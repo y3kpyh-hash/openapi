@@ -1,10 +1,10 @@
-pyinstaller==6.10.0
+﻿pyinstaller==6.10.0
 PyQt5==5.15.11
 openpyxl==3.1.5
 loguru==0.6.0
-pandas==1.5.1
-numpy==1.23.4
+pandas>=1.5,<2.1
+numpy>=1.23,<2.0
 requests==2.32.3
 urllib3==1.26.15
 beautifulsoup4==4.13.1
-ipython==8.36
+ipython>=8.0

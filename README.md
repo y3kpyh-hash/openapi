@@ -1,19 +1,47 @@
 ﻿# 키움증권 OpenAPI 자동매매 프로그램
 
 키움증권 OpenAPI+를 활용한 주식 자동매매 프로그램 (Python + PyQt5)
+Claude Code (VS Code) 환경 기준으로 작성되었습니다.
 
-## 개발 환경
+---
 
-- Python 32비트 (OpenAPI는 64비트 미지원)
-- PyQt5 5.15.11
-- 키움증권 OpenAPI+ (C:\OpenAPI\khopenapi.ocx)
-- Windows 전용
+## 개발 환경 (중요: 32비트 Python 필수)
 
-## 환경 설정
+키움 OpenAPI OCX는 **32비트 전용**입니다. 64비트 Python으로는 실행 불가합니다.
 
-pip install -r requirements.txt
+### 1단계 - 32비트 Python 3.10 설치
 
-주의: 반드시 32비트 Python 사용. 64비트 Python에서는 OCX 로드 불가.
+아래 링크에서 Windows installer (32-bit) 다운로드 및 설치:
+https://www.python.org/downloads/release/python-31011/
+
+- 설치 경로 예: C:\Python310_32
+- 설치 시 "Add Python to PATH" 체크 해제 권장 (64비트 Python과 충돌 방지)
+
+설치 확인:
+```
+C:\Python310_32\python.exe -c "import platform; print(platform.architecture())"
+# ('32bit', 'WindowsPE') 출력되어야 정상
+```
+
+### 2단계 - 의존성 패키지 설치
+
+```
+C:\Python310_32\python.exe -m pip install -r requirements.txt
+```
+
+### 3단계 - VS Code 인터프리터 설정
+
+VS Code에서 Ctrl+Shift+P -> "Python: Select Interpreter"
+-> "Enter interpreter path" -> C:\Python310_32\python.exe 입력
+
+또는 .vscode/settings.json 파일이 자동 생성되어 있으면 바로 사용 가능합니다.
+
+### 4단계 - 키움 OpenAPI+ 설치 확인
+
+C:\OpenAPI\khopenapi.ocx 파일이 있어야 합니다.
+영웅문4 HTS 설치 후 OpenAPI+ 신청 및 설치하면 자동으로 등록됩니다.
+
+---
 
 ## 챕터 구성
 
@@ -25,16 +53,20 @@ pip install -r requirements.txt
 | chapter4 | 조건검색 | (예정) |
 | chapter5 | 기타함수 + 자동화 완성 | (예정) |
 
+---
+
 ## Chapter1 - 로그인 및 기본 구조
 
 ### example1-1.py
-PyQt5 기본 윈도우 생성 + 키움 OCX 컨트롤 로드 확인
+키움 OCX 연결 + CommConnect() 로그인 + 연결 상태 확인 (after_login)
 
 ### example1-2.py
-로그인 구현 (CommConnect() -> OnEventConnect 이벤트)
+로그인 후 GetLoginInfo() 로 사용자 ID, 이름, 계좌번호 목록 출력
 
 ### example1-3.py
-로그인 완성 + 로그인 후 사용자/계좌 정보 조회 (GetLoginInfo)
+KiwoomAPI 클래스 분리 - 실전 구조 기반으로 캡슐화
+
+---
 
 ## 핵심 동작 원리
 
@@ -43,3 +75,13 @@ PyQt5 기본 윈도우 생성 + 키움 OCX 컨트롤 로드 확인
 - 모든 동작은 비동기 이벤트 기반
 - 스레드 미지원 - 메인 스레드에서만 호출
 - 화면번호(스크린번호): 최대 200개, 4자리 숫자 (0000 제외)
+- 계좌번호: 10자리 전체 입력 필요
+
+---
+
+## 실행 방법 (VS Code)
+
+1. VS Code 하단 인터프리터가 32비트 Python으로 설정된 것 확인
+2. chapter1/example1-1.py 열기
+3. 우측 상단 실행 버튼(>) 또는 F5
+4. 키움 로그인창에서 ID/PW 입력 후 로그인

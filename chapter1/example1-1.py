@@ -1,45 +1,33 @@
 # chapter1 / example1-1.py
-# 목표: PyQt5 기본 윈도우 생성 + 키움 OpenAPI OCX 컨트롤 연결 확인
+# 목표: 키움 OCX 연결 + 로그인 + 연결 상태 확인
 
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QAxContainer import QAxWidget
 
 
-class KiwoomOCX(QAxWidget):
+class MyWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        # khopenapi.ocx 의 ProgID 로 OCX 컨트롤 로드
-        self.setControl("KHOPENAPI.KHOpenAPICtrl.1")
+        self.kiwoom = QAxWidget("KHOPENAPI.KHOpenAPICtrl.1")
+        self.kiwoom.OnEventConnect.connect(self._event_connect)
+        self.kiwoom.dynamicCall("CommConnect()")
 
+    def _event_connect(self, err_code):
+        if err_code == 0:
+            print("로그인 성공!")
+        else:
+            print("로그인 실패!")
+        self.after_login()
 
-class MainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle("키움 OpenAPI - Chapter1 Example1-1")
-        self.setGeometry(100, 100, 400, 200)
-
-        central = QWidget()
-        self.setCentralWidget(central)
-        layout = QVBoxLayout(central)
-
-        # OCX 컨트롤 생성
-        self.kiwoom = KiwoomOCX()
-
-        # 연결 상태 확인
-        state = self.kiwoom.dynamicCall("GetConnectState()")
-        status = "연결됨" if state == 1 else "미연결 (로그인 필요)"
-
-        label = QLabel(f"OpenAPI OCX 로드 상태: 성공\n연결 상태: {status}")
-        layout.addWidget(label)
-        layout.addWidget(self.kiwoom)
-
-        print(f"[OCX 로드] 성공")
-        print(f"[연결 상태] {status} (GetConnectState={state})")
+    def after_login(self):
+        if self.kiwoom.dynamicCall("GetConnectState()") == 0:
+            print("서버와 연결이 끊겼습니다!")
+        else:
+            print("서버와 연결 중입니다!")
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
+    myWindow = MyWindow()
     sys.exit(app.exec_())

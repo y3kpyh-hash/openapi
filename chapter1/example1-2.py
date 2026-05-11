@@ -1,60 +1,58 @@
 # chapter1 / example1-2.py
-# 목표: 키움 OpenAPI 로그인 구현
-#       CommConnect() 호출 -> 로그인창 -> OnEventConnect 이벤트 수신
+# 목표: 로그인 후 사용자/계좌 정보 조회 (GetLoginInfo)
+#
+# GetLoginInfo 태그:
+#   ACCOUNT_CNT  - 보유 계좌 수
+#   ACCNO        - 전체 계좌번호 목록 (세미콜론 구분)
+#   USER_ID      - 사용자 ID
+#   USER_NAME    - 사용자 이름
+#   KEY_BSECGB   - 키보드 보안 해지 여부 (0:정상, 1:해지)
+#   FIREW_SECGB  - 방화벽 설정 여부 (0:미설정, 1:설정, 2:해지)
 
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QAxContainer import QAxWidget
 
 
-class KiwoomAPI(QAxWidget):
+class MyWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setControl("KHOPENAPI.KHOpenAPICtrl.1")
-        # 로그인 완료 이벤트 연결
-        self.OnEventConnect.connect(self._on_event_connect)
+        self.kiwoom = QAxWidget("KHOPENAPI.KHOpenAPICtrl.1")
+        self.kiwoom.OnEventConnect.connect(self._event_connect)
+        self.kiwoom.dynamicCall("CommConnect()")
 
-    def login(self):
-        # 키움 로그인창 실행
-        self.dynamicCall("CommConnect()")
-
-    def _on_event_connect(self, err_code):
+    def _event_connect(self, err_code):
         if err_code == 0:
-            print("[로그인] 성공")
-            self.login_label.setText("로그인 상태: 성공")
+            print("로그인 성공!")
         else:
-            print(f"[로그인] 실패 - 오류코드: {err_code}")
-            self.login_label.setText(f"로그인 상태: 실패 (오류코드 {err_code})")
+            print("로그인 실패!")
+        self.after_login()
 
+    def after_login(self):
+        if self.kiwoom.dynamicCall("GetConnectState()") == 0:
+            print("서버와 연결이 끊겼습니다!")
+            return
+        print("서버와 연결 중입니다!")
+        self.get_login_info()
 
-class MainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle("키움 OpenAPI - Chapter1 Example1-2 (로그인)")
-        self.setGeometry(100, 100, 400, 200)
+    def get_login_info(self):
+        account_cnt = self.kiwoom.dynamicCall("GetLoginInfo(QString)", "ACCOUNT_CNT")
+        accounts_raw = self.kiwoom.dynamicCall("GetLoginInfo(QString)", "ACCNO")
+        user_id = self.kiwoom.dynamicCall("GetLoginInfo(QString)", "USER_ID")
+        user_name = self.kiwoom.dynamicCall("GetLoginInfo(QString)", "USER_NAME")
 
-        central = QWidget()
-        self.setCentralWidget(central)
-        layout = QVBoxLayout(central)
+        accounts = [a for a in accounts_raw.split(";") if a.strip()]
 
-        self.kiwoom = KiwoomAPI()
-
-        self.status_label = QLabel("로그인 상태: 미연결")
-        # label을 OCX에서 접근할 수 있도록 참조 전달
-        self.kiwoom.login_label = self.status_label
-
-        login_btn = QPushButton("로그인")
-        login_btn.clicked.connect(self.kiwoom.login)
-
-        layout.addWidget(self.status_label)
-        layout.addWidget(login_btn)
-        layout.addWidget(self.kiwoom)
-
-        print("[앱 시작] '로그인' 버튼을 눌러 키움 로그인창을 실행하세요.")
+        print("=" * 40)
+        print(f"사용자 ID   : {user_id}")
+        print(f"사용자 이름 : {user_name}")
+        print(f"보유 계좌 수: {account_cnt}")
+        for i, acc in enumerate(accounts):
+            print(f"계좌 {i+1}     : {acc}")
+        print("=" * 40)
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
+    myWindow = MyWindow()
     sys.exit(app.exec_())

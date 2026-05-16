@@ -650,6 +650,9 @@ class DashboardWidget(QWidget):
         self.mainTabWidget.addTab(self._dashboard, "전략")
     """
 
+    # NXTWatcher 창 참조 유지 (GC 방지)
+    _nxt_watcher_win = None
+
     def __init__(self, parent=None):
         super().__init__(parent)
         self._trader = None
@@ -781,6 +784,26 @@ class DashboardWidget(QWidget):
             QMessageBox.warning(self, "스캐너 오류", f"스캔 실행 실패: {e}")
 
     def _refresh_nxt(self) -> None:
+        """즉시 계산 버튼 — NXTWatcher 창 열기 + NxtPanel 갱신."""
+        # NXTWatcher 별도 창 열기
+        try:
+            from nxt_watcher import NXTWatcher
+            db = self._trader.db if self._trader else None
+            if (DashboardWidget._nxt_watcher_win is None or
+                    not DashboardWidget._nxt_watcher_win.isVisible()):
+                win = NXTWatcher(trader=self._trader, db=db)
+                win.setWindowTitle("NXT 감시자")
+                win.resize(780, 520)
+                win.show()
+                DashboardWidget._nxt_watcher_win = win
+            else:
+                DashboardWidget._nxt_watcher_win.raise_()
+                DashboardWidget._nxt_watcher_win.activateWindow()
+        except Exception as e:
+            from PyQt5.QtWidgets import QMessageBox
+            QMessageBox.warning(self, "NXT 감시자", f"창 열기 실패: {e}")
+
+        # NxtPanel 패널도 DB 데이터로 갱신
         if self._trader is None:
             return
         try:

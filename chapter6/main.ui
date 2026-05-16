@@ -116,6 +116,22 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="githubPushButton">
+        <property name="text">
+         <string>⬆ GitHub</string>
+        </property>
+        <property name="toolTip">
+         <string>GitHub에 현재 코드를 업로드합니다 (git add → commit → push)</string>
+        </property>
+        <property name="minimumWidth">
+         <number>100</number>
+        </property>
+        <property name="maximumWidth">
+         <number>120</number>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
     <item>

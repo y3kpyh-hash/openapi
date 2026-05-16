@@ -55,6 +55,18 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
     def __init__(self):
         super().__init__()
 
+        # GitHub 업로드 버튼
+        self.githubPushButton.setStyleSheet(
+            "QPushButton {"
+            "  background:#24292e; color:white;"
+            "  border-radius:4px; font-size:12px; font-weight:bold;"
+            "  padding:0 8px;"
+            "}"
+            "QPushButton:hover  { background:#3a3f46; }"
+            "QPushButton:pressed { background:#1a1e22; }"
+        )
+        self.githubPushButton.clicked.connect(self._on_github_push)
+
         # 숫자 포맷 입력
         self.customBuyAmountLineEdit.textChanged.connect(
             lambda: format_number(self.customBuyAmountLineEdit)
@@ -215,8 +227,9 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
 
         # ── DB 영속성 ──────────────────────────────────────────
         self.db = DBManager()
-        self._nxt_update_done: bool = False    # 오늘 09:05 next_day 업데이트 완료 여부
-        self._nxt_save_done:   bool = False    # 오늘 20:00 nxt 저장 완료 여부
+        self._nxt_update_done:  bool = False   # 오늘 09:05 next_day 업데이트 완료 여부
+        self._nxt_save_done:    bool = False   # 오늘 20:00 nxt 저장 완료 여부
+        self._nxt_report_done:  bool = False   # 오늘 20:30 리포트 생성 완료 여부
 
         # 1분마다 수급흐름 스냅샷 저장
         self._supply_save_timer = QTimer()
@@ -2419,6 +2432,205 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
             self.auto_trade_stock_df.at[stock_code, "매도주문완료"] = False
 
     # ========================
+    # GitHub 업로드
+    # ========================
+
+    def _on_github_push(self) -> None:
+        """⬆ GitHub 버튼 — git add → commit → push 다이얼로그."""
+        from PyQt5.QtWidgets import (
+            QDialog, QVBoxLayout, QHBoxLayout, QLabel,
+            QTextEdit, QLineEdit, QPushButton, QMessageBox,
+        )
+        import subprocess
+
+        _ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+        def _git(args: list, timeout: int = 30) -> tuple[int, str, str]:
+            r = subprocess.run(
+                ["git"] + args, cwd=_ROOT,
+                capture_output=True, text=True, encoding="utf-8",
+                errors="replace", timeout=timeout,
+            )
+            return r.returncode, r.stdout.strip(), r.stderr.strip()
+
+        # ── git status 조회 ─────────────────────────────────
+        _, status_out, _ = _git(["status", "--short"])
+        if not status_out:
+            QMessageBox.information(
+                self, "GitHub 업로드",
+                "변경된 파일이 없습니다.\n현재 코드가 이미 최신 상태입니다."
+            )
+            return
+
+        # ── 업로드 다이얼로그 ────────────────────────────────
+        dlg = QDialog(self)
+        dlg.setWindowTitle("⬆ GitHub 업로드")
+        dlg.setMinimumWidth(520)
+        dlg.setMinimumHeight(380)
+        vl  = QVBoxLayout(dlg)
+        vl.setSpacing(10)
+
+        # 헤더
+        hdr = QLabel("GitHub 업로드  —  변경 내역을 확인하고 커밋 메시지를 입력하세요.")
+        hdr.setStyleSheet(
+            "font-size:12px; font-weight:bold; color:#24292e;"
+            "padding:6px; background:#f6f8fa; border-radius:4px;"
+        )
+        hdr.setWordWrap(True)
+        vl.addWidget(hdr)
+
+        # 변경 파일 목록
+        vl.addWidget(QLabel("변경 파일:"))
+        status_box = QTextEdit()
+        status_box.setReadOnly(True)
+        status_box.setFixedHeight(140)
+        status_box.setStyleSheet(
+            "font-family:Consolas,monospace; font-size:11px;"
+            "background:#f6f8fa; border:1px solid #d0d7de; border-radius:4px;"
+        )
+        # 색상 있는 표시 (M=주황, ??=파랑, D=빨강)
+        lines_html = []
+        for line in status_out.splitlines():
+            flag = line[:2].strip()
+            fname = line[3:]
+            if flag in ("M", "MM", "AM"):
+                color = "#e36209"
+            elif flag == "??":
+                color = "#0969da"
+            elif flag in ("D", "AD", "MD"):
+                color = "#cf222e"
+            elif flag in ("A", "AM"):
+                color = "#1a7f37"
+            else:
+                color = "#24292e"
+            lines_html.append(
+                f'<span style="color:{color};font-family:Consolas;">'
+                f'{line[:2]}</span> {fname}'
+            )
+        status_box.setHtml("<br>".join(lines_html))
+        vl.addWidget(status_box)
+
+        # 커밋 메시지 입력
+        vl.addWidget(QLabel("커밋 메시지:"))
+        now_str  = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+        msg_edit = QLineEdit()
+        msg_edit.setText(f"update: chapter6 코드 업데이트 ({now_str})")
+        msg_edit.setStyleSheet(
+            "font-size:12px; padding:4px;"
+            "border:1px solid #d0d7de; border-radius:4px;"
+        )
+        vl.addWidget(msg_edit)
+
+        # 결과 출력창
+        result_box = QTextEdit()
+        result_box.setReadOnly(True)
+        result_box.setFixedHeight(80)
+        result_box.setStyleSheet(
+            "font-family:Consolas,monospace; font-size:11px;"
+            "background:#f6f8fa; border:1px solid #d0d7de; border-radius:4px;"
+        )
+        result_box.setPlaceholderText("업로드 결과가 여기에 표시됩니다...")
+        vl.addWidget(result_box)
+
+        # 버튼 바
+        btn_hl = QHBoxLayout()
+        btn_hl.addStretch()
+        push_btn = QPushButton("⬆  GitHub에 업로드")
+        push_btn.setFixedHeight(32)
+        push_btn.setStyleSheet(
+            "QPushButton { background:#24292e; color:white; border-radius:4px;"
+            "  font-size:12px; font-weight:bold; padding:0 12px; }"
+            "QPushButton:hover  { background:#3a3f46; }"
+            "QPushButton:pressed { background:#1a1e22; }"
+        )
+        cancel_btn = QPushButton("취소")
+        cancel_btn.setFixedHeight(32)
+        cancel_btn.setFixedWidth(72)
+        cancel_btn.setStyleSheet(
+            "background:#e0e0e0; color:#333; border-radius:4px;"
+            "font-size:12px; padding:0 8px;"
+        )
+        cancel_btn.clicked.connect(dlg.reject)
+        btn_hl.addWidget(push_btn)
+        btn_hl.addWidget(cancel_btn)
+        vl.addLayout(btn_hl)
+
+        # ── 업로드 실행 ─────────────────────────────────────
+        def _do_push():
+            commit_msg = msg_edit.text().strip()
+            if not commit_msg:
+                result_box.setHtml(
+                    '<span style="color:red;">커밋 메시지를 입력하세요.</span>'
+                )
+                return
+
+            push_btn.setEnabled(False)
+            push_btn.setText("업로드 중...")
+            result_box.clear()
+            QApplication.processEvents()
+
+            log_lines: list[str] = []
+
+            def _run_step(label: str, args: list, timeout: int = 60) -> bool:
+                rc, out, err = _git(args, timeout=timeout)
+                out_text = out or err
+                color = "#1a7f37" if rc == 0 else "#cf222e"
+                log_lines.append(
+                    f'<span style="color:{color};font-weight:bold;">[{label}]</span> '
+                    + (
+                        '<span style="color:#1a7f37;">완료</span>'
+                        if rc == 0 else
+                        f'<span style="color:red;">실패 (exit {rc})</span>'
+                    )
+                )
+                if out_text:
+                    log_lines.append(
+                        f'<span style="color:#555;font-size:10px;">{out_text[:300]}</span>'
+                    )
+                result_box.setHtml("<br>".join(log_lines))
+                QApplication.processEvents()
+                return rc == 0
+
+            # git add -A
+            if not _run_step("git add", ["add", "-A"]):
+                push_btn.setEnabled(True)
+                push_btn.setText("⬆  GitHub에 업로드")
+                return
+
+            # git commit
+            ok_commit = _run_step(
+                "git commit", ["commit", "-m", commit_msg]
+            )
+            if not ok_commit:
+                # 변경 없으면 이미 최신
+                result_box.append(
+                    '<span style="color:#e36209;">커밋할 변경사항이 없습니다.'
+                    " (already up-to-date)</span>"
+                )
+                push_btn.setEnabled(True)
+                push_btn.setText("⬆  GitHub에 업로드")
+                return
+
+            # git push
+            ok_push = _run_step("git push", ["push", "origin", "main"], timeout=120)
+            if ok_push:
+                log_lines.append(
+                    '<br><span style="color:#1a7f37; font-weight:bold;">'
+                    "✅ GitHub 업로드 완료!</span>"
+                )
+            else:
+                log_lines.append(
+                    '<br><span style="color:red; font-weight:bold;">'
+                    "❌ push 실패 — 인터넷 연결 또는 원격 브랜치를 확인하세요.</span>"
+                )
+            result_box.setHtml("<br>".join(log_lines))
+            push_btn.setEnabled(True)
+            push_btn.setText("⬆  GitHub에 업로드")
+
+        push_btn.clicked.connect(_do_push)
+        dlg.exec_()
+
+    # ========================
     # 설정 저장/불러오기
     # ========================
 
@@ -3189,10 +3401,20 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
             self._nxt_save_done = True
             self._save_nxt_snapshot()
 
+        # 20:30 — NXT 마감 리포트 자동 팝업
+        if t_str == "20:30" and not self._nxt_report_done:
+            self._nxt_report_done = True
+            try:
+                from nxt_watcher import auto_popup_at_2030
+                auto_popup_at_2030(trader=self, parent=self)
+            except Exception as e:
+                logger.warning(f"[NXT리포트] 팝업 실패: {e}")
+
         # 자정 직후 플래그 초기화 (00:01)
         if t_str == "00:01":
-            self._nxt_update_done = False
-            self._nxt_save_done   = False
+            self._nxt_update_done  = False
+            self._nxt_save_done    = False
+            self._nxt_report_done  = False
 
         # [1051] 공식 컷오프 스냅샷
         label = self._flow_schedule.get(t_str)

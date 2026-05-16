@@ -986,3 +986,73 @@
 2026-05-17 07:28:38.233 | INFO     | common_api:common_log:1357 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=16866608 row1거래량=14461149
 2026-05-17 07:28:38.234 | INFO     | common_api:common_log:1357 - [종목별투자자] 100건 수신 완료
 2026-05-17 07:28:38.569 | DEBUG    | __main__:on_receive_investor_data:355 - [투자자] 319400_AL 외인=+14,345 기관=-395
+2026-05-17 07:36:38.797 | INFO     | common_api:common_log:1357 - 로그인 창 열기 성공!
+2026-05-17 07:36:39.076 | INFO     | db_manager:__init__:137 - [DB] 연결 완료: c:\OpenAPI\data\trade_data.db
+2026-05-17 07:36:42.686 | INFO     | common_api:common_log:1357 - 로그인 성공!
+2026-05-17 07:36:42.689 | INFO     | common_api:get_is_paper_trading:186 - 실서버에 접속 중입니다.
+2026-05-17 07:36:42.690 | DEBUG    | common_api:get_stock_code_name_dict:249 - NXT 대체거래소 가능 종목 수: 634
+2026-05-17 07:36:42.736 | INFO     | common_api:_load_sector_json:311 - [업종맵] krx_sector.json 4072개 적용 완료
+2026-05-17 07:36:42.739 | INFO     | common_api:_load_sector_json:311 - [업종맵] sector_config.json 110개 적용 완료
+2026-05-17 07:36:43.438 | INFO     | common_api:_load_sector_xlsx:294 - [업종맵] sector_list.xlsx 2755개 적용 완료
+2026-05-17 07:36:43.440 | INFO     | common_api:_build_sector_map:278 - [업종맵] 최종 4079개 종목 매핑 완료
+2026-05-17 07:36:43.442 | DEBUG    | __main__:on_finished_password_settings:2703 - 계좌번호: 3942643011 정보 조회를 시작합니다.
+2026-05-17 07:36:43.479 | INFO     | common_api:send_tr_request:323 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x07C3BD18>>, func_args: [0]
+2026-05-17 07:36:43.630 | INFO     | common_api:_receive_msg:1291 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 조회가 완료되었습니다
+2026-05-17 07:36:43.632 | INFO     | common_api:common_log:1357 - [100000] 조회가 완료되었습니다
+2026-05-17 07:36:43.636 | INFO     | __main__:on_done_loading_basic_info:2008 - [시장차트] 선물 코드: 101G2606
+2026-05-17 07:36:43.640 | INFO     | common_api:register_market_indices:1412 - [시장차트] KOSPI 실시간 등록
+2026-05-17 07:36:43.643 | INFO     | common_api:register_market_indices:1412 - [시장차트] KOSDAQ 실시간 등록
+2026-05-17 07:36:43.647 | INFO     | common_api:register_market_indices:1418 - [시장차트] 선물(101G2606) 실시간 등록
+2026-05-17 07:36:43.648 | INFO     | __main__:_load_holding_from_db:2206 - [DB] 보유종목 1개 불러옴
+2026-05-17 07:36:43.651 | INFO     | __main__:_load_holding_from_db:2208 -   005930 삼성전자 | 진입 20260516 @ 69,000.0 | 상태 보유
+2026-05-17 07:36:43.652 | INFO     | common_api:common_log:1357 - [DB] 보유종목 1개 복원 완료
+2026-05-17 07:36:43.653 | INFO     | common_api:common_log:1357 - 기본 정보 로딩 완료!
+2026-05-17 07:36:48.320 | INFO     | common_api:send_tr_request:323 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x07C3BD18>>, func_args: ['000660_AL']
+2026-05-17 07:36:48.327 | INFO     | common_api:_send_opt10081_investor_vol:502 - [opt10081 vol] 요청: 000660_AL
+2026-05-17 07:36:48.500 | INFO     | common_api:_on_opt10081_investor_vol_req:952 - [opt10081 vol] 600건 캐시 완료
+2026-05-17 07:36:48.827 | INFO     | common_api:send_tr_request:323 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x07C3BD18>>, func_args: ['000660_AL', '20260517', '1', '0', '1']
+2026-05-17 07:36:48.835 | INFO     | common_api:_send_opt10059:512 - [opt10059] 요청 전송: 종목=000660_AL 금액수량=1 매매=0 거래소=통합
+2026-05-17 07:36:48.839 | INFO     | common_api:register_overseas_futures:1429 - [해외선물] NQM26 실시간 등록
+2026-05-17 07:36:48.840 | INFO     | __main__:_request_overseas_futures:2727 - [해외선물] NQM26 분봉 요청 + 실시간 등록
+2026-05-17 07:36:48.856 | INFO     | common_api:on_opt10059_req:992 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1848000' r1종가='-1964000' r0개인='3930903'
+2026-05-17 07:36:48.901 | INFO     | common_api:common_log:1357 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=3930903
+2026-05-17 07:36:48.912 | INFO     | common_api:on_opt10059_req:1091 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-17 07:36:48.913 | INFO     | common_api:common_log:1357 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=13151904 row1거래량=9925086
+2026-05-17 07:36:48.915 | INFO     | common_api:common_log:1357 - [종목별투자자] 100건 수신 완료
+2026-05-17 07:36:49.273 | DEBUG    | __main__:on_receive_investor_data:367 - [투자자] 000660_AL 외인=-2,882,228 기관=-1,159,786
+2026-05-17 07:36:49.322 | INFO     | common_api:send_tr_request:323 - Executing TR request fuction: <bound method KiwoomAPI.request_opt50028 of <__main__.CustomAutoTrader object at 0x07C3BD18>>, func_args: ['NQM26', '1']
+2026-05-17 07:36:49.363 | INFO     | common_api:_receive_tr_data:583 - [opt50028] _receive_tr_data: errCode='' msg='' prevNext='0' cnt=0
+2026-05-17 07:36:49.365 | WARNING  | common_api:on_opt50028_req:618 - [opt50028] 데이터 0행 — 종목코드='' trcode='opt50028'
+2026-05-17 07:36:49.565 | INFO     | common_api:send_tr_request:323 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x07C3BD18>>, func_args: ['005930_AL']
+2026-05-17 07:36:49.571 | INFO     | common_api:_send_opt10081_investor_vol:502 - [opt10081 vol] 요청: 005930_AL
+2026-05-17 07:36:49.641 | INFO     | common_api:_on_opt10081_investor_vol_req:952 - [opt10081 vol] 600건 캐시 완료
+2026-05-17 07:36:49.816 | INFO     | common_api:send_tr_request:323 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x07C3BD18>>, func_args: ['005930_AL', '20260517', '1', '0', '1']
+2026-05-17 07:36:49.824 | INFO     | common_api:_send_opt10059:512 - [opt10059] 요청 전송: 종목=005930_AL 금액수량=1 매매=0 거래소=통합
+2026-05-17 07:36:49.846 | INFO     | common_api:on_opt10059_req:992 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-273500' r1종가='+293000' r0개인='3113721'
+2026-05-17 07:36:49.894 | INFO     | common_api:common_log:1357 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=3113721
+2026-05-17 07:36:49.906 | INFO     | common_api:on_opt10059_req:1091 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-17 07:36:49.907 | INFO     | common_api:common_log:1357 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=72786490 row1거래량=69704516
+2026-05-17 07:36:49.907 | INFO     | common_api:common_log:1357 - [종목별투자자] 100건 수신 완료
+2026-05-17 07:36:50.248 | DEBUG    | __main__:on_receive_investor_data:367 - [투자자] 005930_AL 외인=-2,718,740 기관=-486,783
+2026-05-17 07:36:50.823 | INFO     | common_api:send_tr_request:323 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x07C3BD18>>, func_args: ['005380_AL']
+2026-05-17 07:36:50.831 | INFO     | common_api:_send_opt10081_investor_vol:502 - [opt10081 vol] 요청: 005380_AL
+2026-05-17 07:36:50.889 | INFO     | common_api:_on_opt10081_investor_vol_req:952 - [opt10081 vol] 600건 캐시 완료
+2026-05-17 07:36:51.070 | INFO     | common_api:send_tr_request:323 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x07C3BD18>>, func_args: ['005380_AL', '20260517', '1', '0', '1']
+2026-05-17 07:36:51.077 | INFO     | common_api:_send_opt10059:512 - [opt10059] 요청 전송: 종목=005380_AL 금액수량=1 매매=0 거래소=통합
+2026-05-17 07:36:51.107 | INFO     | common_api:on_opt10059_req:992 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-705000' r1종가='+715000' r0개인='229181'
+2026-05-17 07:36:51.151 | INFO     | common_api:common_log:1357 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=229181
+2026-05-17 07:36:51.162 | INFO     | common_api:on_opt10059_req:1091 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-17 07:36:51.164 | INFO     | common_api:common_log:1357 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=9309155 row1거래량=5585631
+2026-05-17 07:36:51.164 | INFO     | common_api:common_log:1357 - [종목별투자자] 100건 수신 완료
+2026-05-17 07:36:51.503 | DEBUG    | __main__:on_receive_investor_data:367 - [투자자] 005380_AL 외인=-220,294 기관=-22,091
+2026-05-17 07:36:52.068 | INFO     | common_api:send_tr_request:323 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x07C3BD18>>, func_args: ['066570_AL']
+2026-05-17 07:36:52.075 | INFO     | common_api:_send_opt10081_investor_vol:502 - [opt10081 vol] 요청: 066570_AL
+2026-05-17 07:36:52.137 | INFO     | common_api:_on_opt10081_investor_vol_req:952 - [opt10081 vol] 600건 캐시 완료
+2026-05-17 07:36:52.404 | INFO     | common_api:send_tr_request:323 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x07C3BD18>>, func_args: ['066570_AL', '20260517', '1', '0', '1']
+2026-05-17 07:36:52.410 | INFO     | common_api:_send_opt10059:512 - [opt10059] 요청 전송: 종목=066570_AL 금액수량=1 매매=0 거래소=통합
+2026-05-17 07:36:52.676 | INFO     | common_api:on_opt10059_req:992 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='+238500' r1종가='+222500' r0개인='328969'
+2026-05-17 07:36:52.719 | INFO     | common_api:common_log:1357 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=328969
+2026-05-17 07:36:52.731 | INFO     | common_api:on_opt10059_req:1091 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-17 07:36:52.732 | INFO     | common_api:common_log:1357 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=16494781 row1거래량=11902925
+2026-05-17 07:36:52.733 | INFO     | common_api:common_log:1357 - [종목별투자자] 100건 수신 완료
+2026-05-17 07:36:53.078 | DEBUG    | __main__:on_receive_investor_data:367 - [투자자] 066570_AL 외인=-332,685 기관=-642

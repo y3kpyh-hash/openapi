@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git ls-remote *)",
+      "Bash(ls \"C:/Users/y2kpyh/.claude/projects/c--OpenAPI/memory/\" 2>/dev/null || echo \"dir not found\")",
+      "Read(//c/Users/y2kpyh/.claude/projects/c--OpenAPI/memory/**)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(python -c \"import platform; print\\('arch:', platform.architecture\\(\\)\\)\")",
+      "Bash(where python *)",
+      "Bash(C:\\\\Python310_32\\\\python.exe *)",
+      "PowerShell(& \"C:\\\\Python310_32\\\\python.exe\" \"C:\\\\OpenAPI\\\\chapter1\\\\example1-1.py\")"
+    ]
+  }
+}

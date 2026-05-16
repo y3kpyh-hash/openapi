@@ -1,0 +1,3050 @@
+[11:19:02]:********************** Start **********************
+[11:19:02]:********************** Finish **********************
+[11:19:02]:FirstInstance
+[11:19:02]:Gdiplus Init
+[11:19:02]:Socket Init
+[11:19:02]:RegistryKey
+[11:19:03]:---------- Begin ----------
+[11:19:03]:RemoveTempDownloadedFiles
+[11:19:03]:SetVersionFileName
+[11:19:03]:InitControls
+[11:19:03]:CreateSubDirectory
+[11:19:03]:Read Security [1] Install[0]
+[11:19:04]:ASTX Procted ID 0 PWD 0 CERT 0
+[11:19:04]:ASTX Proc Done
+[11:19:04]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[11:19:04]:InitDlg  etc read[0] [User ID][ ][ ]
+[11:19:04]:---------- Starter OnInitDialog End ----------
+[11:19:17]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[11:19:17]:Server Socket 접속중...
+[11:19:17]:Server Socket 접속성공...
+[11:19:17]:교환이 완료될 때 까지 기다림
+[11:19:17]:암호화 HANDSHAKE:update  nLen=2044
+[11:19:17]:암호화 HANDSHAKE:final  nLen=82
+[11:19:17]:암호화 HANDSHAKE:ok  nLen=82
+[11:19:17]:********************** Start **********************
+[11:19:17]:서버에 FileDown요구 [mst.lst]
+[11:19:17]:ZipExtract BEFORE [1]
+[11:19:17]:ZipExtract AFTER [1] FileSize[1602]
+[11:19:17]:DownFileInList Size 다름 File[fjcode.dat] LocalSize[5152] ServerSize[5068] Restarter[0]
+[11:19:17]:DownFileInList CRC 다름 File[thcode.dat] LocalCrc[e8ed30b2] ServerCrc[aa29ef67] Restarter[0]
+[11:19:17]:DownFileInList CRC 다름 File[trcode.dat] LocalCrc[4e3e3ccd] ServerCrc[a692ebb8] Restarter[0]
+[11:19:17]:DownFileInList Size 다름 File[nkrealtime.dat] LocalSize[25292] ServerSize[27694] Restarter[0]
+[11:19:17]:DownFileInList Size 다름 File[opcode.dat] LocalSize[90708] ServerSize[218580] Restarter[0]
+[11:19:17]:DownFileInList CRC 다름 File[upcode.dat] LocalCrc[d192eaec] ServerCrc[0ae6df8d] Restarter[0]
+[11:19:17]:DownFileInList Size 다름 File[hjcode.dat] LocalSize[2060724] ServerSize[2438540] Restarter[0]
+[11:19:17]:DownFileInList Size 다름 File[sfcode.dat] LocalSize[599040] ServerSize[640640] Restarter[0]
+[11:19:17]:서버에 FileDown요구 [apiinitrsc.lst]
+[11:19:18]:ZipExtract BEFORE [2]
+[11:19:18]:ZipExtract AFTER [2] FileSize[2117]
+[11:19:18]:DownFileInList CRC 다름 File[image/btn_sign_u.bmp] LocalCrc[57c84c02] ServerCrc[7d18d725] Restarter[0]
+[11:19:18]:>>>> CKHStarterDlg::DownFileInList File 없음 File[image/login_apism_stage_bg.bmp]
+[11:19:18]:DownFileInList Size 다름 File[apiotrsc.lst] LocalSize[19720] ServerSize[20400] Restarter[0]
+[11:19:18]:DownFileInList Size 다름 File[khopenapi.ocx] LocalSize[492128] ServerSize[492656] Restarter[0]
+[11:19:18]:DownFileInList Size 다름 File[opstarter.exe] LocalSize[630888] ServerSize[637552] Restarter[0]
+[11:19:18]:DownFileInList CRC 다름 File[image/btn_sign_f.bmp] LocalCrc[29f48425] ServerCrc[deb4151c] Restarter[0]
+[11:19:18]:DownFileInList CRC 다름 File[image/btn_sign_d.bmp] LocalCrc[7a24fbc0] ServerCrc[0a2054dd] Restarter[0]
+[11:19:18]:DownFileInList Size 다름 File[system/mstfilelist_api.ini] LocalSize[132] ServerSize[145] Restarter[0]
+[11:19:18]:DownFileInList Size 다름 File[opcomms.dll] LocalSize[193128] ServerSize[193136] Restarter[0]
+[11:19:18]:DownFileInList Size 다름 File[opcommapi.dll] LocalSize[660584] ServerSize[660592] Restarter[0]
+[11:19:18]:>>>> CKHStarterDlg::DownFileInList File 없음 File[image/login_api_stage_bg.bmp]
+[11:19:19]:DownFileInList CRC 다름 File[image/btn_sign_x.bmp] LocalCrc[a05e0727] ServerCrc[1a0e1e88] Restarter[0]
+[11:19:19]:DownFileInList Size 다름 File[system/html.ini] LocalSize[30961] ServerSize[32000] Restarter[0]
+[11:19:19]:서버에 FileDown요구 [fjcode.dat]
+[11:19:19]:ZipExtract BEFORE [3]
+[11:19:19]:ZipExtract AFTER [3] FileSize[1526]
+[11:19:19]:서버에 FileDown요구 [thcode.dat]
+[11:19:19]:ZipExtract BEFORE [4]
+[11:19:19]:ZipExtract AFTER [4] FileSize[9035]
+[11:19:19]:서버에 FileDown요구 [trcode.dat]
+[11:19:20]:ZipExtract BEFORE [5]
+[11:19:20]:ZipExtract AFTER [5] FileSize[911]
+[11:19:20]:서버에 FileDown요구 [nkrealtime.dat]
+[11:19:20]:ZipExtract BEFORE [6]
+[11:19:20]:ZipExtract AFTER [6] FileSize[8279]
+[11:19:20]:서버에 FileDown요구 [opcode.dat]
+[11:19:20]:ZipExtract BEFORE [7]
+[11:19:20]:ZipExtract AFTER [7] FileSize[23380]
+[11:19:20]:서버에 FileDown요구 [upcode.dat]
+[11:19:20]:ZipExtract BEFORE [8]
+[11:19:20]:ZipExtract AFTER [8] FileSize[1284]
+[11:19:20]:서버에 FileDown요구 [hjcode.dat]
+[11:19:26]:ZipExtract BEFORE [9]
+[11:19:26]:ZipExtract AFTER [9] FileSize[441252]
+[11:19:26]:서버에 FileDown요구 [sfcode.dat]
+[11:19:27]:ZipExtract BEFORE [10]
+[11:19:27]:ZipExtract AFTER [10] FileSize[60303]
+[11:19:27]:서버에 FileDown요구 [image/btn_sign_u.bmp]
+[11:19:27]:ZipExtract BEFORE [11]
+[11:19:27]:ZipExtract AFTER [11] FileSize[860]
+[11:19:27]:서버에 FileDown요구 [image/login_apism_stage_bg.bmp]
+[11:19:28]:ZipExtract BEFORE [12]
+[11:19:28]:ZipExtract AFTER [12] FileSize[58024]
+[11:19:28]:서버에 FileDown요구 [apiotrsc.lst]
+[11:19:28]:ZipExtract BEFORE [13]
+[11:19:28]:ZipExtract AFTER [13] FileSize[3136]
+[11:19:28]:서버에 FileDown요구 [khopenapi.ocx]
+[11:19:31]:ZipExtract BEFORE [14]
+[11:19:31]:ZipExtract AFTER [14] FileSize[205680]
+[11:19:31]:서버에 FileDown요구 [opstarter.exe]
+[11:19:34]:ZipExtract BEFORE [15]
+[11:19:34]:ZipExtract AFTER [15] FileSize[275075]
+[11:19:34]:서버에 FileDown요구 [image/btn_sign_f.bmp]
+[11:19:34]:ZipExtract BEFORE [16]
+[11:19:34]:ZipExtract AFTER [16] FileSize[870]
+[11:19:34]:서버에 FileDown요구 [image/btn_sign_d.bmp]
+[11:19:34]:ZipExtract BEFORE [17]
+[11:19:34]:ZipExtract AFTER [17] FileSize[682]
+[11:19:34]:서버에 FileDown요구 [system/mstfilelist_api.ini]
+[11:19:35]:ZipExtract BEFORE [18]
+[11:19:35]:ZipExtract AFTER [18] FileSize[272]
+[11:19:35]:서버에 FileDown요구 [opcomms.dll]
+[11:19:36]:ZipExtract BEFORE [19]
+[11:19:36]:ZipExtract AFTER [19] FileSize[96363]
+[11:19:36]:서버에 FileDown요구 [opcommapi.dll]
+[11:19:39]:ZipExtract BEFORE [20]
+[11:19:39]:ZipExtract AFTER [20] FileSize[266593]
+[11:19:39]:서버에 FileDown요구 [image/login_api_stage_bg.bmp]
+[11:19:40]:ZipExtract BEFORE [21]
+[11:19:40]:ZipExtract AFTER [21] FileSize[73090]
+[11:19:40]:서버에 FileDown요구 [image/btn_sign_x.bmp]
+[11:19:41]:ZipExtract BEFORE [22]
+[11:19:41]:ZipExtract AFTER [22] FileSize[1194]
+[11:19:41]:서버에 FileDown요구 [system/html.ini]
+[11:19:41]:ZipExtract BEFORE [23]
+[11:19:41]:ZipExtract AFTER [23] FileSize[31640]
+[11:19:41]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[11:19:41]:==>InitRename()
+[11:19:42]:삭제할 파일 [C:\OpenAPI\image/btn_sign_u.bmp]
+[11:19:42]:이름변경 파일 [C:\OpenAPI\image/_btn_sign_u.bmp : C:\OpenAPI\image/btn_sign_u.bmp]
+[11:19:42]:이름변경 파일 [C:\OpenAPI\image/_login_apism_stage_bg.bmp : C:\OpenAPI\image/login_apism_stage_bg.bmp]
+[11:19:42]:삭제할 파일 [C:\OpenAPI\image/btn_sign_f.bmp]
+[11:19:42]:이름변경 파일 [C:\OpenAPI\image/_btn_sign_f.bmp : C:\OpenAPI\image/btn_sign_f.bmp]
+[11:19:42]:삭제할 파일 [C:\OpenAPI\image/btn_sign_d.bmp]
+[11:19:43]:이름변경 파일 [C:\OpenAPI\image/_btn_sign_d.bmp : C:\OpenAPI\image/btn_sign_d.bmp]
+[11:19:43]:삭제할 파일 [C:\OpenAPI\system/mstfilelist_api.ini]
+[11:19:43]:이름변경 파일 [C:\OpenAPI\system/_mstfilelist_api.ini : C:\OpenAPI\system/mstfilelist_api.ini]
+[11:19:43]:이름변경 파일 [C:\OpenAPI\image/_login_api_stage_bg.bmp : C:\OpenAPI\image/login_api_stage_bg.bmp]
+[11:19:43]:삭제할 파일 [C:\OpenAPI\image/btn_sign_x.bmp]
+[11:19:43]:이름변경 파일 [C:\OpenAPI\image/_btn_sign_x.bmp : C:\OpenAPI\image/btn_sign_x.bmp]
+[11:19:44]:삭제할 파일 [C:\OpenAPI\system/html.ini]
+[11:19:44]:이름변경 파일 [C:\OpenAPI\system/_html.ini : C:\OpenAPI\system/html.ini]
+[11:19:44]:<==InitRename()
+[11:19:44]:OnBnClickedCancel SetEvent[000002C4].. bCancel[1], bUser[0], bRetry[0]
+[11:19:44]:NKVersionUp 실행하기
+[11:27:08]:CNKVersionUpApp::InitInstance CShareMem::IsShareMemCreated(CShareMem::MAPFILENAME_SHARED_MEM) : TRUE
+[11:27:08]:==>CNKVersionUpDlg::OnInitDialog() : C:\OpenAPI
+[11:27:08]:==>CNKVersionUpDlg::CompareStarter()
+[11:27:08]:<==CNKVersionUpDlg::CompareStarter() : Open API Login [0] 남아 있음.
+[11:27:08]:<==CNKVersionUpDlg::CompareStarter() : Open API Login [1] 남아 있음.
+[11:27:09]:<==CNKVersionUpDlg::CompareStarter() : Open API Login [2] 남아 있음.
+[11:27:09]:<==CNKVersionUpDlg::CompareStarter() : ProcessKill[0] 전 Login 존재.
+[11:27:10]:NKStarter 프로세스 종료됨
+[11:27:10]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_absolutedown.ini]
+[11:27:10]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_aossdk.dll]
+[11:27:10]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_aossdkrad.dll]
+[11:27:10]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_asplnchr.exe]
+[11:27:10]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_astxmanager.dll]
+[11:27:10]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_atstrust.dll]
+[11:27:10]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_bldinfo.ini]
+[11:27:10]:manifest 파일 다운됨 ####### strFname [astxsdk/microsoftvc90crt.manifest],  strFind [C:\OpenAPI\astxsdk/_microsoftvc90crt.manifest]
+[11:27:10]:manifest 파일 다운됨 ####### strOldFind [C:\OpenAPI\astxsdk\microsoft.vc90.crt.manifest]
+[11:27:10]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_microsoftvc90crt.manifest]
+[11:27:10]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_msvcr90.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_stsdkex.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_default.lic]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_d.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_f.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_u.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_x.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_check_f.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_check_u.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_d.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_f.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_u.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_x.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_d.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_f.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_u.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_x.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_d.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_f.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_u.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_x.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_d.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_f.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_u.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_x.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_d.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_f.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_u.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_x.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_d.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_f.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_u.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_x.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_d.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_f.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_u.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_x.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_d.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_f.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_u.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_x.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_d.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_f.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_u.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_x.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_d.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_f.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_u.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_x.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_config_api_bg.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_config_apism_bg.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_api_bg.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_api_stage_bg.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_apism_bg.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_apism_stage_bg.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_staff_config_api_bg.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_staff_config_apism_bg.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_version_api_bg.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_version_apism_bg.bmp]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicore_v2.3.32.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicore_v2.3.42.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicrypto20.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicrypto_v5.1.9.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicrypto_v5.1.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inipki_v5.1.33.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inipki_v5.1.40.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inisafenet_v7.2.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inisafetoolset.lic]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inisafetoolset_v1.2.2.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_kdfapi2.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_kdfinj.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_khcrypt.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_khcryptcore.dll]
+[11:27:11]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_khcryptex.dll]
+[11:27:11]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:11]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:11]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:11]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:12]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:12]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:12]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:12]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:12]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:12]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:12]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:12]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:12]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:12]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:13]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:13]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:13]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:13]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:13]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:13]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:13]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:27:13]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 [183]
+[11:27:20]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_klib.dll]
+[11:27:20]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_librsadlx.dll]
+[11:27:20]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npe55kb.npn]
+[11:27:20]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npenkapp5policy_kiwoomcs.xml]
+[11:27:20]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npenkappinstall5.dll]
+[11:27:20]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npenkappinstall5message.xml]
+[11:27:20]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npnv_kiwoom.conf]
+[11:27:20]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_nsldap32v11.dll]
+[11:27:20]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:21]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:21]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:21]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:21]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:21]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:21]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:21]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:21]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:21]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:21]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:22]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:22]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:22]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:22]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:22]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:22]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:22]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:22]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:22]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:23]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:27:23]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 [183]
+[11:27:24]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:24]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:24]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:25]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:25]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:25]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:25]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:25]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:25]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:25]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:25]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:25]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:26]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:26]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:26]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:26]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:26]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:26]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:26]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:26]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:26]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:27:27]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 [183]
+[11:27:33]:>>>> 파일 삭제 성공 [C:\OpenAPI\opstarter.exe]
+[11:27:33]:>>>> 파일 이름변경 성공 [C:\OpenAPI\_opstarter.exe]->[C:\OpenAPI\opstarter.exe]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_opversionup.exe]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_signksc.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdcm.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdem.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdif.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdsc.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommad.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommcm.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommem.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommic.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommif.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommjv.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommsc.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommtm.exe]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommwb.exe]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skmagerapi.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_sksessiondll.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_sksmartcard32.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skusbkey.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_stsdkex.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_font.ini]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_html.ini]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_ip_api.dat]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_jongacc.dat]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_koarealtime.dat]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_mstfilelist_api.ini]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_realtime.dat]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_security_apply.ini]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_unzdll.dll]
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_zipdll.dll]
+[11:27:33]:initrsc.lst 에 있는 파일 중에 _ 붙은 파일 일부 실제 파일로 변경 실패.
+[11:27:33]:<==CNKVersionUpDlg::CompareStarter()
+[11:27:37]:<== CNKVersionUpDlg::OnOK
+[11:29:13]:********************** Start **********************
+[11:29:13]:********************** Finish **********************
+[11:29:13]:FirstInstance
+[11:29:13]:Gdiplus Init
+[11:29:13]:Socket Init
+[11:29:13]:RegistryKey
+[11:29:13]:---------- Begin ----------
+[11:29:13]:RemoveTempDownloadedFiles
+[11:29:13]:SetVersionFileName
+[11:29:13]:InitControls
+[11:29:13]:CreateSubDirectory
+[11:29:13]:CNKStarterDlg::IsInvalidFileCRC() opstarter.exe is in an invalid state
+[11:29:13]:Read Security [1] Install[0]
+[11:29:14]:ASTX Procted ID 0 PWD 0 CERT 0
+[11:29:14]:ASTX Proc Done
+[11:29:14]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[11:29:14]:InitDlg  etc read[0] [User ID][ ][ ]
+[11:29:14]:---------- Starter OnInitDialog End ----------
+[11:29:17]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[11:29:17]:Server Socket 접속중...
+[11:29:17]:Server Socket 접속성공...
+[11:29:17]:교환이 완료될 때 까지 기다림
+[11:29:17]:암호화 HANDSHAKE:update  nLen=2042
+[11:29:17]:암호화 HANDSHAKE:final  nLen=84
+[11:29:17]:암호화 HANDSHAKE:ok  nLen=84
+[11:29:17]:********************** Start **********************
+[11:29:17]:서버에 FileDown요구 [mst.lst]
+[11:29:17]:ZipExtract BEFORE [1]
+[11:29:17]:ZipExtract AFTER [1] FileSize[1602]
+[11:29:17]:>>>> CKHStarterDlg::DownFileInList File 없음 File[popcode.dat]
+[11:29:17]:서버에 FileDown요구 [apiinitrsc.lst]
+[11:29:18]:ZipExtract BEFORE [2]
+[11:29:18]:ZipExtract AFTER [2] FileSize[2117]
+[11:29:18]:DownFileInList Size 다름 File[apiotrsc.lst] LocalSize[19720] ServerSize[20400] Restarter[0]
+[11:29:18]:DownFileInList Size 다름 File[khopenapi.ocx] LocalSize[492128] ServerSize[492656] Restarter[0]
+[11:29:18]:DownFileInList Size 다름 File[opcomms.dll] LocalSize[193128] ServerSize[193136] Restarter[0]
+[11:29:18]:DownFileInList Size 다름 File[opcommapi.dll] LocalSize[660584] ServerSize[660592] Restarter[0]
+[11:29:18]:서버에 FileDown요구 [popcode.dat]
+[11:29:19]:ZipExtract BEFORE [3]
+[11:29:19]:ZipExtract AFTER [3] FileSize[36854]
+[11:29:19]:서버에 FileDown요구 [apiotrsc.lst]
+[11:29:19]:ZipExtract BEFORE [4]
+[11:29:19]:ZipExtract AFTER [4] FileSize[3136]
+[11:29:19]:서버에 FileDown요구 [khopenapi.ocx]
+[11:29:21]:ZipExtract BEFORE [5]
+[11:29:21]:ZipExtract AFTER [5] FileSize[205680]
+[11:29:21]:서버에 FileDown요구 [opcomms.dll]
+[11:29:23]:ZipExtract BEFORE [6]
+[11:29:23]:ZipExtract AFTER [6] FileSize[96363]
+[11:29:23]:서버에 FileDown요구 [opcommapi.dll]
+[11:29:26]:ZipExtract BEFORE [7]
+[11:29:26]:ZipExtract AFTER [7] FileSize[266593]
+[11:29:26]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[11:29:27]:==>InitRename()
+[11:29:27]:<==InitRename()
+[11:29:27]:OnBnClickedCancel SetEvent[00000288].. bCancel[1], bUser[0], bRetry[0]
+[11:29:27]:NKVersionUp 실행하기
+[11:29:50]:CNKVersionUpApp::InitInstance CShareMem::IsShareMemCreated(CShareMem::MAPFILENAME_SHARED_MEM) : TRUE
+[11:29:50]:==>CNKVersionUpDlg::OnInitDialog() : C:\OpenAPI
+[11:29:50]:==>CNKVersionUpDlg::CompareStarter()
+[11:29:50]:<==CNKVersionUpDlg::CompareStarter() : Open API Login [0] 남아 있음.
+[11:29:51]:<==CNKVersionUpDlg::CompareStarter() : Open API Login [1] 남아 있음.
+[11:29:51]:<==CNKVersionUpDlg::CompareStarter() : Open API Login [2] 남아 있음.
+[11:29:52]:<==CNKVersionUpDlg::CompareStarter() : ProcessKill[0] 전 Login 존재.
+[11:29:53]:NKStarter 프로세스 종료됨
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_absolutedown.ini]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_aossdk.dll]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_aossdkrad.dll]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_asplnchr.exe]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_astxmanager.dll]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_atstrust.dll]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_bldinfo.ini]
+[11:29:53]:manifest 파일 다운됨 ####### strFname [astxsdk/microsoftvc90crt.manifest],  strFind [C:\OpenAPI\astxsdk/_microsoftvc90crt.manifest]
+[11:29:53]:manifest 파일 다운됨 ####### strOldFind [C:\OpenAPI\astxsdk\microsoft.vc90.crt.manifest]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_microsoftvc90crt.manifest]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_msvcr90.dll]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_stsdkex.dll]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_default.lic]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_d.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_f.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_u.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_x.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_check_f.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_check_u.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_d.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_f.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_u.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_x.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_d.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_f.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_u.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_x.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_d.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_f.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_u.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_x.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_d.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_f.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_u.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_x.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_d.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_f.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_u.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_x.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_d.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_f.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_u.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_x.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_d.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_f.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_u.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_x.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_d.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_f.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_u.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_x.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_d.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_f.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_u.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_x.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_d.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_f.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_u.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_x.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_config_api_bg.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_config_apism_bg.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_api_bg.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_api_stage_bg.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_apism_bg.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_apism_stage_bg.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_staff_config_api_bg.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_staff_config_apism_bg.bmp]
+[11:29:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_version_api_bg.bmp]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_version_apism_bg.bmp]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicore_v2.3.32.dll]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicore_v2.3.42.dll]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicrypto20.dll]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicrypto_v5.1.9.dll]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicrypto_v5.1.dll]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inipki_v5.1.33.dll]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inipki_v5.1.40.dll]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inisafenet_v7.2.dll]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inisafetoolset.lic]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inisafetoolset_v1.2.2.dll]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_kdfapi2.dll]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_kdfinj.dll]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_khcrypt.dll]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_khcryptcore.dll]
+[11:29:54]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_khcryptex.dll]
+[11:29:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:56]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:56]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:56]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:29:56]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 [183]
+[11:30:08]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_klib.dll]
+[11:30:08]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_librsadlx.dll]
+[11:30:08]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npe55kb.npn]
+[11:30:08]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npenkapp5policy_kiwoomcs.xml]
+[11:30:08]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npenkappinstall5.dll]
+[11:30:08]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npenkappinstall5message.xml]
+[11:30:08]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npnv_kiwoom.conf]
+[11:30:08]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_nsldap32v11.dll]
+[11:30:08]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:08]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:08]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:08]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:08]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:08]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:08]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:08]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:08]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:09]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:09]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:09]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:09]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:09]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:09]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:09]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:09]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:09]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:10]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:10]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:10]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:30:10]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 [183]
+[11:30:11]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:11]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:11]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:11]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:11]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:12]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:12]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:12]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:12]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:12]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:12]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:12]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:12]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:12]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:13]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:13]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:13]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:13]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:13]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:13]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:13]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:30:13]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 [183]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_opstarter.exe]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_opversionup.exe]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_signksc.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdcm.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdem.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdif.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdsc.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommad.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommcm.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommem.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommic.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommif.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommjv.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommsc.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommtm.exe]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommwb.exe]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skmagerapi.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_sksessiondll.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_sksmartcard32.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skusbkey.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_stsdkex.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_font.ini]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_html.ini]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_ip_api.dat]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_jongacc.dat]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_koarealtime.dat]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_mstfilelist_api.ini]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_realtime.dat]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_security_apply.ini]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_unzdll.dll]
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_zipdll.dll]
+[11:30:14]:initrsc.lst 에 있는 파일 중에 _ 붙은 파일 일부 실제 파일로 변경 실패.
+[11:30:14]:<==CNKVersionUpDlg::CompareStarter()
+[11:30:15]:<== CNKVersionUpDlg::OnOK
+[11:33:07]:********************** Start **********************
+[11:33:07]:********************** Finish **********************
+[11:33:07]:FirstInstance
+[11:33:07]:Gdiplus Init
+[11:33:07]:Socket Init
+[11:33:07]:RegistryKey
+[11:33:07]:---------- Begin ----------
+[11:33:07]:RemoveTempDownloadedFiles
+[11:33:07]:SetVersionFileName
+[11:33:07]:InitControls
+[11:33:07]:CreateSubDirectory
+[11:33:07]:C:\OpenAPI\apiinitrsc.lst Open Error.
+[11:33:07]:CNKStarterDlg::IsInvalidFileCRC() opstarter.exe is in an invalid state
+[11:33:07]:Read Security [1] Install[0]
+[11:33:08]:ASTX Procted ID 0 PWD 0 CERT 0
+[11:33:08]:ASTX Proc Done
+[11:33:08]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[11:33:08]:InitDlg  etc read[0] [User ID][ ][ ]
+[11:33:08]:---------- Starter OnInitDialog End ----------
+[11:33:11]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[11:33:11]:Server Socket 접속중...
+[11:33:11]:Server Socket 접속성공...
+[11:33:11]:교환이 완료될 때 까지 기다림
+[11:33:11]:암호화 HANDSHAKE:update  nLen=2042
+[11:33:11]:암호화 HANDSHAKE:final  nLen=80
+[11:33:11]:암호화 HANDSHAKE:ok  nLen=80
+[11:33:11]:********************** Start **********************
+[11:33:11]:서버에 FileDown요구 [mst.lst]
+[11:33:12]:ZipExtract BEFORE [1]
+[11:33:12]:ZipExtract AFTER [1] FileSize[1602]
+[11:33:12]:서버에 FileDown요구 [apiinitrsc.lst]
+[11:33:12]:ZipExtract BEFORE [2]
+[11:33:12]:ZipExtract AFTER [2] FileSize[2117]
+[11:33:12]:DownFileInList Size 다름 File[apiotrsc.lst] LocalSize[19720] ServerSize[20400] Restarter[0]
+[11:33:12]:DownFileInList Size 다름 File[khopenapi.ocx] LocalSize[492128] ServerSize[492656] Restarter[0]
+[11:33:12]:DownFileInList Size 다름 File[opcomms.dll] LocalSize[193128] ServerSize[193136] Restarter[0]
+[11:33:12]:DownFileInList Size 다름 File[opcommapi.dll] LocalSize[660584] ServerSize[660592] Restarter[0]
+[11:33:12]:서버에 FileDown요구 [apiotrsc.lst]
+[11:33:12]:ZipExtract BEFORE [3]
+[11:33:12]:ZipExtract AFTER [3] FileSize[3136]
+[11:33:12]:서버에 FileDown요구 [khopenapi.ocx]
+[11:33:15]:ZipExtract BEFORE [4]
+[11:33:15]:ZipExtract AFTER [4] FileSize[205680]
+[11:33:15]:서버에 FileDown요구 [opcomms.dll]
+[11:33:16]:ZipExtract BEFORE [5]
+[11:33:16]:ZipExtract AFTER [5] FileSize[96363]
+[11:33:16]:서버에 FileDown요구 [opcommapi.dll]
+[11:33:20]:ZipExtract BEFORE [6]
+[11:33:20]:ZipExtract AFTER [6] FileSize[266593]
+[11:33:20]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[11:33:20]:==>InitRename()
+[11:33:20]:<==InitRename()
+[11:33:20]:OnBnClickedCancel SetEvent[000002B4].. bCancel[1], bUser[0], bRetry[0]
+[11:33:21]:NKVersionUp 실행하기
+[11:34:50]:CNKVersionUpApp::InitInstance CShareMem::IsShareMemCreated(CShareMem::MAPFILENAME_SHARED_MEM) : TRUE
+[11:34:50]:==>CNKVersionUpDlg::OnInitDialog() : C:\OpenAPI
+[11:34:50]:==>CNKVersionUpDlg::CompareStarter()
+[11:34:50]:<==CNKVersionUpDlg::CompareStarter() : Open API Login [0] 남아 있음.
+[11:34:51]:<==CNKVersionUpDlg::CompareStarter() : Open API Login [1] 남아 있음.
+[11:34:51]:<==CNKVersionUpDlg::CompareStarter() : Open API Login [2] 남아 있음.
+[11:34:52]:<==CNKVersionUpDlg::CompareStarter() : ProcessKill[0] 전 Login 존재.
+[11:34:53]:NKStarter 프로세스 종료됨
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_absolutedown.ini]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_aossdk.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_aossdkrad.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_asplnchr.exe]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_astxmanager.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_atstrust.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_bldinfo.ini]
+[11:34:53]:manifest 파일 다운됨 ####### strFname [astxsdk/microsoftvc90crt.manifest],  strFind [C:\OpenAPI\astxsdk/_microsoftvc90crt.manifest]
+[11:34:53]:manifest 파일 다운됨 ####### strOldFind [C:\OpenAPI\astxsdk\microsoft.vc90.crt.manifest]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_microsoftvc90crt.manifest]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_msvcr90.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_stsdkex.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_default.lic]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_d.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_f.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_u.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_x.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_check_f.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_check_u.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_d.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_f.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_u.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_x.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_d.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_f.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_u.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_x.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_d.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_f.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_u.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_x.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_d.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_f.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_u.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_x.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_d.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_f.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_u.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_x.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_d.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_f.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_u.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_x.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_d.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_f.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_u.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_x.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_d.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_f.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_u.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_x.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_d.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_f.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_u.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_x.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_d.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_f.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_u.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_x.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_config_api_bg.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_config_apism_bg.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_api_bg.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_api_stage_bg.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_apism_bg.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_apism_stage_bg.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_staff_config_api_bg.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_staff_config_apism_bg.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_version_api_bg.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_version_apism_bg.bmp]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicore_v2.3.32.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicore_v2.3.42.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicrypto20.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicrypto_v5.1.9.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicrypto_v5.1.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inipki_v5.1.33.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inipki_v5.1.40.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inisafenet_v7.2.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inisafetoolset.lic]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inisafetoolset_v1.2.2.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_kdfapi2.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_kdfinj.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_khcrypt.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_khcryptcore.dll]
+[11:34:53]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_khcryptex.dll]
+[11:34:53]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:53]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:54]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:55]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:56]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\khopenapi.ocx was denied.)
+[11:34:56]:[C:\OpenAPI\khopenapi.ocx] 파일 삭제 실패 [183]
+[11:35:23]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_klib.dll]
+[11:35:23]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_librsadlx.dll]
+[11:35:23]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npe55kb.npn]
+[11:35:23]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npenkapp5policy_kiwoomcs.xml]
+[11:35:23]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npenkappinstall5.dll]
+[11:35:23]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npenkappinstall5message.xml]
+[11:35:23]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npnv_kiwoom.conf]
+[11:35:23]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_nsldap32v11.dll]
+[11:35:23]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:23]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:24]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:24]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:24]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:24]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:24]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:24]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:24]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:24]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:24]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:25]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:25]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:25]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:25]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:25]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:25]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:25]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:25]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:25]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:26]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcommapi.dll was denied.)
+[11:35:26]:[C:\OpenAPI\opcommapi.dll] 파일 삭제 실패 [183]
+[11:35:26]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:27]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:27]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:27]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:27]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:27]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:27]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:27]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:27]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:27]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:28]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:28]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:28]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:28]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:28]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:28]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:28]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:28]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:28]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:29]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:29]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 (error메시지 : Access to C:\OpenAPI\opcomms.dll was denied.)
+[11:35:29]:[C:\OpenAPI\opcomms.dll] 파일 삭제 실패 [183]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_opstarter.exe]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_opversionup.exe]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_signksc.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdcm.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdem.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdif.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdsc.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommad.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommcm.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommem.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommic.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommif.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommjv.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommsc.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommtm.exe]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommwb.exe]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skmagerapi.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_sksessiondll.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_sksmartcard32.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skusbkey.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_stsdkex.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_font.ini]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_html.ini]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_ip_api.dat]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_jongacc.dat]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_koarealtime.dat]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_mstfilelist_api.ini]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_realtime.dat]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_security_apply.ini]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_unzdll.dll]
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_zipdll.dll]
+[11:35:30]:initrsc.lst 에 있는 파일 중에 _ 붙은 파일 일부 실제 파일로 변경 실패.
+[11:35:30]:<==CNKVersionUpDlg::CompareStarter()
+[11:35:33]:<== CNKVersionUpDlg::OnOK
+[11:39:05]:********************** Start **********************
+[11:39:05]:********************** Finish **********************
+[11:39:05]:FirstInstance
+[11:39:05]:Gdiplus Init
+[11:39:05]:Socket Init
+[11:39:05]:RegistryKey
+[11:39:05]:---------- Begin ----------
+[11:39:05]:RemoveTempDownloadedFiles
+[11:39:05]:SetVersionFileName
+[11:39:05]:InitControls
+[11:39:05]:CreateSubDirectory
+[11:39:05]:C:\OpenAPI\apiinitrsc.lst Open Error.
+[11:39:05]:CNKStarterDlg::IsInvalidFileCRC() opstarter.exe is in an invalid state
+[11:39:05]:Read Security [1] Install[0]
+[11:39:05]:ASTX Procted ID 0 PWD 0 CERT 0
+[11:39:05]:ASTX Proc Done
+[11:39:06]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[11:39:06]:InitDlg  etc read[0] [User ID][ ][ ]
+[11:39:06]:---------- Starter OnInitDialog End ----------
+[11:40:13]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[11:40:14]:Server Socket 접속중...
+[11:40:14]:Server Socket 접속성공...
+[11:40:14]:교환이 완료될 때 까지 기다림
+[11:40:14]:암호화 HANDSHAKE:update  nLen=2044
+[11:40:14]:암호화 HANDSHAKE:final  nLen=84
+[11:40:14]:암호화 HANDSHAKE:ok  nLen=84
+[11:40:14]:********************** Start **********************
+[11:40:14]:서버에 FileDown요구 [mst.lst]
+[11:40:14]:ZipExtract BEFORE [1]
+[11:40:14]:ZipExtract AFTER [1] FileSize[1602]
+[11:40:14]:서버에 FileDown요구 [apiinitrsc.lst]
+[11:40:14]:ZipExtract BEFORE [2]
+[11:40:14]:ZipExtract AFTER [2] FileSize[2117]
+[11:40:14]:DownFileInList Size 다름 File[apiotrsc.lst] LocalSize[19720] ServerSize[20400] Restarter[0]
+[11:40:14]:DownFileInList Size 다름 File[khopenapi.ocx] LocalSize[492128] ServerSize[492656] Restarter[0]
+[11:40:14]:DownFileInList Size 다름 File[opcomms.dll] LocalSize[193128] ServerSize[193136] Restarter[0]
+[11:40:14]:DownFileInList Size 다름 File[opcommapi.dll] LocalSize[660584] ServerSize[660592] Restarter[0]
+[11:40:15]:서버에 FileDown요구 [apiotrsc.lst]
+[11:40:15]:ZipExtract BEFORE [3]
+[11:40:15]:ZipExtract AFTER [3] FileSize[3136]
+[11:40:15]:서버에 FileDown요구 [khopenapi.ocx]
+[11:40:17]:ZipExtract BEFORE [4]
+[11:40:17]:ZipExtract AFTER [4] FileSize[205680]
+[11:40:17]:서버에 FileDown요구 [opcomms.dll]
+[11:40:19]:ZipExtract BEFORE [5]
+[11:40:19]:ZipExtract AFTER [5] FileSize[96363]
+[11:40:19]:서버에 FileDown요구 [opcommapi.dll]
+[11:40:22]:ZipExtract BEFORE [6]
+[11:40:22]:ZipExtract AFTER [6] FileSize[266593]
+[11:40:22]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[11:40:23]:==>InitRename()
+[11:40:23]:<==InitRename()
+[11:40:23]:OnBnClickedCancel SetEvent[000002A4].. bCancel[1], bUser[0], bRetry[0]
+[11:40:23]:NKVersionUp 실행하기
+[11:41:36]:CNKVersionUpApp::InitInstance CShareMem::IsShareMemCreated(CShareMem::MAPFILENAME_SHARED_MEM) : TRUE
+[11:41:36]:==>CNKVersionUpDlg::OnInitDialog() : C:\OpenAPI
+[11:41:36]:==>CNKVersionUpDlg::CompareStarter()
+[11:41:36]:<==CNKVersionUpDlg::CompareStarter() : Open API Login [0] 남아 있음.
+[11:41:37]:<==CNKVersionUpDlg::CompareStarter() : Open API Login [1] 남아 있음.
+[11:41:37]:<==CNKVersionUpDlg::CompareStarter() : Open API Login [2] 남아 있음.
+[11:41:38]:<==CNKVersionUpDlg::CompareStarter() : ProcessKill[0] 전 Login 존재.
+[11:41:39]:NKStarter 프로세스 종료됨
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_absolutedown.ini]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_aossdk.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_aossdkrad.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_asplnchr.exe]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_astxmanager.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_atstrust.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_bldinfo.ini]
+[11:41:39]:manifest 파일 다운됨 ####### strFname [astxsdk/microsoftvc90crt.manifest],  strFind [C:\OpenAPI\astxsdk/_microsoftvc90crt.manifest]
+[11:41:39]:manifest 파일 다운됨 ####### strOldFind [C:\OpenAPI\astxsdk\microsoft.vc90.crt.manifest]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_microsoftvc90crt.manifest]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_msvcr90.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\astxsdk/_stsdkex.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_default.lic]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_d.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_f.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_u.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_cancel_x.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_check_f.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_check_u.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_d.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_f.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_u.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_close_x.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_d.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_f.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_u.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_config_x.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_d.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_f.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_u.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_idpw_x.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_d.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_f.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_u.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_join_x.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_d.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_f.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_u.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_login_x.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_d.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_f.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_u.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_ok_x.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_d.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_f.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_u.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_sign_x.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_d.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_f.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_u.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_btn_verclose_x.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_d.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_f.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_u.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_c_btn_ok_x.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_d.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_f.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_u.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_cert_btn_ok_x.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_config_api_bg.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_config_apism_bg.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_api_bg.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_api_stage_bg.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_apism_bg.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_login_apism_stage_bg.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_staff_config_api_bg.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_staff_config_apism_bg.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_version_api_bg.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\image/_version_apism_bg.bmp]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicore_v2.3.32.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicore_v2.3.42.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicrypto20.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicrypto_v5.1.9.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inicrypto_v5.1.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inipki_v5.1.33.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inipki_v5.1.40.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inisafenet_v7.2.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inisafetoolset.lic]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_inisafetoolset_v1.2.2.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_kdfapi2.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_kdfinj.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_khcrypt.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_khcryptcore.dll]
+[11:41:39]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_khcryptex.dll]
+[11:41:39]:>>>> 파일 삭제 성공 [C:\OpenAPI\khopenapi.ocx]
+[11:41:40]:>>>> 파일 이름변경 성공 [C:\OpenAPI\_khopenapi.ocx]->[C:\OpenAPI\khopenapi.ocx]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_klib.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_librsadlx.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npe55kb.npn]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npenkapp5policy_kiwoomcs.xml]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npenkappinstall5.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npenkappinstall5message.xml]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_npnv_kiwoom.conf]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_nsldap32v11.dll]
+[11:41:40]:>>>> 파일 삭제 성공 [C:\OpenAPI\opcommapi.dll]
+[11:41:40]:>>>> 파일 이름변경 성공 [C:\OpenAPI\_opcommapi.dll]->[C:\OpenAPI\opcommapi.dll]
+[11:41:40]:>>>> 파일 삭제 성공 [C:\OpenAPI\opcomms.dll]
+[11:41:40]:>>>> 파일 이름변경 성공 [C:\OpenAPI\_opcomms.dll]->[C:\OpenAPI\opcomms.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_opstarter.exe]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_opversionup.exe]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_signksc.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdcm.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdem.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdif.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcomdsc.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommad.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommcm.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommem.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommic.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommif.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommjv.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommsc.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommtm.exe]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skcommwb.exe]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skmagerapi.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_sksessiondll.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_sksmartcard32.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_skusbkey.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_stsdkex.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_font.ini]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_html.ini]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_ip_api.dat]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_jongacc.dat]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_koarealtime.dat]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_mstfilelist_api.ini]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_realtime.dat]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\system/_security_apply.ini]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_unzdll.dll]
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter() : File Not Found [C:\OpenAPI\_zipdll.dll]
+[11:41:40]:initrsc.lst 에 있는 파일 중에 _ 붙은 파일을 실제 파일로 모두 변경하였음.
+[11:41:40]:<==CNKVersionUpDlg::CompareStarter()
+[11:41:45]:<== CNKVersionUpDlg::OnOK
+[11:41:52]:********************** Start **********************
+[11:41:52]:********************** Finish **********************
+[11:41:52]:FirstInstance
+[11:41:52]:Gdiplus Init
+[11:41:52]:Socket Init
+[11:41:52]:RegistryKey
+[11:41:53]:---------- Begin ----------
+[11:41:53]:RemoveTempDownloadedFiles
+[11:41:53]:SetVersionFileName
+[11:41:53]:InitControls
+[11:41:53]:CreateSubDirectory
+[11:41:53]:C:\OpenAPI\apiinitrsc.lst Open Error.
+[11:41:53]:CNKStarterDlg::IsInvalidFileCRC() opstarter.exe is in an invalid state
+[11:41:53]:Read Security [1] Install[0]
+[11:41:53]:ASTX Procted ID 0 PWD 0 CERT 0
+[11:41:53]:ASTX Proc Done
+[11:41:53]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[11:41:53]:InitDlg  etc read[0] [User ID][ ][ ]
+[11:41:53]:---------- Starter OnInitDialog End ----------
+[11:41:56]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[11:41:56]:Server Socket 접속중...
+[11:41:56]:Server Socket 접속성공...
+[11:41:56]:교환이 완료될 때 까지 기다림
+[11:41:56]:암호화 HANDSHAKE:update  nLen=2042
+[11:41:56]:암호화 HANDSHAKE:final  nLen=84
+[11:41:56]:암호화 HANDSHAKE:ok  nLen=84
+[11:41:56]:********************** Start **********************
+[11:41:56]:서버에 FileDown요구 [mst.lst]
+[11:41:56]:ZipExtract BEFORE [1]
+[11:41:56]:ZipExtract AFTER [1] FileSize[1602]
+[11:41:57]:서버에 FileDown요구 [apiinitrsc.lst]
+[11:41:57]:ZipExtract BEFORE [2]
+[11:41:57]:ZipExtract AFTER [2] FileSize[2117]
+[11:41:57]:DownFileInList Size 다름 File[apiotrsc.lst] LocalSize[19720] ServerSize[20400] Restarter[0]
+[11:41:57]:서버에 FileDown요구 [apiotrsc.lst]
+[11:41:57]:ZipExtract BEFORE [3]
+[11:41:57]:ZipExtract AFTER [3] FileSize[3136]
+[11:41:57]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[11:41:58]:==>InitRename()
+[11:41:58]:<==InitRename()
+[11:41:58]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[11:41:58]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[11:41:58]:IsFindFile_astxsdk <<<<<<<<<<<
+[11:41:58]:CFile::Rename org(C:\OpenAPI\apiinitrsc.lst), new(C:\OpenAPI\$apiinitrsc.lst)
+[11:41:58]:ProcessFIDData [LogonResult]  result=0
+[11:41:58]:ProcessFIDData [LogonMessage]  <52, ID비밀번호 1회 오류. 5회이상 연속오류시 사용정지유의>
+[11:42:02]:연결에 실패했습니다. 잠시 후 다시 연결해 주십시오.
+[11:42:02]:OnBnClickedCancel SetEvent[000002A4].. bCancel[1], bUser[0], bRetry[0]
+[11:42:28]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[11:42:28]:Server Socket 접속중...
+[11:42:28]:Server Socket 접속성공...
+[11:42:28]:교환이 완료될 때 까지 기다림
+[11:42:28]:암호화 HANDSHAKE:update  nLen=2044
+[11:42:28]:암호화 HANDSHAKE:final  nLen=82
+[11:42:28]:암호화 HANDSHAKE:ok  nLen=82
+[11:42:28]:********************** Start **********************
+[11:42:28]:서버에 FileDown요구 [mst.lst]
+[11:42:28]:ZipExtract BEFORE [4]
+[11:42:28]:ZipExtract AFTER [4] FileSize[1602]
+[11:42:28]:서버에 FileDown요구 [apiinitrsc.lst]
+[11:42:29]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[11:42:29]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[11:42:29]:DownFileInList Size 다름 File[apiotrsc.lst] LocalSize[19720] ServerSize[20400] Restarter[0]
+[11:42:29]:서버에 FileDown요구 [apiotrsc.lst]
+[11:42:29]:ZipExtract BEFORE [5]
+[11:42:29]:ZipExtract AFTER [5] FileSize[3136]
+[11:42:29]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[11:42:29]:==>InitRename()
+[11:42:29]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[11:42:29]:<==InitRename()
+[11:42:29]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[11:42:29]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[11:42:29]:IsFindFile_astxsdk <<<<<<<<<<<
+[11:42:30]:ProcessFIDData [LogonResult]  result=0
+[11:42:30]:ProcessFIDData [LogonMessage]  <52, ID비밀번호 2회 오류. 5회이상 연속오류시 사용정지유의>
+[11:42:32]:연결에 실패했습니다. 잠시 후 다시 연결해 주십시오.
+[11:42:32]:OnBnClickedCancel SetEvent[000002A4].. bCancel[1], bUser[0], bRetry[0]
+[12:04:26]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:04:26]:Server Socket 접속중...
+[12:04:26]:Server Socket 접속성공...
+[12:04:26]:교환이 완료될 때 까지 기다림
+[12:04:26]:암호화 HANDSHAKE:update  nLen=2042
+[12:04:26]:암호화 HANDSHAKE:final  nLen=80
+[12:04:26]:암호화 HANDSHAKE:ok  nLen=80
+[12:04:26]:********************** Start **********************
+[12:04:26]:서버에 FileDown요구 [mst.lst]
+[12:04:27]:ZipExtract BEFORE [6]
+[12:04:27]:ZipExtract AFTER [6] FileSize[1602]
+[12:04:27]:서버에 FileDown요구 [apiinitrsc.lst]
+[12:04:27]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[12:04:27]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[12:04:27]:DownFileInList Size 다름 File[apiotrsc.lst] LocalSize[19720] ServerSize[20400] Restarter[0]
+[12:04:27]:서버에 FileDown요구 [apiotrsc.lst]
+[12:04:27]:ZipExtract BEFORE [7]
+[12:04:27]:ZipExtract AFTER [7] FileSize[3136]
+[12:04:27]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[12:04:28]:==>InitRename()
+[12:04:28]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[12:04:28]:<==InitRename()
+[12:04:28]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[12:04:28]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[12:04:28]:IsFindFile_astxsdk <<<<<<<<<<<
+[12:04:28]:ProcessFIDData [LogonResult]  result=1
+[12:04:28]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[12:04:28]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[12:04:28]:ProcessFIDData [use]  result=R
+[12:04:28]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[12:04:28]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[12:04:28]:서버에 FileDown요구 [apiotrsc.lst]
+[12:04:28]:ZipExtract BEFORE [8]
+[12:04:28]:ZipExtract AFTER [8] FileSize[3136]
+[12:04:28]:>>>> CNKStarterDlg::DownFileCrcCompareList CRC 다름 File[data/opt10080.enc] LocalCrc[673bf7a9] ServerCrc[b2351f35]
+[12:04:28]:>>>> CNKStarterDlg::DownFileCrcCompareList File 없음 File[data/opt10099.enc]
+[12:04:28]:>>>> CNKStarterDlg::DownFileCrcCompareList File 없음 File[data/opt10100.enc]
+[12:04:29]:>>>> CNKStarterDlg::DownFileCrcCompareList File 없음 File[data/opt10101.enc]
+[12:04:29]:>>>> CNKStarterDlg::DownFileCrcCompareList File 없음 File[data/opt10102.enc]
+[12:04:29]:>>>> CNKStarterDlg::DownFileCrcCompareList File 없음 File[data/opt10103.enc]
+[12:04:29]:>>>> CNKStarterDlg::DownFileCrcCompareList File 없음 File[data/opt10104.enc]
+[12:04:29]:>>>> CNKStarterDlg::DownFileCrcCompareList CRC 다름 File[data/opw20007.enc] LocalCrc[df003816] ServerCrc[fdc74e44]
+[12:04:29]:>>>> CNKStarterDlg::DownFileCrcCompareList CRC 다름 File[koa_devguide.xml] LocalCrc[ec75902a] ServerCrc[548a93bf]
+[12:04:29]:>>>> CNKStarterDlg::DownFileCrcCompareList CRC 다름 File[koatrinputlegend.ini] LocalCrc[558167e9] ServerCrc[051d0e08]
+[12:04:29]:>>>> CNKStarterDlg::DownFileCrcCompareList File 없음 File[system/s4bboxdesc.dat]
+[12:04:29]:>>>> CNKStarterDlg::DownFileCrcCompareList File 없음 File[system/s4treelist.dat]
+[12:04:29]:서버에 FileDown요구 [data/opt10080.enc]
+[12:04:29]:ZipExtract BEFORE [9]
+[12:04:29]:ZipExtract AFTER [9] FileSize[678]
+[12:04:29]:서버에 FileDown요구 [data/opt10099.enc]
+[12:04:29]:ZipExtract BEFORE [10]
+[12:04:29]:ZipExtract AFTER [10] FileSize[640]
+[12:04:29]:서버에 FileDown요구 [data/opt10100.enc]
+[12:04:29]:ZipExtract BEFORE [11]
+[12:04:29]:ZipExtract AFTER [11] FileSize[632]
+[12:04:29]:서버에 FileDown요구 [data/opt10101.enc]
+[12:04:29]:ZipExtract BEFORE [12]
+[12:04:29]:ZipExtract AFTER [12] FileSize[639]
+[12:04:29]:서버에 FileDown요구 [data/opt10102.enc]
+[12:04:30]:ZipExtract BEFORE [13]
+[12:04:30]:ZipExtract AFTER [13] FileSize[638]
+[12:04:30]:서버에 FileDown요구 [data/opt10103.enc]
+[12:04:30]:ZipExtract BEFORE [14]
+[12:04:30]:ZipExtract AFTER [14] FileSize[639]
+[12:04:30]:서버에 FileDown요구 [data/opt10104.enc]
+[12:04:30]:ZipExtract BEFORE [15]
+[12:04:30]:ZipExtract AFTER [15] FileSize[639]
+[12:04:30]:서버에 FileDown요구 [data/opw20007.enc]
+[12:04:30]:ZipExtract BEFORE [16]
+[12:04:30]:ZipExtract AFTER [16] FileSize[642]
+[12:04:30]:서버에 FileDown요구 [koa_devguide.xml]
+[12:04:30]:ZipExtract BEFORE [17]
+[12:04:31]:ZipExtract AFTER [17] FileSize[33931]
+[12:04:31]:서버에 FileDown요구 [koatrinputlegend.ini]
+[12:04:31]:ZipExtract BEFORE [18]
+[12:04:31]:ZipExtract AFTER [18] FileSize[11416]
+[12:04:31]:서버에 FileDown요구 [system/s4bboxdesc.dat]
+[12:04:32]:ZipExtract BEFORE [19]
+[12:04:32]:ZipExtract AFTER [19] FileSize[111124]
+[12:04:32]:서버에 FileDown요구 [system/s4treelist.dat]
+[12:04:33]:ZipExtract BEFORE [20]
+[12:04:33]:ZipExtract AFTER [20] FileSize[18274]
+[12:04:33]:CFile::Rename org(C:\OpenAPI\apiotrsc.lst), new(C:\OpenAPI\$apiotrsc.lst)
+[12:04:33]:3 Handle Check [3309][3736600]
+[12:04:33]:Send Before
+[12:04:34]:Send After [0]
+[12:16:45]:********************** Start **********************
+[12:16:45]:********************** Finish **********************
+[12:16:45]:FirstInstance
+[12:16:45]:Gdiplus Init
+[12:16:45]:Socket Init
+[12:16:45]:RegistryKey
+[12:16:45]:---------- Begin ----------
+[12:16:45]:RemoveTempDownloadedFiles
+[12:16:45]:SetVersionFileName
+[12:16:45]:InitControls
+[12:16:45]:CreateSubDirectory
+[12:16:46]:Read Security [1] Install[0]
+[12:16:46]:ASTX Procted ID 0 PWD 0 CERT 0
+[12:16:46]:ASTX Proc Done
+[12:16:46]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:16:46]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[12:16:46]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:16:46]:Server Socket 접속중...
+[12:16:46]:Server Socket 접속성공...
+[12:16:46]:교환이 완료될 때 까지 기다림
+[12:16:46]:암호화 HANDSHAKE:update  nLen=2046
+[12:16:46]:암호화 HANDSHAKE:final  nLen=80
+[12:16:47]:암호화 HANDSHAKE:ok  nLen=80
+[12:16:47]:********************** Start **********************
+[12:16:47]:서버에 FileDown요구 [mst.lst]
+[12:16:47]:ZipExtract BEFORE [1]
+[12:16:47]:ZipExtract AFTER [1] FileSize[1601]
+[12:16:47]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[644675c6] ServerCrc[3e60d83a] Restarter[0]
+[12:16:47]:서버에 FileDown요구 [hjcode.dat]
+[12:16:53]:ZipExtract BEFORE [2]
+[12:16:53]:ZipExtract AFTER [2] FileSize[441259]
+[12:16:53]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[12:16:53]:==>InitRename()
+[12:16:53]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[12:16:53]:<==InitRename()
+[12:16:53]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[12:16:53]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[12:16:53]:IsFindFile_astxsdk <<<<<<<<<<<
+[12:16:53]:ProcessFIDData [LogonResult]  result=1
+[12:16:53]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[12:16:53]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[12:16:53]:ProcessFIDData [use]  result=R
+[12:16:53]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[12:16:53]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[12:16:53]:서버에 FileDown요구 [apiotrsc.lst]
+[12:16:54]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[12:16:54]:m_ProgressMng.Exit BEFORE
+[12:16:54]:m_ProgressMng.Exit AFTER
+[12:16:54]:3 Handle Check [3309][788576]
+[12:16:54]:Send Before
+[12:16:55]:Send After [0]
+[12:16:55]:---------- Starter OnInitDialog End ----------
+[12:17:07]:********************** Start **********************
+[12:17:07]:********************** Finish **********************
+[12:17:07]:FirstInstance
+[12:17:07]:Gdiplus Init
+[12:17:07]:Socket Init
+[12:17:07]:RegistryKey
+[12:17:07]:---------- Begin ----------
+[12:17:07]:RemoveTempDownloadedFiles
+[12:17:07]:SetVersionFileName
+[12:17:07]:InitControls
+[12:17:07]:CreateSubDirectory
+[12:17:07]:Read Security [1] Install[0]
+[12:17:08]:ASTX Procted ID 0 PWD 0 CERT 0
+[12:17:08]:ASTX Proc Done
+[12:17:08]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:17:08]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[12:17:08]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:17:08]:Server Socket 접속중...
+[12:17:08]:Server Socket 접속성공...
+[12:17:08]:교환이 완료될 때 까지 기다림
+[12:17:08]:암호화 HANDSHAKE:update  nLen=2044
+[12:17:08]:암호화 HANDSHAKE:final  nLen=80
+[12:17:08]:암호화 HANDSHAKE:ok  nLen=80
+[12:17:08]:********************** Start **********************
+[12:17:08]:서버에 FileDown요구 [mst.lst]
+[12:17:08]:ZipExtract BEFORE [1]
+[12:17:08]:ZipExtract AFTER [1] FileSize[1601]
+[12:17:08]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[12:17:09]:==>InitRename()
+[12:17:09]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[12:17:09]:<==InitRename()
+[12:17:09]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[12:17:09]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[12:17:09]:IsFindFile_astxsdk <<<<<<<<<<<
+[12:17:09]:ProcessFIDData [LogonResult]  result=1
+[12:17:09]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[12:17:09]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[12:17:09]:ProcessFIDData [use]  result=R
+[12:17:09]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[12:17:09]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[12:17:09]:서버에 FileDown요구 [apiotrsc.lst]
+[12:17:09]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[12:17:09]:m_ProgressMng.Exit BEFORE
+[12:17:09]:m_ProgressMng.Exit AFTER
+[12:17:09]:3 Handle Check [3309][854112]
+[12:17:09]:Send Before
+[12:17:10]:Send After [0]
+[12:17:10]:---------- Starter OnInitDialog End ----------
+[12:17:34]:********************** Start **********************
+[12:17:34]:********************** Finish **********************
+[12:17:34]:FirstInstance
+[12:17:34]:Gdiplus Init
+[12:17:34]:Socket Init
+[12:17:34]:RegistryKey
+[12:17:34]:---------- Begin ----------
+[12:17:34]:RemoveTempDownloadedFiles
+[12:17:34]:SetVersionFileName
+[12:17:34]:InitControls
+[12:17:34]:CreateSubDirectory
+[12:17:34]:Read Security [1] Install[0]
+[12:17:35]:ASTX Procted ID 0 PWD 0 CERT 0
+[12:17:35]:ASTX Proc Done
+[12:17:35]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:17:35]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[12:17:35]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:17:35]:Server Socket 접속중...
+[12:17:35]:Server Socket 접속성공...
+[12:17:35]:교환이 완료될 때 까지 기다림
+[12:17:35]:암호화 HANDSHAKE:update  nLen=2044
+[12:17:35]:암호화 HANDSHAKE:final  nLen=84
+[12:17:35]:암호화 HANDSHAKE:ok  nLen=84
+[12:17:35]:********************** Start **********************
+[12:17:35]:서버에 FileDown요구 [mst.lst]
+[12:17:35]:ZipExtract BEFORE [1]
+[12:17:35]:ZipExtract AFTER [1] FileSize[1601]
+[12:17:35]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[12:17:36]:==>InitRename()
+[12:17:36]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[12:17:36]:<==InitRename()
+[12:17:36]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[12:17:36]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[12:17:36]:IsFindFile_astxsdk <<<<<<<<<<<
+[12:17:36]:ProcessFIDData [LogonResult]  result=1
+[12:17:36]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[12:17:36]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[12:17:36]:ProcessFIDData [use]  result=R
+[12:17:36]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[12:17:36]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[12:17:36]:서버에 FileDown요구 [apiotrsc.lst]
+[12:17:36]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[12:17:36]:m_ProgressMng.Exit BEFORE
+[12:17:36]:m_ProgressMng.Exit AFTER
+[12:17:36]:3 Handle Check [3309][2362388]
+[12:17:36]:Send Before
+[12:17:37]:Send After [0]
+[12:17:37]:---------- Starter OnInitDialog End ----------
+[12:18:46]:********************** Start **********************
+[12:18:46]:********************** Finish **********************
+[12:18:46]:FirstInstance
+[12:18:46]:Gdiplus Init
+[12:18:46]:Socket Init
+[12:18:46]:RegistryKey
+[12:18:46]:---------- Begin ----------
+[12:18:46]:RemoveTempDownloadedFiles
+[12:18:46]:SetVersionFileName
+[12:18:46]:InitControls
+[12:18:46]:CreateSubDirectory
+[12:18:46]:Read Security [1] Install[0]
+[12:18:47]:ASTX Procted ID 0 PWD 0 CERT 0
+[12:18:47]:ASTX Proc Done
+[12:18:47]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:18:47]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[12:18:47]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:18:47]:Server Socket 접속중...
+[12:18:47]:Server Socket 접속성공...
+[12:18:47]:교환이 완료될 때 까지 기다림
+[12:18:47]:암호화 HANDSHAKE:update  nLen=2044
+[12:18:47]:암호화 HANDSHAKE:final  nLen=80
+[12:18:47]:암호화 HANDSHAKE:ok  nLen=80
+[12:18:47]:********************** Start **********************
+[12:18:47]:서버에 FileDown요구 [mst.lst]
+[12:18:47]:ZipExtract BEFORE [1]
+[12:18:47]:ZipExtract AFTER [1] FileSize[1601]
+[12:18:47]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[12:18:48]:==>InitRename()
+[12:18:48]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[12:18:48]:<==InitRename()
+[12:18:48]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[12:18:48]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[12:18:48]:IsFindFile_astxsdk <<<<<<<<<<<
+[12:18:48]:ProcessFIDData [LogonResult]  result=1
+[12:18:48]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[12:18:48]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[12:18:48]:ProcessFIDData [use]  result=R
+[12:18:48]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[12:18:48]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[12:18:48]:서버에 FileDown요구 [apiotrsc.lst]
+[12:18:48]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[12:18:48]:m_ProgressMng.Exit BEFORE
+[12:18:48]:m_ProgressMng.Exit AFTER
+[12:18:48]:3 Handle Check [3309][1050908]
+[12:18:48]:Send Before
+[12:18:49]:Send After [0]
+[12:18:49]:---------- Starter OnInitDialog End ----------
+[12:20:48]:********************** Start **********************
+[12:20:48]:********************** Finish **********************
+[12:20:48]:FirstInstance
+[12:20:48]:Gdiplus Init
+[12:20:48]:Socket Init
+[12:20:48]:RegistryKey
+[12:20:48]:---------- Begin ----------
+[12:20:48]:RemoveTempDownloadedFiles
+[12:20:48]:SetVersionFileName
+[12:20:48]:InitControls
+[12:20:48]:CreateSubDirectory
+[12:20:48]:Read Security [1] Install[0]
+[12:20:49]:ASTX Procted ID 0 PWD 0 CERT 0
+[12:20:49]:ASTX Proc Done
+[12:20:49]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:20:49]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[12:20:49]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:20:49]:Server Socket 접속중...
+[12:20:49]:Server Socket 접속성공...
+[12:20:49]:교환이 완료될 때 까지 기다림
+[12:20:49]:암호화 HANDSHAKE:update  nLen=2042
+[12:20:49]:암호화 HANDSHAKE:final  nLen=82
+[12:20:49]:암호화 HANDSHAKE:ok  nLen=82
+[12:20:49]:********************** Start **********************
+[12:20:49]:서버에 FileDown요구 [mst.lst]
+[12:20:49]:ZipExtract BEFORE [1]
+[12:20:49]:ZipExtract AFTER [1] FileSize[1601]
+[12:20:49]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[12:20:50]:==>InitRename()
+[12:20:50]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[12:20:50]:<==InitRename()
+[12:20:50]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[12:20:50]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[12:20:50]:IsFindFile_astxsdk <<<<<<<<<<<
+[12:20:50]:ProcessFIDData [LogonResult]  result=1
+[12:20:50]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[12:20:50]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[12:20:50]:ProcessFIDData [use]  result=R
+[12:20:50]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[12:20:50]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[12:20:50]:서버에 FileDown요구 [apiotrsc.lst]
+[12:20:50]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[12:20:50]:m_ProgressMng.Exit BEFORE
+[12:20:50]:m_ProgressMng.Exit AFTER
+[12:20:50]:3 Handle Check [3309][3214162]
+[12:20:50]:Send Before
+[12:20:51]:Send After [0]
+[12:20:51]:---------- Starter OnInitDialog End ----------
+[12:23:34]:********************** Start **********************
+[12:23:34]:********************** Finish **********************
+[12:23:34]:FirstInstance
+[12:23:34]:Gdiplus Init
+[12:23:34]:Socket Init
+[12:23:34]:RegistryKey
+[12:23:34]:---------- Begin ----------
+[12:23:34]:RemoveTempDownloadedFiles
+[12:23:34]:SetVersionFileName
+[12:23:34]:InitControls
+[12:23:34]:CreateSubDirectory
+[12:23:34]:Read Security [1] Install[0]
+[12:23:35]:ASTX Procted ID 0 PWD 0 CERT 0
+[12:23:35]:ASTX Proc Done
+[12:23:35]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:23:35]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[12:23:35]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:23:35]:Server Socket 접속중...
+[12:23:35]:Server Socket 접속성공...
+[12:23:35]:교환이 완료될 때 까지 기다림
+[12:23:35]:암호화 HANDSHAKE:update  nLen=2042
+[12:23:35]:암호화 HANDSHAKE:final  nLen=82
+[12:23:35]:암호화 HANDSHAKE:ok  nLen=82
+[12:23:35]:********************** Start **********************
+[12:23:35]:서버에 FileDown요구 [mst.lst]
+[12:23:35]:ZipExtract BEFORE [1]
+[12:23:35]:ZipExtract AFTER [1] FileSize[1601]
+[12:23:35]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[12:23:36]:==>InitRename()
+[12:23:36]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[12:23:36]:<==InitRename()
+[12:23:36]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[12:23:36]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[12:23:36]:IsFindFile_astxsdk <<<<<<<<<<<
+[12:23:36]:ProcessFIDData [LogonResult]  result=1
+[12:23:36]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[12:23:36]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[12:23:36]:ProcessFIDData [use]  result=R
+[12:23:36]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[12:23:36]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[12:23:36]:서버에 FileDown요구 [apiotrsc.lst]
+[12:23:36]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[12:23:36]:m_ProgressMng.Exit BEFORE
+[12:23:36]:m_ProgressMng.Exit AFTER
+[12:23:36]:3 Handle Check [3309][1837374]
+[12:23:36]:Send Before
+[12:23:37]:Send After [0]
+[12:23:37]:---------- Starter OnInitDialog End ----------
+[12:25:04]:********************** Start **********************
+[12:25:04]:********************** Finish **********************
+[12:25:04]:FirstInstance
+[12:25:04]:Gdiplus Init
+[12:25:04]:Socket Init
+[12:25:04]:RegistryKey
+[12:25:04]:---------- Begin ----------
+[12:25:04]:RemoveTempDownloadedFiles
+[12:25:04]:SetVersionFileName
+[12:25:05]:InitControls
+[12:25:05]:CreateSubDirectory
+[12:25:05]:Read Security [1] Install[0]
+[12:25:05]:ASTX Procted ID 0 PWD 0 CERT 0
+[12:25:05]:ASTX Proc Done
+[12:25:05]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:25:05]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[12:25:05]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:25:05]:Server Socket 접속중...
+[12:25:05]:Server Socket 접속성공...
+[12:25:05]:교환이 완료될 때 까지 기다림
+[12:25:05]:암호화 HANDSHAKE:update  nLen=2044
+[12:25:05]:암호화 HANDSHAKE:final  nLen=82
+[12:25:05]:암호화 HANDSHAKE:ok  nLen=82
+[12:25:06]:********************** Start **********************
+[12:25:06]:서버에 FileDown요구 [mst.lst]
+[12:25:06]:ZipExtract BEFORE [1]
+[12:25:06]:ZipExtract AFTER [1] FileSize[1601]
+[12:25:06]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[12:25:06]:==>InitRename()
+[12:25:06]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[12:25:06]:<==InitRename()
+[12:25:06]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[12:25:06]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[12:25:06]:IsFindFile_astxsdk <<<<<<<<<<<
+[12:25:06]:ProcessFIDData [LogonResult]  result=1
+[12:25:06]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[12:25:06]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[12:25:06]:ProcessFIDData [use]  result=R
+[12:25:06]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[12:25:06]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[12:25:06]:서버에 FileDown요구 [apiotrsc.lst]
+[12:25:07]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[12:25:07]:m_ProgressMng.Exit BEFORE
+[12:25:07]:m_ProgressMng.Exit AFTER
+[12:25:07]:3 Handle Check [3309][14682000]
+[12:25:07]:Send Before
+[12:25:08]:Send After [0]
+[12:25:08]:---------- Starter OnInitDialog End ----------
+[12:27:34]:********************** Start **********************
+[12:27:34]:********************** Finish **********************
+[12:27:34]:FirstInstance
+[12:27:34]:Gdiplus Init
+[12:27:34]:Socket Init
+[12:27:34]:RegistryKey
+[12:27:34]:---------- Begin ----------
+[12:27:34]:RemoveTempDownloadedFiles
+[12:27:34]:SetVersionFileName
+[12:27:34]:InitControls
+[12:27:34]:CreateSubDirectory
+[12:27:34]:Read Security [1] Install[0]
+[12:27:35]:ASTX Procted ID 0 PWD 0 CERT 0
+[12:27:35]:ASTX Proc Done
+[12:27:35]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:27:35]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[12:27:35]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:27:35]:Server Socket 접속중...
+[12:27:35]:Server Socket 접속성공...
+[12:27:35]:교환이 완료될 때 까지 기다림
+[12:27:35]:암호화 HANDSHAKE:update  nLen=2042
+[12:27:35]:암호화 HANDSHAKE:final  nLen=82
+[12:27:35]:암호화 HANDSHAKE:ok  nLen=82
+[12:27:35]:********************** Start **********************
+[12:27:35]:서버에 FileDown요구 [mst.lst]
+[12:27:35]:ZipExtract BEFORE [1]
+[12:27:35]:ZipExtract AFTER [1] FileSize[1601]
+[12:27:35]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[12:27:36]:==>InitRename()
+[12:27:36]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[12:27:36]:<==InitRename()
+[12:27:36]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[12:27:36]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[12:27:36]:IsFindFile_astxsdk <<<<<<<<<<<
+[12:27:36]:ProcessFIDData [LogonResult]  result=1
+[12:27:36]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[12:27:36]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[12:27:36]:ProcessFIDData [use]  result=R
+[12:27:36]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[12:27:36]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[12:27:36]:서버에 FileDown요구 [apiotrsc.lst]
+[12:27:36]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[12:27:36]:m_ProgressMng.Exit BEFORE
+[12:27:36]:m_ProgressMng.Exit AFTER
+[12:27:36]:3 Handle Check [3309][2427902]
+[12:27:36]:Send Before
+[12:27:37]:Send After [0]
+[12:27:37]:---------- Starter OnInitDialog End ----------
+[12:29:00]:********************** Start **********************
+[12:29:00]:********************** Finish **********************
+[12:29:00]:FirstInstance
+[12:29:00]:Gdiplus Init
+[12:29:00]:Socket Init
+[12:29:00]:RegistryKey
+[12:29:00]:---------- Begin ----------
+[12:29:00]:RemoveTempDownloadedFiles
+[12:29:00]:SetVersionFileName
+[12:29:00]:InitControls
+[12:29:00]:CreateSubDirectory
+[12:29:00]:Read Security [1] Install[0]
+[12:29:01]:ASTX Procted ID 0 PWD 0 CERT 0
+[12:29:01]:ASTX Proc Done
+[12:29:01]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:29:01]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[12:29:01]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:29:01]:Server Socket 접속중...
+[12:29:01]:Server Socket 접속성공...
+[12:29:01]:교환이 완료될 때 까지 기다림
+[12:29:01]:암호화 HANDSHAKE:update  nLen=2042
+[12:29:01]:암호화 HANDSHAKE:final  nLen=84
+[12:29:01]:암호화 HANDSHAKE:ok  nLen=84
+[12:29:01]:********************** Start **********************
+[12:29:01]:서버에 FileDown요구 [mst.lst]
+[12:29:02]:ZipExtract BEFORE [1]
+[12:29:02]:ZipExtract AFTER [1] FileSize[1601]
+[12:29:02]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[12:29:02]:==>InitRename()
+[12:29:02]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[12:29:02]:<==InitRename()
+[12:29:02]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[12:29:02]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[12:29:02]:IsFindFile_astxsdk <<<<<<<<<<<
+[12:29:02]:ProcessFIDData [LogonResult]  result=1
+[12:29:02]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[12:29:02]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[12:29:02]:ProcessFIDData [use]  result=R
+[12:29:02]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[12:29:02]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[12:29:02]:서버에 FileDown요구 [apiotrsc.lst]
+[12:29:02]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[12:29:02]:m_ProgressMng.Exit BEFORE
+[12:29:03]:m_ProgressMng.Exit AFTER
+[12:29:03]:3 Handle Check [3309][2033824]
+[12:29:03]:Send Before
+[12:29:04]:Send After [0]
+[12:29:04]:---------- Starter OnInitDialog End ----------
+[12:32:14]:********************** Start **********************
+[12:32:14]:********************** Finish **********************
+[12:32:14]:FirstInstance
+[12:32:14]:Gdiplus Init
+[12:32:14]:Socket Init
+[12:32:14]:RegistryKey
+[12:32:14]:---------- Begin ----------
+[12:32:14]:RemoveTempDownloadedFiles
+[12:32:14]:SetVersionFileName
+[12:32:14]:InitControls
+[12:32:14]:CreateSubDirectory
+[12:32:14]:Read Security [1] Install[0]
+[12:32:14]:ASTX Procted ID 0 PWD 0 CERT 0
+[12:32:14]:ASTX Proc Done
+[12:32:14]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:32:14]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[12:32:14]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:32:15]:Server Socket 접속중...
+[12:32:15]:Server Socket 접속성공...
+[12:32:15]:교환이 완료될 때 까지 기다림
+[12:32:15]:암호화 HANDSHAKE:update  nLen=2044
+[12:32:15]:암호화 HANDSHAKE:final  nLen=80
+[12:32:15]:암호화 HANDSHAKE:ok  nLen=80
+[12:32:15]:********************** Start **********************
+[12:32:15]:서버에 FileDown요구 [mst.lst]
+[12:32:15]:ZipExtract BEFORE [1]
+[12:32:15]:ZipExtract AFTER [1] FileSize[1601]
+[12:32:15]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[12:32:15]:==>InitRename()
+[12:32:15]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[12:32:15]:<==InitRename()
+[12:32:15]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[12:32:16]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[12:32:16]:IsFindFile_astxsdk <<<<<<<<<<<
+[12:32:16]:ProcessFIDData [LogonResult]  result=1
+[12:32:16]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[12:32:16]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[12:32:16]:ProcessFIDData [use]  result=R
+[12:32:16]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[12:32:16]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[12:32:16]:서버에 FileDown요구 [apiotrsc.lst]
+[12:32:16]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[12:32:16]:m_ProgressMng.Exit BEFORE
+[12:32:16]:m_ProgressMng.Exit AFTER
+[12:32:16]:3 Handle Check [3309][2361914]
+[12:32:16]:Send Before
+[12:32:17]:Send After [0]
+[12:32:17]:---------- Starter OnInitDialog End ----------
+[12:33:42]:********************** Start **********************
+[12:33:42]:********************** Finish **********************
+[12:33:42]:FirstInstance
+[12:33:42]:Gdiplus Init
+[12:33:42]:Socket Init
+[12:33:42]:RegistryKey
+[12:33:42]:---------- Begin ----------
+[12:33:42]:RemoveTempDownloadedFiles
+[12:33:42]:SetVersionFileName
+[12:33:42]:InitControls
+[12:33:42]:CreateSubDirectory
+[12:33:42]:Read Security [1] Install[0]
+[12:33:43]:ASTX Procted ID 0 PWD 0 CERT 0
+[12:33:43]:ASTX Proc Done
+[12:33:43]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:33:43]:InitDlg  etc read[0] [User ID][ ][ ]
+[12:33:43]:---------- Starter OnInitDialog End ----------
+[12:35:32]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[12:35:32]:Server Socket 접속중...
+[12:35:32]:Server Socket 접속성공...
+[12:35:32]:교환이 완료될 때 까지 기다림
+[12:35:32]:암호화 HANDSHAKE:update  nLen=2042
+[12:35:32]:암호화 HANDSHAKE:final  nLen=82
+[12:35:33]:암호화 HANDSHAKE:ok  nLen=82
+[12:35:33]:********************** Start **********************
+[12:35:33]:서버에 FileDown요구 [mst.lst]
+[12:35:33]:ZipExtract BEFORE [1]
+[12:35:33]:ZipExtract AFTER [1] FileSize[1601]
+[12:35:33]:서버에 FileDown요구 [apiinitrsc.lst]
+[12:35:33]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[12:35:33]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[12:35:33]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[12:35:34]:==>InitRename()
+[12:35:34]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[12:35:34]:<==InitRename()
+[12:35:34]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[12:35:34]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[12:35:34]:IsFindFile_astxsdk <<<<<<<<<<<
+[12:35:34]:ProcessFIDData [LogonResult]  result=1
+[12:35:34]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[12:35:34]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[12:35:34]:ProcessFIDData [use]  result=R
+[12:35:34]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[12:35:34]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[12:35:34]:서버에 FileDown요구 [apiotrsc.lst]
+[12:35:34]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[12:35:34]:m_ProgressMng.Exit BEFORE
+[12:35:34]:m_ProgressMng.Exit AFTER
+[12:35:34]:3 Handle Check [3309][1574870]
+[12:35:34]:Send Before
+[12:35:35]:Send After [0]
+[13:07:01]:********************** Start **********************
+[13:07:01]:********************** Finish **********************
+[13:07:01]:FirstInstance
+[13:07:01]:Gdiplus Init
+[13:07:01]:Socket Init
+[13:07:01]:RegistryKey
+[13:07:01]:---------- Begin ----------
+[13:07:01]:RemoveTempDownloadedFiles
+[13:07:01]:SetVersionFileName
+[13:07:01]:InitControls
+[13:07:01]:CreateSubDirectory
+[13:07:01]:Read Security [1] Install[0]
+[13:07:02]:ASTX Procted ID 0 PWD 0 CERT 0
+[13:07:02]:ASTX Proc Done
+[13:07:02]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:07:02]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[13:07:02]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:07:02]:Server Socket 접속중...
+[13:07:02]:Server Socket 접속성공...
+[13:07:02]:교환이 완료될 때 까지 기다림
+[13:07:02]:암호화 HANDSHAKE:update  nLen=2042
+[13:07:02]:암호화 HANDSHAKE:final  nLen=82
+[13:07:02]:암호화 HANDSHAKE:ok  nLen=82
+[13:07:02]:********************** Start **********************
+[13:07:02]:서버에 FileDown요구 [mst.lst]
+[13:07:02]:ZipExtract BEFORE [1]
+[13:07:02]:ZipExtract AFTER [1] FileSize[1602]
+[13:07:02]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[3e60d83a] ServerCrc[644675c6] Restarter[0]
+[13:07:02]:서버에 FileDown요구 [hjcode.dat]
+[13:07:08]:ZipExtract BEFORE [2]
+[13:07:08]:ZipExtract AFTER [2] FileSize[441252]
+[13:07:08]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[13:07:08]:==>InitRename()
+[13:07:08]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[13:07:08]:<==InitRename()
+[13:07:08]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[13:07:08]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[13:07:08]:IsFindFile_astxsdk <<<<<<<<<<<
+[13:07:09]:ProcessFIDData [LogonResult]  result=1
+[13:07:09]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[13:07:09]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[13:07:09]:ProcessFIDData [use]  result=R
+[13:07:09]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[13:07:09]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[13:07:09]:서버에 FileDown요구 [apiotrsc.lst]
+[13:07:09]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[13:07:09]:m_ProgressMng.Exit BEFORE
+[13:07:09]:m_ProgressMng.Exit AFTER
+[13:07:09]:3 Handle Check [3309][656986]
+[13:07:09]:Send Before
+[13:07:10]:Send After [0]
+[13:07:10]:---------- Starter OnInitDialog End ----------
+[13:09:35]:********************** Start **********************
+[13:09:35]:********************** Finish **********************
+[13:09:35]:FirstInstance
+[13:09:35]:Gdiplus Init
+[13:09:35]:Socket Init
+[13:09:35]:RegistryKey
+[13:09:35]:---------- Begin ----------
+[13:09:35]:RemoveTempDownloadedFiles
+[13:09:35]:SetVersionFileName
+[13:09:35]:InitControls
+[13:09:35]:CreateSubDirectory
+[13:09:35]:Read Security [1] Install[0]
+[13:09:36]:ASTX Procted ID 0 PWD 0 CERT 0
+[13:09:36]:ASTX Proc Done
+[13:09:36]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:09:36]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[13:09:36]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:09:36]:Server Socket 접속중...
+[13:09:36]:Server Socket 접속성공...
+[13:09:36]:교환이 완료될 때 까지 기다림
+[13:09:36]:암호화 HANDSHAKE:update  nLen=2042
+[13:09:36]:암호화 HANDSHAKE:final  nLen=80
+[13:09:36]:암호화 HANDSHAKE:ok  nLen=80
+[13:09:36]:********************** Start **********************
+[13:09:36]:서버에 FileDown요구 [mst.lst]
+[13:09:36]:ZipExtract BEFORE [1]
+[13:09:36]:ZipExtract AFTER [1] FileSize[1602]
+[13:09:36]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[13:09:37]:==>InitRename()
+[13:09:37]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[13:09:37]:<==InitRename()
+[13:09:37]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[13:09:37]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[13:09:37]:IsFindFile_astxsdk <<<<<<<<<<<
+[13:09:37]:ProcessFIDData [LogonResult]  result=1
+[13:09:37]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[13:09:37]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[13:09:37]:ProcessFIDData [use]  result=R
+[13:09:37]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[13:09:37]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[13:09:37]:서버에 FileDown요구 [apiotrsc.lst]
+[13:09:37]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[13:09:37]:m_ProgressMng.Exit BEFORE
+[13:09:37]:m_ProgressMng.Exit AFTER
+[13:09:37]:3 Handle Check [3309][656386]
+[13:09:37]:Send Before
+[13:09:38]:Send After [0]
+[13:09:38]:---------- Starter OnInitDialog End ----------
+[13:16:31]:********************** Start **********************
+[13:16:31]:********************** Finish **********************
+[13:16:31]:FirstInstance
+[13:16:31]:Gdiplus Init
+[13:16:31]:Socket Init
+[13:16:31]:RegistryKey
+[13:16:31]:---------- Begin ----------
+[13:16:31]:RemoveTempDownloadedFiles
+[13:16:31]:SetVersionFileName
+[13:16:31]:InitControls
+[13:16:31]:CreateSubDirectory
+[13:16:31]:Read Security [1] Install[0]
+[13:16:31]:ASTX Procted ID 0 PWD 0 CERT 0
+[13:16:31]:ASTX Proc Done
+[13:16:31]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:16:31]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[13:16:31]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:16:31]:Server Socket 접속중...
+[13:16:31]:Server Socket 접속성공...
+[13:16:31]:교환이 완료될 때 까지 기다림
+[13:16:31]:암호화 HANDSHAKE:update  nLen=2044
+[13:16:32]:암호화 HANDSHAKE:final  nLen=86
+[13:16:32]:암호화 HANDSHAKE:ok  nLen=86
+[13:16:32]:********************** Start **********************
+[13:16:32]:서버에 FileDown요구 [mst.lst]
+[13:16:32]:ZipExtract BEFORE [1]
+[13:16:32]:ZipExtract AFTER [1] FileSize[1602]
+[13:16:32]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[13:16:32]:==>InitRename()
+[13:16:32]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[13:16:32]:<==InitRename()
+[13:16:32]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[13:16:32]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[13:16:32]:IsFindFile_astxsdk <<<<<<<<<<<
+[13:16:33]:ProcessFIDData [LogonResult]  result=1
+[13:16:33]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[13:16:33]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[13:16:33]:ProcessFIDData [use]  result=R
+[13:16:33]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[13:16:33]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[13:16:33]:서버에 FileDown요구 [apiotrsc.lst]
+[13:16:33]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[13:16:33]:m_ProgressMng.Exit BEFORE
+[13:16:33]:m_ProgressMng.Exit AFTER
+[13:16:33]:3 Handle Check [3309][721802]
+[13:16:33]:Send Before
+[13:16:34]:Send After [0]
+[13:16:34]:---------- Starter OnInitDialog End ----------
+[13:19:29]:********************** Start **********************
+[13:19:29]:********************** Finish **********************
+[13:19:29]:FirstInstance
+[13:19:29]:Gdiplus Init
+[13:19:29]:Socket Init
+[13:19:29]:RegistryKey
+[13:19:29]:---------- Begin ----------
+[13:19:29]:RemoveTempDownloadedFiles
+[13:19:29]:SetVersionFileName
+[13:19:29]:InitControls
+[13:19:29]:CreateSubDirectory
+[13:19:29]:Read Security [1] Install[0]
+[13:19:30]:ASTX Procted ID 0 PWD 0 CERT 0
+[13:19:30]:ASTX Proc Done
+[13:19:30]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:19:30]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[13:19:30]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:19:30]:Server Socket 접속중...
+[13:19:30]:Server Socket 접속성공...
+[13:19:30]:교환이 완료될 때 까지 기다림
+[13:19:30]:암호화 HANDSHAKE:update  nLen=2042
+[13:19:30]:암호화 HANDSHAKE:final  nLen=80
+[13:19:30]:암호화 HANDSHAKE:ok  nLen=80
+[13:19:30]:********************** Start **********************
+[13:19:30]:서버에 FileDown요구 [mst.lst]
+[13:19:30]:ZipExtract BEFORE [1]
+[13:19:30]:ZipExtract AFTER [1] FileSize[1602]
+[13:19:30]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[13:19:31]:==>InitRename()
+[13:19:31]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[13:19:31]:<==InitRename()
+[13:19:31]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[13:19:31]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[13:19:31]:IsFindFile_astxsdk <<<<<<<<<<<
+[13:19:31]:ProcessFIDData [LogonResult]  result=1
+[13:19:31]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[13:19:31]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[13:19:31]:ProcessFIDData [use]  result=R
+[13:19:31]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[13:19:31]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[13:19:31]:서버에 FileDown요구 [apiotrsc.lst]
+[13:19:31]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[13:19:31]:m_ProgressMng.Exit BEFORE
+[13:19:31]:m_ProgressMng.Exit AFTER
+[13:19:31]:3 Handle Check [3309][1705566]
+[13:19:31]:Send Before
+[13:19:32]:Send After [0]
+[13:19:32]:---------- Starter OnInitDialog End ----------
+[13:39:59]:********************** Start **********************
+[13:39:59]:********************** Finish **********************
+[13:39:59]:FirstInstance
+[13:39:59]:Gdiplus Init
+[13:39:59]:Socket Init
+[13:39:59]:RegistryKey
+[13:39:59]:---------- Begin ----------
+[13:39:59]:RemoveTempDownloadedFiles
+[13:39:59]:SetVersionFileName
+[13:39:59]:InitControls
+[13:39:59]:CreateSubDirectory
+[13:39:59]:Read Security [1] Install[0]
+[13:40:00]:ASTX Procted ID 0 PWD 0 CERT 0
+[13:40:00]:ASTX Proc Done
+[13:40:00]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:40:00]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[13:40:00]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:40:00]:Server Socket 접속중...
+[13:40:00]:Server Socket 접속성공...
+[13:40:00]:교환이 완료될 때 까지 기다림
+[13:40:00]:암호화 HANDSHAKE:update  nLen=2042
+[13:40:00]:암호화 HANDSHAKE:final  nLen=80
+[13:40:00]:암호화 HANDSHAKE:ok  nLen=80
+[13:40:00]:********************** Start **********************
+[13:40:00]:서버에 FileDown요구 [mst.lst]
+[13:40:00]:ZipExtract BEFORE [1]
+[13:40:00]:ZipExtract AFTER [1] FileSize[1602]
+[13:40:00]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[13:40:01]:==>InitRename()
+[13:40:01]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[13:40:01]:<==InitRename()
+[13:40:01]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[13:40:01]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[13:40:01]:IsFindFile_astxsdk <<<<<<<<<<<
+[13:40:01]:ProcessFIDData [LogonResult]  result=1
+[13:40:01]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[13:40:01]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[13:40:01]:ProcessFIDData [use]  result=R
+[13:40:01]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[13:40:01]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[13:40:01]:서버에 FileDown요구 [apiotrsc.lst]
+[13:40:01]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[13:40:01]:m_ProgressMng.Exit BEFORE
+[13:40:01]:m_ProgressMng.Exit AFTER
+[13:40:01]:3 Handle Check [3309][1574506]
+[13:40:01]:Send Before
+[13:40:02]:Send After [0]
+[13:40:02]:---------- Starter OnInitDialog End ----------
+[13:47:21]:********************** Start **********************
+[13:47:21]:********************** Finish **********************
+[13:47:21]:FirstInstance
+[13:47:21]:Gdiplus Init
+[13:47:21]:Socket Init
+[13:47:21]:RegistryKey
+[13:47:21]:---------- Begin ----------
+[13:47:21]:RemoveTempDownloadedFiles
+[13:47:21]:SetVersionFileName
+[13:47:21]:InitControls
+[13:47:21]:CreateSubDirectory
+[13:47:21]:Read Security [1] Install[0]
+[13:47:22]:ASTX Procted ID 0 PWD 0 CERT 0
+[13:47:22]:ASTX Proc Done
+[13:47:22]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:47:22]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[13:47:22]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:47:22]:Server Socket 접속중...
+[13:47:22]:Server Socket 접속성공...
+[13:47:22]:교환이 완료될 때 까지 기다림
+[13:47:22]:암호화 HANDSHAKE:update  nLen=2044
+[13:47:22]:암호화 HANDSHAKE:final  nLen=80
+[13:47:22]:암호화 HANDSHAKE:ok  nLen=80
+[13:47:22]:********************** Start **********************
+[13:47:22]:서버에 FileDown요구 [mst.lst]
+[13:47:23]:ZipExtract BEFORE [1]
+[13:47:23]:ZipExtract AFTER [1] FileSize[1601]
+[13:47:23]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[644675c6] ServerCrc[3e60d83a] Restarter[0]
+[13:47:23]:서버에 FileDown요구 [hjcode.dat]
+[13:47:28]:ZipExtract BEFORE [2]
+[13:47:28]:ZipExtract AFTER [2] FileSize[441259]
+[13:47:28]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[13:47:29]:==>InitRename()
+[13:47:29]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[13:47:29]:<==InitRename()
+[13:47:29]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[13:47:29]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[13:47:29]:IsFindFile_astxsdk <<<<<<<<<<<
+[13:47:29]:ProcessFIDData [LogonResult]  result=1
+[13:47:29]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[13:47:29]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[13:47:29]:ProcessFIDData [use]  result=R
+[13:47:29]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[13:47:29]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[13:47:29]:서버에 FileDown요구 [apiotrsc.lst]
+[13:47:29]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[13:47:29]:m_ProgressMng.Exit BEFORE
+[13:47:29]:m_ProgressMng.Exit AFTER
+[13:47:29]:3 Handle Check [3309][2034160]
+[13:47:29]:Send Before
+[13:47:30]:Send After [0]
+[13:47:30]:---------- Starter OnInitDialog End ----------
+[13:53:54]:********************** Start **********************
+[13:53:54]:********************** Finish **********************
+[13:53:54]:FirstInstance
+[13:53:54]:Gdiplus Init
+[13:53:54]:Socket Init
+[13:53:54]:RegistryKey
+[13:53:54]:---------- Begin ----------
+[13:53:54]:RemoveTempDownloadedFiles
+[13:53:54]:SetVersionFileName
+[13:53:54]:InitControls
+[13:53:54]:CreateSubDirectory
+[13:53:54]:Read Security [1] Install[0]
+[13:53:55]:ASTX Procted ID 0 PWD 0 CERT 0
+[13:53:55]:ASTX Proc Done
+[13:53:55]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:53:55]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[13:53:55]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:53:55]:Server Socket 접속중...
+[13:53:55]:Server Socket 접속성공...
+[13:53:55]:교환이 완료될 때 까지 기다림
+[13:53:55]:암호화 HANDSHAKE:update  nLen=2042
+[13:53:55]:암호화 HANDSHAKE:final  nLen=82
+[13:53:55]:암호화 HANDSHAKE:ok  nLen=82
+[13:53:55]:********************** Start **********************
+[13:53:55]:서버에 FileDown요구 [mst.lst]
+[13:53:55]:ZipExtract BEFORE [1]
+[13:53:55]:ZipExtract AFTER [1] FileSize[1601]
+[13:53:55]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[13:53:56]:==>InitRename()
+[13:53:56]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[13:53:56]:<==InitRename()
+[13:53:56]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[13:53:56]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[13:53:56]:IsFindFile_astxsdk <<<<<<<<<<<
+[13:53:56]:ProcessFIDData [LogonResult]  result=1
+[13:53:56]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[13:53:56]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[13:53:56]:ProcessFIDData [use]  result=R
+[13:53:56]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[13:53:56]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[13:53:56]:서버에 FileDown요구 [apiotrsc.lst]
+[13:53:56]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[13:53:56]:m_ProgressMng.Exit BEFORE
+[13:53:56]:m_ProgressMng.Exit AFTER
+[13:53:56]:3 Handle Check [3309][2230504]
+[13:53:56]:Send Before
+[13:53:57]:Send After [0]
+[13:53:57]:---------- Starter OnInitDialog End ----------
+[14:15:55]:********************** Start **********************
+[14:15:55]:********************** Finish **********************
+[14:15:55]:FirstInstance
+[14:15:55]:Gdiplus Init
+[14:15:55]:Socket Init
+[14:15:55]:RegistryKey
+[14:15:55]:---------- Begin ----------
+[14:15:55]:RemoveTempDownloadedFiles
+[14:15:56]:SetVersionFileName
+[14:15:56]:InitControls
+[14:15:56]:CreateSubDirectory
+[14:15:56]:Read Security [1] Install[0]
+[14:15:56]:ASTX Procted ID 0 PWD 0 CERT 0
+[14:15:56]:ASTX Proc Done
+[14:15:56]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:15:56]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[14:15:56]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:15:56]:Server Socket 접속중...
+[14:15:56]:Server Socket 접속성공...
+[14:15:56]:교환이 완료될 때 까지 기다림
+[14:15:56]:암호화 HANDSHAKE:update  nLen=2042
+[14:15:56]:암호화 HANDSHAKE:final  nLen=80
+[14:15:56]:암호화 HANDSHAKE:ok  nLen=80
+[14:15:56]:********************** Start **********************
+[14:15:56]:서버에 FileDown요구 [mst.lst]
+[14:15:57]:ZipExtract BEFORE [1]
+[14:15:57]:ZipExtract AFTER [1] FileSize[1602]
+[14:15:57]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[3e60d83a] ServerCrc[644675c6] Restarter[0]
+[14:15:57]:서버에 FileDown요구 [hjcode.dat]
+[14:16:03]:ZipExtract BEFORE [2]
+[14:16:03]:ZipExtract AFTER [2] FileSize[441252]
+[14:16:03]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[14:16:03]:==>InitRename()
+[14:16:03]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[14:16:03]:<==InitRename()
+[14:16:03]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[14:16:03]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[14:16:03]:IsFindFile_astxsdk <<<<<<<<<<<
+[14:16:03]:ProcessFIDData [LogonResult]  result=1
+[14:16:03]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[14:16:03]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[14:16:03]:ProcessFIDData [use]  result=R
+[14:16:03]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[14:16:03]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[14:16:03]:서버에 FileDown요구 [apiotrsc.lst]
+[14:16:04]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[14:16:04]:m_ProgressMng.Exit BEFORE
+[14:16:04]:m_ProgressMng.Exit AFTER
+[14:16:04]:3 Handle Check [3309][2950568]
+[14:16:04]:Send Before
+[14:16:05]:Send After [0]
+[14:16:05]:---------- Starter OnInitDialog End ----------
+[14:45:35]:********************** Start **********************
+[14:45:35]:********************** Finish **********************
+[14:45:35]:FirstInstance
+[14:45:35]:Gdiplus Init
+[14:45:35]:Socket Init
+[14:45:35]:RegistryKey
+[14:45:35]:---------- Begin ----------
+[14:45:35]:RemoveTempDownloadedFiles
+[14:45:35]:SetVersionFileName
+[14:45:35]:InitControls
+[14:45:35]:CreateSubDirectory
+[14:45:35]:Read Security [1] Install[0]
+[14:45:36]:ASTX Procted ID 0 PWD 0 CERT 0
+[14:45:36]:ASTX Proc Done
+[14:45:36]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:45:36]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[14:45:36]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:45:36]:Server Socket 접속중...
+[14:45:36]:Server Socket 접속성공...
+[14:45:36]:교환이 완료될 때 까지 기다림
+[14:45:36]:암호화 HANDSHAKE:update  nLen=2042
+[14:45:36]:암호화 HANDSHAKE:final  nLen=86
+[14:45:36]:암호화 HANDSHAKE:ok  nLen=86
+[14:45:36]:********************** Start **********************
+[14:45:36]:서버에 FileDown요구 [mst.lst]
+[14:45:36]:ZipExtract BEFORE [1]
+[14:45:36]:ZipExtract AFTER [1] FileSize[1602]
+[14:45:36]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[14:45:37]:==>InitRename()
+[14:45:37]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[14:45:37]:<==InitRename()
+[14:45:37]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[14:45:37]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[14:45:37]:IsFindFile_astxsdk <<<<<<<<<<<
+[14:45:37]:ProcessFIDData [LogonResult]  result=1
+[14:45:37]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[14:45:37]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[14:45:37]:ProcessFIDData [use]  result=R
+[14:45:37]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[14:45:37]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[14:45:37]:서버에 FileDown요구 [apiotrsc.lst]
+[14:45:37]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[14:45:37]:m_ProgressMng.Exit BEFORE
+[14:45:37]:m_ProgressMng.Exit AFTER
+[14:45:37]:3 Handle Check [3309][8461732]
+[14:45:37]:Send Before
+[14:45:38]:Send After [0]
+[14:45:38]:---------- Starter OnInitDialog End ----------
+[14:55:12]:********************** Start **********************
+[14:55:12]:********************** Finish **********************
+[14:55:12]:FirstInstance
+[14:55:12]:Gdiplus Init
+[14:55:12]:Socket Init
+[14:55:12]:RegistryKey
+[14:55:12]:---------- Begin ----------
+[14:55:12]:RemoveTempDownloadedFiles
+[14:55:12]:SetVersionFileName
+[14:55:12]:InitControls
+[14:55:12]:CreateSubDirectory
+[14:55:12]:Read Security [1] Install[0]
+[14:55:12]:ASTX Procted ID 0 PWD 0 CERT 0
+[14:55:12]:ASTX Proc Done
+[14:55:12]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:55:12]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[14:55:13]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:55:13]:Server Socket 접속중...
+[14:55:13]:Server Socket 접속성공...
+[14:55:13]:교환이 완료될 때 까지 기다림
+[14:55:13]:암호화 HANDSHAKE:update  nLen=2044
+[14:55:13]:암호화 HANDSHAKE:final  nLen=82
+[14:55:13]:암호화 HANDSHAKE:ok  nLen=82
+[14:55:13]:********************** Start **********************
+[14:55:13]:서버에 FileDown요구 [mst.lst]
+[14:55:13]:ZipExtract BEFORE [1]
+[14:55:13]:ZipExtract AFTER [1] FileSize[1601]
+[14:55:13]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[644675c6] ServerCrc[3e60d83a] Restarter[0]
+[14:55:13]:서버에 FileDown요구 [hjcode.dat]
+[14:55:19]:ZipExtract BEFORE [2]
+[14:55:19]:ZipExtract AFTER [2] FileSize[441259]
+[14:55:19]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[14:55:19]:==>InitRename()
+[14:55:19]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[14:55:19]:<==InitRename()
+[14:55:19]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[14:55:19]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[14:55:19]:IsFindFile_astxsdk <<<<<<<<<<<
+[14:55:19]:ProcessFIDData [LogonResult]  result=1
+[14:55:19]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[14:55:19]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[14:55:19]:ProcessFIDData [use]  result=R
+[14:55:19]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[14:55:19]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[14:55:19]:서버에 FileDown요구 [apiotrsc.lst]
+[14:55:20]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[14:55:20]:m_ProgressMng.Exit BEFORE
+[14:55:20]:m_ProgressMng.Exit AFTER
+[14:55:20]:3 Handle Check [3309][4064958]
+[14:55:20]:Send Before
+[14:55:21]:Send After [0]
+[14:55:21]:---------- Starter OnInitDialog End ----------
+[14:55:39]:********************** Start **********************
+[14:55:39]:********************** Finish **********************
+[14:55:39]:FirstInstance
+[14:55:39]:Gdiplus Init
+[14:55:39]:Socket Init
+[14:55:39]:RegistryKey
+[14:55:39]:---------- Begin ----------
+[14:55:39]:RemoveTempDownloadedFiles
+[14:55:39]:SetVersionFileName
+[14:55:39]:InitControls
+[14:55:39]:CreateSubDirectory
+[14:55:39]:Read Security [1] Install[0]
+[14:55:40]:ASTX Procted ID 0 PWD 0 CERT 0
+[14:55:40]:ASTX Proc Done
+[14:55:40]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:55:40]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[14:55:40]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:55:40]:Server Socket 접속중...
+[14:55:40]:Server Socket 접속성공...
+[14:55:40]:교환이 완료될 때 까지 기다림
+[14:55:40]:암호화 HANDSHAKE:update  nLen=2042
+[14:55:40]:암호화 HANDSHAKE:final  nLen=82
+[14:55:40]:암호화 HANDSHAKE:ok  nLen=82
+[14:55:40]:********************** Start **********************
+[14:55:40]:서버에 FileDown요구 [mst.lst]
+[14:55:40]:ZipExtract BEFORE [1]
+[14:55:40]:ZipExtract AFTER [1] FileSize[1601]
+[14:55:40]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[14:55:41]:==>InitRename()
+[14:55:41]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[14:55:41]:<==InitRename()
+[14:55:41]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[14:55:41]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[14:55:41]:IsFindFile_astxsdk <<<<<<<<<<<
+[14:55:41]:ProcessFIDData [LogonResult]  result=1
+[14:55:41]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[14:55:41]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[14:55:41]:ProcessFIDData [use]  result=R
+[14:55:41]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[14:55:41]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[14:55:41]:서버에 FileDown요구 [apiotrsc.lst]
+[14:55:41]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[14:55:41]:m_ProgressMng.Exit BEFORE
+[14:55:41]:m_ProgressMng.Exit AFTER
+[14:55:41]:3 Handle Check [3309][5572204]
+[14:55:41]:Send Before
+[14:55:42]:Send After [0]
+[14:55:42]:---------- Starter OnInitDialog End ----------
+[14:56:24]:********************** Start **********************
+[14:56:24]:********************** Finish **********************
+[14:56:24]:FirstInstance
+[14:56:24]:Gdiplus Init
+[14:56:24]:Socket Init
+[14:56:24]:RegistryKey
+[14:56:24]:---------- Begin ----------
+[14:56:24]:RemoveTempDownloadedFiles
+[14:56:24]:SetVersionFileName
+[14:56:24]:InitControls
+[14:56:24]:CreateSubDirectory
+[14:56:24]:Read Security [1] Install[0]
+[14:56:25]:ASTX Procted ID 0 PWD 0 CERT 0
+[14:56:25]:ASTX Proc Done
+[14:56:25]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:56:25]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[14:56:25]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:56:25]:Server Socket 접속중...
+[14:56:25]:Server Socket 접속성공...
+[14:56:25]:교환이 완료될 때 까지 기다림
+[14:56:25]:암호화 HANDSHAKE:update  nLen=2042
+[14:56:25]:암호화 HANDSHAKE:final  nLen=88
+[14:56:25]:암호화 HANDSHAKE:ok  nLen=88
+[14:56:25]:********************** Start **********************
+[14:56:25]:서버에 FileDown요구 [mst.lst]
+[14:56:25]:ZipExtract BEFORE [1]
+[14:56:25]:ZipExtract AFTER [1] FileSize[1601]
+[14:56:25]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[14:56:26]:==>InitRename()
+[14:56:26]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[14:56:26]:<==InitRename()
+[14:56:26]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[14:56:26]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[14:56:26]:IsFindFile_astxsdk <<<<<<<<<<<
+[14:56:26]:ProcessFIDData [LogonResult]  result=1
+[14:56:26]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[14:56:26]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[14:56:26]:ProcessFIDData [use]  result=R
+[14:56:26]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[14:56:26]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[14:56:26]:서버에 FileDown요구 [apiotrsc.lst]
+[14:56:26]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[14:56:26]:m_ProgressMng.Exit BEFORE
+[14:56:26]:m_ProgressMng.Exit AFTER
+[14:56:26]:3 Handle Check [3309][2295338]
+[14:56:26]:Send Before
+[14:56:27]:Send After [0]
+[14:56:27]:---------- Starter OnInitDialog End ----------
+[14:57:50]:********************** Start **********************
+[14:57:50]:********************** Finish **********************
+[14:57:50]:FirstInstance
+[14:57:50]:Gdiplus Init
+[14:57:50]:Socket Init
+[14:57:50]:RegistryKey
+[14:57:50]:---------- Begin ----------
+[14:57:50]:RemoveTempDownloadedFiles
+[14:57:50]:SetVersionFileName
+[14:57:50]:InitControls
+[14:57:50]:CreateSubDirectory
+[14:57:50]:Read Security [1] Install[0]
+[14:57:51]:ASTX Procted ID 0 PWD 0 CERT 0
+[14:57:51]:ASTX Proc Done
+[14:57:51]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:57:51]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[14:57:51]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:57:51]:Server Socket 접속중...
+[14:57:51]:Server Socket 접속성공...
+[14:57:51]:교환이 완료될 때 까지 기다림
+[14:57:51]:암호화 HANDSHAKE:update  nLen=2044
+[14:57:51]:암호화 HANDSHAKE:final  nLen=80
+[14:57:51]:암호화 HANDSHAKE:ok  nLen=80
+[14:57:51]:********************** Start **********************
+[14:57:51]:서버에 FileDown요구 [mst.lst]
+[14:57:51]:ZipExtract BEFORE [1]
+[14:57:51]:ZipExtract AFTER [1] FileSize[1601]
+[14:57:51]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[14:57:52]:==>InitRename()
+[14:57:52]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[14:57:52]:<==InitRename()
+[14:57:52]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[14:57:52]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[14:57:52]:IsFindFile_astxsdk <<<<<<<<<<<
+[14:57:52]:ProcessFIDData [LogonResult]  result=1
+[14:57:52]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[14:57:52]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[14:57:52]:ProcessFIDData [use]  result=R
+[14:57:52]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[14:57:52]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[14:57:52]:서버에 FileDown요구 [apiotrsc.lst]
+[14:57:52]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[14:57:52]:m_ProgressMng.Exit BEFORE
+[14:57:52]:m_ProgressMng.Exit AFTER
+[14:57:52]:3 Handle Check [3309][5637548]
+[14:57:52]:Send Before
+[14:57:53]:Send After [0]
+[14:57:53]:---------- Starter OnInitDialog End ----------
+[14:59:00]:********************** Start **********************
+[14:59:00]:********************** Finish **********************
+[14:59:00]:FirstInstance
+[14:59:00]:Gdiplus Init
+[14:59:00]:Socket Init
+[14:59:00]:RegistryKey
+[14:59:00]:---------- Begin ----------
+[14:59:00]:RemoveTempDownloadedFiles
+[14:59:00]:SetVersionFileName
+[14:59:00]:InitControls
+[14:59:00]:CreateSubDirectory
+[14:59:00]:Read Security [1] Install[0]
+[14:59:01]:ASTX Procted ID 0 PWD 0 CERT 0
+[14:59:01]:ASTX Proc Done
+[14:59:01]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:59:01]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[14:59:01]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:59:01]:Server Socket 접속중...
+[14:59:01]:Server Socket 접속성공...
+[14:59:01]:교환이 완료될 때 까지 기다림
+[14:59:01]:암호화 HANDSHAKE:update  nLen=2042
+[14:59:01]:암호화 HANDSHAKE:final  nLen=80
+[14:59:01]:암호화 HANDSHAKE:ok  nLen=80
+[14:59:01]:********************** Start **********************
+[14:59:01]:서버에 FileDown요구 [mst.lst]
+[14:59:01]:ZipExtract BEFORE [1]
+[14:59:01]:ZipExtract AFTER [1] FileSize[1601]
+[14:59:01]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[14:59:02]:==>InitRename()
+[14:59:02]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[14:59:02]:<==InitRename()
+[14:59:02]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[14:59:02]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[14:59:02]:IsFindFile_astxsdk <<<<<<<<<<<
+[14:59:02]:ProcessFIDData [LogonResult]  result=1
+[14:59:02]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[14:59:02]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[14:59:02]:ProcessFIDData [use]  result=R
+[14:59:02]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[14:59:02]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[14:59:02]:서버에 FileDown요구 [apiotrsc.lst]
+[14:59:02]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[14:59:02]:m_ProgressMng.Exit BEFORE
+[14:59:02]:m_ProgressMng.Exit AFTER
+[14:59:02]:3 Handle Check [3309][1311704]
+[14:59:02]:Send Before
+[14:59:03]:Send After [0]
+[14:59:03]:---------- Starter OnInitDialog End ----------
+[15:00:44]:********************** Start **********************
+[15:00:44]:********************** Finish **********************
+[15:00:44]:FirstInstance
+[15:00:44]:Gdiplus Init
+[15:00:44]:Socket Init
+[15:00:44]:RegistryKey
+[15:00:45]:---------- Begin ----------
+[15:00:45]:RemoveTempDownloadedFiles
+[15:00:45]:SetVersionFileName
+[15:00:45]:InitControls
+[15:00:45]:CreateSubDirectory
+[15:00:45]:Read Security [1] Install[0]
+[15:00:45]:ASTX Procted ID 0 PWD 0 CERT 0
+[15:00:45]:ASTX Proc Done
+[15:00:45]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:00:45]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[15:00:45]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:00:45]:Server Socket 접속중...
+[15:00:45]:Server Socket 접속성공...
+[15:00:45]:교환이 완료될 때 까지 기다림
+[15:00:45]:암호화 HANDSHAKE:update  nLen=2044
+[15:00:45]:암호화 HANDSHAKE:final  nLen=86
+[15:00:45]:암호화 HANDSHAKE:ok  nLen=86
+[15:00:45]:********************** Start **********************
+[15:00:45]:서버에 FileDown요구 [mst.lst]
+[15:00:46]:ZipExtract BEFORE [1]
+[15:00:46]:ZipExtract AFTER [1] FileSize[1601]
+[15:00:46]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[15:00:46]:==>InitRename()
+[15:00:46]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[15:00:46]:<==InitRename()
+[15:00:46]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[15:00:46]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[15:00:46]:IsFindFile_astxsdk <<<<<<<<<<<
+[15:00:46]:ProcessFIDData [LogonResult]  result=1
+[15:00:46]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[15:00:46]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[15:00:46]:ProcessFIDData [use]  result=R
+[15:00:46]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[15:00:46]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[15:00:46]:서버에 FileDown요구 [apiotrsc.lst]
+[15:00:47]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[15:00:47]:m_ProgressMng.Exit BEFORE
+[15:00:47]:m_ProgressMng.Exit AFTER
+[15:00:47]:3 Handle Check [3309][1770440]
+[15:00:47]:Send Before
+[15:00:48]:Send After [0]
+[15:00:48]:---------- Starter OnInitDialog End ----------
+[15:06:14]:********************** Start **********************
+[15:06:14]:********************** Finish **********************
+[15:06:14]:FirstInstance
+[15:06:14]:Gdiplus Init
+[15:06:14]:Socket Init
+[15:06:14]:RegistryKey
+[15:06:14]:---------- Begin ----------
+[15:06:14]:RemoveTempDownloadedFiles
+[15:06:14]:SetVersionFileName
+[15:06:14]:InitControls
+[15:06:14]:CreateSubDirectory
+[15:06:14]:Read Security [1] Install[0]
+[15:06:15]:ASTX Procted ID 0 PWD 0 CERT 0
+[15:06:15]:ASTX Proc Done
+[15:06:15]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:06:15]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[15:06:15]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:06:15]:Server Socket 접속중...
+[15:06:15]:Server Socket 접속성공...
+[15:06:15]:교환이 완료될 때 까지 기다림
+[15:06:15]:암호화 HANDSHAKE:update  nLen=2042
+[15:06:15]:암호화 HANDSHAKE:final  nLen=80
+[15:06:15]:암호화 HANDSHAKE:ok  nLen=80
+[15:06:15]:********************** Start **********************
+[15:06:15]:서버에 FileDown요구 [mst.lst]
+[15:06:16]:ZipExtract BEFORE [1]
+[15:06:16]:ZipExtract AFTER [1] FileSize[1602]
+[15:06:16]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[3e60d83a] ServerCrc[644675c6] Restarter[0]
+[15:06:16]:서버에 FileDown요구 [hjcode.dat]
+[15:06:21]:ZipExtract BEFORE [2]
+[15:06:21]:ZipExtract AFTER [2] FileSize[441252]
+[15:06:21]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[15:06:22]:==>InitRename()
+[15:06:22]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[15:06:22]:<==InitRename()
+[15:06:22]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[15:06:22]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[15:06:22]:IsFindFile_astxsdk <<<<<<<<<<<
+[15:06:22]:ProcessFIDData [LogonResult]  result=1
+[15:06:22]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[15:06:22]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[15:06:22]:ProcessFIDData [use]  result=R
+[15:06:22]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[15:06:22]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[15:06:22]:서버에 FileDown요구 [apiotrsc.lst]
+[15:06:22]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[15:06:22]:m_ProgressMng.Exit BEFORE
+[15:06:22]:m_ProgressMng.Exit AFTER
+[15:06:22]:3 Handle Check [3309][4391912]
+[15:06:22]:Send Before
+[15:06:23]:Send After [0]
+[15:06:23]:---------- Starter OnInitDialog End ----------
+[15:07:42]:********************** Start **********************
+[15:07:42]:********************** Finish **********************
+[15:07:42]:FirstInstance
+[15:07:42]:Gdiplus Init
+[15:07:42]:Socket Init
+[15:07:42]:RegistryKey
+[15:07:43]:---------- Begin ----------
+[15:07:43]:RemoveTempDownloadedFiles
+[15:07:43]:SetVersionFileName
+[15:07:43]:InitControls
+[15:07:43]:CreateSubDirectory
+[15:07:43]:Read Security [1] Install[0]
+[15:07:43]:ASTX Procted ID 0 PWD 0 CERT 0
+[15:07:43]:ASTX Proc Done
+[15:07:43]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:07:43]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[15:07:43]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:07:43]:Server Socket 접속중...
+[15:07:43]:Server Socket 접속성공...
+[15:07:43]:교환이 완료될 때 까지 기다림
+[15:07:43]:암호화 HANDSHAKE:update  nLen=2042
+[15:07:43]:암호화 HANDSHAKE:final  nLen=84
+[15:07:43]:암호화 HANDSHAKE:ok  nLen=84
+[15:07:43]:********************** Start **********************
+[15:07:43]:서버에 FileDown요구 [mst.lst]
+[15:07:44]:ZipExtract BEFORE [1]
+[15:07:44]:ZipExtract AFTER [1] FileSize[1602]
+[15:07:44]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[15:07:44]:==>InitRename()
+[15:07:44]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[15:07:44]:<==InitRename()
+[15:07:44]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[15:07:44]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[15:07:44]:IsFindFile_astxsdk <<<<<<<<<<<
+[15:07:44]:ProcessFIDData [LogonResult]  result=1
+[15:07:44]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[15:07:44]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[15:07:44]:ProcessFIDData [use]  result=R
+[15:07:44]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[15:07:44]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[15:07:44]:서버에 FileDown요구 [apiotrsc.lst]
+[15:07:45]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[15:07:45]:m_ProgressMng.Exit BEFORE
+[15:07:45]:m_ProgressMng.Exit AFTER
+[15:07:45]:3 Handle Check [3309][4457448]
+[15:07:45]:Send Before
+[15:07:46]:Send After [0]
+[15:07:46]:---------- Starter OnInitDialog End ----------
+[15:51:13]:********************** Start **********************
+[15:51:13]:********************** Finish **********************
+[15:51:13]:FirstInstance
+[15:51:13]:Gdiplus Init
+[15:51:13]:Socket Init
+[15:51:13]:RegistryKey
+[15:51:13]:---------- Begin ----------
+[15:51:13]:RemoveTempDownloadedFiles
+[15:51:13]:SetVersionFileName
+[15:51:13]:InitControls
+[15:51:13]:CreateSubDirectory
+[15:51:13]:Read Security [1] Install[0]
+[15:51:14]:ASTX Procted ID 0 PWD 0 CERT 0
+[15:51:14]:ASTX Proc Done
+[15:51:14]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:51:14]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[15:51:14]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:51:14]:Server Socket 접속중...
+[15:51:14]:Server Socket 접속성공...
+[15:51:14]:교환이 완료될 때 까지 기다림
+[15:51:14]:암호화 HANDSHAKE:update  nLen=2042
+[15:51:14]:암호화 HANDSHAKE:final  nLen=82
+[15:51:14]:암호화 HANDSHAKE:ok  nLen=82
+[15:51:14]:********************** Start **********************
+[15:51:14]:서버에 FileDown요구 [mst.lst]
+[15:51:15]:ZipExtract BEFORE [1]
+[15:51:15]:ZipExtract AFTER [1] FileSize[1601]
+[15:51:15]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[644675c6] ServerCrc[3e60d83a] Restarter[0]
+[15:51:15]:서버에 FileDown요구 [hjcode.dat]
+[15:51:20]:ZipExtract BEFORE [2]
+[15:51:20]:ZipExtract AFTER [2] FileSize[441259]
+[15:51:20]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[15:51:21]:==>InitRename()
+[15:51:21]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[15:51:21]:<==InitRename()
+[15:51:21]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[15:51:21]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[15:51:21]:IsFindFile_astxsdk <<<<<<<<<<<
+[15:51:21]:ProcessFIDData [LogonResult]  result=1
+[15:51:21]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[15:51:21]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[15:51:21]:ProcessFIDData [use]  result=R
+[15:51:21]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[15:51:21]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[15:51:21]:서버에 FileDown요구 [apiotrsc.lst]
+[15:51:21]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[15:51:21]:m_ProgressMng.Exit BEFORE
+[15:51:21]:m_ProgressMng.Exit AFTER
+[15:51:21]:3 Handle Check [3309][6095764]
+[15:51:21]:Send Before
+[15:51:22]:Send After [0]
+[15:51:22]:---------- Starter OnInitDialog End ----------
+[16:07:11]:********************** Start **********************
+[16:07:11]:********************** Finish **********************
+[16:07:11]:FirstInstance
+[16:07:11]:Gdiplus Init
+[16:07:11]:Socket Init
+[16:07:11]:RegistryKey
+[16:07:11]:---------- Begin ----------
+[16:07:11]:RemoveTempDownloadedFiles
+[16:07:11]:SetVersionFileName
+[16:07:11]:InitControls
+[16:07:11]:CreateSubDirectory
+[16:07:11]:Read Security [1] Install[0]
+[16:07:12]:ASTX Procted ID 0 PWD 0 CERT 0
+[16:07:12]:ASTX Proc Done
+[16:07:12]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[16:07:12]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[16:07:12]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[16:07:12]:Server Socket 접속중...
+[16:07:12]:Server Socket 접속성공...
+[16:07:12]:교환이 완료될 때 까지 기다림
+[16:07:12]:암호화 HANDSHAKE:update  nLen=2042
+[16:07:12]:암호화 HANDSHAKE:final  nLen=82
+[16:07:12]:암호화 HANDSHAKE:ok  nLen=82
+[16:07:12]:********************** Start **********************
+[16:07:12]:서버에 FileDown요구 [mst.lst]
+[16:07:13]:ZipExtract BEFORE [1]
+[16:07:13]:ZipExtract AFTER [1] FileSize[1601]
+[16:07:13]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[16:07:13]:==>InitRename()
+[16:07:13]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[16:07:13]:<==InitRename()
+[16:07:13]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[16:07:13]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[16:07:13]:IsFindFile_astxsdk <<<<<<<<<<<
+[16:07:13]:ProcessFIDData [LogonResult]  result=1
+[16:07:13]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[16:07:13]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[16:07:13]:ProcessFIDData [use]  result=R
+[16:07:13]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[16:07:13]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[16:07:13]:서버에 FileDown요구 [apiotrsc.lst]
+[16:07:14]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[16:07:14]:m_ProgressMng.Exit BEFORE
+[16:07:14]:m_ProgressMng.Exit AFTER
+[16:07:14]:3 Handle Check [3309][1968812]
+[16:07:14]:Send Before
+[16:07:15]:Send After [0]
+[16:07:15]:---------- Starter OnInitDialog End ----------
+[16:44:24]:********************** Start **********************
+[16:44:24]:********************** Finish **********************
+[16:44:24]:FirstInstance
+[16:44:24]:Gdiplus Init
+[16:44:24]:Socket Init
+[16:44:24]:RegistryKey
+[16:44:24]:---------- Begin ----------
+[16:44:24]:RemoveTempDownloadedFiles
+[16:44:24]:SetVersionFileName
+[16:44:25]:InitControls
+[16:44:25]:CreateSubDirectory
+[16:44:25]:Read Security [1] Install[0]
+[16:44:25]:ASTX Procted ID 0 PWD 0 CERT 0
+[16:44:25]:ASTX Proc Done
+[16:44:25]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[16:44:25]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[16:44:25]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[16:44:25]:Server Socket 접속중...
+[16:44:25]:Server Socket 접속성공...
+[16:44:25]:교환이 완료될 때 까지 기다림
+[16:44:25]:암호화 HANDSHAKE:update  nLen=2042
+[16:44:26]:암호화 HANDSHAKE:final  nLen=82
+[16:44:26]:암호화 HANDSHAKE:ok  nLen=82
+[16:44:26]:********************** Start **********************
+[16:44:26]:서버에 FileDown요구 [mst.lst]
+[16:44:26]:ZipExtract BEFORE [1]
+[16:44:26]:ZipExtract AFTER [1] FileSize[1602]
+[16:44:26]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[3e60d83a] ServerCrc[644675c6] Restarter[0]
+[16:44:26]:서버에 FileDown요구 [hjcode.dat]
+[16:44:32]:ZipExtract BEFORE [2]
+[16:44:32]:ZipExtract AFTER [2] FileSize[441252]
+[16:44:32]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[16:44:32]:==>InitRename()
+[16:44:32]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[16:44:32]:<==InitRename()
+[16:44:32]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[16:44:32]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[16:44:32]:IsFindFile_astxsdk <<<<<<<<<<<
+[16:44:32]:ProcessFIDData [LogonResult]  result=1
+[16:44:32]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[16:44:32]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[16:44:32]:ProcessFIDData [use]  result=R
+[16:44:32]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[16:44:32]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[16:44:32]:서버에 FileDown요구 [apiotrsc.lst]
+[16:44:33]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[16:44:33]:m_ProgressMng.Exit BEFORE
+[16:44:33]:m_ProgressMng.Exit AFTER
+[16:44:33]:3 Handle Check [3309][5832894]
+[16:44:33]:Send Before
+[16:44:34]:Send After [0]
+[16:44:34]:---------- Starter OnInitDialog End ----------
+[16:49:25]:********************** Start **********************
+[16:49:25]:********************** Finish **********************
+[16:49:25]:FirstInstance
+[16:49:25]:Gdiplus Init
+[16:49:25]:Socket Init
+[16:49:25]:RegistryKey
+[16:49:25]:---------- Begin ----------
+[16:49:25]:RemoveTempDownloadedFiles
+[16:49:25]:SetVersionFileName
+[16:49:25]:InitControls
+[16:49:25]:CreateSubDirectory
+[16:49:25]:Read Security [1] Install[0]
+[16:49:26]:ASTX Procted ID 0 PWD 0 CERT 0
+[16:49:26]:ASTX Proc Done
+[16:49:26]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[16:49:26]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[16:49:26]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[16:49:26]:Server Socket 접속중...
+[16:49:26]:Server Socket 접속성공...
+[16:49:26]:교환이 완료될 때 까지 기다림
+[16:49:26]:암호화 HANDSHAKE:update  nLen=2044
+[16:49:26]:암호화 HANDSHAKE:final  nLen=80
+[16:49:26]:암호화 HANDSHAKE:ok  nLen=80
+[16:49:26]:********************** Start **********************
+[16:49:26]:서버에 FileDown요구 [mst.lst]
+[16:49:26]:ZipExtract BEFORE [1]
+[16:49:26]:ZipExtract AFTER [1] FileSize[1602]
+[16:49:27]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[16:49:27]:==>InitRename()
+[16:49:27]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[16:49:27]:<==InitRename()
+[16:49:27]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[16:49:27]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[16:49:27]:IsFindFile_astxsdk <<<<<<<<<<<
+[16:49:27]:ProcessFIDData [LogonResult]  result=1
+[16:49:27]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[16:49:27]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[16:49:27]:ProcessFIDData [use]  result=R
+[16:49:27]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[16:49:27]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[16:49:27]:서버에 FileDown요구 [apiotrsc.lst]
+[16:49:27]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[16:49:27]:m_ProgressMng.Exit BEFORE
+[16:49:27]:m_ProgressMng.Exit AFTER
+[16:49:27]:3 Handle Check [3309][4201888]
+[16:49:27]:Send Before
+[16:49:28]:Send After [0]
+[16:49:28]:---------- Starter OnInitDialog End ----------
+[18:33:53]:********************** Start **********************
+[18:33:53]:********************** Finish **********************
+[18:33:53]:FirstInstance
+[18:33:53]:Gdiplus Init
+[18:33:53]:Socket Init
+[18:33:53]:RegistryKey
+[18:33:53]:---------- Begin ----------
+[18:33:53]:RemoveTempDownloadedFiles
+[18:33:53]:SetVersionFileName
+[18:33:53]:InitControls
+[18:33:53]:CreateSubDirectory
+[18:33:53]:Read Security [1] Install[0]
+[18:33:54]:ASTX Procted ID 0 PWD 0 CERT 0
+[18:33:54]:ASTX Proc Done
+[18:33:54]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[18:33:54]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[18:33:54]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[18:33:54]:Server Socket 접속중...
+[18:33:54]:Server Socket 접속성공...
+[18:33:54]:교환이 완료될 때 까지 기다림
+[18:33:54]:암호화 HANDSHAKE:update  nLen=2044
+[18:33:55]:암호화 HANDSHAKE:final  nLen=82
+[18:33:55]:암호화 HANDSHAKE:ok  nLen=82
+[18:33:55]:********************** Start **********************
+[18:33:55]:서버에 FileDown요구 [mst.lst]
+[18:33:55]:ZipExtract BEFORE [1]
+[18:33:55]:ZipExtract AFTER [1] FileSize[1595]
+[18:33:55]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[18:33:55]:==>InitRename()
+[18:33:55]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[18:33:56]:<==InitRename()
+[18:33:56]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[18:33:56]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[18:33:56]:IsFindFile_astxsdk <<<<<<<<<<<
+[18:33:56]:ProcessFIDData [LogonResult]  result=1
+[18:33:56]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[18:33:56]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[18:33:56]:ProcessFIDData [use]  result=R
+[18:33:56]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[18:33:56]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[18:33:56]:서버에 FileDown요구 [apiotrsc.lst]
+[18:33:56]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[18:33:56]:m_ProgressMng.Exit BEFORE
+[18:33:56]:m_ProgressMng.Exit AFTER
+[18:33:56]:3 Handle Check [3309][6753454]
+[18:33:56]:Send Before
+[18:33:57]:Send After [0]
+[18:33:57]:---------- Starter OnInitDialog End ----------
+[18:40:10]:********************** Start **********************
+[18:40:10]:********************** Finish **********************
+[18:40:10]:FirstInstance
+[18:40:10]:Gdiplus Init
+[18:40:10]:Socket Init
+[18:40:10]:RegistryKey
+[18:40:10]:---------- Begin ----------
+[18:40:10]:RemoveTempDownloadedFiles
+[18:40:10]:SetVersionFileName
+[18:40:10]:InitControls
+[18:40:10]:CreateSubDirectory
+[18:40:10]:Read Security [1] Install[0]
+[18:40:11]:ASTX Procted ID 0 PWD 0 CERT 0
+[18:40:11]:ASTX Proc Done
+[18:40:11]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[18:40:11]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[18:40:11]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[18:40:11]:Server Socket 접속중...
+[18:40:11]:Server Socket 접속성공...
+[18:40:11]:교환이 완료될 때 까지 기다림
+[18:40:11]:암호화 HANDSHAKE:update  nLen=2042
+[18:40:11]:암호화 HANDSHAKE:final  nLen=82
+[18:40:11]:암호화 HANDSHAKE:ok  nLen=82
+[18:40:11]:********************** Start **********************
+[18:40:11]:서버에 FileDown요구 [mst.lst]
+[18:40:11]:ZipExtract BEFORE [1]
+[18:40:11]:ZipExtract AFTER [1] FileSize[1595]
+[18:40:11]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[18:40:12]:==>InitRename()
+[18:40:12]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[18:40:12]:<==InitRename()
+[18:40:12]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[18:40:12]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[18:40:12]:IsFindFile_astxsdk <<<<<<<<<<<
+[18:40:12]:ProcessFIDData [LogonResult]  result=1
+[18:40:12]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[18:40:12]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[18:40:12]:ProcessFIDData [use]  result=R
+[18:40:12]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[18:40:12]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[18:40:12]:서버에 FileDown요구 [apiotrsc.lst]
+[18:40:12]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[18:40:12]:m_ProgressMng.Exit BEFORE
+[18:40:12]:m_ProgressMng.Exit AFTER
+[18:40:12]:3 Handle Check [3309][6818990]
+[18:40:12]:Send Before
+[18:40:13]:Send After [0]
+[18:40:13]:---------- Starter OnInitDialog End ----------
+[19:17:55]:********************** Start **********************
+[19:17:55]:********************** Finish **********************
+[19:17:55]:FirstInstance
+[19:17:55]:Gdiplus Init
+[19:17:55]:Socket Init
+[19:17:55]:RegistryKey
+[19:17:55]:---------- Begin ----------
+[19:17:55]:RemoveTempDownloadedFiles
+[19:17:55]:SetVersionFileName
+[19:17:55]:InitControls
+[19:17:55]:CreateSubDirectory
+[19:17:55]:Read Security [1] Install[0]
+[19:17:56]:ASTX Procted ID 0 PWD 0 CERT 0
+[19:17:56]:ASTX Proc Done
+[19:17:56]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[19:17:56]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[19:17:56]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[19:17:56]:Server Socket 접속중...
+[19:17:56]:Server Socket 접속성공...
+[19:17:56]:교환이 완료될 때 까지 기다림
+[19:17:56]:암호화 HANDSHAKE:update  nLen=2044
+[19:17:56]:암호화 HANDSHAKE:final  nLen=80
+[19:17:56]:암호화 HANDSHAKE:ok  nLen=80
+[19:17:56]:********************** Start **********************
+[19:17:56]:서버에 FileDown요구 [mst.lst]
+[19:17:57]:ZipExtract BEFORE [1]
+[19:17:57]:ZipExtract AFTER [1] FileSize[1595]
+[19:17:57]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[19:17:57]:==>InitRename()
+[19:17:57]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[19:17:57]:<==InitRename()
+[19:17:57]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[19:17:57]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[19:17:57]:IsFindFile_astxsdk <<<<<<<<<<<
+[19:17:57]:ProcessFIDData [LogonResult]  result=1
+[19:17:57]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[19:17:57]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[19:17:57]:ProcessFIDData [use]  result=R
+[19:17:57]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[19:17:57]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[19:17:57]:서버에 FileDown요구 [apiotrsc.lst]
+[19:17:58]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[19:17:58]:m_ProgressMng.Exit BEFORE
+[19:17:58]:m_ProgressMng.Exit AFTER
+[19:17:58]:3 Handle Check [3309][723138]
+[19:17:58]:Send Before
+[19:17:59]:Send After [0]
+[19:17:59]:---------- Starter OnInitDialog End ----------
+[19:22:43]:********************** Start **********************
+[19:22:43]:********************** Finish **********************
+[19:22:43]:FirstInstance
+[19:22:43]:Gdiplus Init
+[19:22:43]:Socket Init
+[19:22:43]:RegistryKey
+[19:22:43]:---------- Begin ----------
+[19:22:43]:RemoveTempDownloadedFiles
+[19:22:43]:SetVersionFileName
+[19:22:43]:InitControls
+[19:22:43]:CreateSubDirectory
+[19:22:43]:Read Security [1] Install[0]
+[19:22:44]:ASTX Procted ID 0 PWD 0 CERT 0
+[19:22:44]:ASTX Proc Done
+[19:22:44]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[19:22:44]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[19:22:44]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[19:22:44]:Server Socket 접속중...
+[19:22:44]:Server Socket 접속성공...
+[19:22:44]:교환이 완료될 때 까지 기다림
+[19:22:44]:암호화 HANDSHAKE:update  nLen=2044
+[19:22:44]:암호화 HANDSHAKE:final  nLen=82
+[19:22:45]:암호화 HANDSHAKE:ok  nLen=82
+[19:22:45]:********************** Start **********************
+[19:22:45]:서버에 FileDown요구 [mst.lst]
+[19:22:45]:ZipExtract BEFORE [1]
+[19:22:45]:ZipExtract AFTER [1] FileSize[1595]
+[19:22:45]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[19:22:46]:==>InitRename()
+[19:22:46]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[19:22:46]:<==InitRename()
+[19:22:46]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[19:22:46]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[19:22:46]:IsFindFile_astxsdk <<<<<<<<<<<
+[19:22:46]:ProcessFIDData [LogonResult]  result=1
+[19:22:46]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[19:22:46]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[19:22:46]:ProcessFIDData [use]  result=R
+[19:22:46]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[19:22:46]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[19:22:46]:서버에 FileDown요구 [apiotrsc.lst]
+[19:22:46]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[19:22:46]:m_ProgressMng.Exit BEFORE
+[19:22:46]:m_ProgressMng.Exit AFTER
+[19:22:46]:3 Handle Check [3309][723222]
+[19:22:46]:Send Before
+[19:22:47]:Send After [0]
+[19:22:47]:---------- Starter OnInitDialog End ----------

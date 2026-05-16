@@ -1,0 +1,44 @@
+2026-05-11 16:44:24.824 | INFO     | common_api:common_log:584 - 로그인 창 열기 성공!
+2026-05-11 16:44:34.490 | INFO     | common_api:common_log:584 - 로그인 성공!
+2026-05-11 16:44:34.492 | INFO     | common_api:get_is_paper_trading:176 - 모의투자 서버에 접속 중입니다.
+2026-05-11 16:49:25.205 | INFO     | common_api:common_log:584 - 로그인 창 열기 성공!
+2026-05-11 16:49:28.963 | INFO     | common_api:common_log:584 - 로그인 성공!
+2026-05-11 16:49:28.964 | INFO     | common_api:get_is_paper_trading:176 - 모의투자 서버에 접속 중입니다.
+2026-05-11 16:50:09.931 | INFO     | common_api:common_log:584 - 자동매매 시작
+2026-05-11 18:33:53.762 | INFO     | common_api:common_log:584 - 로그인 창 열기 성공!
+2026-05-11 18:33:57.628 | INFO     | common_api:common_log:584 - 로그인 성공!
+2026-05-11 18:33:57.633 | INFO     | common_api:get_is_paper_trading:176 - 모의투자 서버에 접속 중입니다.
+2026-05-11 18:33:57.677 | DEBUG    | __main__:on_finished_password_settings:521 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-11 18:33:57.681 | INFO     | common_api:send_tr_request:255 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x0603A388>>, func_args: [0]
+2026-05-11 18:33:57.752 | INFO     | common_api:_receive_msg:518 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-11 18:33:57.755 | INFO     | common_api:common_log:584 - [100000] 모의투자 조회완료
+2026-05-11 18:33:57.759 | INFO     | common_api:common_log:584 - 기본 정보 로딩 완료!
+2026-05-11 18:34:01.577 | INFO     | common_api:common_log:584 - 자동매매 시작
+2026-05-11 18:34:23.693 | INFO     | common_api:common_log:584 - 자동매매 중지
+2026-05-11 18:34:24.556 | INFO     | common_api:common_log:584 - 자동매매 시작
+2026-05-11 18:34:53.933 | INFO     | common_api:common_log:584 - 자동매매 중지
+2026-05-11 18:34:54.916 | INFO     | common_api:common_log:584 - 자동매매 시작
+2026-05-11 18:40:10.001 | INFO     | common_api:common_log:584 - 로그인 창 열기 성공!
+2026-05-11 18:40:13.834 | INFO     | common_api:common_log:584 - 로그인 성공!
+2026-05-11 18:40:13.836 | INFO     | common_api:get_is_paper_trading:176 - 모의투자 서버에 접속 중입니다.
+2026-05-11 18:40:13.878 | DEBUG    | __main__:on_finished_password_settings:563 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-11 18:40:13.881 | INFO     | common_api:send_tr_request:255 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x058352F8>>, func_args: [0]
+2026-05-11 18:40:13.898 | INFO     | common_api:_receive_msg:518 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-11 18:40:13.899 | INFO     | common_api:common_log:584 - [100000] 모의투자 조회완료
+2026-05-11 18:40:13.902 | INFO     | common_api:common_log:584 - 기본 정보 로딩 완료!
+2026-05-11 19:17:55.171 | INFO     | common_api:common_log:627 - 로그인 창 열기 성공!
+2026-05-11 19:17:59.478 | INFO     | common_api:common_log:627 - 로그인 성공!
+2026-05-11 19:17:59.479 | INFO     | common_api:get_is_paper_trading:176 - 모의투자 서버에 접속 중입니다.
+2026-05-11 19:17:59.520 | DEBUG    | __main__:on_finished_password_settings:616 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-11 19:17:59.524 | INFO     | common_api:send_tr_request:255 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05C03F10>>, func_args: [0]
+2026-05-11 19:17:59.544 | INFO     | common_api:_receive_msg:561 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-11 19:17:59.546 | INFO     | common_api:common_log:627 - [100000] 모의투자 조회완료
+2026-05-11 19:17:59.550 | INFO     | common_api:common_log:627 - 기본 정보 로딩 완료!
+2026-05-11 19:22:43.682 | INFO     | common_api:common_log:627 - 로그인 창 열기 성공!
+2026-05-11 19:22:47.586 | INFO     | common_api:common_log:627 - 로그인 성공!
+2026-05-11 19:22:47.587 | INFO     | common_api:get_is_paper_trading:176 - 모의투자 서버에 접속 중입니다.
+2026-05-11 19:22:47.632 | DEBUG    | __main__:on_finished_password_settings:617 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-11 19:22:47.637 | INFO     | common_api:send_tr_request:255 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05AF4F10>>, func_args: [0]
+2026-05-11 19:22:47.664 | INFO     | common_api:_receive_msg:561 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-11 19:22:47.671 | INFO     | common_api:common_log:627 - [100000] 모의투자 조회완료
+2026-05-11 19:22:47.675 | INFO     | common_api:common_log:627 - 기본 정보 로딩 완료!

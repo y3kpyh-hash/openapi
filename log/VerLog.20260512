@@ -1,0 +1,1645 @@
+[07:26:23]:********************** Start **********************
+[07:26:23]:********************** Finish **********************
+[07:26:23]:FirstInstance
+[07:26:23]:Gdiplus Init
+[07:26:23]:Socket Init
+[07:26:23]:RegistryKey
+[07:26:23]:---------- Begin ----------
+[07:26:23]:RemoveTempDownloadedFiles
+[07:26:23]:SetVersionFileName
+[07:26:23]:InitControls
+[07:26:23]:CreateSubDirectory
+[07:26:23]:Read Security [1] Install[0]
+[07:26:23]:ASTX Procted ID 0 PWD 0 CERT 0
+[07:26:23]:ASTX Proc Done
+[07:26:23]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[07:26:23]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[07:26:24]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[07:26:24]:Server Socket 접속중...
+[07:26:24]:Server Socket 접속성공...
+[07:26:24]:교환이 완료될 때 까지 기다림
+[07:26:24]:암호화 HANDSHAKE:update  nLen=2042
+[07:26:24]:암호화 HANDSHAKE:final  nLen=82
+[07:26:24]:암호화 HANDSHAKE:ok  nLen=82
+[07:26:24]:********************** Start **********************
+[07:26:24]:서버에 FileDown요구 [mst.lst]
+[07:26:24]:ZipExtract BEFORE [1]
+[07:26:24]:ZipExtract AFTER [1] FileSize[1566]
+[07:26:24]:DownFileInList Size 다름 File[popcode.dat] LocalSize[485639] ServerSize[513414] Restarter[0]
+[07:26:24]:DownFileInList Size 다름 File[hjcode.dat] LocalSize[2438540] ServerSize[2438208] Restarter[0]
+[07:26:24]:서버에 FileDown요구 [popcode.dat]
+[07:26:25]:ZipExtract BEFORE [2]
+[07:26:25]:ZipExtract AFTER [2] FileSize[39418]
+[07:26:25]:서버에 FileDown요구 [hjcode.dat]
+[07:26:31]:ZipExtract BEFORE [3]
+[07:26:31]:ZipExtract AFTER [3] FileSize[441346]
+[07:26:31]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[07:26:31]:==>InitRename()
+[07:26:31]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[07:26:31]:<==InitRename()
+[07:26:31]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[07:26:31]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[07:26:31]:IsFindFile_astxsdk <<<<<<<<<<<
+[07:26:31]:ProcessFIDData [LogonResult]  result=1
+[07:26:31]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[07:26:31]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[07:26:31]:ProcessFIDData [use]  result=R
+[07:26:31]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[07:26:31]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[07:26:31]:서버에 FileDown요구 [apiotrsc.lst]
+[07:26:32]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[07:26:32]:m_ProgressMng.Exit BEFORE
+[07:26:32]:m_ProgressMng.Exit AFTER
+[07:26:32]:3 Handle Check [3309][262536]
+[07:26:32]:Send Before
+[07:26:33]:Send After [0]
+[07:26:33]:---------- Starter OnInitDialog End ----------
+[07:35:15]:********************** Start **********************
+[07:35:15]:********************** Finish **********************
+[07:35:15]:FirstInstance
+[07:35:15]:Gdiplus Init
+[07:35:15]:Socket Init
+[07:35:15]:RegistryKey
+[07:35:15]:---------- Begin ----------
+[07:35:15]:RemoveTempDownloadedFiles
+[07:35:15]:SetVersionFileName
+[07:35:15]:InitControls
+[07:35:15]:CreateSubDirectory
+[07:35:15]:Read Security [1] Install[0]
+[07:35:16]:ASTX Procted ID 0 PWD 0 CERT 0
+[07:35:16]:ASTX Proc Done
+[07:35:16]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[07:35:16]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[07:35:16]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[07:35:16]:Server Socket 접속중...
+[07:35:16]:Server Socket 접속성공...
+[07:35:16]:교환이 완료될 때 까지 기다림
+[07:35:16]:암호화 HANDSHAKE:update  nLen=2042
+[07:35:16]:암호화 HANDSHAKE:final  nLen=82
+[07:35:16]:암호화 HANDSHAKE:ok  nLen=82
+[07:35:16]:********************** Start **********************
+[07:35:16]:서버에 FileDown요구 [mst.lst]
+[07:35:17]:ZipExtract BEFORE [1]
+[07:35:17]:ZipExtract AFTER [1] FileSize[1564]
+[07:35:17]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[a79a6628] ServerCrc[f1c8b70d] Restarter[0]
+[07:35:17]:서버에 FileDown요구 [hjcode.dat]
+[07:35:23]:ZipExtract BEFORE [2]
+[07:35:23]:ZipExtract AFTER [2] FileSize[441349]
+[07:35:23]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[07:35:23]:==>InitRename()
+[07:35:23]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[07:35:23]:<==InitRename()
+[07:35:23]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[07:35:23]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[07:35:23]:IsFindFile_astxsdk <<<<<<<<<<<
+[07:35:23]:ProcessFIDData [LogonResult]  result=1
+[07:35:23]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[07:35:23]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[07:35:23]:ProcessFIDData [use]  result=R
+[07:35:23]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[07:35:23]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[07:35:23]:서버에 FileDown요구 [apiotrsc.lst]
+[07:35:24]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[07:35:24]:m_ProgressMng.Exit BEFORE
+[07:35:24]:m_ProgressMng.Exit AFTER
+[07:35:24]:3 Handle Check [3309][2364604]
+[07:35:24]:Send Before
+[07:35:25]:Send After [0]
+[07:35:25]:---------- Starter OnInitDialog End ----------
+[07:38:55]:********************** Start **********************
+[07:38:55]:********************** Finish **********************
+[07:38:55]:FirstInstance
+[07:38:55]:Gdiplus Init
+[07:38:55]:Socket Init
+[07:38:55]:RegistryKey
+[07:38:55]:---------- Begin ----------
+[07:38:55]:RemoveTempDownloadedFiles
+[07:38:55]:SetVersionFileName
+[07:38:55]:InitControls
+[07:38:55]:CreateSubDirectory
+[07:38:55]:Read Security [1] Install[0]
+[07:38:55]:ASTX Procted ID 0 PWD 0 CERT 0
+[07:38:55]:ASTX Proc Done
+[07:38:56]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[07:38:56]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[07:38:56]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[07:38:56]:Server Socket 접속중...
+[07:38:56]:Server Socket 접속성공...
+[07:38:56]:교환이 완료될 때 까지 기다림
+[07:38:56]:암호화 HANDSHAKE:update  nLen=2042
+[07:38:56]:암호화 HANDSHAKE:final  nLen=82
+[07:38:56]:암호화 HANDSHAKE:ok  nLen=82
+[07:38:56]:********************** Start **********************
+[07:38:56]:서버에 FileDown요구 [mst.lst]
+[07:38:56]:ZipExtract BEFORE [1]
+[07:38:56]:ZipExtract AFTER [1] FileSize[1564]
+[07:38:56]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[07:38:57]:==>InitRename()
+[07:38:57]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[07:38:57]:<==InitRename()
+[07:38:57]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[07:38:57]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[07:38:57]:IsFindFile_astxsdk <<<<<<<<<<<
+[07:38:57]:ProcessFIDData [LogonResult]  result=1
+[07:38:57]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[07:38:57]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[07:38:57]:ProcessFIDData [use]  result=R
+[07:38:57]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[07:38:57]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[07:38:57]:서버에 FileDown요구 [apiotrsc.lst]
+[07:38:57]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[07:38:57]:m_ProgressMng.Exit BEFORE
+[07:38:57]:m_ProgressMng.Exit AFTER
+[07:38:57]:3 Handle Check [3309][725788]
+[07:38:57]:Send Before
+[07:38:58]:Send After [0]
+[07:38:58]:---------- Starter OnInitDialog End ----------
+[07:43:21]:********************** Start **********************
+[07:43:21]:********************** Finish **********************
+[07:43:21]:FirstInstance
+[07:43:21]:Gdiplus Init
+[07:43:21]:Socket Init
+[07:43:21]:RegistryKey
+[07:43:21]:---------- Begin ----------
+[07:43:21]:RemoveTempDownloadedFiles
+[07:43:21]:SetVersionFileName
+[07:43:21]:InitControls
+[07:43:21]:CreateSubDirectory
+[07:43:21]:Read Security [1] Install[0]
+[07:43:22]:ASTX Procted ID 0 PWD 0 CERT 0
+[07:43:22]:ASTX Proc Done
+[07:43:22]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[07:43:22]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[07:43:22]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[07:43:22]:Server Socket 접속중...
+[07:43:22]:Server Socket 접속성공...
+[07:43:22]:교환이 완료될 때 까지 기다림
+[07:43:22]:암호화 HANDSHAKE:update  nLen=2042
+[07:43:22]:암호화 HANDSHAKE:final  nLen=82
+[07:43:22]:암호화 HANDSHAKE:ok  nLen=82
+[07:43:22]:********************** Start **********************
+[07:43:22]:서버에 FileDown요구 [mst.lst]
+[07:43:23]:ZipExtract BEFORE [1]
+[07:43:23]:ZipExtract AFTER [1] FileSize[1564]
+[07:43:23]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[07:43:23]:==>InitRename()
+[07:43:23]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[07:43:23]:<==InitRename()
+[07:43:23]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[07:43:23]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[07:43:23]:IsFindFile_astxsdk <<<<<<<<<<<
+[07:43:23]:ProcessFIDData [LogonResult]  result=1
+[07:43:23]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[07:43:23]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[07:43:23]:ProcessFIDData [use]  result=R
+[07:43:23]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[07:43:23]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[07:43:23]:서버에 FileDown요구 [apiotrsc.lst]
+[07:43:23]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[07:43:23]:m_ProgressMng.Exit BEFORE
+[07:43:23]:m_ProgressMng.Exit AFTER
+[07:43:24]:3 Handle Check [3309][7408296]
+[07:43:24]:Send Before
+[07:43:25]:Send After [0]
+[07:43:25]:---------- Starter OnInitDialog End ----------
+[07:49:47]:********************** Start **********************
+[07:49:47]:********************** Finish **********************
+[07:49:47]:FirstInstance
+[07:49:47]:Gdiplus Init
+[07:49:47]:Socket Init
+[07:49:47]:RegistryKey
+[07:49:47]:---------- Begin ----------
+[07:49:47]:RemoveTempDownloadedFiles
+[07:49:47]:SetVersionFileName
+[07:49:47]:InitControls
+[07:49:47]:CreateSubDirectory
+[07:49:47]:Read Security [1] Install[0]
+[07:49:48]:ASTX Procted ID 0 PWD 0 CERT 0
+[07:49:48]:ASTX Proc Done
+[07:49:48]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[07:49:48]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[07:49:48]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[07:49:48]:Server Socket 접속중...
+[07:49:48]:Server Socket 접속성공...
+[07:49:48]:교환이 완료될 때 까지 기다림
+[07:49:48]:암호화 HANDSHAKE:update  nLen=2044
+[07:49:48]:암호화 HANDSHAKE:final  nLen=80
+[07:49:48]:암호화 HANDSHAKE:ok  nLen=80
+[07:49:48]:********************** Start **********************
+[07:49:48]:서버에 FileDown요구 [mst.lst]
+[07:49:48]:ZipExtract BEFORE [1]
+[07:49:48]:ZipExtract AFTER [1] FileSize[1564]
+[07:49:48]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[07:49:49]:==>InitRename()
+[07:49:49]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[07:49:49]:<==InitRename()
+[07:49:49]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[07:49:49]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[07:49:49]:IsFindFile_astxsdk <<<<<<<<<<<
+[07:49:49]:ProcessFIDData [LogonResult]  result=1
+[07:49:49]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[07:49:49]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[07:49:49]:ProcessFIDData [use]  result=R
+[07:49:49]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[07:49:49]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[07:49:49]:서버에 FileDown요구 [apiotrsc.lst]
+[07:49:49]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[07:49:49]:m_ProgressMng.Exit BEFORE
+[07:49:49]:m_ProgressMng.Exit AFTER
+[07:49:49]:3 Handle Check [3309][1507716]
+[07:49:49]:Send Before
+[07:49:50]:Send After [0]
+[07:49:50]:---------- Starter OnInitDialog End ----------
+[07:52:28]:********************** Start **********************
+[07:52:28]:********************** Finish **********************
+[07:52:28]:FirstInstance
+[07:52:28]:Gdiplus Init
+[07:52:28]:Socket Init
+[07:52:28]:RegistryKey
+[07:52:28]:---------- Begin ----------
+[07:52:28]:RemoveTempDownloadedFiles
+[07:52:28]:SetVersionFileName
+[07:52:28]:InitControls
+[07:52:28]:CreateSubDirectory
+[07:52:28]:Read Security [1] Install[0]
+[07:52:29]:ASTX Procted ID 0 PWD 0 CERT 0
+[07:52:29]:ASTX Proc Done
+[07:52:29]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[07:52:29]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[07:52:29]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[07:52:29]:Server Socket 접속중...
+[07:52:29]:Server Socket 접속성공...
+[07:52:29]:교환이 완료될 때 까지 기다림
+[07:52:29]:암호화 HANDSHAKE:update  nLen=2044
+[07:52:29]:암호화 HANDSHAKE:final  nLen=80
+[07:52:29]:암호화 HANDSHAKE:ok  nLen=80
+[07:52:29]:********************** Start **********************
+[07:52:29]:서버에 FileDown요구 [mst.lst]
+[07:52:30]:ZipExtract BEFORE [1]
+[07:52:30]:ZipExtract AFTER [1] FileSize[1564]
+[07:52:30]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[07:52:30]:==>InitRename()
+[07:52:30]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[07:52:30]:<==InitRename()
+[07:52:30]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[07:52:30]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[07:52:30]:IsFindFile_astxsdk <<<<<<<<<<<
+[07:52:30]:ProcessFIDData [LogonResult]  result=1
+[07:52:30]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[07:52:30]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[07:52:30]:ProcessFIDData [use]  result=R
+[07:52:30]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[07:52:30]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[07:52:30]:서버에 FileDown요구 [apiotrsc.lst]
+[07:52:31]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[07:52:31]:m_ProgressMng.Exit BEFORE
+[07:52:31]:m_ProgressMng.Exit AFTER
+[07:52:31]:3 Handle Check [3309][7539368]
+[07:52:31]:Send Before
+[07:52:32]:Send After [0]
+[07:52:32]:---------- Starter OnInitDialog End ----------
+[07:56:27]:********************** Start **********************
+[07:56:27]:********************** Finish **********************
+[07:56:27]:FirstInstance
+[07:56:27]:Gdiplus Init
+[07:56:27]:Socket Init
+[07:56:27]:RegistryKey
+[07:56:27]:---------- Begin ----------
+[07:56:27]:RemoveTempDownloadedFiles
+[07:56:27]:SetVersionFileName
+[07:56:27]:InitControls
+[07:56:27]:CreateSubDirectory
+[07:56:27]:Read Security [1] Install[0]
+[07:56:28]:ASTX Procted ID 0 PWD 0 CERT 0
+[07:56:28]:ASTX Proc Done
+[07:56:28]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[07:56:28]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[07:56:28]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[07:56:28]:Server Socket 접속중...
+[07:56:28]:Server Socket 접속성공...
+[07:56:28]:교환이 완료될 때 까지 기다림
+[07:56:28]:암호화 HANDSHAKE:update  nLen=2042
+[07:56:28]:암호화 HANDSHAKE:final  nLen=82
+[07:56:28]:암호화 HANDSHAKE:ok  nLen=82
+[07:56:28]:********************** Start **********************
+[07:56:28]:서버에 FileDown요구 [mst.lst]
+[07:56:29]:ZipExtract BEFORE [1]
+[07:56:29]:ZipExtract AFTER [1] FileSize[1564]
+[07:56:29]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[07:56:29]:==>InitRename()
+[07:56:29]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[07:56:29]:<==InitRename()
+[07:56:29]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[07:56:29]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[07:56:29]:IsFindFile_astxsdk <<<<<<<<<<<
+[07:56:30]:ProcessFIDData [LogonResult]  result=1
+[07:56:30]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[07:56:30]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[07:56:30]:ProcessFIDData [use]  result=R
+[07:56:30]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[07:56:30]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[07:56:30]:서버에 FileDown요구 [apiotrsc.lst]
+[07:56:30]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[07:56:30]:m_ProgressMng.Exit BEFORE
+[07:56:30]:m_ProgressMng.Exit AFTER
+[07:56:30]:3 Handle Check [3309][1968522]
+[07:56:30]:Send Before
+[07:56:31]:Send After [0]
+[07:56:31]:---------- Starter OnInitDialog End ----------
+[08:02:31]:********************** Start **********************
+[08:02:31]:********************** Finish **********************
+[08:02:31]:FirstInstance
+[08:02:31]:Gdiplus Init
+[08:02:31]:Socket Init
+[08:02:31]:RegistryKey
+[08:02:31]:---------- Begin ----------
+[08:02:31]:RemoveTempDownloadedFiles
+[08:02:31]:SetVersionFileName
+[08:02:31]:InitControls
+[08:02:31]:CreateSubDirectory
+[08:02:31]:Read Security [1] Install[0]
+[08:02:32]:ASTX Procted ID 0 PWD 0 CERT 0
+[08:02:32]:ASTX Proc Done
+[08:02:32]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[08:02:32]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[08:02:32]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[08:02:32]:Server Socket 접속중...
+[08:02:32]:Server Socket 접속성공...
+[08:02:32]:교환이 완료될 때 까지 기다림
+[08:02:32]:암호화 HANDSHAKE:update  nLen=2042
+[08:02:32]:암호화 HANDSHAKE:final  nLen=90
+[08:02:32]:암호화 HANDSHAKE:ok  nLen=90
+[08:02:32]:********************** Start **********************
+[08:02:32]:서버에 FileDown요구 [mst.lst]
+[08:02:32]:ZipExtract BEFORE [1]
+[08:02:32]:ZipExtract AFTER [1] FileSize[1564]
+[08:02:32]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[08:02:33]:==>InitRename()
+[08:02:33]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[08:02:33]:<==InitRename()
+[08:02:33]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[08:02:33]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[08:02:33]:IsFindFile_astxsdk <<<<<<<<<<<
+[08:02:33]:ProcessFIDData [LogonResult]  result=1
+[08:02:33]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[08:02:33]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[08:02:33]:ProcessFIDData [use]  result=R
+[08:02:33]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[08:02:33]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[08:02:33]:서버에 FileDown요구 [apiotrsc.lst]
+[08:02:33]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[08:02:33]:m_ProgressMng.Exit BEFORE
+[08:02:33]:m_ProgressMng.Exit AFTER
+[08:02:33]:3 Handle Check [3309][2034058]
+[08:02:33]:Send Before
+[08:02:34]:Send After [0]
+[08:02:34]:---------- Starter OnInitDialog End ----------
+[08:09:02]:********************** Start **********************
+[08:09:02]:********************** Finish **********************
+[08:09:02]:FirstInstance
+[08:09:02]:Gdiplus Init
+[08:09:02]:Socket Init
+[08:09:02]:RegistryKey
+[08:09:02]:---------- Begin ----------
+[08:09:02]:RemoveTempDownloadedFiles
+[08:09:02]:SetVersionFileName
+[08:09:02]:InitControls
+[08:09:02]:CreateSubDirectory
+[08:09:02]:Read Security [1] Install[0]
+[08:09:03]:ASTX Procted ID 0 PWD 0 CERT 0
+[08:09:03]:ASTX Proc Done
+[08:09:03]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[08:09:03]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[08:09:03]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[08:09:03]:Server Socket 접속중...
+[08:09:03]:Server Socket 접속성공...
+[08:09:03]:교환이 완료될 때 까지 기다림
+[08:09:03]:암호화 HANDSHAKE:update  nLen=2044
+[08:09:03]:암호화 HANDSHAKE:final  nLen=82
+[08:09:03]:암호화 HANDSHAKE:ok  nLen=82
+[08:09:03]:********************** Start **********************
+[08:09:03]:서버에 FileDown요구 [mst.lst]
+[08:09:04]:ZipExtract BEFORE [1]
+[08:09:04]:ZipExtract AFTER [1] FileSize[1564]
+[08:09:04]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[08:09:04]:==>InitRename()
+[08:09:04]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[08:09:04]:<==InitRename()
+[08:09:04]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[08:09:04]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[08:09:04]:IsFindFile_astxsdk <<<<<<<<<<<
+[08:09:04]:ProcessFIDData [LogonResult]  result=1
+[08:09:04]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[08:09:04]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[08:09:04]:ProcessFIDData [use]  result=R
+[08:09:04]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[08:09:04]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[08:09:04]:서버에 FileDown요구 [apiotrsc.lst]
+[08:09:04]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[08:09:04]:m_ProgressMng.Exit BEFORE
+[08:09:04]:m_ProgressMng.Exit AFTER
+[08:09:05]:3 Handle Check [3309][2099594]
+[08:09:05]:Send Before
+[08:09:06]:Send After [0]
+[08:09:06]:---------- Starter OnInitDialog End ----------
+[08:23:52]:********************** Start **********************
+[08:23:52]:********************** Finish **********************
+[08:23:52]:FirstInstance
+[08:23:52]:Gdiplus Init
+[08:23:52]:Socket Init
+[08:23:52]:RegistryKey
+[08:23:53]:---------- Begin ----------
+[08:23:53]:RemoveTempDownloadedFiles
+[08:23:53]:SetVersionFileName
+[08:23:53]:InitControls
+[08:23:53]:CreateSubDirectory
+[08:23:53]:Read Security [1] Install[0]
+[08:23:53]:ASTX Procted ID 0 PWD 0 CERT 0
+[08:23:53]:ASTX Proc Done
+[08:23:53]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[08:23:53]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[08:23:53]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[08:23:54]:Server Socket 접속중...
+[08:23:54]:Server Socket 접속성공...
+[08:23:54]:교환이 완료될 때 까지 기다림
+[08:23:54]:암호화 HANDSHAKE:update  nLen=2042
+[08:23:54]:암호화 HANDSHAKE:final  nLen=80
+[08:23:54]:암호화 HANDSHAKE:ok  nLen=80
+[08:23:54]:********************** Start **********************
+[08:23:54]:서버에 FileDown요구 [mst.lst]
+[08:23:54]:ZipExtract BEFORE [1]
+[08:23:54]:ZipExtract AFTER [1] FileSize[1566]
+[08:23:54]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[f1c8b70d] ServerCrc[a79a6628] Restarter[0]
+[08:23:54]:서버에 FileDown요구 [hjcode.dat]
+[08:24:00]:ZipExtract BEFORE [2]
+[08:24:00]:ZipExtract AFTER [2] FileSize[441346]
+[08:24:00]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[08:24:00]:==>InitRename()
+[08:24:00]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[08:24:00]:<==InitRename()
+[08:24:00]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[08:24:00]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[08:24:00]:IsFindFile_astxsdk <<<<<<<<<<<
+[08:24:00]:ProcessFIDData [LogonResult]  result=1
+[08:24:00]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[08:24:00]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[08:24:00]:ProcessFIDData [use]  result=R
+[08:24:00]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[08:24:00]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[08:24:00]:서버에 FileDown요구 [apiotrsc.lst]
+[08:24:01]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[08:24:01]:m_ProgressMng.Exit BEFORE
+[08:24:01]:m_ProgressMng.Exit AFTER
+[08:24:01]:3 Handle Check [3309][2165130]
+[08:24:01]:Send Before
+[08:24:02]:Send After [0]
+[08:24:02]:---------- Starter OnInitDialog End ----------
+[08:30:48]:********************** Start **********************
+[08:30:48]:********************** Finish **********************
+[08:30:48]:FirstInstance
+[08:30:48]:Gdiplus Init
+[08:30:48]:Socket Init
+[08:30:48]:RegistryKey
+[08:30:48]:---------- Begin ----------
+[08:30:48]:RemoveTempDownloadedFiles
+[08:30:48]:SetVersionFileName
+[08:30:48]:InitControls
+[08:30:48]:CreateSubDirectory
+[08:30:48]:Read Security [1] Install[0]
+[08:30:49]:ASTX Procted ID 0 PWD 0 CERT 0
+[08:30:49]:ASTX Proc Done
+[08:30:49]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[08:30:49]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[08:30:49]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[08:30:49]:Server Socket 접속중...
+[08:30:49]:Server Socket 접속성공...
+[08:30:49]:교환이 완료될 때 까지 기다림
+[08:30:49]:암호화 HANDSHAKE:update  nLen=2042
+[08:30:49]:암호화 HANDSHAKE:final  nLen=82
+[08:30:49]:암호화 HANDSHAKE:ok  nLen=82
+[08:30:49]:********************** Start **********************
+[08:30:49]:서버에 FileDown요구 [mst.lst]
+[08:30:50]:ZipExtract BEFORE [1]
+[08:30:50]:ZipExtract AFTER [1] FileSize[1566]
+[08:30:50]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[08:30:50]:==>InitRename()
+[08:30:50]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[08:30:50]:<==InitRename()
+[08:30:50]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[08:30:50]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[08:30:50]:IsFindFile_astxsdk <<<<<<<<<<<
+[08:30:50]:ProcessFIDData [LogonResult]  result=1
+[08:30:50]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[08:30:50]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[08:30:50]:ProcessFIDData [use]  result=R
+[08:30:50]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[08:30:50]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[08:30:50]:서버에 FileDown요구 [apiotrsc.lst]
+[08:30:51]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[08:30:51]:m_ProgressMng.Exit BEFORE
+[08:30:51]:m_ProgressMng.Exit AFTER
+[08:30:51]:3 Handle Check [3309][656336]
+[08:30:51]:Send Before
+[08:30:52]:Send After [0]
+[08:30:52]:---------- Starter OnInitDialog End ----------
+[08:36:30]:********************** Start **********************
+[08:36:30]:********************** Finish **********************
+[08:36:30]:FirstInstance
+[08:36:30]:Gdiplus Init
+[08:36:30]:Socket Init
+[08:36:30]:RegistryKey
+[08:36:30]:---------- Begin ----------
+[08:36:30]:RemoveTempDownloadedFiles
+[08:36:30]:SetVersionFileName
+[08:36:30]:InitControls
+[08:36:30]:CreateSubDirectory
+[08:36:30]:Read Security [1] Install[0]
+[08:36:31]:ASTX Procted ID 0 PWD 0 CERT 0
+[08:36:31]:ASTX Proc Done
+[08:36:31]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[08:36:31]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[08:36:31]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[08:36:31]:Server Socket 접속중...
+[08:36:31]:Server Socket 접속성공...
+[08:36:31]:교환이 완료될 때 까지 기다림
+[08:36:31]:암호화 HANDSHAKE:update  nLen=2042
+[08:36:32]:암호화 HANDSHAKE:final  nLen=84
+[08:36:32]:암호화 HANDSHAKE:ok  nLen=84
+[08:36:32]:********************** Start **********************
+[08:36:32]:서버에 FileDown요구 [mst.lst]
+[08:36:32]:ZipExtract BEFORE [1]
+[08:36:32]:ZipExtract AFTER [1] FileSize[1566]
+[08:36:32]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[08:36:33]:==>InitRename()
+[08:36:33]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[08:36:33]:<==InitRename()
+[08:36:33]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[08:36:33]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[08:36:33]:IsFindFile_astxsdk <<<<<<<<<<<
+[08:36:33]:ProcessFIDData [LogonResult]  result=1
+[08:36:33]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[08:36:33]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[08:36:33]:ProcessFIDData [use]  result=R
+[08:36:33]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[08:36:33]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[08:36:33]:서버에 FileDown요구 [apiotrsc.lst]
+[08:36:33]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[08:36:33]:m_ProgressMng.Exit BEFORE
+[08:36:33]:m_ProgressMng.Exit AFTER
+[08:36:33]:3 Handle Check [3309][656526]
+[08:36:33]:Send Before
+[08:36:34]:Send After [0]
+[08:36:34]:---------- Starter OnInitDialog End ----------
+[08:49:28]:********************** Start **********************
+[08:49:28]:********************** Finish **********************
+[08:49:28]:FirstInstance
+[08:49:28]:Gdiplus Init
+[08:49:28]:Socket Init
+[08:49:28]:RegistryKey
+[08:49:28]:---------- Begin ----------
+[08:49:28]:RemoveTempDownloadedFiles
+[08:49:28]:SetVersionFileName
+[08:49:28]:InitControls
+[08:49:28]:CreateSubDirectory
+[08:49:28]:Read Security [1] Install[0]
+[08:49:29]:ASTX Procted ID 0 PWD 0 CERT 0
+[08:49:29]:ASTX Proc Done
+[08:49:29]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[08:49:29]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[08:49:29]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[08:49:29]:Server Socket 접속중...
+[08:49:29]:Server Socket 접속성공...
+[08:49:29]:교환이 완료될 때 까지 기다림
+[08:49:29]:암호화 HANDSHAKE:update  nLen=2046
+[08:49:29]:암호화 HANDSHAKE:final  nLen=86
+[08:49:29]:암호화 HANDSHAKE:ok  nLen=86
+[08:49:29]:********************** Start **********************
+[08:49:29]:서버에 FileDown요구 [mst.lst]
+[08:49:30]:ZipExtract BEFORE [1]
+[08:49:30]:ZipExtract AFTER [1] FileSize[1564]
+[08:49:30]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[a79a6628] ServerCrc[f1c8b70d] Restarter[0]
+[08:49:30]:서버에 FileDown요구 [hjcode.dat]
+[08:49:35]:ZipExtract BEFORE [2]
+[08:49:35]:ZipExtract AFTER [2] FileSize[441349]
+[08:49:35]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[08:49:36]:==>InitRename()
+[08:49:36]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[08:49:36]:<==InitRename()
+[08:49:36]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[08:49:36]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[08:49:36]:IsFindFile_astxsdk <<<<<<<<<<<
+[08:49:36]:ProcessFIDData [LogonResult]  result=1
+[08:49:36]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[08:49:36]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[08:49:36]:ProcessFIDData [use]  result=R
+[08:49:36]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[08:49:36]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[08:49:36]:서버에 FileDown요구 [apiotrsc.lst]
+[08:49:36]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[08:49:36]:m_ProgressMng.Exit BEFORE
+[08:49:36]:m_ProgressMng.Exit AFTER
+[08:49:37]:3 Handle Check [3309][722062]
+[08:49:37]:Send Before
+[08:49:38]:Send After [0]
+[08:49:38]:---------- Starter OnInitDialog End ----------
+[09:13:10]:********************** Start **********************
+[09:13:10]:********************** Finish **********************
+[09:13:10]:FirstInstance
+[09:13:10]:Gdiplus Init
+[09:13:10]:Socket Init
+[09:13:10]:RegistryKey
+[09:13:11]:---------- Begin ----------
+[09:13:11]:RemoveTempDownloadedFiles
+[09:13:11]:SetVersionFileName
+[09:13:11]:InitControls
+[09:13:11]:CreateSubDirectory
+[09:13:11]:Read Security [1] Install[0]
+[09:13:11]:ASTX Procted ID 0 PWD 0 CERT 0
+[09:13:11]:ASTX Proc Done
+[09:13:11]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[09:13:11]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[09:13:11]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[09:13:12]:Server Socket 접속중...
+[09:13:12]:Server Socket 접속성공...
+[09:13:12]:교환이 완료될 때 까지 기다림
+[09:13:12]:암호화 HANDSHAKE:update  nLen=2046
+[09:13:12]:암호화 HANDSHAKE:final  nLen=82
+[09:13:12]:암호화 HANDSHAKE:ok  nLen=82
+[09:13:12]:********************** Start **********************
+[09:13:12]:서버에 FileDown요구 [mst.lst]
+[09:13:12]:ZipExtract BEFORE [1]
+[09:13:12]:ZipExtract AFTER [1] FileSize[1564]
+[09:13:12]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[09:13:13]:==>InitRename()
+[09:13:13]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[09:13:13]:<==InitRename()
+[09:13:13]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[09:13:13]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[09:13:13]:IsFindFile_astxsdk <<<<<<<<<<<
+[09:13:13]:ProcessFIDData [LogonResult]  result=1
+[09:13:13]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[09:13:13]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[09:13:13]:ProcessFIDData [use]  result=R
+[09:13:13]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[09:13:13]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[09:13:13]:서버에 FileDown요구 [apiotrsc.lst]
+[09:13:13]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[09:13:13]:m_ProgressMng.Exit BEFORE
+[09:13:13]:m_ProgressMng.Exit AFTER
+[09:13:13]:3 Handle Check [3309][1184858]
+[09:13:13]:Send Before
+[09:13:14]:Send After [0]
+[09:13:14]:---------- Starter OnInitDialog End ----------
+[09:17:27]:********************** Start **********************
+[09:17:27]:********************** Finish **********************
+[09:17:27]:FirstInstance
+[09:17:27]:Gdiplus Init
+[09:17:27]:Socket Init
+[09:17:27]:RegistryKey
+[09:17:27]:---------- Begin ----------
+[09:17:27]:RemoveTempDownloadedFiles
+[09:17:27]:SetVersionFileName
+[09:17:27]:InitControls
+[09:17:27]:CreateSubDirectory
+[09:17:27]:Read Security [1] Install[0]
+[09:17:28]:ASTX Procted ID 0 PWD 0 CERT 0
+[09:17:28]:ASTX Proc Done
+[09:17:28]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[09:17:28]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[09:17:28]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[09:17:28]:Server Socket 접속중...
+[09:17:28]:Server Socket 접속성공...
+[09:17:28]:교환이 완료될 때 까지 기다림
+[09:17:28]:암호화 HANDSHAKE:update  nLen=2042
+[09:17:28]:암호화 HANDSHAKE:final  nLen=82
+[09:17:28]:암호화 HANDSHAKE:ok  nLen=82
+[09:17:28]:********************** Start **********************
+[09:17:28]:서버에 FileDown요구 [mst.lst]
+[09:17:29]:ZipExtract BEFORE [1]
+[09:17:29]:ZipExtract AFTER [1] FileSize[1564]
+[09:17:29]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[09:17:29]:==>InitRename()
+[09:17:29]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[09:17:29]:<==InitRename()
+[09:17:29]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[09:17:29]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[09:17:29]:IsFindFile_astxsdk <<<<<<<<<<<
+[09:17:30]:ProcessFIDData [LogonResult]  result=1
+[09:17:30]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[09:17:30]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[09:17:30]:ProcessFIDData [use]  result=R
+[09:17:30]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[09:17:30]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[09:17:30]:서버에 FileDown요구 [apiotrsc.lst]
+[09:17:30]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[09:17:30]:m_ProgressMng.Exit BEFORE
+[09:17:30]:m_ProgressMng.Exit AFTER
+[09:17:30]:3 Handle Check [3309][2102022]
+[09:17:30]:Send Before
+[09:17:31]:Send After [0]
+[09:17:31]:---------- Starter OnInitDialog End ----------
+[09:40:06]:********************** Start **********************
+[09:40:06]:********************** Finish **********************
+[09:40:06]:FirstInstance
+[09:40:06]:Gdiplus Init
+[09:40:06]:Socket Init
+[09:40:06]:RegistryKey
+[09:40:06]:---------- Begin ----------
+[09:40:06]:RemoveTempDownloadedFiles
+[09:40:06]:SetVersionFileName
+[09:40:06]:InitControls
+[09:40:06]:CreateSubDirectory
+[09:40:06]:Read Security [1] Install[0]
+[09:40:07]:ASTX Procted ID 0 PWD 0 CERT 0
+[09:40:07]:ASTX Proc Done
+[09:40:07]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[09:40:07]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[09:40:07]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[09:40:07]:Server Socket 접속중...
+[09:40:07]:Server Socket 접속성공...
+[09:40:07]:교환이 완료될 때 까지 기다림
+[09:40:07]:암호화 HANDSHAKE:update  nLen=2044
+[09:40:07]:암호화 HANDSHAKE:final  nLen=82
+[09:40:07]:암호화 HANDSHAKE:ok  nLen=82
+[09:40:07]:********************** Start **********************
+[09:40:07]:서버에 FileDown요구 [mst.lst]
+[09:40:08]:ZipExtract BEFORE [1]
+[09:40:08]:ZipExtract AFTER [1] FileSize[1564]
+[09:40:08]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[09:40:08]:==>InitRename()
+[09:40:08]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[09:40:08]:<==InitRename()
+[09:40:08]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[09:40:08]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[09:40:08]:IsFindFile_astxsdk <<<<<<<<<<<
+[09:40:08]:ProcessFIDData [LogonResult]  result=1
+[09:40:08]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[09:40:08]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[09:40:08]:ProcessFIDData [use]  result=R
+[09:40:08]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[09:40:08]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[09:40:08]:서버에 FileDown요구 [apiotrsc.lst]
+[09:40:08]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[09:40:08]:m_ProgressMng.Exit BEFORE
+[09:40:08]:m_ProgressMng.Exit AFTER
+[09:40:08]:3 Handle Check [3309][3546726]
+[09:40:08]:Send Before
+[09:40:09]:Send After [0]
+[09:40:09]:---------- Starter OnInitDialog End ----------
+[09:51:35]:********************** Start **********************
+[09:51:35]:********************** Finish **********************
+[09:51:35]:FirstInstance
+[09:51:35]:Gdiplus Init
+[09:51:35]:Socket Init
+[09:51:35]:RegistryKey
+[09:51:35]:---------- Begin ----------
+[09:51:35]:RemoveTempDownloadedFiles
+[09:51:35]:SetVersionFileName
+[09:51:35]:InitControls
+[09:51:35]:CreateSubDirectory
+[09:51:35]:Read Security [1] Install[0]
+[09:51:35]:ASTX Procted ID 0 PWD 0 CERT 0
+[09:51:35]:ASTX Proc Done
+[09:51:36]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[09:51:36]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[09:51:36]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[09:51:36]:Server Socket 접속중...
+[09:51:36]:Server Socket 접속성공...
+[09:51:36]:교환이 완료될 때 까지 기다림
+[09:51:36]:암호화 HANDSHAKE:update  nLen=2042
+[09:51:36]:암호화 HANDSHAKE:final  nLen=82
+[09:51:36]:암호화 HANDSHAKE:ok  nLen=82
+[09:51:36]:********************** Start **********************
+[09:51:36]:서버에 FileDown요구 [mst.lst]
+[09:51:36]:ZipExtract BEFORE [1]
+[09:51:36]:ZipExtract AFTER [1] FileSize[1564]
+[09:51:36]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[09:51:37]:==>InitRename()
+[09:51:37]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[09:51:37]:<==InitRename()
+[09:51:37]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[09:51:37]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[09:51:37]:IsFindFile_astxsdk <<<<<<<<<<<
+[09:51:37]:ProcessFIDData [LogonResult]  result=1
+[09:51:37]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[09:51:37]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[09:51:37]:ProcessFIDData [use]  result=R
+[09:51:37]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[09:51:37]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[09:51:37]:서버에 FileDown요구 [apiotrsc.lst]
+[09:51:37]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[09:51:37]:m_ProgressMng.Exit BEFORE
+[09:51:37]:m_ProgressMng.Exit AFTER
+[09:51:37]:3 Handle Check [3309][5442500]
+[09:51:37]:Send Before
+[09:51:38]:Send After [0]
+[09:51:38]:---------- Starter OnInitDialog End ----------
+[09:56:54]:********************** Start **********************
+[09:56:54]:********************** Finish **********************
+[09:56:54]:FirstInstance
+[09:56:54]:Gdiplus Init
+[09:56:54]:Socket Init
+[09:56:54]:RegistryKey
+[09:56:54]:---------- Begin ----------
+[09:56:54]:RemoveTempDownloadedFiles
+[09:56:54]:SetVersionFileName
+[09:56:54]:InitControls
+[09:56:54]:CreateSubDirectory
+[09:56:54]:Read Security [1] Install[0]
+[09:56:55]:ASTX Procted ID 0 PWD 0 CERT 0
+[09:56:55]:ASTX Proc Done
+[09:56:55]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[09:56:55]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[09:56:55]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[09:56:55]:Server Socket 접속중...
+[09:56:55]:Server Socket 접속성공...
+[09:56:55]:교환이 완료될 때 까지 기다림
+[09:56:55]:암호화 HANDSHAKE:update  nLen=2042
+[09:56:55]:암호화 HANDSHAKE:final  nLen=80
+[09:56:55]:암호화 HANDSHAKE:ok  nLen=80
+[09:56:55]:********************** Start **********************
+[09:56:55]:서버에 FileDown요구 [mst.lst]
+[09:56:56]:ZipExtract BEFORE [1]
+[09:56:56]:ZipExtract AFTER [1] FileSize[1564]
+[09:56:56]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[09:56:56]:==>InitRename()
+[09:56:56]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[09:56:56]:<==InitRename()
+[09:56:56]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[09:56:56]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[09:56:56]:IsFindFile_astxsdk <<<<<<<<<<<
+[09:56:57]:ProcessFIDData [LogonResult]  result=1
+[09:56:57]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[09:56:57]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[09:56:57]:ProcessFIDData [use]  result=R
+[09:56:57]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[09:56:57]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[09:56:57]:서버에 FileDown요구 [apiotrsc.lst]
+[09:56:57]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[09:56:57]:m_ProgressMng.Exit BEFORE
+[09:56:57]:m_ProgressMng.Exit AFTER
+[09:56:57]:3 Handle Check [3309][2098276]
+[09:56:57]:Send Before
+[09:56:58]:Send After [0]
+[09:56:58]:---------- Starter OnInitDialog End ----------
+[10:06:38]:********************** Start **********************
+[10:06:38]:********************** Finish **********************
+[10:06:38]:FirstInstance
+[10:06:38]:Gdiplus Init
+[10:06:38]:Socket Init
+[10:06:38]:RegistryKey
+[10:06:38]:---------- Begin ----------
+[10:06:38]:RemoveTempDownloadedFiles
+[10:06:38]:SetVersionFileName
+[10:06:38]:InitControls
+[10:06:38]:CreateSubDirectory
+[10:06:38]:Read Security [1] Install[0]
+[10:06:39]:ASTX Procted ID 0 PWD 0 CERT 0
+[10:06:39]:ASTX Proc Done
+[10:06:39]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[10:06:39]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[10:06:39]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[10:06:39]:Server Socket 접속중...
+[10:06:39]:Server Socket 접속성공...
+[10:06:39]:교환이 완료될 때 까지 기다림
+[10:06:39]:암호화 HANDSHAKE:update  nLen=2042
+[10:06:39]:암호화 HANDSHAKE:final  nLen=82
+[10:06:39]:암호화 HANDSHAKE:ok  nLen=82
+[10:06:39]:********************** Start **********************
+[10:06:39]:서버에 FileDown요구 [mst.lst]
+[10:06:40]:ZipExtract BEFORE [1]
+[10:06:40]:ZipExtract AFTER [1] FileSize[1567]
+[10:06:40]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[f1c8b70d] ServerCrc[a79a6628] Restarter[0]
+[10:06:40]:서버에 FileDown요구 [hjcode.dat]
+[10:06:46]:ZipExtract BEFORE [2]
+[10:06:46]:ZipExtract AFTER [2] FileSize[441346]
+[10:06:46]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[10:06:46]:==>InitRename()
+[10:06:46]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[10:06:46]:<==InitRename()
+[10:06:46]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[10:06:46]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[10:06:46]:IsFindFile_astxsdk <<<<<<<<<<<
+[10:06:46]:ProcessFIDData [LogonResult]  result=1
+[10:06:46]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[10:06:46]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[10:06:46]:ProcessFIDData [use]  result=R
+[10:06:46]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[10:06:46]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[10:06:46]:서버에 FileDown요구 [apiotrsc.lst]
+[10:06:47]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[10:06:47]:m_ProgressMng.Exit BEFORE
+[10:06:47]:m_ProgressMng.Exit AFTER
+[10:06:47]:3 Handle Check [3309][3543416]
+[10:06:47]:Send Before
+[10:06:48]:Send After [0]
+[10:06:48]:---------- Starter OnInitDialog End ----------
+[13:37:14]:********************** Start **********************
+[13:37:14]:********************** Finish **********************
+[13:37:14]:FirstInstance
+[13:37:14]:Gdiplus Init
+[13:37:14]:Socket Init
+[13:37:14]:RegistryKey
+[13:37:15]:---------- Begin ----------
+[13:37:15]:RemoveTempDownloadedFiles
+[13:37:15]:SetVersionFileName
+[13:37:15]:InitControls
+[13:37:15]:CreateSubDirectory
+[13:37:15]:Read Security [1] Install[0]
+[13:37:15]:ASTX Procted ID 0 PWD 0 CERT 0
+[13:37:15]:ASTX Proc Done
+[13:37:15]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:37:15]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[13:37:15]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:37:15]:Server Socket 접속중...
+[13:37:15]:Server Socket 접속성공...
+[13:37:15]:교환이 완료될 때 까지 기다림
+[13:37:16]:암호화 HANDSHAKE:update  nLen=2042
+[13:37:16]:암호화 HANDSHAKE:final  nLen=84
+[13:37:16]:암호화 HANDSHAKE:ok  nLen=84
+[13:37:16]:********************** Start **********************
+[13:37:16]:서버에 FileDown요구 [mst.lst]
+[13:37:16]:ZipExtract BEFORE [1]
+[13:37:16]:ZipExtract AFTER [1] FileSize[1564]
+[13:37:16]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[a79a6628] ServerCrc[f1c8b70d] Restarter[0]
+[13:37:16]:서버에 FileDown요구 [hjcode.dat]
+[13:37:22]:ZipExtract BEFORE [2]
+[13:37:22]:ZipExtract AFTER [2] FileSize[441349]
+[13:37:22]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[13:37:22]:==>InitRename()
+[13:37:22]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[13:37:22]:<==InitRename()
+[13:37:22]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[13:37:22]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[13:37:22]:IsFindFile_astxsdk <<<<<<<<<<<
+[13:37:22]:ProcessFIDData [LogonResult]  result=1
+[13:37:22]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[13:37:22]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[13:37:22]:ProcessFIDData [use]  result=R
+[13:37:22]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[13:37:22]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[13:37:22]:서버에 FileDown요구 [apiotrsc.lst]
+[13:37:23]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[13:37:23]:m_ProgressMng.Exit BEFORE
+[13:37:23]:m_ProgressMng.Exit AFTER
+[13:37:23]:3 Handle Check [3309][7539286]
+[13:37:23]:Send Before
+[13:37:24]:Send After [0]
+[13:37:24]:---------- Starter OnInitDialog End ----------
+[13:46:55]:********************** Start **********************
+[13:46:55]:********************** Finish **********************
+[13:46:55]:FirstInstance
+[13:46:55]:Gdiplus Init
+[13:46:55]:Socket Init
+[13:46:55]:RegistryKey
+[13:46:55]:---------- Begin ----------
+[13:46:55]:RemoveTempDownloadedFiles
+[13:46:55]:SetVersionFileName
+[13:46:55]:InitControls
+[13:46:55]:CreateSubDirectory
+[13:46:55]:Read Security [1] Install[0]
+[13:46:56]:ASTX Procted ID 0 PWD 0 CERT 0
+[13:46:56]:ASTX Proc Done
+[13:46:56]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:46:56]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[13:46:56]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:46:56]:Server Socket 접속중...
+[13:46:56]:Server Socket 접속성공...
+[13:46:56]:교환이 완료될 때 까지 기다림
+[13:46:56]:암호화 HANDSHAKE:update  nLen=2042
+[13:46:56]:암호화 HANDSHAKE:final  nLen=82
+[13:46:56]:암호화 HANDSHAKE:ok  nLen=82
+[13:46:56]:********************** Start **********************
+[13:46:56]:서버에 FileDown요구 [mst.lst]
+[13:46:57]:ZipExtract BEFORE [1]
+[13:46:57]:ZipExtract AFTER [1] FileSize[1567]
+[13:46:57]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[f1c8b70d] ServerCrc[a79a6628] Restarter[0]
+[13:46:57]:서버에 FileDown요구 [hjcode.dat]
+[13:47:02]:ZipExtract BEFORE [2]
+[13:47:02]:ZipExtract AFTER [2] FileSize[441346]
+[13:47:02]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[13:47:03]:==>InitRename()
+[13:47:03]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[13:47:03]:<==InitRename()
+[13:47:03]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[13:47:03]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[13:47:03]:IsFindFile_astxsdk <<<<<<<<<<<
+[13:47:03]:ProcessFIDData [LogonResult]  result=1
+[13:47:03]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[13:47:03]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[13:47:03]:ProcessFIDData [use]  result=R
+[13:47:03]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[13:47:03]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[13:47:03]:서버에 FileDown요구 [apiotrsc.lst]
+[13:47:03]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[13:47:03]:m_ProgressMng.Exit BEFORE
+[13:47:03]:m_ProgressMng.Exit AFTER
+[13:47:04]:3 Handle Check [3309][591974]
+[13:47:04]:Send Before
+[13:47:05]:Send After [0]
+[13:47:05]:---------- Starter OnInitDialog End ----------
+[13:53:45]:********************** Start **********************
+[13:53:45]:********************** Finish **********************
+[13:53:45]:FirstInstance
+[13:53:45]:Gdiplus Init
+[13:53:45]:Socket Init
+[13:53:45]:RegistryKey
+[13:53:45]:---------- Begin ----------
+[13:53:45]:RemoveTempDownloadedFiles
+[13:53:45]:SetVersionFileName
+[13:53:45]:InitControls
+[13:53:45]:CreateSubDirectory
+[13:53:45]:Read Security [1] Install[0]
+[13:53:46]:ASTX Procted ID 0 PWD 0 CERT 0
+[13:53:46]:ASTX Proc Done
+[13:53:46]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:53:46]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[13:53:46]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:53:46]:Server Socket 접속중...
+[13:53:46]:Server Socket 접속성공...
+[13:53:46]:교환이 완료될 때 까지 기다림
+[13:53:46]:암호화 HANDSHAKE:update  nLen=2042
+[13:53:46]:암호화 HANDSHAKE:final  nLen=84
+[13:53:46]:암호화 HANDSHAKE:ok  nLen=84
+[13:53:46]:********************** Start **********************
+[13:53:46]:서버에 FileDown요구 [mst.lst]
+[13:53:47]:ZipExtract BEFORE [1]
+[13:53:47]:ZipExtract AFTER [1] FileSize[1564]
+[13:53:47]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[a79a6628] ServerCrc[f1c8b70d] Restarter[0]
+[13:53:47]:서버에 FileDown요구 [hjcode.dat]
+[13:53:53]:ZipExtract BEFORE [2]
+[13:53:53]:ZipExtract AFTER [2] FileSize[441349]
+[13:53:53]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[13:53:53]:==>InitRename()
+[13:53:53]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[13:53:53]:<==InitRename()
+[13:53:53]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[13:53:53]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[13:53:53]:IsFindFile_astxsdk <<<<<<<<<<<
+[13:53:53]:ProcessFIDData [LogonResult]  result=1
+[13:53:53]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[13:53:53]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[13:53:53]:ProcessFIDData [use]  result=R
+[13:53:53]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[13:53:53]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[13:53:53]:서버에 FileDown요구 [apiotrsc.lst]
+[13:53:54]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[13:53:54]:m_ProgressMng.Exit BEFORE
+[13:53:54]:m_ProgressMng.Exit AFTER
+[13:53:54]:3 Handle Check [3309][657510]
+[13:53:54]:Send Before
+[13:53:55]:Send After [0]
+[13:53:55]:---------- Starter OnInitDialog End ----------
+[13:57:50]:********************** Start **********************
+[13:57:50]:********************** Finish **********************
+[13:57:50]:FirstInstance
+[13:57:50]:Gdiplus Init
+[13:57:50]:Socket Init
+[13:57:50]:RegistryKey
+[13:57:50]:---------- Begin ----------
+[13:57:50]:RemoveTempDownloadedFiles
+[13:57:50]:SetVersionFileName
+[13:57:50]:InitControls
+[13:57:50]:CreateSubDirectory
+[13:57:50]:Read Security [1] Install[0]
+[13:57:51]:ASTX Procted ID 0 PWD 0 CERT 0
+[13:57:51]:ASTX Proc Done
+[13:57:51]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:57:51]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[13:57:51]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[13:57:51]:Server Socket 접속중...
+[13:57:51]:Server Socket 접속성공...
+[13:57:51]:교환이 완료될 때 까지 기다림
+[13:57:51]:암호화 HANDSHAKE:update  nLen=2042
+[13:57:52]:암호화 HANDSHAKE:final  nLen=84
+[13:57:52]:암호화 HANDSHAKE:ok  nLen=84
+[13:57:52]:********************** Start **********************
+[13:57:52]:서버에 FileDown요구 [mst.lst]
+[13:57:52]:ZipExtract BEFORE [1]
+[13:57:52]:ZipExtract AFTER [1] FileSize[1564]
+[13:57:52]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[13:57:53]:==>InitRename()
+[13:57:53]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[13:57:53]:<==InitRename()
+[13:57:53]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[13:57:53]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[13:57:53]:IsFindFile_astxsdk <<<<<<<<<<<
+[13:57:53]:ProcessFIDData [LogonResult]  result=1
+[13:57:53]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[13:57:53]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[13:57:53]:ProcessFIDData [use]  result=R
+[13:57:53]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[13:57:53]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[13:57:53]:서버에 FileDown요구 [apiotrsc.lst]
+[13:57:53]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[13:57:53]:m_ProgressMng.Exit BEFORE
+[13:57:53]:m_ProgressMng.Exit AFTER
+[13:57:53]:3 Handle Check [3309][723046]
+[13:57:53]:Send Before
+[13:57:54]:Send After [0]
+[13:57:54]:---------- Starter OnInitDialog End ----------
+[14:06:47]:********************** Start **********************
+[14:06:47]:********************** Finish **********************
+[14:06:47]:FirstInstance
+[14:06:47]:Gdiplus Init
+[14:06:47]:Socket Init
+[14:06:47]:RegistryKey
+[14:06:47]:---------- Begin ----------
+[14:06:47]:RemoveTempDownloadedFiles
+[14:06:47]:SetVersionFileName
+[14:06:47]:InitControls
+[14:06:47]:CreateSubDirectory
+[14:06:47]:Read Security [1] Install[0]
+[14:06:48]:ASTX Procted ID 0 PWD 0 CERT 0
+[14:06:48]:ASTX Proc Done
+[14:06:48]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:06:48]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[14:06:48]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:06:48]:Server Socket 접속중...
+[14:06:48]:Server Socket 접속성공...
+[14:06:48]:교환이 완료될 때 까지 기다림
+[14:06:48]:암호화 HANDSHAKE:update  nLen=2042
+[14:06:48]:암호화 HANDSHAKE:final  nLen=86
+[14:06:48]:암호화 HANDSHAKE:ok  nLen=86
+[14:06:48]:********************** Start **********************
+[14:06:48]:서버에 FileDown요구 [mst.lst]
+[14:06:49]:ZipExtract BEFORE [1]
+[14:06:49]:ZipExtract AFTER [1] FileSize[1564]
+[14:06:49]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[14:06:49]:==>InitRename()
+[14:06:49]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[14:06:49]:<==InitRename()
+[14:06:49]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[14:06:49]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[14:06:49]:IsFindFile_astxsdk <<<<<<<<<<<
+[14:06:50]:ProcessFIDData [LogonResult]  result=1
+[14:06:50]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[14:06:50]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[14:06:50]:ProcessFIDData [use]  result=R
+[14:06:50]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[14:06:50]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[14:06:50]:서버에 FileDown요구 [apiotrsc.lst]
+[14:06:50]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[14:06:50]:m_ProgressMng.Exit BEFORE
+[14:06:50]:m_ProgressMng.Exit AFTER
+[14:06:50]:3 Handle Check [3309][597804]
+[14:06:50]:Send Before
+[14:06:51]:Send After [0]
+[14:06:51]:---------- Starter OnInitDialog End ----------
+[14:11:19]:********************** Start **********************
+[14:11:19]:********************** Finish **********************
+[14:11:19]:FirstInstance
+[14:11:19]:Gdiplus Init
+[14:11:19]:Socket Init
+[14:11:19]:RegistryKey
+[14:11:19]:---------- Begin ----------
+[14:11:19]:RemoveTempDownloadedFiles
+[14:11:19]:SetVersionFileName
+[14:11:19]:InitControls
+[14:11:19]:CreateSubDirectory
+[14:11:19]:Read Security [1] Install[0]
+[14:11:20]:ASTX Procted ID 0 PWD 0 CERT 0
+[14:11:20]:ASTX Proc Done
+[14:11:20]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:11:20]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[14:11:20]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:11:20]:Server Socket 접속중...
+[14:11:20]:Server Socket 접속성공...
+[14:11:20]:교환이 완료될 때 까지 기다림
+[14:11:20]:암호화 HANDSHAKE:update  nLen=2042
+[14:11:20]:암호화 HANDSHAKE:final  nLen=82
+[14:11:20]:암호화 HANDSHAKE:ok  nLen=82
+[14:11:20]:********************** Start **********************
+[14:11:20]:서버에 FileDown요구 [mst.lst]
+[14:11:21]:ZipExtract BEFORE [1]
+[14:11:21]:ZipExtract AFTER [1] FileSize[1564]
+[14:11:21]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[14:11:21]:==>InitRename()
+[14:11:21]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[14:11:21]:<==InitRename()
+[14:11:21]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[14:11:21]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[14:11:21]:IsFindFile_astxsdk <<<<<<<<<<<
+[14:11:21]:ProcessFIDData [LogonResult]  result=1
+[14:11:21]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[14:11:21]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[14:11:21]:ProcessFIDData [use]  result=R
+[14:11:21]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[14:11:21]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[14:11:21]:서버에 FileDown요구 [apiotrsc.lst]
+[14:11:21]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[14:11:21]:m_ProgressMng.Exit BEFORE
+[14:11:21]:m_ProgressMng.Exit AFTER
+[14:11:22]:3 Handle Check [3309][2492592]
+[14:11:22]:Send Before
+[14:11:23]:Send After [0]
+[14:11:23]:---------- Starter OnInitDialog End ----------
+[14:22:36]:********************** Start **********************
+[14:22:36]:********************** Finish **********************
+[14:22:36]:FirstInstance
+[14:22:36]:Gdiplus Init
+[14:22:36]:Socket Init
+[14:22:36]:RegistryKey
+[14:22:36]:---------- Begin ----------
+[14:22:36]:RemoveTempDownloadedFiles
+[14:22:36]:SetVersionFileName
+[14:22:36]:InitControls
+[14:22:36]:CreateSubDirectory
+[14:22:36]:Read Security [1] Install[0]
+[14:22:37]:ASTX Procted ID 0 PWD 0 CERT 0
+[14:22:37]:ASTX Proc Done
+[14:22:37]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:22:37]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[14:22:37]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:22:37]:Server Socket 접속중...
+[14:22:37]:Server Socket 접속성공...
+[14:22:37]:교환이 완료될 때 까지 기다림
+[14:22:37]:암호화 HANDSHAKE:update  nLen=2042
+[14:22:37]:암호화 HANDSHAKE:final  nLen=82
+[14:22:37]:암호화 HANDSHAKE:ok  nLen=82
+[14:22:37]:********************** Start **********************
+[14:22:37]:서버에 FileDown요구 [mst.lst]
+[14:22:38]:ZipExtract BEFORE [1]
+[14:22:38]:ZipExtract AFTER [1] FileSize[1564]
+[14:22:38]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[14:22:38]:==>InitRename()
+[14:22:38]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[14:22:38]:<==InitRename()
+[14:22:38]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[14:22:38]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[14:22:38]:IsFindFile_astxsdk <<<<<<<<<<<
+[14:22:38]:ProcessFIDData [LogonResult]  result=1
+[14:22:38]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[14:22:38]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[14:22:38]:ProcessFIDData [use]  result=R
+[14:22:39]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[14:22:39]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[14:22:39]:서버에 FileDown요구 [apiotrsc.lst]
+[14:22:39]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[14:22:39]:m_ProgressMng.Exit BEFORE
+[14:22:39]:m_ProgressMng.Exit AFTER
+[14:22:39]:3 Handle Check [3309][1838762]
+[14:22:39]:Send Before
+[14:22:40]:Send After [0]
+[14:22:40]:---------- Starter OnInitDialog End ----------
+[14:35:41]:********************** Start **********************
+[14:35:41]:********************** Finish **********************
+[14:35:41]:FirstInstance
+[14:35:41]:Gdiplus Init
+[14:35:41]:Socket Init
+[14:35:41]:RegistryKey
+[14:35:41]:---------- Begin ----------
+[14:35:41]:RemoveTempDownloadedFiles
+[14:35:41]:SetVersionFileName
+[14:35:41]:InitControls
+[14:35:41]:CreateSubDirectory
+[14:35:41]:Read Security [1] Install[0]
+[14:35:42]:ASTX Procted ID 0 PWD 0 CERT 0
+[14:35:42]:ASTX Proc Done
+[14:35:42]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:35:42]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[14:35:42]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:35:42]:Server Socket 접속중...
+[14:35:42]:Server Socket 접속성공...
+[14:35:42]:교환이 완료될 때 까지 기다림
+[14:35:42]:암호화 HANDSHAKE:update  nLen=2042
+[14:35:42]:암호화 HANDSHAKE:final  nLen=82
+[14:35:42]:암호화 HANDSHAKE:ok  nLen=82
+[14:35:42]:********************** Start **********************
+[14:35:42]:서버에 FileDown요구 [mst.lst]
+[14:35:43]:ZipExtract BEFORE [1]
+[14:35:43]:ZipExtract AFTER [1] FileSize[1567]
+[14:35:43]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[f1c8b70d] ServerCrc[a79a6628] Restarter[0]
+[14:35:43]:서버에 FileDown요구 [hjcode.dat]
+[14:35:49]:ZipExtract BEFORE [2]
+[14:35:49]:ZipExtract AFTER [2] FileSize[441346]
+[14:35:49]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[14:35:49]:==>InitRename()
+[14:35:49]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[14:35:49]:<==InitRename()
+[14:35:49]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[14:35:49]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[14:35:49]:IsFindFile_astxsdk <<<<<<<<<<<
+[14:35:49]:ProcessFIDData [LogonResult]  result=1
+[14:35:49]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[14:35:49]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[14:35:49]:ProcessFIDData [use]  result=R
+[14:35:49]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[14:35:49]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[14:35:49]:서버에 FileDown요구 [apiotrsc.lst]
+[14:35:50]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[14:35:50]:m_ProgressMng.Exit BEFORE
+[14:35:50]:m_ProgressMng.Exit AFTER
+[14:35:50]:3 Handle Check [3309][1904298]
+[14:35:50]:Send Before
+[14:35:51]:Send After [0]
+[14:35:51]:---------- Starter OnInitDialog End ----------
+[14:49:25]:********************** Start **********************
+[14:49:25]:********************** Finish **********************
+[14:49:25]:FirstInstance
+[14:49:25]:Gdiplus Init
+[14:49:25]:Socket Init
+[14:49:25]:RegistryKey
+[14:49:25]:---------- Begin ----------
+[14:49:25]:RemoveTempDownloadedFiles
+[14:49:25]:SetVersionFileName
+[14:49:25]:InitControls
+[14:49:25]:CreateSubDirectory
+[14:49:25]:Read Security [1] Install[0]
+[14:49:25]:ASTX Procted ID 0 PWD 0 CERT 0
+[14:49:25]:ASTX Proc Done
+[14:49:26]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:49:26]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[14:49:26]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[14:49:26]:Server Socket 접속중...
+[14:49:26]:Server Socket 접속성공...
+[14:49:26]:교환이 완료될 때 까지 기다림
+[14:49:26]:암호화 HANDSHAKE:update  nLen=2044
+[14:49:26]:암호화 HANDSHAKE:final  nLen=82
+[14:49:26]:암호화 HANDSHAKE:ok  nLen=82
+[14:49:26]:********************** Start **********************
+[14:49:26]:서버에 FileDown요구 [mst.lst]
+[14:49:26]:ZipExtract BEFORE [1]
+[14:49:26]:ZipExtract AFTER [1] FileSize[1567]
+[14:49:26]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[14:49:27]:==>InitRename()
+[14:49:27]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[14:49:27]:<==InitRename()
+[14:49:27]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[14:49:27]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[14:49:27]:IsFindFile_astxsdk <<<<<<<<<<<
+[14:49:27]:ProcessFIDData [LogonResult]  result=1
+[14:49:27]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[14:49:27]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[14:49:27]:ProcessFIDData [use]  result=R
+[14:49:27]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[14:49:27]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[14:49:27]:서버에 FileDown요구 [apiotrsc.lst]
+[14:49:27]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[14:49:27]:m_ProgressMng.Exit BEFORE
+[14:49:27]:m_ProgressMng.Exit AFTER
+[14:49:27]:3 Handle Check [3309][1969834]
+[14:49:27]:Send Before
+[14:49:28]:Send After [0]
+[14:49:28]:---------- Starter OnInitDialog End ----------
+[15:14:52]:********************** Start **********************
+[15:14:52]:********************** Finish **********************
+[15:14:52]:FirstInstance
+[15:14:52]:Gdiplus Init
+[15:14:52]:Socket Init
+[15:14:52]:RegistryKey
+[15:14:52]:---------- Begin ----------
+[15:14:52]:RemoveTempDownloadedFiles
+[15:14:52]:SetVersionFileName
+[15:14:52]:InitControls
+[15:14:52]:CreateSubDirectory
+[15:14:52]:Read Security [1] Install[0]
+[15:14:53]:ASTX Procted ID 0 PWD 0 CERT 0
+[15:14:53]:ASTX Proc Done
+[15:14:53]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:14:53]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[15:14:53]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:14:53]:Server Socket 접속중...
+[15:14:53]:Server Socket 접속성공...
+[15:14:53]:교환이 완료될 때 까지 기다림
+[15:14:53]:암호화 HANDSHAKE:update  nLen=2042
+[15:14:53]:암호화 HANDSHAKE:final  nLen=82
+[15:14:53]:암호화 HANDSHAKE:ok  nLen=82
+[15:14:53]:********************** Start **********************
+[15:14:53]:서버에 FileDown요구 [mst.lst]
+[15:14:54]:ZipExtract BEFORE [1]
+[15:14:54]:ZipExtract AFTER [1] FileSize[1564]
+[15:14:54]:DownFileInList CRC 다름 File[hjcode.dat] LocalCrc[a79a6628] ServerCrc[f1c8b70d] Restarter[0]
+[15:14:54]:서버에 FileDown요구 [hjcode.dat]
+[15:14:59]:ZipExtract BEFORE [2]
+[15:14:59]:ZipExtract AFTER [2] FileSize[441349]
+[15:15:00]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[15:15:00]:==>InitRename()
+[15:15:00]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[15:15:00]:<==InitRename()
+[15:15:00]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[15:15:00]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[15:15:00]:IsFindFile_astxsdk <<<<<<<<<<<
+[15:15:00]:ProcessFIDData [LogonResult]  result=1
+[15:15:00]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[15:15:00]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[15:15:00]:ProcessFIDData [use]  result=R
+[15:15:00]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[15:15:00]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[15:15:00]:서버에 FileDown요구 [apiotrsc.lst]
+[15:15:00]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[15:15:00]:m_ProgressMng.Exit BEFORE
+[15:15:00]:m_ProgressMng.Exit AFTER
+[15:15:01]:3 Handle Check [3309][2035370]
+[15:16:09]:********************** API 모드일때 핸들값 없음 **********************
+[15:16:09]:OnBnClickedCancel SetEvent[000002B0].. bCancel[1], bUser[0], bRetry[0]
+[15:16:09]:---------- Starter OnInitDialog End ----------
+[15:16:15]:OnBnClickedCancel SetEvent[000002B0].. bCancel[0], bUser[0], bRetry[0]
+[15:20:44]:********************** Start **********************
+[15:20:44]:********************** Finish **********************
+[15:20:44]:FirstInstance
+[15:20:44]:Gdiplus Init
+[15:20:44]:Socket Init
+[15:20:44]:RegistryKey
+[15:20:44]:---------- Begin ----------
+[15:20:44]:RemoveTempDownloadedFiles
+[15:20:44]:SetVersionFileName
+[15:20:44]:InitControls
+[15:20:44]:CreateSubDirectory
+[15:20:44]:Read Security [1] Install[0]
+[15:20:45]:ASTX Procted ID 0 PWD 0 CERT 0
+[15:20:45]:ASTX Proc Done
+[15:20:45]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:20:45]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[15:20:45]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:20:45]:Server Socket 접속중...
+[15:20:45]:Server Socket 접속성공...
+[15:20:45]:교환이 완료될 때 까지 기다림
+[15:20:45]:암호화 HANDSHAKE:update  nLen=2042
+[15:20:45]:암호화 HANDSHAKE:final  nLen=82
+[15:20:45]:암호화 HANDSHAKE:ok  nLen=82
+[15:20:45]:********************** Start **********************
+[15:20:45]:서버에 FileDown요구 [mst.lst]
+[15:20:46]:ZipExtract BEFORE [1]
+[15:20:46]:ZipExtract AFTER [1] FileSize[1564]
+[15:20:46]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[15:20:46]:==>InitRename()
+[15:20:46]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[15:20:46]:<==InitRename()
+[15:20:46]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[15:20:46]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[15:20:46]:IsFindFile_astxsdk <<<<<<<<<<<
+[15:20:46]:ProcessFIDData [LogonResult]  result=1
+[15:20:46]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[15:20:46]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[15:20:46]:ProcessFIDData [use]  result=R
+[15:20:46]:ProcessFIDData [SVRIP0] IP=61.78.32.142  port=0
+[15:20:46]:ProcessFIDData [SVRIP1] IP=61.78.32.143  port=0
+[15:20:46]:서버에 FileDown요구 [apiotrsc.lst]
+[15:20:47]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[15:20:47]:m_ProgressMng.Exit BEFORE
+[15:20:47]:m_ProgressMng.Exit AFTER
+[15:20:47]:3 Handle Check [3309][3871522]
+[15:20:47]:Send Before
+[15:20:48]:Send After [0]
+[15:20:48]:---------- Starter OnInitDialog End ----------
+[15:25:11]:********************** Start **********************
+[15:25:11]:********************** Finish **********************
+[15:25:11]:FirstInstance
+[15:25:11]:Gdiplus Init
+[15:25:11]:Socket Init
+[15:25:11]:RegistryKey
+[15:25:11]:---------- Begin ----------
+[15:25:11]:RemoveTempDownloadedFiles
+[15:25:11]:SetVersionFileName
+[15:25:11]:InitControls
+[15:25:11]:CreateSubDirectory
+[15:25:11]:Read Security [1] Install[0]
+[15:25:12]:ASTX Procted ID 0 PWD 0 CERT 0
+[15:25:12]:ASTX Proc Done
+[15:25:12]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:25:12]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[15:25:12]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:25:12]:Server Socket 접속중...
+[15:25:12]:Server Socket 접속성공...
+[15:25:12]:교환이 완료될 때 까지 기다림
+[15:25:12]:암호화 HANDSHAKE:update  nLen=2042
+[15:25:12]:암호화 HANDSHAKE:final  nLen=80
+[15:25:12]:암호화 HANDSHAKE:ok  nLen=80
+[15:25:12]:********************** Start **********************
+[15:25:12]:서버에 FileDown요구 [mst.lst]
+[15:25:12]:ZipExtract BEFORE [1]
+[15:25:12]:ZipExtract AFTER [1] FileSize[1564]
+[15:25:13]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[15:25:13]:==>InitRename()
+[15:25:13]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[15:25:13]:<==InitRename()
+[15:25:13]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[15:25:13]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[15:25:13]:IsFindFile_astxsdk <<<<<<<<<<<
+[15:25:13]:ProcessFIDData [LogonResult]  result=1
+[15:25:13]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[15:25:13]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[15:25:13]:ProcessFIDData [use]  result=R
+[15:25:13]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[15:25:13]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[15:25:13]:서버에 FileDown요구 [apiotrsc.lst]
+[15:25:13]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[15:25:13]:m_ProgressMng.Exit BEFORE
+[15:25:13]:m_ProgressMng.Exit AFTER
+[15:25:13]:3 Handle Check [3309][532368]
+[15:25:13]:Send Before
+[15:25:14]:Send After [0]
+[15:25:14]:---------- Starter OnInitDialog End ----------
+[15:37:49]:********************** Start **********************
+[15:37:49]:********************** Finish **********************
+[15:37:49]:FirstInstance
+[15:37:49]:Gdiplus Init
+[15:37:49]:Socket Init
+[15:37:49]:RegistryKey
+[15:37:49]:---------- Begin ----------
+[15:37:49]:RemoveTempDownloadedFiles
+[15:37:49]:SetVersionFileName
+[15:37:49]:InitControls
+[15:37:49]:CreateSubDirectory
+[15:37:49]:Read Security [1] Install[0]
+[15:37:50]:ASTX Procted ID 0 PWD 0 CERT 0
+[15:37:50]:ASTX Proc Done
+[15:37:50]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:37:50]:InitDlg  AutoConnect [>Ymu]z][*][ ][1]
+[15:37:50]:Server_Imit [SVRIP0]  IP=MainIP  port=MainPort
+
+[15:37:50]:Server Socket 접속중...
+[15:37:50]:Server Socket 접속성공...
+[15:37:50]:교환이 완료될 때 까지 기다림
+[15:37:50]:암호화 HANDSHAKE:update  nLen=2046
+[15:37:50]:암호화 HANDSHAKE:final  nLen=82
+[15:37:50]:암호화 HANDSHAKE:ok  nLen=82
+[15:37:50]:********************** Start **********************
+[15:37:50]:서버에 FileDown요구 [mst.lst]
+[15:37:51]:ZipExtract BEFORE [1]
+[15:37:51]:ZipExtract AFTER [1] FileSize[1564]
+[15:37:51]:CFile::Rename org(C:\OpenAPI\mst.lst), new(C:\OpenAPI\_mst.lst)
+[15:37:51]:==>InitRename()
+[15:37:51]:C:\OpenAPI\$apiinitrsc.lst Open Error.  CNKStarterDlg::GetDownLoadListToFile
+[15:37:51]:<==InitRename()
+[15:37:51]:IsFindFile_astxsdk >>>>>>>>>>>>>>>
+[15:37:51]:IsFindFile_astxsdk 파일 찾을 경로 -  [C:\OpenAPI\astxsdk\_*.*]
+[15:37:51]:IsFindFile_astxsdk <<<<<<<<<<<
+[15:37:51]:ProcessFIDData [LogonResult]  result=1
+[15:37:51]:ProcessFIDData [LogonMessage]  <39, 모의투자 : 정상적으로 로그인되었습니다.>
+[15:37:51]:ProcessFIDData [MenuFile]  file(12)=모의투자.mnu
+[15:37:51]:ProcessFIDData [use]  result=R
+[15:37:51]:ProcessFIDData [SVRIP0] IP=61.78.32.143  port=0
+[15:37:51]:ProcessFIDData [SVRIP1] IP=61.78.32.142  port=0
+[15:37:52]:서버에 FileDown요구 [apiotrsc.lst]
+[15:37:52]:No Writing temp.zip File : [0, 101] C:\OpenAPI\
+[15:37:52]:m_ProgressMng.Exit BEFORE
+[15:37:52]:m_ProgressMng.Exit AFTER
+[15:37:52]:3 Handle Check [3309][597904]
+[15:37:52]:Send Before
+[15:37:53]:Send After [0]
+[15:37:53]:---------- Starter OnInitDialog End ----------

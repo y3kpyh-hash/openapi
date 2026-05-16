@@ -48,7 +48,7 @@ C:\OpenAPI\khopenapi.ocx 파일이 있어야 합니다.
 | 챕터 | 주제 | 파일 |
 |------|------|------|
 | chapter1 | OCX 연결 + 로그인 + 계좌조회 | example1-1.py ~ example1-3.py |
-| chapter2 | 조회와 실시간 데이터 처리 | (예정) |
+| chapter2 | TR 조회와 실시간 데이터 처리 | example2-1.py ~ |
 | chapter3 | 주문과 잔고처리 | (예정) |
 | chapter4 | 조건검색 | (예정) |
 | chapter5 | 기타함수 + 자동화 완성 | (예정) |
@@ -65,6 +65,19 @@ C:\OpenAPI\khopenapi.ocx 파일이 있어야 합니다.
 
 ### example1-3.py
 KiwoomAPI 클래스 분리 - 실전 구조 기반으로 캡슐화
+
+---
+
+## Chapter2 - TR 조회와 실시간 데이터 처리
+
+### example2-1.py
+opt10001(주식기본정보요청) TR 요청 구조 실습
+- `KiwoomAPI` 클래스로 리팩토링 (MyWindow → KiwoomAPI)
+- `_set_signal_slots()`: OnEventConnect + OnReceiveTrData 연결
+- `get_basic_stock_info("005930")`: SetInputValue → CommRqData 요청
+- `_receive_tr_data()`: TR 이벤트 수신 후 rqname으로 라우팅
+- `get_comm_data()`: GetCommData 래퍼
+- `on_opt10001_req()`: 종목코드, 현재가, 기준가, 시가, 고가, 저가, 상/하한가 출력
 
 ---
 

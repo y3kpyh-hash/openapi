@@ -1,0 +1,1242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1497</width>
+    <height>948</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>키움증권 자동 주문 프로그램</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_main">
+    <property name="spacing">
+     <number>4</number>
+    </property>
+    <property name="leftMargin">
+     <number>6</number>
+    </property>
+    <property name="topMargin">
+     <number>6</number>
+    </property>
+    <property name="rightMargin">
+     <number>6</number>
+    </property>
+    <property name="bottomMargin">
+     <number>6</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="hl_top">
+      <item>
+       <widget class="QPushButton" name="autoOnPushButton">
+        <property name="text">
+         <string>자동매매 ON</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="autoOffPushButton">
+        <property name="text">
+         <string>자동매매 OFF</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="saveSettingsPushButton">
+        <property name="text">
+         <string>설정 저장</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="convertServerPushButton">
+        <property name="text">
+         <string>비밀번호 재설정 및 모의/실투 전환</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="statusLineEdit">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="placeholderText">
+         <string>상태: 서버 연결 완료</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_tax">
+        <property name="text">
+         <string>증권거래세(%):</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDoubleSpinBox" name="taxDoubleSpinBox">
+        <property name="decimals">
+         <number>3</number>
+        </property>
+        <property name="maximum">
+         <double>10.000000000000000</double>
+        </property>
+        <property name="singleStep">
+         <double>0.001000000000000</double>
+        </property>
+        <property name="value">
+         <double>0.150000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_fee">
+        <property name="text">
+         <string>거래수수료(%):</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDoubleSpinBox" name="transactionFeeDoubleSpinBox">
+        <property name="decimals">
+         <number>3</number>
+        </property>
+        <property name="maximum">
+         <double>10.000000000000000</double>
+        </property>
+        <property name="singleStep">
+         <double>0.001000000000000</double>
+        </property>
+        <property name="value">
+         <double>0.015000000000000</double>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="hl_options">
+      <item>
+       <widget class="QCheckBox" name="autoOnCheckBox">
+        <property name="text">
+         <string>프로그램 시작 시 자동매매 ON</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_shutdown">
+        <property name="text">
+         <string>프로그램 자동 종료 시간:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTimeEdit" name="autoShutDownTimeEdit">
+        <property name="displayFormat">
+         <string>오후 h:mm</string>
+        </property>
+        <property name="time">
+         <time>
+          <hour>21</hour>
+          <minute>0</minute>
+          <second>0</second>
+         </time>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="serverLineEdit">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="placeholderText">
+         <string>접속 서버:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="maskAccountCheckBox">
+        <property name="text">
+         <string>거래번호 가리기</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="alwaysOnTopCheckBox">
+        <property name="text">
+         <string>항상 위로</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="sp_options">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="hl_order_settings">
+      <item>
+       <widget class="QGroupBox" name="groupBox_buy">
+        <property name="title">
+         <string>매수 주문 설정</string>
+        </property>
+        <layout class="QGridLayout" name="gl_buy">
+         <item row="0" column="0">
+          <widget class="QRadioButton" name="buyMarketRadioButton">
+           <property name="text">
+            <string>시장가</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QRadioButton" name="buyLimitRadioButton">
+           <property name="text">
+            <string>현재가 (대비</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QSpinBox" name="buyOffsetSpinBox">
+           <property name="minimum">
+            <number>-99</number>
+           </property>
+           <property name="maximum">
+            <number>99</number>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="label_buy_hoga">
+           <property name="text">
+            <string>호가로 지정가 주문)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QRadioButton" name="buyQuantityRadioButton">
+           <property name="text">
+            <string>주식수량</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QSpinBox" name="buyQuantitySpinBox">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>99999</number>
+           </property>
+           <property name="value">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QRadioButton" name="buyAmountRadioButton">
+           <property name="text">
+            <string>금액</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="customBuyAmountLineEdit">
+           <property name="text">
+            <string>200,000</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_sell">
+        <property name="title">
+         <string>매도 주문 설정</string>
+        </property>
+        <layout class="QGridLayout" name="gl_sell">
+         <item row="0" column="0">
+          <widget class="QRadioButton" name="sellMarketRadioButton">
+           <property name="text">
+            <string>시장가</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QRadioButton" name="sellLimitRadioButton">
+           <property name="text">
+            <string>현재가 (대비</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QSpinBox" name="sellOffsetSpinBox">
+           <property name="minimum">
+            <number>-99</number>
+           </property>
+           <property name="maximum">
+            <number>99</number>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="label_sell_hoga">
+           <property name="text">
+            <string>호가로 지정가 주문)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QRadioButton" name="sellQuantityRadioButton">
+           <property name="text">
+            <string>주식수량</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QSpinBox" name="sellQuantitySpinBox">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>99999</number>
+           </property>
+           <property name="value">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QRadioButton" name="sellAvailableRadioButton">
+           <property name="text">
+            <string>매도가능수량 대비</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QDoubleSpinBox" name="sellAvailableRatioSpinBox">
+           <property name="minimum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>100.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>100.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QLabel" name="label_sell_pct">
+           <property name="text">
+            <string>%</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="mainTabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_auto">
+       <attribute name="title">
+        <string>자동매매 현황</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_auto">
+        <property name="spacing">
+         <number>4</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="hl_condition">
+          <item>
+           <widget class="QLabel" name="label_condition">
+            <property name="text">
+             <string>매매대상 추출 조건식:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="conditionSearchComboBox"/>
+          </item>
+          <item>
+           <spacer name="sp_cond">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_accountnum">
+            <property name="text">
+             <string>계좌 번호:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="customAccountNumComboBox"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hl_profit_upper">
+          <item>
+           <widget class="QLabel" name="label_profit_upper">
+            <property name="text">
+             <string>계좌 수익률(%)이</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="profitSellUpperSpinBox">
+            <property name="minimum">
+             <double>0.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>100.000000000000000</double>
+            </property>
+            <property name="singleStep">
+             <double>0.010000000000000</double>
+            </property>
+            <property name="value">
+             <double>1.600000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_profit_upper2">
+            <property name="text">
+             <string>% 이상 발생할 경우 매도</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="sp_upper">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_tradetime">
+            <property name="text">
+             <string>조건 적용 시간:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTimeEdit" name="tradeStartTimeEdit">
+            <property name="displayFormat">
+             <string>오전 h:mm</string>
+            </property>
+            <property name="time">
+             <time>
+              <hour>9</hour>
+              <minute>0</minute>
+              <second>0</second>
+             </time>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_tilde">
+            <property name="text">
+             <string>~</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTimeEdit" name="tradeEndTimeEdit">
+            <property name="displayFormat">
+             <string>오후 h:mm</string>
+            </property>
+            <property name="time">
+             <time>
+              <hour>13</hour>
+              <minute>30</minute>
+              <second>0</second>
+             </time>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hl_profit_lower">
+          <item>
+           <widget class="QLabel" name="label_profit_lower">
+            <property name="text">
+             <string>계좌 수익률(%)이</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="profitSellLowerSpinBox">
+            <property name="minimum">
+             <double>-100.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>0.000000000000000</double>
+            </property>
+            <property name="singleStep">
+             <double>0.010000000000000</double>
+            </property>
+            <property name="value">
+             <double>-1.400000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_profit_lower2">
+            <property name="text">
+             <string>% 이하 발생할 경우 매도</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="sp_lower">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_maxtrack">
+            <property name="text">
+             <string>최대 트레킹 종목 수:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="maxTrackingCountSpinBox">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>9999</number>
+            </property>
+            <property name="value">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hl_ma">
+          <item>
+           <widget class="QLabel" name="label_ma_prefix">
+            <property name="text">
+             <string>현재가가</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="candleTypeComboBox">
+            <item>
+             <property name="text">
+              <string>1분봉</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3분봉</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5분봉</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>10분봉</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>15분봉</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>30분봉</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>60분봉</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>일봉</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="maLengthSpinBox">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>999</number>
+            </property>
+            <property name="value">
+             <number>15</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_matype">
+            <property name="text">
+             <string>이평선</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="maConditionComboBox">
+            <item>
+             <property name="text">
+              <string>이상</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>이하</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_ma_suffix">
+            <property name="text">
+             <string>일 때 매수</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="sp_ma">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_unfilled">
+            <property name="text">
+             <string>미체결 주문:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="unfilledOrderSecondsSpinBox">
+            <property name="minimum">
+             <number>10</number>
+            </property>
+            <property name="maximum">
+             <number>3600</number>
+            </property>
+            <property name="value">
+             <number>60</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_unfilled2">
+            <property name="text">
+             <string>초 이상 발생 시</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="unfilledOrderActionComboBox">
+            <item>
+             <property name="text">
+              <string>취소</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>정정</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_autotrade_table">
+          <property name="text">
+           <string>자동매매 현황</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableView" name="autoTradeTableView"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_cash">
+       <attribute name="title">
+        <string>현금 잔고</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_cash">
+        <item>
+         <widget class="QTableView" name="accountInfoTableView"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_credit">
+       <attribute name="title">
+        <string>신용 잔고</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_credit">
+        <item>
+         <widget class="QTableView" name="creditAccountInfoTableView"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_log">
+       <attribute name="title">
+        <string>Log</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_log">
+        <item>
+         <widget class="QPlainTextEdit" name="logPlainTextEdit">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_telegram">
+       <attribute name="title">
+        <string>텔레그램 설정</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_telegram">
+        <item>
+         <layout class="QHBoxLayout" name="hl_tg_keys">
+          <item>
+           <widget class="QLabel" name="label_apikey">
+            <property name="text">
+             <string>API KEY:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="telegramAPIKEYLineEdit"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_chatid">
+            <property name="text">
+             <string>Chat ID:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="telegramChatIDLineEdit"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hl_tg_opt">
+          <item>
+           <widget class="QRadioButton" name="telegramOnlyLoginRadioButton">
+            <property name="text">
+             <string>로그인 시만 전송</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="telegramSendAllRadioButton">
+            <property name="text">
+             <string>전체 전송</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="sendSampleTelegramPushButton">
+            <property name="text">
+             <string>테스트 전송</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="sp_tg">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="sp_tg_v">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_top_trading">
+       <attribute name="title">
+        <string>거래대금상위</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_top_trading">
+        <property name="leftMargin">
+         <number>4</number>
+        </property>
+        <property name="topMargin">
+         <number>4</number>
+        </property>
+        <property name="rightMargin">
+         <number>4</number>
+        </property>
+        <property name="bottomMargin">
+         <number>4</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="hl_top_trading_ctrl">
+          <item>
+           <widget class="QLabel" name="label_top_market">
+            <property name="text">
+             <string>시장:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="topTradingMarketComboBox"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_top_filter">
+            <property name="text">
+             <string>종목조건:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="topTradingFilterComboBox"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="topTradingRefreshPushButton">
+            <property name="text">
+             <string>조회</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_top_interval">
+            <property name="text">
+             <string>자동조회 간격:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="topTradingIntervalSpinBox">
+            <property name="minimum">
+             <number>10</number>
+            </property>
+            <property name="maximum">
+             <number>3600</number>
+            </property>
+            <property name="value">
+             <number>60</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_top_sec">
+            <property name="text">
+             <string>초</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="topTradingAutoRefreshPushButton">
+            <property name="text">
+             <string>자동조회 OFF</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="topTradingSectorSortPushButton">
+            <property name="text">
+             <string>섹터정렬 OFF</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="sp_top_trading_h">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="trUsageLabel">
+            <property name="text">
+             <string>TR 사용: 0 / 990  |  잔여: 990</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="topTradingTableWidget">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="columnCount">
+           <number>12</number>
+          </property>
+          <column>
+           <property name="text"><string>순위</string></property>
+          </column>
+          <column>
+           <property name="text"><string>전일순위</string></property>
+          </column>
+          <column>
+           <property name="text"><string>종목명</string></property>
+          </column>
+          <column>
+           <property name="text"><string>업종</string></property>
+          </column>
+          <column>
+           <property name="text"><string>현재가</string></property>
+          </column>
+          <column>
+           <property name="text"><string>전일대비</string></property>
+          </column>
+          <column>
+           <property name="text"><string>등락률(%)</string></property>
+          </column>
+          <column>
+           <property name="text"><string>매도호가</string></property>
+          </column>
+          <column>
+           <property name="text"><string>매수호가</string></property>
+          </column>
+          <column>
+           <property name="text"><string>거래량</string></property>
+          </column>
+          <column>
+           <property name="text"><string>시가총액(억)</string></property>
+          </column>
+          <column>
+           <property name="text"><string>거래대금(억)</string></property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_broker">
+       <attribute name="title">
+        <string>거래원분석</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_broker">
+        <property name="leftMargin"><number>4</number></property>
+        <property name="topMargin"><number>4</number></property>
+        <property name="rightMargin"><number>4</number></property>
+        <property name="bottomMargin"><number>4</number></property>
+        <item>
+         <layout class="QHBoxLayout" name="hl_broker_ctrl">
+          <item>
+           <widget class="QLabel" name="label_broker_code">
+            <property name="text"><string>종목코드:</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="brokerStockCodeLineEdit">
+            <property name="placeholderText"><string>예: 000660</string></property>
+            <property name="maximumWidth"><number>80</number></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="brokerStockNameLabel">
+            <property name="text"><string></string></property>
+            <property name="minimumWidth"><number>80</number></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="brokerTimeRadioButton">
+            <property name="text"><string>시간별</string></property>
+            <property name="checked"><bool>true</bool></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="brokerDayRadioButton">
+            <property name="text"><string>일별</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_broker_date">
+            <property name="text"><string>날짜:</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="brokerAnalysisDateEdit">
+            <property name="calendarPopup"><bool>true</bool></property>
+            <property name="displayFormat"><string>yyyy/MM/dd</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="brokerRefreshPushButton">
+            <property name="text"><string>조회</string></property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="sp_broker_h">
+            <property name="orientation"><enum>Qt::Horizontal</enum></property>
+            <property name="sizeHint" stdset="0">
+             <size><width>40</width><height>20</height></size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="brokerTrUsageLabel">
+            <property name="text"><string></string></property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="brokerTableWidget">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_investor">
+       <attribute name="title">
+        <string>종목별투자자</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_investor">
+        <property name="leftMargin"><number>4</number></property>
+        <property name="topMargin"><number>4</number></property>
+        <property name="rightMargin"><number>4</number></property>
+        <property name="bottomMargin"><number>4</number></property>
+        <item>
+         <layout class="QHBoxLayout" name="hl_investor_ctrl">
+          <item>
+           <widget class="QLabel" name="label_inv_code">
+            <property name="text"><string>종목코드:</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="investorStockCodeLineEdit">
+            <property name="placeholderText"><string>예: 034020</string></property>
+            <property name="maximumWidth"><number>80</number></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="investorStockNameLabel">
+            <property name="text"><string></string></property>
+            <property name="minimumWidth"><number>80</number></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_inv_start">
+            <property name="text"><string>시작:</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="investorStartDateEdit">
+            <property name="calendarPopup"><bool>true</bool></property>
+            <property name="displayFormat"><string>yyyy/MM/dd</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_inv_end">
+            <property name="text"><string>~</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="investorEndDateEdit">
+            <property name="calendarPopup"><bool>true</bool></property>
+            <property name="displayFormat"><string>yyyy/MM/dd</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="investorAmountRadioButton">
+            <property name="text"><string>금액</string></property>
+            <property name="checked"><bool>true</bool></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="investorQuantityRadioButton">
+            <property name="text"><string>수량</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="investorNetBuyRadioButton">
+            <property name="text"><string>순매수</string></property>
+            <property name="checked"><bool>true</bool></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="investorBuyRadioButton">
+            <property name="text"><string>매수</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="investorSellRadioButton">
+            <property name="text"><string>매도</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="investorRefreshPushButton">
+            <property name="text"><string>조회</string></property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="sp_investor_h">
+            <property name="orientation"><enum>Qt::Horizontal</enum></property>
+            <property name="sizeHint" stdset="0">
+             <size><width>40</width><height>20</height></size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="investorTableWidget">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <column><property name="text"><string>일자</string></property></column>
+          <column><property name="text"><string>종가</string></property></column>
+          <column><property name="text"><string>대비</string></property></column>
+          <column><property name="text"><string>거래량</string></property></column>
+          <column><property name="text"><string>개인</string></property></column>
+          <column><property name="text"><string>외국인</string></property></column>
+          <column><property name="text"><string>기관계</string></property></column>
+          <column><property name="text"><string>금융투자</string></property></column>
+          <column><property name="text"><string>보험</string></property></column>
+          <column><property name="text"><string>투신</string></property></column>
+          <column><property name="text"><string>기타금융</string></property></column>
+          <column><property name="text"><string>은행</string></property></column>
+          <column><property name="text"><string>연기금등</string></property></column>
+          <column><property name="text"><string>사모펀드</string></property></column>
+          <column><property name="text"><string>국가</string></property></column>
+          <column><property name="text"><string>기타법인</string></property></column>
+          <column><property name="text"><string>내외국인</string></property></column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

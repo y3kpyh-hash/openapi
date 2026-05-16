@@ -1,0 +1,1630 @@
+2026-05-12 07:26:22.935 | INFO     | common_api:common_log:625 - 로그인 창 열기 성공!
+2026-05-12 07:26:33.456 | INFO     | common_api:common_log:625 - 로그인 성공!
+2026-05-12 07:26:33.457 | INFO     | common_api:get_is_paper_trading:176 - 모의투자 서버에 접속 중입니다.
+2026-05-12 07:26:33.500 | DEBUG    | __main__:on_finished_password_settings:617 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 07:26:33.502 | INFO     | common_api:send_tr_request:255 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05734F10>>, func_args: [0]
+2026-05-12 07:26:33.576 | INFO     | common_api:_receive_msg:559 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 07:26:33.577 | INFO     | common_api:common_log:625 - [100000] 모의투자 조회완료
+2026-05-12 07:26:33.580 | INFO     | common_api:common_log:625 - 기본 정보 로딩 완료!
+2026-05-12 07:26:33.702 | ERROR    | common_api:_receive_tr_data:391 - 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+Traceback (most recent call last):
+
+  File "c:\OpenAPI\chapter6\trading_product.py", line 634, in <module>
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x01183340>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+> File "c:\OpenAPI\chapter6\common_api.py", line 389, in _receive_tr_data
+    self.on_opt10032_req(sTrCode, sRQName)
+    │                    │        └ 'opt10032_req'
+    │                    └ 'opt10032'
+    └ <__main__.CustomAutoTrader object at 0x05734F10>
+
+AttributeError: 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+2026-05-12 07:26:35.489 | ERROR    | common_api:_receive_tr_data:391 - 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+Traceback (most recent call last):
+
+  File "c:\OpenAPI\chapter6\trading_product.py", line 634, in <module>
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x01183340>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+> File "c:\OpenAPI\chapter6\common_api.py", line 389, in _receive_tr_data
+    self.on_opt10032_req(sTrCode, sRQName)
+    │                    │        └ 'opt10032_req'
+    │                    └ 'opt10032'
+    └ <__main__.CustomAutoTrader object at 0x05734F10>
+
+AttributeError: 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+2026-05-12 07:26:36.083 | ERROR    | common_api:_receive_tr_data:391 - 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+Traceback (most recent call last):
+
+  File "c:\OpenAPI\chapter6\trading_product.py", line 634, in <module>
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x01183340>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+> File "c:\OpenAPI\chapter6\common_api.py", line 389, in _receive_tr_data
+    self.on_opt10032_req(sTrCode, sRQName)
+    │                    │        └ 'opt10032_req'
+    │                    └ 'opt10032'
+    └ <__main__.CustomAutoTrader object at 0x05734F10>
+
+AttributeError: 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+2026-05-12 07:26:36.311 | ERROR    | common_api:_receive_tr_data:391 - 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+Traceback (most recent call last):
+
+  File "c:\OpenAPI\chapter6\trading_product.py", line 634, in <module>
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x01183340>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+> File "c:\OpenAPI\chapter6\common_api.py", line 389, in _receive_tr_data
+    self.on_opt10032_req(sTrCode, sRQName)
+    │                    │        └ 'opt10032_req'
+    │                    └ 'opt10032'
+    └ <__main__.CustomAutoTrader object at 0x05734F10>
+
+AttributeError: 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+2026-05-12 07:26:36.504 | ERROR    | common_api:_receive_tr_data:391 - 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+Traceback (most recent call last):
+
+  File "c:\OpenAPI\chapter6\trading_product.py", line 634, in <module>
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x01183340>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+> File "c:\OpenAPI\chapter6\common_api.py", line 389, in _receive_tr_data
+    self.on_opt10032_req(sTrCode, sRQName)
+    │                    │        └ 'opt10032_req'
+    │                    └ 'opt10032'
+    └ <__main__.CustomAutoTrader object at 0x05734F10>
+
+AttributeError: 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+2026-05-12 07:26:36.846 | ERROR    | common_api:_receive_tr_data:391 - 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+Traceback (most recent call last):
+
+  File "c:\OpenAPI\chapter6\trading_product.py", line 634, in <module>
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x01183340>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+> File "c:\OpenAPI\chapter6\common_api.py", line 389, in _receive_tr_data
+    self.on_opt10032_req(sTrCode, sRQName)
+    │                    │        └ 'opt10032_req'
+    │                    └ 'opt10032'
+    └ <__main__.CustomAutoTrader object at 0x05734F10>
+
+AttributeError: 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+2026-05-12 07:26:40.275 | ERROR    | common_api:_receive_tr_data:391 - 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+Traceback (most recent call last):
+
+  File "c:\OpenAPI\chapter6\trading_product.py", line 634, in <module>
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x01183340>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+> File "c:\OpenAPI\chapter6\common_api.py", line 389, in _receive_tr_data
+    self.on_opt10032_req(sTrCode, sRQName)
+    │                    │        └ 'opt10032_req'
+    │                    └ 'opt10032'
+    └ <__main__.CustomAutoTrader object at 0x05734F10>
+
+AttributeError: 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+2026-05-12 07:26:40.492 | ERROR    | common_api:_receive_tr_data:391 - 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+Traceback (most recent call last):
+
+  File "c:\OpenAPI\chapter6\trading_product.py", line 634, in <module>
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x01183340>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+> File "c:\OpenAPI\chapter6\common_api.py", line 389, in _receive_tr_data
+    self.on_opt10032_req(sTrCode, sRQName)
+    │                    │        └ 'opt10032_req'
+    │                    └ 'opt10032'
+    └ <__main__.CustomAutoTrader object at 0x05734F10>
+
+AttributeError: 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+2026-05-12 07:26:40.679 | ERROR    | common_api:_receive_tr_data:391 - 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+Traceback (most recent call last):
+
+  File "c:\OpenAPI\chapter6\trading_product.py", line 634, in <module>
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x01183340>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+> File "c:\OpenAPI\chapter6\common_api.py", line 389, in _receive_tr_data
+    self.on_opt10032_req(sTrCode, sRQName)
+    │                    │        └ 'opt10032_req'
+    │                    └ 'opt10032'
+    └ <__main__.CustomAutoTrader object at 0x05734F10>
+
+AttributeError: 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+2026-05-12 07:26:40.898 | ERROR    | common_api:_receive_tr_data:391 - 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+Traceback (most recent call last):
+
+  File "c:\OpenAPI\chapter6\trading_product.py", line 634, in <module>
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x01183340>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+> File "c:\OpenAPI\chapter6\common_api.py", line 389, in _receive_tr_data
+    self.on_opt10032_req(sTrCode, sRQName)
+    │                    │        └ 'opt10032_req'
+    │                    └ 'opt10032'
+    └ <__main__.CustomAutoTrader object at 0x05734F10>
+
+AttributeError: 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+2026-05-12 07:26:46.904 | ERROR    | common_api:_receive_tr_data:391 - 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+Traceback (most recent call last):
+
+  File "c:\OpenAPI\chapter6\trading_product.py", line 634, in <module>
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x01183340>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+> File "c:\OpenAPI\chapter6\common_api.py", line 389, in _receive_tr_data
+    self.on_opt10032_req(sTrCode, sRQName)
+    │                    │        └ 'opt10032_req'
+    │                    └ 'opt10032'
+    └ <__main__.CustomAutoTrader object at 0x05734F10>
+
+AttributeError: 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+2026-05-12 07:26:47.564 | ERROR    | common_api:_receive_tr_data:391 - 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+Traceback (most recent call last):
+
+  File "c:\OpenAPI\chapter6\trading_product.py", line 634, in <module>
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x01183340>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+> File "c:\OpenAPI\chapter6\common_api.py", line 389, in _receive_tr_data
+    self.on_opt10032_req(sTrCode, sRQName)
+    │                    │        └ 'opt10032_req'
+    │                    └ 'opt10032'
+    └ <__main__.CustomAutoTrader object at 0x05734F10>
+
+AttributeError: 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+2026-05-12 07:26:51.630 | ERROR    | common_api:_receive_tr_data:391 - 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+Traceback (most recent call last):
+
+  File "c:\OpenAPI\chapter6\trading_product.py", line 634, in <module>
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x01183340>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+> File "c:\OpenAPI\chapter6\common_api.py", line 389, in _receive_tr_data
+    self.on_opt10032_req(sTrCode, sRQName)
+    │                    │        └ 'opt10032_req'
+    │                    └ 'opt10032'
+    └ <__main__.CustomAutoTrader object at 0x05734F10>
+
+AttributeError: 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+2026-05-12 07:26:52.041 | ERROR    | common_api:_receive_tr_data:391 - 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+Traceback (most recent call last):
+
+  File "c:\OpenAPI\chapter6\trading_product.py", line 634, in <module>
+    sys.exit(app.exec_())
+    │   │    │   └ <built-in method exec_>
+    │   │    └ <PyQt5.QtWidgets.QApplication object at 0x01183340>
+    │   └ <built-in function exit>
+    └ <module 'sys' (built-in)>
+
+> File "c:\OpenAPI\chapter6\common_api.py", line 389, in _receive_tr_data
+    self.on_opt10032_req(sTrCode, sRQName)
+    │                    │        └ 'opt10032_req'
+    │                    └ 'opt10032'
+    └ <__main__.CustomAutoTrader object at 0x05734F10>
+
+AttributeError: 'CustomAutoTrader' object has no attribute 'on_opt10032_req'
+2026-05-12 07:35:15.407 | INFO     | common_api:common_log:657 - 로그인 창 열기 성공!
+2026-05-12 07:35:26.031 | INFO     | common_api:common_log:657 - 로그인 성공!
+2026-05-12 07:35:26.031 | INFO     | common_api:get_is_paper_trading:176 - 모의투자 서버에 접속 중입니다.
+2026-05-12 07:35:26.072 | DEBUG    | __main__:on_finished_password_settings:620 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 07:35:26.076 | INFO     | common_api:send_tr_request:255 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05EC2190>>, func_args: [0]
+2026-05-12 07:35:26.092 | INFO     | common_api:_receive_msg:591 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 07:35:26.092 | INFO     | common_api:common_log:657 - [100000] 모의투자 조회완료
+2026-05-12 07:35:26.096 | INFO     | common_api:common_log:657 - 기본 정보 로딩 완료!
+2026-05-12 07:38:54.983 | INFO     | common_api:common_log:665 - 로그인 창 열기 성공!
+2026-05-12 07:38:58.725 | INFO     | common_api:common_log:665 - 로그인 성공!
+2026-05-12 07:38:58.727 | INFO     | common_api:get_is_paper_trading:176 - 모의투자 서버에 접속 중입니다.
+2026-05-12 07:38:58.770 | DEBUG    | __main__:on_finished_password_settings:626 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 07:38:58.773 | INFO     | common_api:send_tr_request:255 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05F914A8>>, func_args: [0]
+2026-05-12 07:38:58.791 | INFO     | common_api:_receive_msg:599 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 07:38:58.793 | INFO     | common_api:common_log:665 - [100000] 모의투자 조회완료
+2026-05-12 07:38:58.796 | INFO     | common_api:common_log:665 - 기본 정보 로딩 완료!
+2026-05-12 07:43:21.482 | INFO     | common_api:common_log:669 - 로그인 창 열기 성공!
+2026-05-12 07:43:25.176 | INFO     | common_api:common_log:669 - 로그인 성공!
+2026-05-12 07:43:25.177 | INFO     | common_api:get_is_paper_trading:176 - 모의투자 서버에 접속 중입니다.
+2026-05-12 07:43:25.218 | DEBUG    | __main__:on_finished_password_settings:626 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 07:43:25.221 | INFO     | common_api:send_tr_request:255 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05AA44A8>>, func_args: [0]
+2026-05-12 07:43:25.244 | INFO     | common_api:_receive_msg:603 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 07:43:25.245 | INFO     | common_api:common_log:669 - [100000] 모의투자 조회완료
+2026-05-12 07:43:25.247 | INFO     | common_api:common_log:669 - 기본 정보 로딩 완료!
+2026-05-12 07:49:47.149 | INFO     | common_api:common_log:680 - 로그인 창 열기 성공!
+2026-05-12 07:49:50.892 | INFO     | common_api:common_log:680 - 로그인 성공!
+2026-05-12 07:49:50.893 | INFO     | common_api:get_is_paper_trading:176 - 모의투자 서버에 접속 중입니다.
+2026-05-12 07:49:50.937 | DEBUG    | __main__:on_finished_password_settings:634 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 07:49:50.940 | INFO     | common_api:send_tr_request:255 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x064944A8>>, func_args: [0]
+2026-05-12 07:49:50.963 | INFO     | common_api:_receive_msg:614 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 07:49:50.964 | INFO     | common_api:common_log:680 - [100000] 모의투자 조회완료
+2026-05-12 07:49:50.967 | INFO     | common_api:common_log:680 - 기본 정보 로딩 완료!
+2026-05-12 07:52:28.640 | INFO     | common_api:common_log:685 - 로그인 창 열기 성공!
+2026-05-12 07:52:32.382 | INFO     | common_api:common_log:685 - 로그인 성공!
+2026-05-12 07:52:32.383 | INFO     | common_api:get_is_paper_trading:176 - 모의투자 서버에 접속 중입니다.
+2026-05-12 07:52:32.386 | DEBUG    | common_api:get_stock_code_name_dict:243 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 07:52:32.429 | DEBUG    | __main__:on_finished_password_settings:634 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 07:52:32.432 | INFO     | common_api:send_tr_request:259 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05A474F0>>, func_args: [0]
+2026-05-12 07:52:32.455 | INFO     | common_api:_receive_msg:619 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 07:52:32.456 | INFO     | common_api:common_log:685 - [100000] 모의투자 조회완료
+2026-05-12 07:52:32.458 | INFO     | common_api:common_log:685 - 기본 정보 로딩 완료!
+2026-05-12 07:56:27.649 | INFO     | common_api:common_log:685 - 로그인 창 열기 성공!
+2026-05-12 07:56:31.486 | INFO     | common_api:common_log:685 - 로그인 성공!
+2026-05-12 07:56:31.488 | INFO     | common_api:get_is_paper_trading:176 - 모의투자 서버에 접속 중입니다.
+2026-05-12 07:56:31.491 | DEBUG    | common_api:get_stock_code_name_dict:243 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 07:56:31.534 | DEBUG    | __main__:on_finished_password_settings:633 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 07:56:31.538 | INFO     | common_api:send_tr_request:259 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05EF54F0>>, func_args: [0]
+2026-05-12 07:56:31.565 | INFO     | common_api:_receive_msg:619 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 07:56:31.566 | INFO     | common_api:common_log:685 - [100000] 모의투자 조회완료
+2026-05-12 07:56:31.570 | INFO     | common_api:common_log:685 - 기본 정보 로딩 완료!
+2026-05-12 08:02:31.036 | INFO     | common_api:common_log:685 - 로그인 창 열기 성공!
+2026-05-12 08:02:34.764 | INFO     | common_api:common_log:685 - 로그인 성공!
+2026-05-12 08:02:34.765 | INFO     | common_api:get_is_paper_trading:176 - 모의투자 서버에 접속 중입니다.
+2026-05-12 08:02:34.767 | DEBUG    | common_api:get_stock_code_name_dict:243 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 08:02:34.811 | DEBUG    | __main__:on_finished_password_settings:649 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 08:02:34.815 | INFO     | common_api:send_tr_request:259 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05F2F418>>, func_args: [0]
+2026-05-12 08:02:34.846 | INFO     | common_api:_receive_msg:619 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 08:02:34.848 | INFO     | common_api:common_log:685 - [100000] 모의투자 조회완료
+2026-05-12 08:02:34.851 | INFO     | common_api:common_log:685 - 기본 정보 로딩 완료!
+2026-05-12 08:09:02.261 | INFO     | common_api:common_log:701 - 로그인 창 열기 성공!
+2026-05-12 08:09:06.141 | INFO     | common_api:common_log:701 - 로그인 성공!
+2026-05-12 08:09:06.142 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 08:09:06.144 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 08:09:06.187 | DEBUG    | __main__:on_finished_password_settings:656 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 08:09:06.190 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x060516A0>>, func_args: [0]
+2026-05-12 08:09:06.206 | INFO     | common_api:_receive_msg:635 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 08:09:06.207 | INFO     | common_api:common_log:701 - [100000] 모의투자 조회완료
+2026-05-12 08:09:06.210 | INFO     | common_api:common_log:701 - 기본 정보 로딩 완료!
+2026-05-12 08:23:52.829 | INFO     | common_api:common_log:743 - 로그인 창 열기 성공!
+2026-05-12 08:24:02.688 | INFO     | common_api:common_log:743 - 로그인 성공!
+2026-05-12 08:24:02.690 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 08:24:02.691 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 08:24:02.737 | DEBUG    | __main__:on_finished_password_settings:741 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 08:24:02.743 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x065B1730>>, func_args: [0]
+2026-05-12 08:24:02.771 | INFO     | common_api:_receive_msg:677 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 08:24:02.772 | INFO     | common_api:common_log:743 - [100000] 모의투자 조회완료
+2026-05-12 08:24:02.774 | INFO     | common_api:common_log:743 - 기본 정보 로딩 완료!
+2026-05-12 08:30:48.499 | INFO     | common_api:common_log:750 - 로그인 창 열기 성공!
+2026-05-12 08:30:52.399 | INFO     | common_api:common_log:750 - 로그인 성공!
+2026-05-12 08:30:52.400 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 08:30:52.401 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 08:30:52.444 | DEBUG    | __main__:on_finished_password_settings:762 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 08:30:52.447 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x06282808>>, func_args: [0]
+2026-05-12 08:30:52.470 | INFO     | common_api:_receive_msg:684 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 08:30:52.471 | INFO     | common_api:common_log:750 - [100000] 모의투자 조회완료
+2026-05-12 08:30:52.475 | INFO     | common_api:common_log:750 - 기본 정보 로딩 완료!
+2026-05-12 08:36:30.741 | INFO     | common_api:common_log:757 - 로그인 창 열기 성공!
+2026-05-12 08:36:34.627 | INFO     | common_api:common_log:757 - 로그인 성공!
+2026-05-12 08:36:34.628 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 08:36:34.631 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 08:36:34.672 | DEBUG    | __main__:on_finished_password_settings:790 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 08:36:34.676 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x059FC8E0>>, func_args: [0]
+2026-05-12 08:36:34.692 | INFO     | common_api:_receive_msg:691 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 08:36:34.694 | INFO     | common_api:common_log:757 - [100000] 모의투자 조회완료
+2026-05-12 08:36:34.698 | INFO     | common_api:common_log:757 - 기본 정보 로딩 완료!
+2026-05-12 08:36:41.976 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:36:41.978 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:41.979 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:41.980 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:41.981 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:41.982 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.068 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:36:49.069 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.070 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.072 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.073 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.074 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.688 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:36:49.689 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.692 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.693 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.694 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.695 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.869 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:36:49.870 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.871 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.872 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.874 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:49.875 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.468 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:36:51.470 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.471 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.471 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.472 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.473 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.669 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:36:51.670 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.671 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.672 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.673 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.674 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.881 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:36:51.883 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.885 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.886 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.887 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:51.888 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:56.987 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:36:56.988 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:56.989 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:56.990 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:56.991 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:56.992 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:57.181 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:36:57.182 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:57.183 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:57.184 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:57.184 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:57.185 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:57.403 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:36:57.405 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:57.406 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:57.408 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:57.409 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:36:57.410 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.062 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:37:18.063 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.064 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.065 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.066 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.067 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.749 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:37:18.751 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.751 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.755 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.756 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.758 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.951 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:37:18.952 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.953 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.954 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.955 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:18.956 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:20.750 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:37:20.751 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:20.752 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:20.753 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:20.754 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:20.755 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:22.775 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:37:22.776 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:22.778 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:22.779 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:22.780 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:22.781 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:29.525 | DEBUG    | common_api:on_opt10059_req:573 - [opt10059] data_cnt=100
+2026-05-12 08:37:29.526 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=1: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:29.527 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=2: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:29.528 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=3: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:29.529 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=4: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:37:29.530 | DEBUG    | common_api:on_opt10059_req:586 - [opt10059] row0 n=5: 매수거래원='' 매수수량='' 매수금액='' | 매도거래원='' 매도수량='' 매도금액=''
+2026-05-12 08:49:28.461 | INFO     | common_api:common_log:787 - 로그인 창 열기 성공!
+2026-05-12 08:49:38.223 | INFO     | common_api:common_log:787 - 로그인 성공!
+2026-05-12 08:49:38.225 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 08:49:38.226 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 08:49:38.269 | DEBUG    | __main__:on_finished_password_settings:871 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 08:49:38.274 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05B1F190>>, func_args: [0]
+2026-05-12 08:49:38.304 | INFO     | common_api:_receive_msg:721 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 08:49:38.306 | INFO     | common_api:common_log:787 - [100000] 모의투자 조회완료
+2026-05-12 08:49:38.308 | INFO     | common_api:common_log:787 - 기본 정보 로딩 완료!
+2026-05-12 08:49:41.062 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 08:49:41.063 | INFO     | common_api:common_log:787 - [거래원] 000660 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:43.477 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 08:49:43.478 | INFO     | common_api:common_log:787 - [거래원] 000660 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:44.419 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 08:49:44.420 | INFO     | common_api:common_log:787 - [거래원] 000660 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:44.654 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 08:49:44.655 | INFO     | common_api:common_log:787 - [거래원] 000660 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:44.843 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 08:49:44.844 | INFO     | common_api:common_log:787 - [거래원] 000660 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:45.476 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 08:49:45.477 | INFO     | common_api:common_log:787 - [거래원] 000660 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:45.731 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 08:49:45.732 | INFO     | common_api:common_log:787 - [거래원] 000660 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:45.971 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 08:49:45.972 | INFO     | common_api:common_log:787 - [거래원] 000660 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:46.171 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 08:49:46.172 | INFO     | common_api:common_log:787 - [거래원] 000660 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:50.477 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 08:49:50.478 | INFO     | common_api:common_log:787 - [거래원] 005930 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:52.139 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 08:49:52.141 | INFO     | common_api:common_log:787 - [거래원] 005930 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:52.471 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 08:49:52.472 | INFO     | common_api:common_log:787 - [거래원] 005930 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:52.644 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 08:49:52.645 | INFO     | common_api:common_log:787 - [거래원] 005930 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:52.827 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 08:49:52.829 | INFO     | common_api:common_log:787 - [거래원] 005930 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:53.067 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 08:49:53.069 | INFO     | common_api:common_log:787 - [거래원] 005930 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:53.563 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 08:49:53.564 | INFO     | common_api:common_log:787 - [거래원] 005930 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:54.763 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 08:49:54.765 | INFO     | common_api:common_log:787 - [거래원] 005930 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:49:54.971 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 08:49:54.972 | INFO     | common_api:common_log:787 - [거래원] 005930 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:50:30.464 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 08:50:30.465 | INFO     | common_api:common_log:787 - [거래원] 005930 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:50:31.177 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 08:50:31.178 | INFO     | common_api:common_log:787 - [거래원] 005930 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:50:31.416 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 08:50:31.416 | INFO     | common_api:common_log:787 - [거래원] 005930 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:50:31.656 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 08:50:31.658 | INFO     | common_api:common_log:787 - [거래원] 005930 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 08:50:32.232 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 08:50:32.233 | INFO     | common_api:common_log:787 - [거래원] 005930 시간별 실시간 구독 시작 (장중 데이터가 실시간으로 채워집니다)
+2026-05-12 09:13:10.869 | INFO     | common_api:common_log:774 - 로그인 창 열기 성공!
+2026-05-12 09:13:14.886 | INFO     | common_api:common_log:774 - 로그인 성공!
+2026-05-12 09:13:14.888 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 09:13:14.890 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 09:13:14.934 | DEBUG    | __main__:on_finished_password_settings:836 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 09:13:14.940 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x06096F10>>, func_args: [0]
+2026-05-12 09:13:14.959 | INFO     | common_api:_receive_msg:708 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 09:13:14.960 | INFO     | common_api:common_log:774 - [100000] 모의투자 조회완료
+2026-05-12 09:13:14.963 | INFO     | common_api:common_log:774 - 기본 정보 로딩 완료!
+2026-05-12 09:13:19.239 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수수량='' | 매도거래원='KB증권' 매도수량=''
+2026-05-12 09:13:19.240 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수수량='' | 매도거래원='모건스탠리' 매도수량=''
+2026-05-12 09:13:19.241 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수수량='' | 매도거래원='골드만삭스' 매도수량=''
+2026-05-12 09:13:19.242 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='메릴린치' 매수수량='' | 매도거래원='신한투자증권' 매도수량=''
+2026-05-12 09:13:19.243 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='삼  성' 매수수량='' | 매도거래원='삼  성' 매도수량=''
+2026-05-12 09:13:19.250 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:13:19.250 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:13:21.029 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수수량='' | 매도거래원='KB증권' 매도수량=''
+2026-05-12 09:13:21.030 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수수량='' | 매도거래원='모건스탠리' 매도수량=''
+2026-05-12 09:13:21.031 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수수량='' | 매도거래원='골드만삭스' 매도수량=''
+2026-05-12 09:13:21.032 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='메릴린치' 매수수량='' | 매도거래원='신한투자증권' 매도수량=''
+2026-05-12 09:13:21.033 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='삼  성' 매수수량='' | 매도거래원='삼  성' 매도수량=''
+2026-05-12 09:13:21.047 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:13:21.048 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:13:21.242 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수수량='' | 매도거래원='KB증권' 매도수량=''
+2026-05-12 09:13:21.243 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수수량='' | 매도거래원='모건스탠리' 매도수량=''
+2026-05-12 09:13:21.244 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수수량='' | 매도거래원='골드만삭스' 매도수량=''
+2026-05-12 09:13:21.245 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='메릴린치' 매수수량='' | 매도거래원='신한투자증권' 매도수량=''
+2026-05-12 09:13:21.246 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='삼  성' 매수수량='' | 매도거래원='삼  성' 매도수량=''
+2026-05-12 09:13:21.262 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:13:21.263 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:13:21.530 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수수량='' | 매도거래원='KB증권' 매도수량=''
+2026-05-12 09:13:21.532 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수수량='' | 매도거래원='모건스탠리' 매도수량=''
+2026-05-12 09:13:21.533 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수수량='' | 매도거래원='골드만삭스' 매도수량=''
+2026-05-12 09:13:21.534 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='메릴린치' 매수수량='' | 매도거래원='신한투자증권' 매도수량=''
+2026-05-12 09:13:21.534 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='삼  성' 매수수량='' | 매도거래원='삼  성' 매도수량=''
+2026-05-12 09:13:21.550 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:13:21.551 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:13:27.276 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수수량='' | 매도거래원='KB증권' 매도수량=''
+2026-05-12 09:13:27.278 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수수량='' | 매도거래원='모건스탠리' 매도수량=''
+2026-05-12 09:13:27.279 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수수량='' | 매도거래원='골드만삭스' 매도수량=''
+2026-05-12 09:13:27.280 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='메릴린치' 매수수량='' | 매도거래원='신한투자증권' 매도수량=''
+2026-05-12 09:13:27.281 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='삼  성' 매수수량='' | 매도거래원='삼  성' 매도수량=''
+2026-05-12 09:13:27.296 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:13:27.297 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:13:27.496 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수수량='' | 매도거래원='KB증권' 매도수량=''
+2026-05-12 09:13:27.498 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수수량='' | 매도거래원='모건스탠리' 매도수량=''
+2026-05-12 09:13:27.499 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수수량='' | 매도거래원='골드만삭스' 매도수량=''
+2026-05-12 09:13:27.500 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='메릴린치' 매수수량='' | 매도거래원='신한투자증권' 매도수량=''
+2026-05-12 09:13:27.501 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='삼  성' 매수수량='' | 매도거래원='삼  성' 매도수량=''
+2026-05-12 09:13:27.519 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:13:27.520 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:13:38.264 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수수량='' | 매도거래원='KB증권' 매도수량=''
+2026-05-12 09:13:38.265 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수수량='' | 매도거래원='모건스탠리' 매도수량=''
+2026-05-12 09:13:38.266 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수수량='' | 매도거래원='골드만삭스' 매도수량=''
+2026-05-12 09:13:38.267 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='메릴린치' 매수수량='' | 매도거래원='신한투자증권' 매도수량=''
+2026-05-12 09:13:38.268 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='삼  성' 매수수량='' | 매도거래원='삼  성' 매도수량=''
+2026-05-12 09:13:38.283 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:13:38.284 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:13:38.439 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수수량='' | 매도거래원='KB증권' 매도수량=''
+2026-05-12 09:13:38.440 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수수량='' | 매도거래원='모건스탠리' 매도수량=''
+2026-05-12 09:13:38.441 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수수량='' | 매도거래원='골드만삭스' 매도수량=''
+2026-05-12 09:13:38.442 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='메릴린치' 매수수량='' | 매도거래원='신한투자증권' 매도수량=''
+2026-05-12 09:13:38.443 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='삼  성' 매수수량='' | 매도거래원='삼  성' 매도수량=''
+2026-05-12 09:13:38.458 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:13:38.459 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:13:38.720 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수수량='' | 매도거래원='KB증권' 매도수량=''
+2026-05-12 09:13:38.721 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수수량='' | 매도거래원='모건스탠리' 매도수량=''
+2026-05-12 09:13:38.722 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수수량='' | 매도거래원='골드만삭스' 매도수량=''
+2026-05-12 09:13:38.723 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='메릴린치' 매수수량='' | 매도거래원='신한투자증권' 매도수량=''
+2026-05-12 09:13:38.724 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='삼  성' 매수수량='' | 매도거래원='삼  성' 매도수량=''
+2026-05-12 09:13:38.738 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:13:38.738 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:13:38.939 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수수량='' | 매도거래원='KB증권' 매도수량=''
+2026-05-12 09:13:38.942 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수수량='' | 매도거래원='모건스탠리' 매도수량=''
+2026-05-12 09:13:38.943 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수수량='' | 매도거래원='골드만삭스' 매도수량=''
+2026-05-12 09:13:38.943 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='메릴린치' 매수수량='' | 매도거래원='신한투자증권' 매도수량=''
+2026-05-12 09:13:38.944 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='삼  성' 매수수량='' | 매도거래원='삼  성' 매도수량=''
+2026-05-12 09:13:38.957 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:13:38.958 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:17:27.674 | INFO     | common_api:common_log:774 - 로그인 창 열기 성공!
+2026-05-12 09:17:31.633 | INFO     | common_api:common_log:774 - 로그인 성공!
+2026-05-12 09:17:31.634 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 09:17:31.636 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 09:17:31.681 | DEBUG    | __main__:on_finished_password_settings:836 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 09:17:31.685 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x06047F10>>, func_args: [0]
+2026-05-12 09:17:31.734 | INFO     | common_api:_receive_msg:708 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 09:17:31.735 | INFO     | common_api:common_log:774 - [100000] 모의투자 조회완료
+2026-05-12 09:17:31.737 | INFO     | common_api:common_log:774 - 기본 정보 로딩 완료!
+2026-05-12 09:17:38.502 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수거래원수량='+135728' | 매도거래원='KB증권' 매도거래원수량='-158113'
+2026-05-12 09:17:38.503 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수거래원수량='+119110' | 매도거래원='모건스탠리' 매도거래원수량='-115074'
+2026-05-12 09:17:38.504 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수거래원수량='+107436' | 매도거래원='삼  성' 매도거래원수량='-90072'
+2026-05-12 09:17:38.505 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='삼  성' 매수거래원수량='+95269' | 매도거래원='신한투자증권' 매도거래원수량='-81038'
+2026-05-12 09:17:38.506 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='메릴린치' 매수거래원수량='+79436' | 매도거래원='골드만삭스' 매도거래원수량='-78612'
+2026-05-12 09:17:38.513 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:17:38.513 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:17:39.336 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수거래원수량='+135728' | 매도거래원='KB증권' 매도거래원수량='-158113'
+2026-05-12 09:17:39.339 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수거래원수량='+119110' | 매도거래원='모건스탠리' 매도거래원수량='-115074'
+2026-05-12 09:17:39.340 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수거래원수량='+107436' | 매도거래원='삼  성' 매도거래원수량='-90072'
+2026-05-12 09:17:39.341 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='삼  성' 매수거래원수량='+95269' | 매도거래원='신한투자증권' 매도거래원수량='-81038'
+2026-05-12 09:17:39.342 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='메릴린치' 매수거래원수량='+79436' | 매도거래원='골드만삭스' 매도거래원수량='-78612'
+2026-05-12 09:17:39.358 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:17:39.359 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:17:39.534 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수거래원수량='+135728' | 매도거래원='KB증권' 매도거래원수량='-158113'
+2026-05-12 09:17:39.535 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수거래원수량='+119110' | 매도거래원='모건스탠리' 매도거래원수량='-115074'
+2026-05-12 09:17:39.536 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수거래원수량='+107436' | 매도거래원='삼  성' 매도거래원수량='-90072'
+2026-05-12 09:17:39.537 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='삼  성' 매수거래원수량='+95269' | 매도거래원='신한투자증권' 매도거래원수량='-81038'
+2026-05-12 09:17:39.538 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='메릴린치' 매수거래원수량='+79436' | 매도거래원='골드만삭스' 매도거래원수량='-78612'
+2026-05-12 09:17:39.555 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:17:39.556 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:17:40.273 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수거래원수량='+135728' | 매도거래원='KB증권' 매도거래원수량='-158113'
+2026-05-12 09:17:40.274 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수거래원수량='+119110' | 매도거래원='모건스탠리' 매도거래원수량='-115074'
+2026-05-12 09:17:40.275 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수거래원수량='+107436' | 매도거래원='삼  성' 매도거래원수량='-90072'
+2026-05-12 09:17:40.276 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='삼  성' 매수거래원수량='+95269' | 매도거래원='신한투자증권' 매도거래원수량='-81038'
+2026-05-12 09:17:40.278 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='메릴린치' 매수거래원수량='+79436' | 매도거래원='골드만삭스' 매도거래원수량='-78612'
+2026-05-12 09:17:40.297 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:17:40.298 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:17:40.498 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수거래원수량='+135728' | 매도거래원='KB증권' 매도거래원수량='-158113'
+2026-05-12 09:17:40.500 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수거래원수량='+119110' | 매도거래원='모건스탠리' 매도거래원수량='-115074'
+2026-05-12 09:17:40.501 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수거래원수량='+107436' | 매도거래원='삼  성' 매도거래원수량='-90072'
+2026-05-12 09:17:40.502 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='삼  성' 매수거래원수량='+95269' | 매도거래원='신한투자증권' 매도거래원수량='-81038'
+2026-05-12 09:17:40.503 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='메릴린치' 매수거래원수량='+79436' | 매도거래원='골드만삭스' 매도거래원수량='-78612'
+2026-05-12 09:17:40.518 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:17:40.519 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:17:42.105 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=1: 매수거래원='미래에셋' 매수거래원수량='+135728' | 매도거래원='KB증권' 매도거래원수량='-158113'
+2026-05-12 09:17:42.106 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=2: 매수거래원='키움증권' 매수거래원수량='+119110' | 매도거래원='모건스탠리' 매도거래원수량='-115074'
+2026-05-12 09:17:42.107 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=3: 매수거래원='KB증권' 매수거래원수량='+107436' | 매도거래원='삼  성' 매도거래원수량='-90072'
+2026-05-12 09:17:42.108 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=4: 매수거래원='삼  성' 매수거래원수량='+95269' | 매도거래원='신한투자증권' 매도거래원수량='-81038'
+2026-05-12 09:17:42.110 | DEBUG    | common_api:on_opt10070_req:583 - [opt10070] n=5: 매수거래원='메릴린치' 매수거래원수량='+79436' | 매도거래원='골드만삭스' 매도거래원수량='-78612'
+2026-05-12 09:17:42.141 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 09:17:42.142 | INFO     | common_api:common_log:774 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 09:40:06.194 | INFO     | common_api:common_log:869 - 로그인 창 열기 성공!
+2026-05-12 09:40:10.121 | INFO     | common_api:common_log:869 - 로그인 성공!
+2026-05-12 09:40:10.122 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 09:40:10.124 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 09:40:10.169 | DEBUG    | __main__:on_finished_password_settings:919 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 09:40:10.172 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x0589F4A8>>, func_args: [0]
+2026-05-12 09:40:10.192 | INFO     | common_api:_receive_msg:803 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 09:40:10.194 | INFO     | common_api:common_log:869 - [100000] 모의투자 조회완료
+2026-05-12 09:40:10.196 | INFO     | common_api:common_log:869 - 기본 정보 로딩 완료!
+2026-05-12 09:40:29.857 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:29.859 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3100 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:29.860 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:29.861 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:30.189 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:30.191 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3100 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:30.192 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:30.193 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:30.466 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:30.467 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3100 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:30.468 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:30.469 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:30.650 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:30.652 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:30.653 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:30.654 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:30.843 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:30.844 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:30.845 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:30.846 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:31.053 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:31.054 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:31.055 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:31.056 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:31.248 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:31.249 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:31.250 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:31.252 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:31.621 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:31.622 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:31.623 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:31.624 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:31.878 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:31.879 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:31.880 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:31.882 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:32.132 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:32.135 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:32.136 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:32.137 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:32.344 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:32.347 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:32.348 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:32.349 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:32.545 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:32.547 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:32.548 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:32.549 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:32.773 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:32.774 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3100 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:32.775 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:32.776 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:33.284 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:33.285 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:33.286 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:33.287 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:33.546 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:33.548 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:33.549 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:33.550 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:33.777 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:33.778 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3100 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:33.779 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:33.780 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:40.290 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:40.292 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3050 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:40.293 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:40.294 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:40.532 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:40.534 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3100 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:40.535 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:40.536 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:40.825 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:40.827 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:40.828 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:40.829 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:41.062 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:41.063 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:41.064 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:41.065 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:41.304 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:41.306 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:41.307 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:41.307 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:41.588 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:41.589 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:41.590 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:41.591 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:44.637 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:44.638 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:44.639 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:44.640 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:45.169 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:45.170 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:45.171 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:45.172 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:45.450 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:45.450 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:45.452 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:45.453 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:45.800 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:45.802 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:45.802 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:45.803 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:46.730 | DEBUG    | common_api:on_opt10059_req:604 - [opt10059] data_cnt=100
+2026-05-12 09:40:46.731 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row0: 일자=20260512 전일대비=+3000 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:46.732 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row1: 일자=20260511 전일대비=-1600 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:40:46.733 | DEBUG    | common_api:on_opt10059_req:616 - [opt10059] row2: 일자=20260508 전일대비=-6800 거래량합= 매도량= 매수량= 순매수수량= 거래비중=
+2026-05-12 09:51:35.008 | INFO     | common_api:common_log:902 - 로그인 창 열기 성공!
+2026-05-12 09:51:38.768 | INFO     | common_api:common_log:902 - 로그인 성공!
+2026-05-12 09:51:38.770 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 09:51:38.772 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 09:51:38.816 | DEBUG    | __main__:on_finished_password_settings:931 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 09:51:38.821 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x063034A8>>, func_args: [0]
+2026-05-12 09:51:38.852 | INFO     | common_api:_receive_msg:836 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 09:51:38.854 | INFO     | common_api:common_log:902 - [100000] 모의투자 조회완료
+2026-05-12 09:51:38.856 | INFO     | common_api:common_log:902 - 기본 정보 로딩 완료!
+2026-05-12 09:51:43.626 | DEBUG    | common_api:on_opt10059_req:618 - [opt10059] data_cnt=100
+2026-05-12 09:51:43.627 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row0: 일자='20260512' 대비='+71500' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.628 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row1: 일자='20260511' 대비='+194000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.630 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row2: 일자='20260508' 대비='+32000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.631 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row3: 일자='20260507' 대비='+53000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.632 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row4: 일자='20260506' 대비='+154000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.634 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row5: 일자='20260504' 대비='+161000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.635 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row6: 일자='20260430' 대비='-7000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.636 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row7: 일자='20260429' 대비='-7000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.638 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row8: 일자='20260428' 대비='+8000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.639 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row9: 일자='20260427' 대비='+70000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.641 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row10: 일자='20260424' 대비='-3000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.642 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row11: 일자='20260423' 대비='+2000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.643 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row12: 일자='20260422' 대비='-1000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.644 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row13: 일자='20260421' 대비='+58000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.645 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row14: 일자='20260420' 대비='+38000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.647 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row15: 일자='20260417' 대비='-27000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.648 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row16: 일자='20260416' 대비='+19000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.649 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row17: 일자='20260415' 대비='+33000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.650 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row18: 일자='20260414' 대비='+63000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.651 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row19: 일자='20260413' 대비='+13000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.653 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row20: 일자='20260410' 대비='+29000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.654 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row21: 일자='20260409' 대비='-35000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.655 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row22: 일자='20260408' 대비='+117000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.656 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row23: 일자='20260407' 대비='+30000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.657 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row24: 일자='20260406' 대비='+10000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.658 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row25: 일자='20260403' 대비='+46000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.659 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row26: 일자='20260402' 대비='-63000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.660 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row27: 일자='20260401' 대비='+86000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.662 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row28: 일자='20260331' 대비='-66000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.664 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row29: 일자='20260330' 대비='-49000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:43.676 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260512 대비=71500 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.677 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260511 대비=194000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.678 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260508 대비=32000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.679 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260507 대비=53000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.679 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260506 대비=154000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.680 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260504 대비=161000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.681 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260430 대비=-7000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.682 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260429 대비=-7000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.683 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260428 대비=8000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.684 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260427 대비=70000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.685 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260424 대비=-3000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.686 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260423 대비=2000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.686 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260422 대비=-1000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.687 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260421 대비=58000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.689 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260420 대비=38000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.690 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260417 대비=-27000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.691 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260416 대비=19000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.692 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260415 대비=33000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.693 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260414 대비=63000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.693 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260413 대비=13000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.694 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260410 대비=29000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.695 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260409 대비=-35000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.696 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260408 대비=117000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.697 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260407 대비=30000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.698 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260406 대비=10000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.699 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260403 대비=46000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.699 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260402 대비=-63000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.700 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260401 대비=86000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.701 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260331 대비=-66000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.702 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260330 대비=-49000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.704 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260327 대비=-11000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.704 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260326 대비=-62000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.705 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260325 대비=9000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.706 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260324 대비=53000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.707 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260323 대비=-74000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.708 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260320 대비=-6000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.708 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260319 대비=-43000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.709 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260318 대비=86000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.710 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260317 대비=-4000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.711 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260316 대비=64000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.712 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260313 대비=-20000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.713 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260312 대비=-25000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.714 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260311 대비=17000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.715 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260310 대비=102000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.716 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260309 대비=-88000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.717 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260306 대비=-17000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.717 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260305 대비=92000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.718 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260304 대비=-90000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.719 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260303 대비=-122000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.721 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260227 대비=-38000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.722 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260226 대비=81000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.723 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260225 대비=13000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.724 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260224 대비=54000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.724 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260223 대비=2000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.725 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260220 대비=55000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.726 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260219 대비=14000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.727 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260213 대비=-8000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.728 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260212 대비=28000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.729 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260211 대비=-16000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.730 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260210 대비=-11000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.731 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260209 대비=48000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.732 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260206 대비=-3000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.732 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260205 대비=-58000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.733 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260204 대비=-7000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.734 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260203 대비=77000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.735 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260202 대비=-79000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.736 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260130 대비=48000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.737 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260129 대비=20000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.738 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260128 대비=41000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.739 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260127 대비=64000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.740 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260126 대비=-31000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.741 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260123 대비=12000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.741 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260122 대비=15000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.742 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260121 대비=-3000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.743 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260120 대비=-21000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.744 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260119 대비=8000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.745 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260116 대비=7000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.746 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260115 대비=7000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.746 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260114 대비=4000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.747 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260113 대비=-11000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.748 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260112 대비=5000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.749 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260109 대비=-12000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.750 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260108 대비=14000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.750 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260107 대비=16000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.751 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260106 대비=30000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.752 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260105 대비=19000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.753 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260102 대비=26000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.754 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251230 대비=11000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.756 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251229 대비=41000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.757 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251226 대비=11000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.757 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251224 대비=4000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.758 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251223 대비=4000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.759 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251222 대비=33000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.760 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251219 대비=-5000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.761 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251218 대비=1000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.761 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251217 대비=21000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.762 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251216 대비=-24000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.763 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251215 대비=-17000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.764 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251212 대비=6000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:43.765 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251211 대비=-22000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.069 | DEBUG    | common_api:on_opt10059_req:618 - [opt10059] data_cnt=100
+2026-05-12 09:51:46.070 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row0: 일자='20260512' 대비='+72000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.071 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row1: 일자='20260511' 대비='+194000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.072 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row2: 일자='20260508' 대비='+32000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.073 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row3: 일자='20260507' 대비='+53000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.075 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row4: 일자='20260506' 대비='+154000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.076 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row5: 일자='20260504' 대비='+161000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.077 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row6: 일자='20260430' 대비='-7000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.079 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row7: 일자='20260429' 대비='-7000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.080 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row8: 일자='20260428' 대비='+8000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.081 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row9: 일자='20260427' 대비='+70000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.083 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row10: 일자='20260424' 대비='-3000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.084 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row11: 일자='20260423' 대비='+2000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.085 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row12: 일자='20260422' 대비='-1000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.086 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row13: 일자='20260421' 대비='+58000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.088 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row14: 일자='20260420' 대비='+38000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.089 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row15: 일자='20260417' 대비='-27000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.090 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row16: 일자='20260416' 대비='+19000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.091 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row17: 일자='20260415' 대비='+33000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.092 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row18: 일자='20260414' 대비='+63000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.093 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row19: 일자='20260413' 대비='+13000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.094 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row20: 일자='20260410' 대비='+29000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.096 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row21: 일자='20260409' 대비='-35000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.096 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row22: 일자='20260408' 대비='+117000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.099 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row23: 일자='20260407' 대비='+30000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.100 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row24: 일자='20260406' 대비='+10000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.101 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row25: 일자='20260403' 대비='+46000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.101 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row26: 일자='20260402' 대비='-63000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.103 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row27: 일자='20260401' 대비='+86000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.104 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row28: 일자='20260331' 대비='-66000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.106 | DEBUG    | common_api:on_opt10059_req:630 - [opt10059] row29: 일자='20260330' 대비='-49000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:51:46.118 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260512 대비=72000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.119 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260511 대비=194000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.120 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260508 대비=32000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.121 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260507 대비=53000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.122 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260506 대비=154000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.123 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260504 대비=161000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.124 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260430 대비=-7000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.125 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260429 대비=-7000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.127 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260428 대비=8000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.128 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260427 대비=70000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.129 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260424 대비=-3000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.130 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260423 대비=2000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.131 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260422 대비=-1000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.132 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260421 대비=58000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.133 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260420 대비=38000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.134 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260417 대비=-27000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.134 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260416 대비=19000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.135 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260415 대비=33000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.136 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260414 대비=63000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.137 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260413 대비=13000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.138 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260410 대비=29000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.139 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260409 대비=-35000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.140 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260408 대비=117000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.142 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260407 대비=30000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.143 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260406 대비=10000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.144 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260403 대비=46000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.145 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260402 대비=-63000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.146 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260401 대비=86000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.147 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260331 대비=-66000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.148 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260330 대비=-49000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.149 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260327 대비=-11000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.150 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260326 대비=-62000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.150 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260325 대비=9000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.151 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260324 대비=53000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.152 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260323 대비=-74000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.153 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260320 대비=-6000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.154 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260319 대비=-43000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.155 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260318 대비=86000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.156 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260317 대비=-4000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.157 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260316 대비=64000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.158 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260313 대비=-20000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.158 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260312 대비=-25000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.159 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260311 대비=17000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.160 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260310 대비=102000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.161 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260309 대비=-88000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.163 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260306 대비=-17000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.164 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260305 대비=92000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.165 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260304 대비=-90000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.165 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260303 대비=-122000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.166 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260227 대비=-38000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.167 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260226 대비=81000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.169 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260225 대비=13000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.170 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260224 대비=54000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.171 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260223 대비=2000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.172 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260220 대비=55000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.173 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260219 대비=14000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.174 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260213 대비=-8000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.175 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260212 대비=28000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.175 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260211 대비=-16000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.176 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260210 대비=-11000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.177 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260209 대비=48000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.178 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260206 대비=-3000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.179 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260205 대비=-58000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.180 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260204 대비=-7000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.181 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260203 대비=77000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.182 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260202 대비=-79000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.183 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260130 대비=48000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.184 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260129 대비=20000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.185 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260128 대비=41000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.186 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260127 대비=64000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.187 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260126 대비=-31000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.188 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260123 대비=12000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.188 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260122 대비=15000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.191 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260121 대비=-3000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.191 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260120 대비=-21000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.192 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260119 대비=8000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.193 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260116 대비=7000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.194 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260115 대비=7000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.195 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260114 대비=4000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.196 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260113 대비=-11000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.197 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260112 대비=5000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.198 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260109 대비=-12000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.199 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260108 대비=14000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.199 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260107 대비=16000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.200 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260106 대비=30000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.201 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260105 대비=19000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.202 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20260102 대비=26000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.203 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251230 대비=11000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.204 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251229 대비=41000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.205 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251226 대비=11000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.206 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251224 대비=4000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.207 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251223 대비=4000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.208 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251222 대비=33000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.209 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251219 대비=-5000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.210 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251218 대비=1000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.211 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251217 대비=21000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.212 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251216 대비=-24000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.212 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251215 대비=-17000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.213 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251212 대비=6000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:51:46.215 | DEBUG    | common_api:on_opt10059_req:684 - [opt10059] pivot 일자=20251211 대비=-22000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:56:54.692 | INFO     | common_api:common_log:907 - 로그인 창 열기 성공!
+2026-05-12 09:56:58.518 | INFO     | common_api:common_log:907 - 로그인 성공!
+2026-05-12 09:56:58.520 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 09:56:58.521 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 09:56:58.565 | DEBUG    | __main__:on_finished_password_settings:934 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 09:56:58.568 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x0634F5C8>>, func_args: [0]
+2026-05-12 09:56:58.591 | INFO     | common_api:_receive_msg:841 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 09:56:58.592 | INFO     | common_api:common_log:907 - [100000] 모의투자 조회완료
+2026-05-12 09:56:58.594 | INFO     | common_api:common_log:907 - 기본 정보 로딩 완료!
+2026-05-12 09:57:07.307 | INFO     | common_api:common_log:907 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 09:57:07.440 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x0634F5C8>>, func_args: ['000660', '20260512', '2', '0', '1']
+2026-05-12 09:57:07.446 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=2 매매=0
+2026-05-12 09:57:07.468 | INFO     | common_api:on_opt10059_req:622 - [opt10059] 응답 수신 data_cnt=100
+2026-05-12 09:57:07.470 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row0: 일자='20260512' 대비='+65000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:07.471 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row1: 일자='20260511' 대비='+194000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:07.472 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row2: 일자='20260508' 대비='+32000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:07.473 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row3: 일자='20260507' 대비='+53000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:07.474 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row4: 일자='20260506' 대비='+154000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:07.490 | INFO     | common_api:on_opt10059_req:692 - [opt10059] 피벗 완료 100일: 첫날=20260512 대비=65000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:57:07.492 | INFO     | common_api:common_log:907 - [종목별투자자] 100건 수신 완료
+2026-05-12 09:57:17.676 | INFO     | common_api:common_log:907 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 09:57:17.692 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x0634F5C8>>, func_args: ['000660', '20260512', '2', '0', '1']
+2026-05-12 09:57:17.700 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=2 매매=0
+2026-05-12 09:57:17.714 | INFO     | common_api:on_opt10059_req:622 - [opt10059] 응답 수신 data_cnt=100
+2026-05-12 09:57:17.715 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row0: 일자='20260512' 대비='+65000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:17.717 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row1: 일자='20260511' 대비='+194000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:17.718 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row2: 일자='20260508' 대비='+32000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:17.719 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row3: 일자='20260507' 대비='+53000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:17.720 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row4: 일자='20260506' 대비='+154000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:17.734 | INFO     | common_api:on_opt10059_req:692 - [opt10059] 피벗 완료 100일: 첫날=20260512 대비=65000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:57:17.736 | INFO     | common_api:common_log:907 - [종목별투자자] 100건 수신 완료
+2026-05-12 09:57:17.892 | INFO     | common_api:common_log:907 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 09:57:17.948 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x0634F5C8>>, func_args: ['000660', '20260512', '2', '0', '1']
+2026-05-12 09:57:17.959 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=2 매매=0
+2026-05-12 09:57:17.969 | INFO     | common_api:on_opt10059_req:622 - [opt10059] 응답 수신 data_cnt=100
+2026-05-12 09:57:17.970 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row0: 일자='20260512' 대비='+65000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:17.971 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row1: 일자='20260511' 대비='+194000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:17.972 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row2: 일자='20260508' 대비='+32000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:17.973 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row3: 일자='20260507' 대비='+53000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:17.974 | INFO     | common_api:on_opt10059_req:634 - [opt10059] row4: 일자='20260506' 대비='+154000' 거래량합='' 매도='' 매수='' 순매수='' 비중=''
+2026-05-12 09:57:17.991 | INFO     | common_api:on_opt10059_req:692 - [opt10059] 피벗 완료 100일: 첫날=20260512 대비=65000 거래량=0 개인=0 외국인=0 기관계=0
+2026-05-12 09:57:17.993 | INFO     | common_api:common_log:907 - [종목별투자자] 100건 수신 완료
+2026-05-12 10:06:38.653 | INFO     | common_api:common_log:910 - 로그인 창 열기 성공!
+2026-05-12 10:06:48.549 | INFO     | common_api:common_log:910 - 로그인 성공!
+2026-05-12 10:06:48.551 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 10:06:48.552 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 10:06:48.595 | DEBUG    | __main__:on_finished_password_settings:934 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 10:06:48.598 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x062875C8>>, func_args: [0]
+2026-05-12 10:06:48.667 | INFO     | common_api:_receive_msg:844 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 10:06:48.668 | INFO     | common_api:common_log:910 - [100000] 모의투자 조회완료
+2026-05-12 10:06:48.670 | INFO     | common_api:common_log:910 - 기본 정보 로딩 완료!
+2026-05-12 10:06:54.541 | INFO     | common_api:common_log:910 - [종목별투자자] 005930 조회 요청 중...
+2026-05-12 10:06:54.662 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x062875C8>>, func_args: ['005930', '20260512', '2', '0', '1']
+2026-05-12 10:06:54.669 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=005930 금액수량=2 매매=0
+2026-05-12 10:06:54.688 | INFO     | common_api:common_log:910 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 순매수='' 개인필드=''
+2026-05-12 10:06:54.690 | INFO     | common_api:on_opt10059_req:640 - [opt10059] data_cnt=100 row0='20260512' row1='20260511' 순매수='' 개인=''
+2026-05-12 10:06:54.731 | INFO     | common_api:common_log:910 - [투자자] 구조A(날짜별1행) → 100건 파싱
+2026-05-12 10:06:54.734 | INFO     | common_api:common_log:910 - [종목별투자자] 100건 수신 완료
+2026-05-12 10:06:57.266 | DEBUG    | common_api:on_opt10070_req:719 - [opt10070] n=1: 매수거래원='미래에셋' 매수거래원수량='+1091403' | 매도거래원='메릴린치' 매도거래원수량='-907292'
+2026-05-12 10:06:57.268 | DEBUG    | common_api:on_opt10070_req:719 - [opt10070] n=2: 매수거래원='NH투자증권' 매수거래원수량='+872167' | 매도거래원='미래에셋' 매도거래원수량='-744477'
+2026-05-12 10:06:57.269 | DEBUG    | common_api:on_opt10070_req:719 - [opt10070] n=3: 매수거래원='키움증권' 매수거래원수량='+789748' | 매도거래원='한  화' 매도거래원수량='-661811'
+2026-05-12 10:06:57.270 | DEBUG    | common_api:on_opt10070_req:719 - [opt10070] n=4: 매수거래원='BNK증권' 매수거래원수량='+656685' | 매도거래원='BNK증권' 매도거래원수량='-638808'
+2026-05-12 10:06:57.271 | DEBUG    | common_api:on_opt10070_req:719 - [opt10070] n=5: 매수거래원='삼  성' 매수거래원수량='+651883' | 매도거래원='유비에스증권' 매도거래원수량='-635185'
+2026-05-12 10:06:57.276 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 005930
+2026-05-12 10:06:57.279 | INFO     | common_api:common_log:910 - [거래원] 005930 시간별 실시간 구독 시작
+2026-05-12 10:07:21.177 | INFO     | common_api:common_log:910 - [종목별투자자] 005930 조회 요청 중...
+2026-05-12 10:07:21.408 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x062875C8>>, func_args: ['005930', '20260512', '1', '0', '1']
+2026-05-12 10:07:21.415 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=005930 금액수량=1 매매=0
+2026-05-12 10:07:21.437 | INFO     | common_api:common_log:910 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 순매수='' 개인필드=''
+2026-05-12 10:07:21.438 | INFO     | common_api:on_opt10059_req:640 - [opt10059] data_cnt=100 row0='20260512' row1='20260511' 순매수='' 개인=''
+2026-05-12 10:07:21.472 | INFO     | common_api:common_log:910 - [투자자] 구조A(날짜별1행) → 100건 파싱
+2026-05-12 10:07:21.474 | INFO     | common_api:common_log:910 - [종목별투자자] 100건 수신 완료
+2026-05-12 10:07:21.826 | INFO     | common_api:common_log:910 - [종목별투자자] 005930 조회 요청 중...
+2026-05-12 10:07:21.918 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x062875C8>>, func_args: ['005930', '20260512', '1', '0', '1']
+2026-05-12 10:07:21.925 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=005930 금액수량=1 매매=0
+2026-05-12 10:07:21.941 | INFO     | common_api:common_log:910 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 순매수='' 개인필드=''
+2026-05-12 10:07:21.942 | INFO     | common_api:on_opt10059_req:640 - [opt10059] data_cnt=100 row0='20260512' row1='20260511' 순매수='' 개인=''
+2026-05-12 10:07:21.977 | INFO     | common_api:common_log:910 - [투자자] 구조A(날짜별1행) → 100건 파싱
+2026-05-12 10:07:21.979 | INFO     | common_api:common_log:910 - [종목별투자자] 100건 수신 완료
+2026-05-12 10:07:22.061 | INFO     | common_api:common_log:910 - [종목별투자자] 005930 조회 요청 중...
+2026-05-12 10:07:22.157 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x062875C8>>, func_args: ['005930', '20260512', '1', '0', '1']
+2026-05-12 10:07:22.164 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=005930 금액수량=1 매매=0
+2026-05-12 10:07:22.187 | INFO     | common_api:common_log:910 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 순매수='' 개인필드=''
+2026-05-12 10:07:22.189 | INFO     | common_api:on_opt10059_req:640 - [opt10059] data_cnt=100 row0='20260512' row1='20260511' 순매수='' 개인=''
+2026-05-12 10:07:22.226 | INFO     | common_api:common_log:910 - [투자자] 구조A(날짜별1행) → 100건 파싱
+2026-05-12 10:07:22.228 | INFO     | common_api:common_log:910 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:37:14.857 | INFO     | common_api:common_log:929 - 로그인 창 열기 성공!
+2026-05-12 13:37:24.796 | INFO     | common_api:common_log:929 - 로그인 성공!
+2026-05-12 13:37:24.798 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 13:37:24.799 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 13:37:24.842 | DEBUG    | __main__:on_finished_password_settings:939 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 13:37:24.846 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x06504658>>, func_args: [0]
+2026-05-12 13:37:25.303 | INFO     | common_api:_receive_msg:863 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 13:37:25.304 | INFO     | common_api:common_log:929 - [100000] 모의투자 조회완료
+2026-05-12 13:37:25.308 | INFO     | common_api:common_log:929 - 기본 정보 로딩 완료!
+2026-05-12 13:37:27.789 | INFO     | common_api:common_log:929 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:37:27.877 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x06504658>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:37:27.889 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:37:27.915 | INFO     | common_api:common_log:929 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인필드='개인투자자'='0' 외국인필드='외국인투자자' 거래량필드='거래량합'
+2026-05-12 13:37:27.916 | INFO     | common_api:on_opt10059_req:652 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합'
+2026-05-12 13:37:27.952 | INFO     | common_api:common_log:929 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:37:27.954 | INFO     | common_api:common_log:929 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:46:55.389 | INFO     | common_api:common_log:933 - 로그인 창 열기 성공!
+2026-05-12 13:47:05.284 | INFO     | common_api:common_log:933 - 로그인 성공!
+2026-05-12 13:47:05.286 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 13:47:05.287 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 13:47:05.331 | DEBUG    | __main__:on_finished_password_settings:939 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 13:47:05.333 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x062FA610>>, func_args: [0]
+2026-05-12 13:47:05.348 | INFO     | common_api:_receive_msg:867 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 13:47:05.350 | INFO     | common_api:common_log:933 - [100000] 모의투자 조회완료
+2026-05-12 13:47:05.352 | INFO     | common_api:common_log:933 - 기본 정보 로딩 완료!
+2026-05-12 13:47:16.390 | INFO     | common_api:common_log:933 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:47:16.422 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x062FA610>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:47:16.429 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:47:16.444 | INFO     | common_api:common_log:933 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인필드='개인투자자'='0' 외국인필드='외국인투자자' 거래량필드='거래량합'
+2026-05-12 13:47:16.446 | INFO     | common_api:on_opt10059_req:654 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합'
+2026-05-12 13:47:16.484 | INFO     | common_api:common_log:933 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:47:16.487 | INFO     | common_api:common_log:933 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:47:20.176 | INFO     | common_api:common_log:933 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:47:20.416 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x062FA610>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:47:20.423 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:47:20.439 | INFO     | common_api:common_log:933 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인필드='개인투자자'='0' 외국인필드='외국인투자자' 거래량필드='거래량합'
+2026-05-12 13:47:20.440 | INFO     | common_api:on_opt10059_req:654 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합'
+2026-05-12 13:47:20.479 | INFO     | common_api:common_log:933 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:47:20.481 | INFO     | common_api:common_log:933 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:47:21.595 | INFO     | common_api:common_log:933 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:47:21.658 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x062FA610>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:47:21.665 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:47:21.682 | INFO     | common_api:common_log:933 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인필드='개인투자자'='0' 외국인필드='외국인투자자' 거래량필드='거래량합'
+2026-05-12 13:47:21.684 | INFO     | common_api:on_opt10059_req:654 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합'
+2026-05-12 13:47:21.731 | INFO     | common_api:common_log:933 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:47:21.734 | INFO     | common_api:common_log:933 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:47:23.868 | INFO     | common_api:common_log:933 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:47:23.915 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x062FA610>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:47:23.922 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:47:23.945 | INFO     | common_api:common_log:933 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인필드='개인투자자'='0' 외국인필드='외국인투자자' 거래량필드='거래량합'
+2026-05-12 13:47:23.947 | INFO     | common_api:on_opt10059_req:654 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합'
+2026-05-12 13:47:23.983 | INFO     | common_api:common_log:933 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:47:23.985 | INFO     | common_api:common_log:933 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:47:24.671 | INFO     | common_api:common_log:933 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:47:24.909 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x062FA610>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:47:24.959 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:47:25.000 | INFO     | common_api:common_log:933 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인필드='개인투자자'='0' 외국인필드='외국인투자자' 거래량필드='거래량합'
+2026-05-12 13:47:25.021 | INFO     | common_api:on_opt10059_req:654 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합'
+2026-05-12 13:47:25.060 | INFO     | common_api:common_log:933 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:47:25.066 | INFO     | common_api:common_log:933 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:47:25.223 | INFO     | common_api:common_log:933 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:47:25.414 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x062FA610>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:47:25.421 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:47:25.443 | INFO     | common_api:common_log:933 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인필드='개인투자자'='0' 외국인필드='외국인투자자' 거래량필드='거래량합'
+2026-05-12 13:47:25.445 | INFO     | common_api:on_opt10059_req:654 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합'
+2026-05-12 13:47:25.484 | INFO     | common_api:common_log:933 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:47:25.487 | INFO     | common_api:common_log:933 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:47:25.575 | INFO     | common_api:common_log:933 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:47:25.666 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x062FA610>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:47:25.674 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:47:25.686 | INFO     | common_api:common_log:933 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인필드='개인투자자'='0' 외국인필드='외국인투자자' 거래량필드='거래량합'
+2026-05-12 13:47:25.688 | INFO     | common_api:on_opt10059_req:654 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합'
+2026-05-12 13:47:25.729 | INFO     | common_api:common_log:933 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:47:25.731 | INFO     | common_api:common_log:933 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:47:25.812 | INFO     | common_api:common_log:933 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:47:25.909 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x062FA610>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:47:25.917 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:47:25.952 | INFO     | common_api:common_log:933 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인필드='개인투자자'='0' 외국인필드='외국인투자자' 거래량필드='거래량합'
+2026-05-12 13:47:25.953 | INFO     | common_api:on_opt10059_req:654 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합'
+2026-05-12 13:47:25.989 | INFO     | common_api:common_log:933 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:47:25.992 | INFO     | common_api:common_log:933 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:53:45.595 | INFO     | common_api:common_log:936 - 로그인 창 열기 성공!
+2026-05-12 13:53:55.448 | INFO     | common_api:common_log:936 - 로그인 성공!
+2026-05-12 13:53:55.450 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 13:53:55.452 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 13:53:55.493 | DEBUG    | __main__:on_finished_password_settings:939 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 13:53:55.497 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x0565A610>>, func_args: [0]
+2026-05-12 13:53:55.585 | INFO     | common_api:_receive_msg:870 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 13:53:55.586 | INFO     | common_api:common_log:936 - [100000] 모의투자 조회완료
+2026-05-12 13:53:55.588 | INFO     | common_api:common_log:936 - 기본 정보 로딩 완료!
+2026-05-12 13:53:57.605 | INFO     | common_api:common_log:936 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:53:57.616 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x0565A610>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:53:57.623 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:53:57.652 | INFO     | common_api:common_log:936 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' today='20260512'
+2026-05-12 13:53:57.653 | INFO     | common_api:on_opt10059_req:655 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' today='20260512'
+2026-05-12 13:53:57.698 | INFO     | common_api:common_log:936 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:53:57.701 | INFO     | common_api:common_log:936 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:53:59.950 | DEBUG    | common_api:on_opt10070_req:745 - [opt10070] n=1: 매수거래원='KB증권' 매수거래원수량='+793472' | 매도거래원='KB증권' 매도거래원수량='-1016749'
+2026-05-12 13:53:59.951 | DEBUG    | common_api:on_opt10070_req:745 - [opt10070] n=2: 매수거래원='삼  성' 매수거래원수량='+745443' | 매도거래원='삼  성' 매도거래원수량='-621279'
+2026-05-12 13:53:59.952 | DEBUG    | common_api:on_opt10070_req:745 - [opt10070] n=3: 매수거래원='키움증권' 매수거래원수량='+696825' | 매도거래원='키움증권' 매도거래원수량='-513857'
+2026-05-12 13:53:59.953 | DEBUG    | common_api:on_opt10070_req:745 - [opt10070] n=4: 매수거래원='미래에셋' 매수거래원수량='+590842' | 매도거래원='한국투자증권' 매도거래원수량='-412644'
+2026-05-12 13:53:59.955 | DEBUG    | common_api:on_opt10070_req:745 - [opt10070] n=5: 매수거래원='NH투자증권' 매수거래원수량='+553040' | 매도거래원='모건스탠리' 매도거래원수량='-386793'
+2026-05-12 13:53:59.961 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 13:53:59.962 | INFO     | common_api:common_log:936 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 13:54:03.377 | INFO     | common_api:common_log:936 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:54:03.616 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x0565A610>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:54:03.623 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:54:03.657 | INFO     | common_api:common_log:936 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' today='20260512'
+2026-05-12 13:54:03.659 | INFO     | common_api:on_opt10059_req:655 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' today='20260512'
+2026-05-12 13:54:03.697 | INFO     | common_api:common_log:936 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:54:03.699 | INFO     | common_api:common_log:936 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:54:07.930 | INFO     | common_api:common_log:936 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:54:08.112 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x0565A610>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:54:08.118 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:54:08.137 | INFO     | common_api:common_log:936 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' today='20260512'
+2026-05-12 13:54:08.139 | INFO     | common_api:on_opt10059_req:655 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' today='20260512'
+2026-05-12 13:54:08.176 | INFO     | common_api:common_log:936 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:54:08.179 | INFO     | common_api:common_log:936 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:57:50.707 | INFO     | common_api:common_log:942 - 로그인 창 열기 성공!
+2026-05-12 13:57:54.707 | INFO     | common_api:common_log:942 - 로그인 성공!
+2026-05-12 13:57:54.710 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 13:57:54.712 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 13:57:54.756 | DEBUG    | __main__:on_finished_password_settings:939 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 13:57:54.759 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05FFE610>>, func_args: [0]
+2026-05-12 13:57:54.825 | INFO     | common_api:_receive_msg:876 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 13:57:54.826 | INFO     | common_api:common_log:942 - [100000] 모의투자 조회완료
+2026-05-12 13:57:54.828 | INFO     | common_api:common_log:942 - 기본 정보 로딩 완료!
+2026-05-12 13:57:59.089 | INFO     | common_api:common_log:942 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:57:59.225 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x05FFE610>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:57:59.231 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:57:59.254 | INFO     | common_api:common_log:942 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' 종가='현재가'
+2026-05-12 13:57:59.256 | INFO     | common_api:on_opt10059_req:656 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' 종가='현재가'
+2026-05-12 13:57:59.296 | INFO     | common_api:common_log:942 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:57:59.298 | INFO     | common_api:common_log:942 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:58:05.202 | INFO     | common_api:common_log:942 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:58:05.229 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x05FFE610>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:58:05.236 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:58:05.254 | INFO     | common_api:common_log:942 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' 종가='현재가'
+2026-05-12 13:58:05.255 | INFO     | common_api:on_opt10059_req:656 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' 종가='현재가'
+2026-05-12 13:58:05.298 | INFO     | common_api:common_log:942 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:58:05.300 | INFO     | common_api:common_log:942 - [종목별투자자] 100건 수신 완료
+2026-05-12 13:58:06.618 | INFO     | common_api:common_log:942 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 13:58:06.727 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x05FFE610>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 13:58:06.734 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 13:58:06.749 | INFO     | common_api:common_log:942 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' 종가='현재가'
+2026-05-12 13:58:06.750 | INFO     | common_api:on_opt10059_req:656 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' 종가='현재가'
+2026-05-12 13:58:06.791 | INFO     | common_api:common_log:942 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 13:58:06.794 | INFO     | common_api:common_log:942 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:06:47.675 | INFO     | common_api:common_log:954 - 로그인 창 열기 성공!
+2026-05-12 14:06:51.651 | INFO     | common_api:common_log:954 - 로그인 성공!
+2026-05-12 14:06:51.653 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 14:06:51.654 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 14:06:51.696 | DEBUG    | __main__:on_finished_password_settings:940 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 14:06:51.700 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x0650D6A0>>, func_args: [0]
+2026-05-12 14:06:51.743 | INFO     | common_api:_receive_msg:888 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 14:06:51.744 | INFO     | common_api:common_log:954 - [100000] 모의투자 조회완료
+2026-05-12 14:06:51.747 | INFO     | common_api:common_log:954 - 기본 정보 로딩 완료!
+2026-05-12 14:06:59.705 | INFO     | common_api:common_log:954 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:06:59.940 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x0650D6A0>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:06:59.946 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:06:59.962 | INFO     | common_api:on_opt10059_req:648 - [opt10059] 거래량필드='거래량합' row1sample=''
+2026-05-12 14:06:59.964 | INFO     | common_api:common_log:954 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' 종가='현재가'
+2026-05-12 14:06:59.965 | INFO     | common_api:on_opt10059_req:660 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' 종가='현재가'
+2026-05-12 14:07:00.010 | INFO     | common_api:common_log:954 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:07:00.012 | INFO     | common_api:common_log:954 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:07:04.843 | INFO     | common_api:common_log:954 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:07:04.948 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x0650D6A0>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:07:04.955 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:07:04.974 | INFO     | common_api:on_opt10059_req:648 - [opt10059] 거래량필드='거래량합' row1sample=''
+2026-05-12 14:07:04.976 | INFO     | common_api:common_log:954 - [투자자] cnt=100 | row0일자='20260512' row1일자='20260511' | 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' 종가='현재가'
+2026-05-12 14:07:04.977 | INFO     | common_api:on_opt10059_req:660 - [opt10059] cnt=100 개인='개인투자자'('0') 외국인='외국인투자자' 거래량='거래량합' 종가='현재가'
+2026-05-12 14:07:05.022 | INFO     | common_api:common_log:954 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:07:05.025 | INFO     | common_api:common_log:954 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:11:19.265 | INFO     | common_api:common_log:956 - 로그인 창 열기 성공!
+2026-05-12 14:11:23.241 | INFO     | common_api:common_log:956 - 로그인 성공!
+2026-05-12 14:11:23.242 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 14:11:23.244 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 14:11:23.291 | DEBUG    | __main__:on_finished_password_settings:940 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 14:11:23.294 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05F35658>>, func_args: [0]
+2026-05-12 14:11:23.326 | INFO     | common_api:_receive_msg:890 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 14:11:23.327 | INFO     | common_api:common_log:956 - [100000] 모의투자 조회완료
+2026-05-12 14:11:23.330 | INFO     | common_api:common_log:956 - 기본 정보 로딩 완료!
+2026-05-12 14:11:24.846 | INFO     | common_api:common_log:956 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:11:25.019 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x05F35658>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:11:25.026 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:11:25.043 | INFO     | common_api:on_opt10059_req:655 - [opt10059] cnt=100 거래량필드='거래량합' r0거래량='' r1거래량='' 종가='현재가'
+2026-05-12 14:11:25.096 | INFO     | common_api:common_log:956 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:11:25.099 | INFO     | common_api:common_log:956 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=0 row1거래량=0
+2026-05-12 14:11:25.100 | INFO     | common_api:common_log:956 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:11:27.903 | INFO     | common_api:common_log:956 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:11:28.021 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x05F35658>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:11:28.028 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:11:28.044 | INFO     | common_api:on_opt10059_req:655 - [opt10059] cnt=100 거래량필드='거래량합' r0거래량='' r1거래량='' 종가='현재가'
+2026-05-12 14:11:28.087 | INFO     | common_api:common_log:956 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:11:28.090 | INFO     | common_api:common_log:956 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=0 row1거래량=0
+2026-05-12 14:11:28.092 | INFO     | common_api:common_log:956 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:11:28.815 | INFO     | common_api:common_log:956 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:11:29.020 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x05F35658>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:11:29.026 | INFO     | common_api:_send_opt10059:421 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:11:29.045 | INFO     | common_api:on_opt10059_req:655 - [opt10059] cnt=100 거래량필드='거래량합' r0거래량='' r1거래량='' 종가='현재가'
+2026-05-12 14:11:29.102 | INFO     | common_api:common_log:956 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:11:29.105 | INFO     | common_api:common_log:956 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=0 row1거래량=0
+2026-05-12 14:11:29.106 | INFO     | common_api:common_log:956 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:22:36.627 | INFO     | common_api:common_log:998 - 로그인 창 열기 성공!
+2026-05-12 14:22:40.562 | INFO     | common_api:common_log:998 - 로그인 성공!
+2026-05-12 14:22:40.563 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 14:22:40.564 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 14:22:40.607 | DEBUG    | __main__:on_finished_password_settings:940 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 14:22:40.610 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: [0]
+2026-05-12 14:22:40.636 | INFO     | common_api:_receive_msg:932 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 14:22:40.638 | INFO     | common_api:common_log:998 - [100000] 모의투자 조회완료
+2026-05-12 14:22:40.640 | INFO     | common_api:common_log:998 - 기본 정보 로딩 완료!
+2026-05-12 14:23:21.194 | INFO     | common_api:common_log:998 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:23:21.441 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660']
+2026-05-12 14:23:21.457 | INFO     | common_api:_send_opt10081_investor_vol:424 - [opt10081 vol] 요청: 000660
+2026-05-12 14:23:21.524 | INFO     | common_api:_on_opt10081_investor_vol_req:647 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:23:21.697 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:23:21.704 | INFO     | common_api:_send_opt10059:433 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:23:21.720 | INFO     | common_api:on_opt10059_req:684 - [opt10059] cnt=100 거래량필드='거래량합' r0거래량='' r1거래량='' 종가='현재가'
+2026-05-12 14:23:21.764 | INFO     | common_api:common_log:998 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:23:21.776 | INFO     | common_api:on_opt10059_req:782 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:23:21.777 | INFO     | common_api:common_log:998 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7387531 row1거래량=7433039
+2026-05-12 14:23:21.778 | INFO     | common_api:common_log:998 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:23:23.842 | INFO     | common_api:common_log:998 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:23:23.939 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660']
+2026-05-12 14:23:23.946 | INFO     | common_api:_send_opt10081_investor_vol:424 - [opt10081 vol] 요청: 000660
+2026-05-12 14:23:24.013 | INFO     | common_api:_on_opt10081_investor_vol_req:647 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:23:24.189 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:23:24.196 | INFO     | common_api:_send_opt10059:433 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:23:24.210 | INFO     | common_api:on_opt10059_req:684 - [opt10059] cnt=100 거래량필드='거래량합' r0거래량='' r1거래량='' 종가='현재가'
+2026-05-12 14:23:24.253 | INFO     | common_api:common_log:998 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:23:24.266 | INFO     | common_api:on_opt10059_req:782 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:23:24.268 | INFO     | common_api:common_log:998 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7388633 row1거래량=7433039
+2026-05-12 14:23:24.269 | INFO     | common_api:common_log:998 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:23:26.270 | INFO     | common_api:common_log:998 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:23:26.440 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660']
+2026-05-12 14:23:26.448 | INFO     | common_api:_send_opt10081_investor_vol:424 - [opt10081 vol] 요청: 000660
+2026-05-12 14:23:26.497 | INFO     | common_api:_on_opt10081_investor_vol_req:647 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:23:26.693 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:23:26.702 | INFO     | common_api:_send_opt10059:433 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:23:26.718 | INFO     | common_api:on_opt10059_req:684 - [opt10059] cnt=100 거래량필드='거래량합' r0거래량='' r1거래량='' 종가='현재가'
+2026-05-12 14:23:26.762 | INFO     | common_api:common_log:998 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:23:26.772 | INFO     | common_api:on_opt10059_req:782 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:23:26.774 | INFO     | common_api:common_log:998 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7389484 row1거래량=7433039
+2026-05-12 14:23:26.775 | INFO     | common_api:common_log:998 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:23:26.962 | INFO     | common_api:common_log:998 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:23:27.193 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660']
+2026-05-12 14:23:27.206 | INFO     | common_api:_send_opt10081_investor_vol:424 - [opt10081 vol] 요청: 000660
+2026-05-12 14:23:27.260 | INFO     | common_api:_on_opt10081_investor_vol_req:647 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:23:27.454 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:23:27.461 | INFO     | common_api:_send_opt10059:433 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:23:27.490 | INFO     | common_api:on_opt10059_req:684 - [opt10059] cnt=100 거래량필드='거래량합' r0거래량='' r1거래량='' 종가='현재가'
+2026-05-12 14:23:27.535 | INFO     | common_api:common_log:998 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:23:27.545 | INFO     | common_api:on_opt10059_req:782 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:23:27.547 | INFO     | common_api:common_log:998 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7389561 row1거래량=7433039
+2026-05-12 14:23:27.548 | INFO     | common_api:common_log:998 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:23:27.761 | INFO     | common_api:common_log:998 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:23:27.945 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660']
+2026-05-12 14:23:27.952 | INFO     | common_api:_send_opt10081_investor_vol:424 - [opt10081 vol] 요청: 000660
+2026-05-12 14:23:28.015 | INFO     | common_api:_on_opt10081_investor_vol_req:647 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:23:28.197 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:23:28.203 | INFO     | common_api:_send_opt10059:433 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:23:28.224 | INFO     | common_api:on_opt10059_req:684 - [opt10059] cnt=100 거래량필드='거래량합' r0거래량='' r1거래량='' 종가='현재가'
+2026-05-12 14:23:28.283 | INFO     | common_api:common_log:998 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:23:28.297 | INFO     | common_api:on_opt10059_req:782 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:23:28.298 | INFO     | common_api:common_log:998 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7389596 row1거래량=7433039
+2026-05-12 14:23:28.299 | INFO     | common_api:common_log:998 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:23:47.835 | INFO     | common_api:common_log:998 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:23:47.954 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660']
+2026-05-12 14:23:47.961 | INFO     | common_api:_send_opt10081_investor_vol:424 - [opt10081 vol] 요청: 000660
+2026-05-12 14:23:48.027 | INFO     | common_api:_on_opt10081_investor_vol_req:647 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:23:48.233 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:23:48.240 | INFO     | common_api:_send_opt10059:433 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:23:48.259 | INFO     | common_api:on_opt10059_req:684 - [opt10059] cnt=100 거래량필드='거래량합' r0거래량='' r1거래량='' 종가='현재가'
+2026-05-12 14:23:48.303 | INFO     | common_api:common_log:998 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:23:48.314 | INFO     | common_api:on_opt10059_req:782 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:23:48.315 | INFO     | common_api:common_log:998 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7401851 row1거래량=7433039
+2026-05-12 14:23:48.316 | INFO     | common_api:common_log:998 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:23:48.743 | INFO     | common_api:common_log:998 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:23:48.972 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660']
+2026-05-12 14:23:48.981 | INFO     | common_api:_send_opt10081_investor_vol:424 - [opt10081 vol] 요청: 000660
+2026-05-12 14:23:49.030 | INFO     | common_api:_on_opt10081_investor_vol_req:647 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:23:49.222 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:23:49.229 | INFO     | common_api:_send_opt10059:433 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:23:49.250 | INFO     | common_api:on_opt10059_req:684 - [opt10059] cnt=100 거래량필드='거래량합' r0거래량='' r1거래량='' 종가='현재가'
+2026-05-12 14:23:49.295 | INFO     | common_api:common_log:998 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:23:49.307 | INFO     | common_api:on_opt10059_req:782 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:23:49.309 | INFO     | common_api:common_log:998 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7401878 row1거래량=7433039
+2026-05-12 14:23:49.310 | INFO     | common_api:common_log:998 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:23:57.403 | INFO     | common_api:common_log:998 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:23:57.479 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660']
+2026-05-12 14:23:57.486 | INFO     | common_api:_send_opt10081_investor_vol:424 - [opt10081 vol] 요청: 000660
+2026-05-12 14:23:57.538 | INFO     | common_api:_on_opt10081_investor_vol_req:647 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:23:57.720 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:23:57.728 | INFO     | common_api:_send_opt10059:433 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:23:57.753 | INFO     | common_api:on_opt10059_req:684 - [opt10059] cnt=100 거래량필드='거래량합' r0거래량='' r1거래량='' 종가='현재가'
+2026-05-12 14:23:57.799 | INFO     | common_api:common_log:998 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:23:57.809 | INFO     | common_api:on_opt10059_req:782 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:23:57.810 | INFO     | common_api:common_log:998 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7403320 row1거래량=7433039
+2026-05-12 14:23:57.811 | INFO     | common_api:common_log:998 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:23:59.326 | INFO     | common_api:common_log:998 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:23:59.471 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660']
+2026-05-12 14:23:59.478 | INFO     | common_api:_send_opt10081_investor_vol:424 - [opt10081 vol] 요청: 000660
+2026-05-12 14:23:59.525 | INFO     | common_api:_on_opt10081_investor_vol_req:647 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:23:59.720 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:23:59.727 | INFO     | common_api:_send_opt10059:433 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:23:59.746 | INFO     | common_api:on_opt10059_req:684 - [opt10059] cnt=100 거래량필드='거래량합' r0거래량='' r1거래량='' 종가='현재가'
+2026-05-12 14:23:59.888 | INFO     | common_api:common_log:998 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:23:59.899 | INFO     | common_api:on_opt10059_req:782 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:23:59.900 | INFO     | common_api:common_log:998 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7403787 row1거래량=7433039
+2026-05-12 14:23:59.901 | INFO     | common_api:common_log:998 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:24:15.719 | INFO     | common_api:common_log:998 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:24:15.772 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660']
+2026-05-12 14:24:15.780 | INFO     | common_api:_send_opt10081_investor_vol:424 - [opt10081 vol] 요청: 000660
+2026-05-12 14:24:15.834 | INFO     | common_api:_on_opt10081_investor_vol_req:647 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:24:16.018 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x056346E8>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:24:16.026 | INFO     | common_api:_send_opt10059:433 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0
+2026-05-12 14:24:16.044 | INFO     | common_api:on_opt10059_req:684 - [opt10059] cnt=100 거래량필드='거래량합' r0거래량='' r1거래량='' 종가='현재가'
+2026-05-12 14:24:16.089 | INFO     | common_api:common_log:998 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:24:16.103 | INFO     | common_api:on_opt10059_req:782 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:24:16.104 | INFO     | common_api:common_log:998 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7414705 row1거래량=7433039
+2026-05-12 14:24:16.105 | INFO     | common_api:common_log:998 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:35:41.622 | INFO     | common_api:common_log:1004 - 로그인 창 열기 성공!
+2026-05-12 14:35:51.605 | INFO     | common_api:common_log:1004 - 로그인 성공!
+2026-05-12 14:35:51.606 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 14:35:51.608 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 14:35:51.652 | DEBUG    | __main__:on_finished_password_settings:940 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 14:35:51.656 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: [0]
+2026-05-12 14:35:51.684 | INFO     | common_api:_receive_msg:938 - Received MSG! 화면번호: 5003, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 14:35:51.685 | INFO     | common_api:common_log:1004 - [100000] 모의투자 조회완료
+2026-05-12 14:35:51.687 | INFO     | common_api:common_log:1004 - 기본 정보 로딩 완료!
+2026-05-12 14:35:52.929 | INFO     | common_api:common_log:1004 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:35:53.145 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660']
+2026-05-12 14:35:53.152 | INFO     | common_api:_send_opt10081_investor_vol:425 - [opt10081 vol] 요청: 000660
+2026-05-12 14:35:53.213 | INFO     | common_api:_on_opt10081_investor_vol_req:649 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:35:53.393 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:35:53.400 | INFO     | common_api:_send_opt10059:435 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0 거래소=통합
+2026-05-12 14:35:53.419 | INFO     | common_api:on_opt10059_req:689 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1848000' r1종가='+1880000' r0개인='0'
+2026-05-12 14:35:53.472 | INFO     | common_api:common_log:1004 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:35:53.485 | INFO     | common_api:on_opt10059_req:788 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:35:53.486 | INFO     | common_api:common_log:1004 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7597727 row1거래량=7433039
+2026-05-12 14:35:53.487 | INFO     | common_api:common_log:1004 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:36:50.175 | INFO     | common_api:common_log:1004 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:36:50.419 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660']
+2026-05-12 14:36:50.511 | INFO     | common_api:_send_opt10081_investor_vol:425 - [opt10081 vol] 요청: 000660
+2026-05-12 14:36:50.569 | INFO     | common_api:_on_opt10081_investor_vol_req:649 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:36:50.670 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660', '20260512', '2', '0', '1']
+2026-05-12 14:36:50.677 | INFO     | common_api:_send_opt10059:435 - [opt10059] 요청 전송: 종목=000660 금액수량=2 매매=0 거래소=통합
+2026-05-12 14:36:50.694 | INFO     | common_api:on_opt10059_req:689 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1844000' r1종가='+1880000' r0개인='0'
+2026-05-12 14:36:50.744 | INFO     | common_api:common_log:1004 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:36:50.755 | INFO     | common_api:on_opt10059_req:788 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:36:50.756 | INFO     | common_api:common_log:1004 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7616717 row1거래량=7433039
+2026-05-12 14:36:50.757 | INFO     | common_api:common_log:1004 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:36:53.267 | INFO     | common_api:common_log:1004 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:36:53.412 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660']
+2026-05-12 14:36:53.418 | INFO     | common_api:_send_opt10081_investor_vol:425 - [opt10081 vol] 요청: 000660
+2026-05-12 14:36:53.473 | INFO     | common_api:_on_opt10081_investor_vol_req:649 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:36:53.670 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660', '20260512', '2', '0', '1']
+2026-05-12 14:36:53.676 | INFO     | common_api:_send_opt10059:435 - [opt10059] 요청 전송: 종목=000660 금액수량=2 매매=0 거래소=통합
+2026-05-12 14:36:53.694 | INFO     | common_api:on_opt10059_req:689 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1843000' r1종가='+1880000' r0개인='0'
+2026-05-12 14:36:53.742 | INFO     | common_api:common_log:1004 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:36:53.754 | INFO     | common_api:on_opt10059_req:788 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:36:53.754 | INFO     | common_api:common_log:1004 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7618368 row1거래량=7433039
+2026-05-12 14:36:53.756 | INFO     | common_api:common_log:1004 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:36:56.439 | INFO     | common_api:common_log:1004 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:36:56.663 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660']
+2026-05-12 14:36:56.670 | INFO     | common_api:_send_opt10081_investor_vol:425 - [opt10081 vol] 요청: 000660
+2026-05-12 14:36:56.723 | INFO     | common_api:_on_opt10081_investor_vol_req:649 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:36:56.911 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660', '20260512', '2', '1', '1']
+2026-05-12 14:36:56.918 | INFO     | common_api:_send_opt10059:435 - [opt10059] 요청 전송: 종목=000660 금액수량=2 매매=1 거래소=통합
+2026-05-12 14:36:56.943 | INFO     | common_api:on_opt10059_req:689 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1841000' r1종가='+1880000' r0개인='0'
+2026-05-12 14:36:56.988 | INFO     | common_api:common_log:1004 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:36:56.999 | INFO     | common_api:on_opt10059_req:788 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:36:57.000 | INFO     | common_api:common_log:1004 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7620179 row1거래량=7433039
+2026-05-12 14:36:57.001 | INFO     | common_api:common_log:1004 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:37:00.091 | INFO     | common_api:common_log:1004 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:37:00.159 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660']
+2026-05-12 14:37:00.166 | INFO     | common_api:_send_opt10081_investor_vol:425 - [opt10081 vol] 요청: 000660
+2026-05-12 14:37:00.221 | INFO     | common_api:_on_opt10081_investor_vol_req:649 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:37:00.408 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660', '20260512', '2', '0', '1']
+2026-05-12 14:37:00.415 | INFO     | common_api:_send_opt10059:435 - [opt10059] 요청 전송: 종목=000660 금액수량=2 매매=0 거래소=통합
+2026-05-12 14:37:00.445 | INFO     | common_api:on_opt10059_req:689 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1840000' r1종가='+1880000' r0개인='0'
+2026-05-12 14:37:00.505 | INFO     | common_api:common_log:1004 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:37:00.517 | INFO     | common_api:on_opt10059_req:788 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:37:00.519 | INFO     | common_api:common_log:1004 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7621493 row1거래량=7433039
+2026-05-12 14:37:00.520 | INFO     | common_api:common_log:1004 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:37:03.872 | INFO     | common_api:common_log:1004 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:37:03.909 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660']
+2026-05-12 14:37:03.916 | INFO     | common_api:_send_opt10081_investor_vol:425 - [opt10081 vol] 요청: 000660
+2026-05-12 14:37:03.971 | INFO     | common_api:_on_opt10081_investor_vol_req:649 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:37:04.160 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:37:04.167 | INFO     | common_api:_send_opt10059:435 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0 거래소=통합
+2026-05-12 14:37:04.188 | INFO     | common_api:on_opt10059_req:689 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1841000' r1종가='+1880000' r0개인='0'
+2026-05-12 14:37:04.236 | INFO     | common_api:common_log:1004 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:37:04.248 | INFO     | common_api:on_opt10059_req:788 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:37:04.249 | INFO     | common_api:common_log:1004 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7623000 row1거래량=7433039
+2026-05-12 14:37:04.250 | INFO     | common_api:common_log:1004 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:37:08.700 | INFO     | common_api:common_log:1004 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:37:08.908 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660']
+2026-05-12 14:37:08.915 | INFO     | common_api:_send_opt10081_investor_vol:425 - [opt10081 vol] 요청: 000660
+2026-05-12 14:37:08.979 | INFO     | common_api:_on_opt10081_investor_vol_req:649 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:37:09.173 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660', '20260512', '2', '0', '1']
+2026-05-12 14:37:09.180 | INFO     | common_api:_send_opt10059:435 - [opt10059] 요청 전송: 종목=000660 금액수량=2 매매=0 거래소=통합
+2026-05-12 14:37:09.202 | INFO     | common_api:on_opt10059_req:689 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1841500' r1종가='+1880000' r0개인='0'
+2026-05-12 14:37:09.252 | INFO     | common_api:common_log:1004 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:37:09.263 | INFO     | common_api:on_opt10059_req:788 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:37:09.264 | INFO     | common_api:common_log:1004 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7624228 row1거래량=7433039
+2026-05-12 14:37:09.265 | INFO     | common_api:common_log:1004 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:37:17.972 | INFO     | common_api:common_log:1004 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:37:18.180 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660']
+2026-05-12 14:37:18.188 | INFO     | common_api:_send_opt10081_investor_vol:425 - [opt10081 vol] 요청: 000660
+2026-05-12 14:37:18.249 | INFO     | common_api:_on_opt10081_investor_vol_req:649 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:37:18.424 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660', '20260512', '2', '0', '1']
+2026-05-12 14:37:18.431 | INFO     | common_api:_send_opt10059:435 - [opt10059] 요청 전송: 종목=000660 금액수량=2 매매=0 거래소=통합
+2026-05-12 14:37:18.448 | INFO     | common_api:on_opt10059_req:689 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1841000' r1종가='+1880000' r0개인='0'
+2026-05-12 14:37:18.509 | INFO     | common_api:common_log:1004 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:37:18.521 | INFO     | common_api:on_opt10059_req:788 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:37:18.522 | INFO     | common_api:common_log:1004 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7627023 row1거래량=7433039
+2026-05-12 14:37:18.523 | INFO     | common_api:common_log:1004 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:37:27.548 | INFO     | common_api:common_log:1004 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:37:27.674 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660']
+2026-05-12 14:37:27.681 | INFO     | common_api:_send_opt10081_investor_vol:425 - [opt10081 vol] 요청: 000660
+2026-05-12 14:37:27.736 | INFO     | common_api:_on_opt10081_investor_vol_req:649 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:37:27.925 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:37:27.932 | INFO     | common_api:_send_opt10059:435 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0 거래소=통합
+2026-05-12 14:37:27.948 | INFO     | common_api:on_opt10059_req:689 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1839000' r1종가='+1880000' r0개인='0'
+2026-05-12 14:37:28.011 | INFO     | common_api:common_log:1004 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:37:28.025 | INFO     | common_api:on_opt10059_req:788 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:37:28.026 | INFO     | common_api:common_log:1004 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7629207 row1거래량=7433039
+2026-05-12 14:37:28.028 | INFO     | common_api:common_log:1004 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:38:08.400 | INFO     | common_api:common_log:1004 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:38:08.448 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660']
+2026-05-12 14:38:08.533 | INFO     | common_api:_send_opt10081_investor_vol:425 - [opt10081 vol] 요청: 000660
+2026-05-12 14:38:08.588 | INFO     | common_api:_on_opt10081_investor_vol_req:649 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:38:08.691 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660', '20260512', '2', '0', '1']
+2026-05-12 14:38:08.697 | INFO     | common_api:_send_opt10059:435 - [opt10059] 요청 전송: 종목=000660 금액수량=2 매매=0 거래소=통합
+2026-05-12 14:38:08.714 | INFO     | common_api:on_opt10059_req:689 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1840000' r1종가='+1880000' r0개인='0'
+2026-05-12 14:38:08.759 | INFO     | common_api:common_log:1004 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:38:08.769 | INFO     | common_api:on_opt10059_req:788 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:38:08.772 | INFO     | common_api:common_log:1004 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7637147 row1거래량=7433039
+2026-05-12 14:38:08.773 | INFO     | common_api:common_log:1004 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:38:12.153 | INFO     | common_api:common_log:1004 - [종목별투자자] 000660 조회 요청 중...
+2026-05-12 14:38:12.192 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660']
+2026-05-12 14:38:12.199 | INFO     | common_api:_send_opt10081_investor_vol:425 - [opt10081 vol] 요청: 000660
+2026-05-12 14:38:12.262 | INFO     | common_api:_on_opt10081_investor_vol_req:649 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:38:12.443 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x055D76A0>>, func_args: ['000660', '20260512', '1', '0', '1']
+2026-05-12 14:38:12.450 | INFO     | common_api:_send_opt10059:435 - [opt10059] 요청 전송: 종목=000660 금액수량=1 매매=0 거래소=통합
+2026-05-12 14:38:12.473 | INFO     | common_api:on_opt10059_req:689 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1841000' r1종가='+1880000' r0개인='0'
+2026-05-12 14:38:12.528 | INFO     | common_api:common_log:1004 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:38:12.541 | INFO     | common_api:on_opt10059_req:788 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:38:12.542 | INFO     | common_api:common_log:1004 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=7637389 row1거래량=7433039
+2026-05-12 14:38:12.543 | INFO     | common_api:common_log:1004 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:49:24.966 | INFO     | common_api:common_log:1006 - 로그인 창 열기 성공!
+2026-05-12 14:49:28.916 | INFO     | common_api:common_log:1006 - 로그인 성공!
+2026-05-12 14:49:28.918 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 14:49:28.920 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 14:49:28.962 | DEBUG    | __main__:on_finished_password_settings:940 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 14:49:29.068 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x0581D6A0>>, func_args: [0]
+2026-05-12 14:49:29.132 | INFO     | common_api:_receive_msg:940 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 14:49:29.135 | INFO     | common_api:common_log:1006 - [100000] 모의투자 조회완료
+2026-05-12 14:49:29.138 | INFO     | common_api:common_log:1006 - 기본 정보 로딩 완료!
+2026-05-12 14:49:32.002 | INFO     | common_api:common_log:1006 - [종목별투자자] 000660_AL 조회 요청 중...
+2026-05-12 14:49:32.230 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x0581D6A0>>, func_args: ['000660_AL']
+2026-05-12 14:49:32.237 | INFO     | common_api:_send_opt10081_investor_vol:427 - [opt10081 vol] 요청: 000660_AL
+2026-05-12 14:49:32.296 | INFO     | common_api:_on_opt10081_investor_vol_req:651 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:49:32.470 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x0581D6A0>>, func_args: ['000660_AL', '20260512', '1', '0', '1']
+2026-05-12 14:49:32.478 | INFO     | common_api:_send_opt10059:437 - [opt10059] 요청 전송: 종목=000660_AL 금액수량=1 매매=0 거래소=통합
+2026-05-12 14:49:32.501 | INFO     | common_api:on_opt10059_req:691 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1848000' r1종가='+1908000' r0개인='0'
+2026-05-12 14:49:32.562 | INFO     | common_api:common_log:1006 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:49:32.579 | INFO     | common_api:on_opt10059_req:790 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:49:32.580 | INFO     | common_api:common_log:1006 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=12569752 row1거래량=12911808
+2026-05-12 14:49:32.581 | INFO     | common_api:common_log:1006 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:49:35.316 | INFO     | common_api:common_log:1006 - [종목별투자자] 000660_AL 조회 요청 중...
+2026-05-12 14:49:35.472 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x0581D6A0>>, func_args: ['000660_AL']
+2026-05-12 14:49:35.478 | INFO     | common_api:_send_opt10081_investor_vol:427 - [opt10081 vol] 요청: 000660_AL
+2026-05-12 14:49:35.548 | INFO     | common_api:_on_opt10081_investor_vol_req:651 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 14:49:35.721 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x0581D6A0>>, func_args: ['000660_AL', '20260512', '1', '0', '1']
+2026-05-12 14:49:35.728 | INFO     | common_api:_send_opt10059:437 - [opt10059] 요청 전송: 종목=000660_AL 금액수량=1 매매=0 거래소=통합
+2026-05-12 14:49:35.757 | INFO     | common_api:on_opt10059_req:691 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1847000' r1종가='+1908000' r0개인='0'
+2026-05-12 14:49:35.801 | INFO     | common_api:common_log:1006 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 14:49:35.812 | INFO     | common_api:on_opt10059_req:790 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 14:49:35.813 | INFO     | common_api:common_log:1006 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=12570668 row1거래량=12911808
+2026-05-12 14:49:35.814 | INFO     | common_api:common_log:1006 - [종목별투자자] 100건 수신 완료
+2026-05-12 14:50:27.438 | DEBUG    | common_api:on_opt10070_req:815 - [opt10070] n=1: 매수거래원='KB증권' 매수거래원수량='+907121' | 매도거래원='KB증권' 매도거래원수량='-1154092'
+2026-05-12 14:50:27.439 | DEBUG    | common_api:on_opt10070_req:815 - [opt10070] n=2: 매수거래원='삼  성' 매수거래원수량='+842645' | 매도거래원='삼  성' 매도거래원수량='-681672'
+2026-05-12 14:50:27.440 | DEBUG    | common_api:on_opt10070_req:815 - [opt10070] n=3: 매수거래원='키움증권' 매수거래원수량='+794697' | 매도거래원='키움증권' 매도거래원수량='-574505'
+2026-05-12 14:50:27.441 | DEBUG    | common_api:on_opt10070_req:815 - [opt10070] n=4: 매수거래원='미래에셋' 매수거래원수량='+671305' | 매도거래원='한국투자증권' 매도거래원수량='-497952'
+2026-05-12 14:50:27.442 | DEBUG    | common_api:on_opt10070_req:815 - [opt10070] n=5: 매수거래원='NH투자증권' 매수거래원수량='+638945' | 매도거래원='모건스탠리' 매도거래원수량='-481823'
+2026-05-12 14:50:27.448 | DEBUG    | common_api:subscribe_broker_realtime:396 - [거래원] 시간별 실시간 구독 시작: 000660
+2026-05-12 14:50:27.449 | INFO     | common_api:common_log:1006 - [거래원] 000660 시간별 실시간 구독 시작
+2026-05-12 15:14:52.066 | INFO     | common_api:common_log:1024 - 로그인 창 열기 성공!
+2026-05-12 15:20:44.556 | INFO     | common_api:common_log:1024 - 로그인 창 열기 성공!
+2026-05-12 15:20:44.563 | WARNING  | __main__:__init__:113 - [시장차트] 탭 초기화 실패 (matplotlib 없거나 Qt 충돌): No module named 'matplotlib'
+2026-05-12 15:20:48.363 | INFO     | common_api:common_log:1024 - 로그인 성공!
+2026-05-12 15:20:48.364 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 15:20:48.366 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 15:20:48.407 | DEBUG    | __main__:on_finished_password_settings:1048 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 15:20:48.411 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05975FA0>>, func_args: [0]
+2026-05-12 15:20:48.428 | INFO     | common_api:_receive_msg:958 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 15:20:48.429 | INFO     | common_api:common_log:1024 - [100000] 모의투자 조회완료
+2026-05-12 15:20:48.432 | INFO     | common_api:common_log:1024 - 기본 정보 로딩 완료!
+2026-05-12 15:20:50.915 | INFO     | common_api:common_log:1024 - [종목별투자자] 000660_AL 조회 요청 중...
+2026-05-12 15:20:51.084 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10081_investor_vol of <__main__.CustomAutoTrader object at 0x05975FA0>>, func_args: ['000660_AL']
+2026-05-12 15:20:51.090 | INFO     | common_api:_send_opt10081_investor_vol:427 - [opt10081 vol] 요청: 000660_AL
+2026-05-12 15:20:51.150 | INFO     | common_api:_on_opt10081_investor_vol_req:651 - [opt10081 vol] 600건 캐시 완료
+2026-05-12 15:20:51.330 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI._send_opt10059 of <__main__.CustomAutoTrader object at 0x05975FA0>>, func_args: ['000660_AL', '20260512', '1', '0', '1']
+2026-05-12 15:20:51.337 | INFO     | common_api:_send_opt10059:437 - [opt10059] 요청 전송: 종목=000660_AL 금액수량=1 매매=0 거래소=통합
+2026-05-12 15:20:51.354 | INFO     | common_api:on_opt10059_req:691 - [opt10059] cnt=100 거래량필드='거래량합' 종가필드='현재가' r0거래량='' r1거래량='' r0종가='-1863000' r1종가='+1908000' r0개인='0'
+2026-05-12 15:20:51.398 | INFO     | common_api:common_log:1024 - [투자자] 구조A(날짜별1행) → 100건 파싱 | 개인0=0
+2026-05-12 15:20:51.408 | INFO     | common_api:on_opt10059_req:790 - [opt10059] opt10081 캐시로 거래량 100행 보완
+2026-05-12 15:20:51.410 | INFO     | common_api:common_log:1024 - [투자자] 100건 파싱완료 | 거래량필드='거래량합' row0거래량=13376897 row1거래량=12911808
+2026-05-12 15:20:51.411 | INFO     | common_api:common_log:1024 - [종목별투자자] 100건 수신 완료
+2026-05-12 15:25:11.128 | INFO     | common_api:common_log:1024 - 로그인 창 열기 성공!
+2026-05-12 15:25:15.015 | INFO     | common_api:common_log:1024 - 로그인 성공!
+2026-05-12 15:25:15.017 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 15:25:15.019 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 15:25:15.059 | DEBUG    | __main__:on_finished_password_settings:1048 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 15:25:15.063 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05F73028>>, func_args: [0]
+2026-05-12 15:25:15.098 | INFO     | common_api:_receive_msg:958 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 15:25:15.099 | INFO     | common_api:common_log:1024 - [100000] 모의투자 조회완료
+2026-05-12 15:25:15.102 | INFO     | common_api:common_log:1024 - 기본 정보 로딩 완료!
+2026-05-12 15:37:49.654 | INFO     | common_api:common_log:1024 - 로그인 창 열기 성공!
+2026-05-12 15:37:53.469 | INFO     | common_api:common_log:1024 - 로그인 성공!
+2026-05-12 15:37:53.470 | INFO     | common_api:get_is_paper_trading:177 - 모의투자 서버에 접속 중입니다.
+2026-05-12 15:37:53.473 | DEBUG    | common_api:get_stock_code_name_dict:244 - NXT 대체거래소 가능 종목 수: 632
+2026-05-12 15:37:53.515 | DEBUG    | __main__:on_finished_password_settings:1045 - 계좌번호: 8126097211 정보 조회를 시작합니다.
+2026-05-12 15:37:53.519 | INFO     | common_api:send_tr_request:260 - Executing TR request fuction: <bound method KiwoomAPI.get_account_balance of <__main__.CustomAutoTrader object at 0x05FBEF10>>, func_args: [0]
+2026-05-12 15:37:53.560 | INFO     | common_api:_receive_msg:958 - Received MSG! 화면번호: 5001, 사용자 구분명: opw00018_req, TR이름: opw00018, 메세지: [100000] 모의투자 조회완료
+2026-05-12 15:37:53.561 | INFO     | common_api:common_log:1024 - [100000] 모의투자 조회완료
+2026-05-12 15:37:53.563 | INFO     | __main__:on_done_loading_basic_info:786 - [시장차트] 선물 코드: 101G2606
+2026-05-12 15:37:53.566 | INFO     | common_api:register_market_indices:1079 - [시장차트] KOSPI 실시간 등록
+2026-05-12 15:37:53.569 | INFO     | common_api:register_market_indices:1079 - [시장차트] KOSDAQ 실시간 등록
+2026-05-12 15:37:53.571 | INFO     | common_api:register_market_indices:1085 - [시장차트] 선물(101G2606) 실시간 등록
+2026-05-12 15:37:53.572 | INFO     | common_api:common_log:1024 - 기본 정보 로딩 완료!

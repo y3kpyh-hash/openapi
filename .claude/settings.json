@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit -m ' *)",
+      "Bash(\"C:/Python310_32/python.exe\" -c \"import platform; print\\(platform.architecture\\(\\)\\)\")",
+      "Bash(\"C:/Python310_32/python.exe\" -m pip install -r \"C:/OpenAPI/requirements.txt\")",
+      "Bash(\"C:/Python310_32/python.exe\" -m pip install --upgrade pip setuptools wheel)",
+      "Bash(\"C:/Python310_32/python.exe\" -m pip install PyQt5==5.15.11 openpyxl==3.1.5 loguru==0.6.0 requests==2.32.3 urllib3==1.26.15 beautifulsoup4==4.13.1)",
+      "Bash(\"C:/Python310_32/python.exe\" -m pip install \"numpy>=1.23,<2.0\" \"pandas>=1.5,<2.1\")",
+      "Bash(\"C:/Python310_32/python.exe\" -m pip install pyinstaller==6.10.0 ipython)",
+      "Bash(\"C:/Python310_32/python.exe\" -c \"from PyQt5.QtWidgets import QApplication; from PyQt5.QAxContainer import QAxWidget; import pandas; import numpy; print\\('PyQt5 OK'\\); print\\('pandas', pandas.__version__\\); print\\('numpy', numpy.__version__\\)\")",
+      "Bash(git commit -m 'requirements.txt: 32비트 Python 3.10 호환 버전으로 수정 *)",
+      "Bash(code --list-extensions)",
+      "PowerShell(& \"C:/Python310_32/python.exe\" -m pip install pandas_ta)",
+      "PowerShell(& \"C:/Python310_32/python.exe\" -m pip install \"pandas_ta==0.3.14b0\")",
+      "PowerShell(& \"C:/Python310_32/python.exe\" -m pip index versions pandas_ta 2>&1)",
+      "PowerShell(& \"C:/Python310_32/python.exe\" -m pip install python-telegram-bot 2>&1)",
+      "Bash(python -c ' *)",
+      "PowerShell(python --version)",
+      "PowerShell(python -c \"import sys; print\\(sys.executable\\)\")",
+      "Bash(python -m py_compile buy_signal.py)",
+      "Bash(python trading_product.py)",
+      "PowerShell(pip install -r c:\\\\OpenAPI\\\\requirements.txt 2>&1)",
+      "PowerShell(pip show loguru 2>&1)",
+      "PowerShell(cd c:\\\\OpenAPI\\\\chapter6; c:\\\\python310_32\\\\python.exe trading_product.py 2>&1; Write-Host \"Exit: $LASTEXITCODE\")",
+      "Bash(powershell -command \"Get-Content 'c:\\\\OpenAPI\\\\chapter6\\\\Log\\\\20260515log.log' | Select-Object -Last 80\")",
+      "Bash(c:/python310_32/python.exe -c \"import ast; ast.parse\\(open\\('common_api.py',encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(c:/python310_32/python.exe -m py_compile trading_product.py)",
+      "PowerShell(Stop-Process -Id 21496 -Force)",
+      "PowerShell(Start-Process python -ArgumentList \"c:\\\\OpenAPI\\\\chapter6\\\\trading_product.py\" -WorkingDirectory \"c:\\\\OpenAPI\\\\chapter6\")",
+      "Bash(python -c \"from db_manager import DBManager, DB_PATH; print\\('DB_PATH:', DB_PATH\\); db = DBManager\\(\\); print\\('테이블 생성 완료'\\); db.close\\(\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('flow_monitor.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(python -c \"print\\(sum\\(1 for _ in open\\('flow_monitor.py', encoding='utf-8'\\)\\)\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(r'c:\\\\OpenAPI\\\\chapter6\\\\scan_popup.py', encoding='utf-8'\\).read\\(\\)\\); print\\('scan_popup OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(r'c:\\\\OpenAPI\\\\chapter6\\\\db_manager.py', encoding='utf-8'\\).read\\(\\)\\); print\\('db_manager OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(r'c:\\\\OpenAPI\\\\chapter6\\\\trading_product.py', encoding='utf-8'\\).read\\(\\)\\); print\\('trading_product OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(r'c:\\\\OpenAPI\\\\chapter6\\\\dashboard.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\")"
+    ],
+    "additionalDirectories": [
+      "C:\\OpenAPI"
+    ]
+  }
+}

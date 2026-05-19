@@ -34,7 +34,11 @@
       "Bash(python -c \"import ast; ast.parse\\(open\\(r'c:\\\\OpenAPI\\\\chapter6\\\\scan_popup.py', encoding='utf-8'\\).read\\(\\)\\); print\\('scan_popup OK'\\)\")",
       "Bash(python -c \"import ast; ast.parse\\(open\\(r'c:\\\\OpenAPI\\\\chapter6\\\\db_manager.py', encoding='utf-8'\\).read\\(\\)\\); print\\('db_manager OK'\\)\")",
       "Bash(python -c \"import ast; ast.parse\\(open\\(r'c:\\\\OpenAPI\\\\chapter6\\\\trading_product.py', encoding='utf-8'\\).read\\(\\)\\); print\\('trading_product OK'\\)\")",
-      "Bash(python -c \"import ast; ast.parse\\(open\\(r'c:\\\\OpenAPI\\\\chapter6\\\\dashboard.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\")"
+      "Bash(python -c \"import ast; ast.parse\\(open\\(r'c:\\\\OpenAPI\\\\chapter6\\\\dashboard.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('chapter6/stock_flow_widget.py', encoding='utf-8'\\).read\\(\\)\\); print\\('widget: OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('chapter6/trading_product.py', encoding='utf-8'\\).read\\(\\)\\); print\\('trading: OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('chapter6/trading_product.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('chapter6/common_api.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\")"
     ],
     "additionalDirectories": [
       "C:\\OpenAPI"

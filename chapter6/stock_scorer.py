@@ -3,9 +3,11 @@
 StockScorer — 실시간 종목 강도 점수 시스템
 
 점수 구성 요소 (각 0~100, 가중 합산 → 최종 0~100):
-  거래대금 증가율  35%  — 세션 시작 대비 누적 거래대금 증가
-  등락률          25%  — 절대 척도 (-10%→0, 0%→50, +10%→100)
-  외인 순매수     20%  — 퍼센타일 순위
+  거래대금 증가율  30%  — 세션 시작 대비 누적 거래대금 증가
+  등락률          20%  — 절대 척도 (-10%→0, 0%→50, +10%→100)
+  외인 순매수     15%  — 퍼센타일 순위
+  기관 순매수      8%  — 퍼센타일 순위
+  금융투자 순매수  7%  — 퍼센타일 순위
   체결강도        10%  — 절대 척도 (0%→0, 100%→50, 200%→100)
   거래량 증가율   10%  — 세션 시작 대비 누적 거래량 증가
 
@@ -36,9 +38,11 @@ import pandas as pd
 # ──────────────────────────────────────────────────────────────
 
 WEIGHTS: dict[str, float] = {
-    "trading_value": 0.35,
-    "change_pct":    0.25,
-    "foreign_net":   0.20,
+    "trading_value": 0.30,
+    "change_pct":    0.20,
+    "foreign_net":   0.15,
+    "inst_net":      0.08,
+    "fin_net":       0.07,
     "exec_strength": 0.10,
     "volume":        0.10,
 }
@@ -46,9 +50,9 @@ WEIGHTS: dict[str, float] = {
 OUTPUT_COLS = [
     "종목코드", "종목명",
     "등락률(%)", "거래대금", "거래량",
-    "외인순매수", "체결강도(%)",
+    "외인순매수", "기관순매수", "금융투자순매수", "체결강도(%)",
     "score", "등급",
-    "tv_score", "cp_score", "fn_score", "es_score", "vol_score",
+    "tv_score", "cp_score", "fn_score", "in_score", "fi_score", "es_score", "vol_score",
 ]
 
 
@@ -68,6 +72,7 @@ class _StockData:
     exec_strength:      float = 100.0  # 체결강도 (%)
     foreign_net:        float = 0.0    # 외인 순매수
     inst_net:           float = 0.0    # 기관 순매수
+    fin_net:            float = 0.0    # 금융투자 순매수
     ts:                 float = field(default_factory=time.time)
 
 
@@ -210,12 +215,14 @@ class StockScorer:
         code: str,
         foreign_net: float,
         inst_net:    float,
+        fin_net:     float = 0.0,
     ) -> None:
-        """외인/기관 순매수 갱신."""
+        """외인/기관/금융투자 순매수 갱신."""
         with self._lock:
             if code in self._stocks:
                 self._stocks[code].foreign_net = foreign_net
                 self._stocks[code].inst_net    = inst_net
+                self._stocks[code].fin_net     = fin_net
         self._notify()
 
     def reset_baselines(self) -> None:
@@ -258,6 +265,8 @@ class StockScorer:
             "volume_base":        d.volume_base,
             "exec_strength":      d.exec_strength,
             "foreign_net":        d.foreign_net,
+            "inst_net":           d.inst_net,
+            "fin_net":            d.fin_net,
         } for d in stocks])
 
         # ── 1) 거래대금 증가율 (퍼센타일) ────────────────────
@@ -273,12 +282,18 @@ class StockScorer:
         # ── 3) 외인 순매수 (퍼센타일) ────────────────────────
         df["fn_score"] = _percentile_score(df["foreign_net"])
 
-        # ── 4) 체결강도 (절대, 0~200% → 0~100점) ─────────────
+        # ── 4) 기관 순매수 (퍼센타일) ────────────────────────
+        df["in_score"] = _percentile_score(df["inst_net"])
+
+        # ── 5) 금융투자 순매수 (퍼센타일) ────────────────────
+        df["fi_score"] = _percentile_score(df["fin_net"])
+
+        # ── 6) 체결강도 (절대, 0~200% → 0~100점) ─────────────
         df["es_score"] = df["exec_strength"].apply(
             lambda x: _clamp(x / 2.0)
         )
 
-        # ── 5) 거래량 증가율 (퍼센타일) ──────────────────────
+        # ── 7) 거래량 증가율 (퍼센타일) ──────────────────────
         safe_vol = df["volume_base"].replace(0, np.nan)
         vol_rate = (df["volume"] / safe_vol - 1.0).fillna(0.0)
         df["vol_score"] = _percentile_score(vol_rate)
@@ -288,6 +303,8 @@ class StockScorer:
             df["tv_score"]  * WEIGHTS["trading_value"] +
             df["cp_score"]  * WEIGHTS["change_pct"]    +
             df["fn_score"]  * WEIGHTS["foreign_net"]   +
+            df["in_score"]  * WEIGHTS["inst_net"]      +
+            df["fi_score"]  * WEIGHTS["fin_net"]       +
             df["es_score"]  * WEIGHTS["exec_strength"] +
             df["vol_score"] * WEIGHTS["volume"]
         ).round(1)
@@ -302,6 +319,8 @@ class StockScorer:
                 "trading_value": "거래대금",
                 "volume":        "거래량",
                 "foreign_net":   "외인순매수",
+                "inst_net":      "기관순매수",
+                "fin_net":       "금융투자순매수",
                 "exec_strength": "체결강도(%)",
             })
             [OUTPUT_COLS]

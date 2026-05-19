@@ -7,10 +7,10 @@ BuySignalScanner — 매수 신호 스캐너
 매수 조건 6가지 (각 조건 pass/fail):
   C1. 섹터 강도 상위 3위 이내  — 섹터 거래대금합 순위 ≤ 3
   C2. 섹터 확산도 60% 이상     — 섹터 내 상승종목 비율 ≥ 60%
-  C3. 대장주                   — 섹터 내 leader_score 1위 AND 등급 ≥ A (≥ 65점)
-  C4. 외인 순매수 +            — 종목 외인순매수 > 0
-  C5. 거래대금 증가속도 급증    — 섹터 5분 증가율 ≥ 50% 또는 종목 tv_score ≥ 70
-  C6. 눌림 후 재돌파           — 체결강도 ≥ 120% AND 등락률 > 1%
+  C3. 대장주                   — 섹터 내 leader_score ≥ A등급 (≥ 65점)
+  C4. 외인 실순매수             — 외인순매수 > 0 (NaN=미로드이면 자동 실패)
+  C5. 거래 속도 급증            — 섹터 5분 증가율 ≥ 50% OR tv_score ≥ 65
+  C6. 눌림 후 재돌파 (과매수 ✕) — 체결강도 ≥ 115% AND 0.5% < 등락률 ≤ 8%
 
 신호 강도 (pass 개수 기준):
   ★★★ STRONG : 6개 모두 통과
@@ -38,22 +38,23 @@ CRITERIA: dict[str, float] = {
     "sector_rank":       3,      # C1: 섹터 순위 ≤ N 위
     "diffusion_pct":     60.0,   # C2: 확산도(%) ≥
     "leader_min_score":  65.0,   # C3: leader_score ≥ (A등급 기준)
-    # C4: 외인 데이터 미로드(=NaN)이면 실패, 로드된 경우 대규모 매도(-100억↓)만 실패
-    "foreign_net_floor": -100.0, # C4: 외인순매수 > 이 값 (미로드 NaN은 NaN>x=False → 실패)
-    "sector_vel5_min":   30.0,   # C5a: 섹터 5분 증가율(%) ≥ (초기 0% 고려해 낮춤)
-    "tv_score_min":      55.0,   # C5b: tv_score ≥ 중간 이상 (C5a 대체)
-    "change_pct_proxy":  3.0,    # C5c: 등락률 ≥ 이 값이면 급등 중으로 간주 (C5 대체)
-    "exec_str_min":      105.0,  # C6a: 체결강도(%) ≥ (기본 100보다 조금 높으면 매수세)
-    "change_pct_min":    0.3,    # C6b: 등락률(%) > (상승 중)
+    # C4: NaN(미로드)은 NaN>0=False로 자동 실패 / 실제 순매수 > 0만 통과
+    "foreign_net_floor":  0.0,   # C4: 외인순매수 > 0 (순매수 중인 종목만)
+    "sector_vel5_min":   50.0,   # C5a: 섹터 5분 증가율(%) ≥ 50% (충분히 강한 속도)
+    "tv_score_min":      65.0,   # C5b: tv_score ≥ 65 (A등급 거래량, C5a 대체)
+    # C5c(change_pct_proxy) 제거 — 이미 급등한 종목을 속도로 오인하지 않기 위해
+    "exec_str_min":      115.0,  # C6a: 체결강도(%) ≥ 115% (명확한 매수우위)
+    "change_pct_min":    0.5,    # C6b: 등락률(%) > 0.5% (의미있는 상승 중)
+    "change_pct_max":    8.0,    # C6c: 등락률(%) ≤ 8% (과매수·급등주 제외)
 }
 
 CRITERIA_LABELS = {
     "C1": f"섹터순위 ≤{int(CRITERIA['sector_rank'])}위",
     "C2": f"확산도 ≥{CRITERIA['diffusion_pct']:.0f}%",
     "C3": f"대장주(leader≥{CRITERIA['leader_min_score']:.0f})",
-    "C4": f"외인 >{CRITERIA['foreign_net_floor']:.0f}억",
-    "C5": f"속도≥{CRITERIA['sector_vel5_min']:.0f}% or 등락률≥{CRITERIA['change_pct_proxy']:.0f}%",
-    "C6": f"체결강도≥{CRITERIA['exec_str_min']:.0f}%+등락률>{CRITERIA['change_pct_min']:.1f}%",
+    "C4": f"외인순매수 >0억",
+    "C5": f"속도≥{CRITERIA['sector_vel5_min']:.0f}% or tv≥{CRITERIA['tv_score_min']:.0f}",
+    "C6": f"체결강도≥{CRITERIA['exec_str_min']:.0f}%+{CRITERIA['change_pct_min']:.1f}%<등락률≤{CRITERIA['change_pct_max']:.0f}%",
 }
 
 SIGNAL_COLS = [
@@ -183,15 +184,15 @@ class BuySignalScanner:
             c1 = r.sector_rank    <= CRITERIA["sector_rank"]
             c2 = r.diffusion      >= CRITERIA["diffusion_pct"]
             c3 = r.leader_score   >= CRITERIA["leader_min_score"]
-            # C4: 미로드(NaN)이면 NaN>x=False로 자동 실패, 로드 시 -100억 초과면 통과
+            # C4: NaN(미로드)은 NaN>0=False로 자동 실패 / 실제 순매수만 통과
             c4 = r.foreign_net    >  CRITERIA["foreign_net_floor"]
-            # C5: 섹터 속도, tv_score 퍼센타일, 또는 등락률로 급등 판단
+            # C5: 섹터 속도 OR tv_score — 이미 급등한 종목을 속도로 오인하는 등락률 대체 제거
             c5 = (r.sector_vel5   >= CRITERIA["sector_vel5_min"] or
-                  r.tv_score      >= CRITERIA["tv_score_min"] or
-                  r.change_pct    >= CRITERIA["change_pct_proxy"])
-            # C6: 체결강도(매수세)가 평균 초과 + 상승 중
+                  r.tv_score      >= CRITERIA["tv_score_min"])
+            # C6: 체결강도 강세 + 의미있는 상승 중 + 과매수(8% 초과) 제외
             c6 = (r.exec_strength >= CRITERIA["exec_str_min"] and
-                  r.change_pct    >  CRITERIA["change_pct_min"])
+                  r.change_pct    >  CRITERIA["change_pct_min"] and
+                  r.change_pct    <= CRITERIA["change_pct_max"])
 
             pass_cnt = sum([c1, c2, c3, c4, c5, c6])
             if pass_cnt < self._min_pass:

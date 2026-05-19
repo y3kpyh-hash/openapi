@@ -133,12 +133,17 @@ class ScanEngine:
 
     def run_scan(
         self,
-        score_min:    int   = 70,
-        pullback_min: float = 3.0,
-        pullback_max: float = 7.0,
-        target_pct:   float = 3.5,
-        stop_pct:     float = 3.0,
+        score_min:    int         = 70,
+        pullback_min: float       = 3.0,
+        pullback_max: float       = 7.0,
+        target_pct:   float       = 3.5,
+        stop_pct:     float       = 3.0,
+        hot_sectors:  list | None = None,
     ) -> list[dict]:
+        """
+        hot_sectors: MarketMapWidget.get_hot_sectors() 반환값.
+                     상위 섹터 종목에 보너스 점수 부여 (1위+10, 2위+7, 3위+5, 4~5위+3).
+        """
         if self._trader is None:
             return self._demo_candidates(target_pct, stop_pct)
 
@@ -150,6 +155,13 @@ class ScanEngine:
 
         if leader_df is None or leader_df.empty:
             return self._demo_candidates(target_pct, stop_pct)
+
+        # HOT 섹터 보너스 맵 (섹터명 → 보너스 점수)
+        _HOT_BONUS = [10, 7, 5, 3, 3]
+        hot_bonus_map: dict[str, int] = {}
+        if hot_sectors:
+            for i, sec in enumerate(hot_sectors[:5]):
+                hot_bonus_map[sec] = _HOT_BONUS[i]
 
         # 섹터 순위 맵
         sector_rank_map: dict[str, int] = {}
@@ -186,6 +198,8 @@ class ScanEngine:
 
             score = calc_score(foreigner, program, vol_ratio,
                                consec_buy, prog_accel, is_top)
+            # HOT 섹터 보너스
+            score = min(100, score + hot_bonus_map.get(sector, 0))
             if score < score_min:
                 continue
 

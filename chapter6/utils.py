@@ -93,7 +93,8 @@ class PandasModel(QAbstractTableModel):
         return QVariant()
 
     def refresh(self):
-        self.layoutChanged.emit()
+        self.beginResetModel()
+        self.endResetModel()
 
 
 class ConfirmDialog(QDialog):

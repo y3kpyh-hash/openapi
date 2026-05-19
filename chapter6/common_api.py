@@ -387,7 +387,12 @@ class KiwoomAPI(QMainWindow, form_class):
         if include_pre_post and not self.is_paper_trading:
             stock_code += "_AL"
         if '분' in candle_type:
-            self.tr_req_queue.put([self.request_opt10080, stock_code, f"{candle_type}:{candle_type}"])
+            # opt10080 틱범위는 숫자만 허용 (1, 3, 5, 10, 15, 30, 60)
+            # "1분봉", "3분봉", "30분봉" 등에서 숫자만 추출
+            import re as _re
+            _m = _re.search(r'\d+', candle_type)
+            tick_range = _m.group() if _m else "1"
+            self.tr_req_queue.put([self.request_opt10080, stock_code, tick_range])
         elif candle_type == '일봉':
             self.tr_req_queue.put([self.request_opt10081, stock_code])
         elif candle_type == '주봉':
@@ -511,9 +516,71 @@ class KiwoomAPI(QMainWindow, form_class):
         self.comm_rq_data(rqname="opt10059_req", trcode="opt10059", next=0, screen_no=self._get_screen_num())
         logger.info(f"[opt10059] 요청 전송: 종목={stock_code} 금액수량={amount_qty} 매매={trade_type} 거래소=통합")
 
+    def request_investor_data_flow_only(self, stock_code: str, end_date: str) -> None:
+        """수급흐름 배치 전용 — opt10059만 요청 (opt10081 생략으로 TR 절반 절감).
+        응답은 기존 on_opt10059_req → on_receive_investor_data 경로 공유."""
+        stock_code = stock_code.strip()
+        today = end_date
+        self._investor_trade_type = "0"   # 순매수
+        self.tr_req_queue.put([self._send_opt10059, stock_code, today, "1", "0", "1"])
+
+    # ── opt90013 종목일별프로그램매매추이 ────────────────────────
+
+    def request_prog_trade_daily(self, stock_code: str, date: str) -> None:
+        """opt90013 종목일별프로그램매매추이 — 오늘 프로그램 순매수금액 조회.
+        배치당 1TR만 사용 (opt10081 없음)."""
+        self.tr_req_queue.put([self._send_opt90013, stock_code.strip(), date])
+
+    def _send_opt90013(self, stock_code: str, date: str) -> None:
+        self.set_input_value(id="시간일자구분", value="1")   # 1=일별
+        self.set_input_value(id="금액수량구분", value="1")   # 1=금액
+        self.set_input_value(id="종목코드",     value=stock_code)
+        self.set_input_value(id="날짜",         value=date)
+        self.comm_rq_data(rqname="opt90013_prog_req", trcode="opt90013",
+                          next=0, screen_no=self._get_screen_num())
+        logger.info(f"[opt90013] 요청: 종목={stock_code} 날짜={date}")
+
+    def _on_opt90013_prog_req(self, trcode: str, rqname: str) -> None:
+        """opt90013 응답 파싱 → on_receive_program_trade_data(code, prog_net) 콜백."""
+        data_cnt = self._get_repeat_cnt(trcode, rqname)
+        if data_cnt == 0:
+            self.on_receive_program_trade_data("", 0.0)
+            return
+
+        today_str = datetime.datetime.now().strftime("%Y%m%d")
+        prog_net  = 0.0
+        code_used = getattr(self, '_auto_investor_code', '')
+
+        for i in range(min(data_cnt, 3)):   # 최대 3행만 탐색
+            일자 = self._comm_get_data(trcode, "", rqname, i, "일자").strip()
+            if 일자 == today_str:
+                raw = self._comm_get_data(trcode, "", rqname, i, "프로그램순매수금액").strip()
+                try:
+                    prog_net = float(raw.replace(",", "").replace("+", "") or 0)
+                except ValueError:
+                    prog_net = 0.0
+                break
+            elif i == 0 and 일자:
+                # 오늘 날짜가 row0에 없으면 row0을 당일 최신값으로 사용
+                raw = self._comm_get_data(trcode, "", rqname, 0, "프로그램순매수금액").strip()
+                try:
+                    prog_net = float(raw.replace(",", "").replace("+", "") or 0)
+                except ValueError:
+                    prog_net = 0.0
+                break
+
+        logger.debug(f"[opt90013] {code_used} 프로그램순매수={prog_net:+,.0f}")
+        self.on_receive_program_trade_data(code_used, prog_net)
+
+    def on_receive_program_trade_data(self, code: str, prog_net: float) -> None:
+        """opt90013 콜백 — 하위 클래스에서 오버라이드."""
+        pass
+
     def request_top_trading_value(self, market_type='000', filter_mode=0):
         # filter_mode: 0=전체, 1=ETF+ETN 제외, 2=ETF 제외, 3=ETN 제외
         self._top_trading_filter_mode = filter_mode
+        self._opt10032_acc = []          # 페이지 누적 초기화
+        self._top_trading_market = market_type
         self.set_input_value(id="시장구분",    value=market_type)
         self.set_input_value(id="관리종목포함", value="0")
         self.set_input_value(id="거래소구분",  value="3")   # 3=통합(KRX+NXT)
@@ -567,10 +634,12 @@ class KiwoomAPI(QMainWindow, form_class):
                 self._on_opt10081_investor_vol_req(sTrCode, sRQName)
             elif sRQName == "opt10059_req":
                 self.on_opt10059_req(sTrCode, sRQName)
+            elif sRQName == "opt90013_prog_req":
+                self._on_opt90013_prog_req(sTrCode, sRQName)
             elif sRQName == "opt10070_req":
                 self.on_opt10070_req(sTrCode, sRQName)
             elif sRQName == "opt10032_req":
-                self.on_opt10032_req(sTrCode, sRQName)
+                self.on_opt10032_req(sTrCode, sRQName, sPrevNext)
             elif sRQName == "opt90001_req":
                 self.on_opt90001_req(sTrCode, sRQName)
             elif sRQName == "opt90002_req":
@@ -745,15 +814,17 @@ class KiwoomAPI(QMainWindow, form_class):
     def _is_etn(self, name: str) -> bool:
         return "ETN" in name.upper()
 
-    def on_opt10032_req(self, trcode, rqname):
+    def on_opt10032_req(self, trcode, rqname, prev_next="0"):
         # opt10032 출력 필드: 종목코드, 현재순위, 전일순위, 종목명,
         #   현재가, 전일대비기호, 전일대비, 등락률, 매도호가, 매수호가,
         #   현재거래량, 전일거래량, 거래대금   (시가총액 없음)
         filter_mode = getattr(self, '_top_trading_filter_mode', 0)
-        data_cnt = self._get_repeat_cnt(trcode, rqname)
-        rows = []
-        rank = 1
-        for i in range(min(data_cnt, 130)):   # 필터링 여유분 확보 (최대 100위 + 여유 30)
+        data_cnt    = self._get_repeat_cnt(trcode, rqname)
+
+        if not hasattr(self, '_opt10032_acc'):
+            self._opt10032_acc = []
+
+        for i in range(data_cnt):
             종목코드 = self._comm_get_data(trcode, "", rqname, i, "종목코드").strip()
             전일순위 = self._comm_get_data(trcode, "", rqname, i, "전일순위").strip()
             종목명   = self._comm_get_data(trcode, "", rqname, i, "종목명").strip()
@@ -781,17 +852,14 @@ class KiwoomAPI(QMainWindow, form_class):
             except Exception:
                 시가총액_억 = 0
 
-            # 업종명: 초기화 시 구축한 역방향 맵에서 조회
             clean_for_sector = 종목코드.replace('_AL', '').strip()
             업종명 = self.stock_code_to_sector.get(clean_for_sector, "")
 
-            # 대체거래소(NXT) 가능 여부 (코드 정규화 후 비교)
             clean_code = 종목코드.replace('_AL', '').strip()
             is_nxt = clean_code in self.NXT_code_set and bool(self.NXT_code_set)
 
             try:
-                rows.append({
-                    "순위":    rank,
+                self._opt10032_acc.append({
                     "전일순위": int(전일순위)     if 전일순위 else 0,
                     "종목코드": 종목코드,
                     "종목명":  종목명,
@@ -802,17 +870,28 @@ class KiwoomAPI(QMainWindow, form_class):
                     "매도호가": abs(int(매도호가)) if 매도호가 else 0,
                     "매수호가": abs(int(매수호가)) if 매수호가 else 0,
                     "거래량":  abs(int(거래량))  if 거래량  else 0,
-                    "시가총액": 시가총액_억,       # 억원
-                    "거래대금": abs(int(거래대금)) if 거래대금 else 0,  # 백만원
+                    "시가총액": 시가총액_억,
+                    "거래대금": abs(int(거래대금)) if 거래대금 else 0,
                     "NXT":     is_nxt,
                 })
-                rank += 1
             except (ValueError, TypeError):
                 continue
-            if rank > 100:
-                break
 
-        df = pd.DataFrame(rows)
+        # 50개 미만이고 다음 페이지가 있으면 계속 요청
+        if str(prev_next) == '2' and len(self._opt10032_acc) < 50:
+            market = getattr(self, '_top_trading_market', '000')
+            self.set_input_value(id="시장구분",    value=market)
+            self.set_input_value(id="관리종목포함", value="0")
+            self.set_input_value(id="거래소구분",  value="3")
+            self.comm_rq_data(rqname="opt10032_req", trcode="opt10032", next=2, screen_no=self._get_screen_num())
+            return
+
+        # 완료 — 최대 50개로 자르고 순위 부여 후 emit
+        final = self._opt10032_acc[:50]
+        self._opt10032_acc = []
+        for idx, row in enumerate(final):
+            row["순위"] = idx + 1
+        df = pd.DataFrame(final)
         self.on_receive_top_trading_value(df)
 
     def on_receive_top_trading_value(self, df):

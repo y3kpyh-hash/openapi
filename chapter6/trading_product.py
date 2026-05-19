@@ -33,7 +33,6 @@ from sector_analyzer import SectorAnalyzer
 from stock_scorer import StockScorer
 from buy_signal import BuySignalScanner, CRITERIA, CRITERIA_LABELS
 from db_manager import DBManager, DB_PATH
-from flow_monitor import FlowMonitor
 from dashboard import DashboardWidget
 
 
@@ -77,6 +76,8 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         self.topTradingFilterComboBox.addItems(["전체조회", "ETF+ETN 제외", "ETF 제외", "ETN 제외"])
         self.topTradingRefreshPushButton.clicked.connect(self._on_top_trading_refresh)
         self.topTradingAutoRefreshPushButton.clicked.connect(self._on_top_trading_auto_toggle)
+        # 인터벌 변경 즉시 저장 (프로그램 재시작 후에도 유지)
+        self.topTradingIntervalSpinBox.valueChanged.connect(self._on_top_trading_interval_changed)
 
         self._top_trading_timer = QTimer()
         self._top_trading_timer.timeout.connect(self._on_top_trading_refresh)
@@ -117,17 +118,114 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         self.buy_signal_scanner = BuySignalScanner(on_signal=self._on_buy_signal_updated)
         self._buy_signal_prev_codes: set[str] = set()   # 이전 신호 종목 (신규 감지용)
 
+        # 수급단타 엔진 상태
+        self._flow_mode:          int   = 0          # 0=OFF 1=반자동 2=자동
+        self._flow_positions:     dict  = {}         # {code: {name,entry_price,qty,target,stop,entry_time}}
+        self._flow_alerted:       dict  = {}         # {code: last_alert_timestamp}
+        self._flow_log:           list  = []         # 신호/포지션 로그 row dict 리스트
+        self._flow_log_refresh_ts: float = 0.0       # 테이블 스로틀용
+        self._flow_min_foreign:   float = 5_000.0
+        self._flow_min_inst:      float = 3_000.0
+        self._flow_min_exec:      float = 130.0
+        self._flow_min_change:    float = 0.0
+        self._flow_max_change:    float = 3.0
+        self._flow_profit_pct:    float = 1.5
+        self._flow_stop_pct:      float = 0.5
+        self._flow_invest_amt:    int   = 1_000_000
+        self._flow_prev_investor: dict  = {}    # {code: (foreign_net, inst_net)} — 이전 배치값
+        self._stock_price_cache: dict   = {}    # {code: {현재가,전일대비,등락률,시가총액}} — opt10032에서 갱신
+        self._prog_trade_cache:  dict   = {}    # {code: float} — opt90013 프로그램순매수금액
+        self._flow_min_delta_foreign: float = 0.0   # Δ외인 최소값 (0=비활성)
+        self._flow_min_delta_inst:    float = 0.0   # Δ기관 최소값 (0=비활성)
+
+        # 수급흐름 Δ배치 신호 → 자동매매 연계
+        self._prog_prev_cache:       dict  = {}    # {code: float} — opt90013 직전 배치값 (Δ계산용)
+        self._flow_delta_enabled:    bool  = False # 수급Δ 배치 신호 활성화
+        self._flow_delta_mode:       int   = 0     # 0=프로그램Δ 1=급증배율 2=동시유입가중
+        self._flow_delta_prog_min:   float = 1000.0  # 모드0·2: 프로그램Δ 임계값 (백만)
+        self._flow_delta_surge_x:    float = 3.0     # 모드1: 직전 3구간 평균 대비 배율
+        self._flow_delta_inst_w:     float = 0.3     # 모드2: 기관Δ 가중치 (신뢰도 낮아 0.3)
+        self._flow_delta_cooldown:   int   = 300     # 종목당 최소 재신호 간격 (초)
+        self._flow_delta_hist:       dict  = {}    # {code: [최근Δ값]} 급증 감지용
+        self._flow_delta_alerted:    dict  = {}    # {code: timestamp} 쿨다운
+
         # 자동매매 종목 DataFrame 및 테이블 모델
         self.auto_trade_stock_df = self.load_auto_trader_df()
         self.auto_pd_model = PandasModel(self.auto_trade_stock_df)
         self.autoTradeTableView.setModel(self.auto_pd_model)
         self.autoTradeTableView.clicked.connect(self.on_auto_trade_table_view_clicked)
 
-        # 현금/신용 잔고 테이블 모델
+        # ── 자동매매현황 탭: 종목 수동 추가 UI (코드 입력 + 추가 버튼) ──
+        from PyQt5.QtWidgets import QHBoxLayout as _QHL, QLineEdit as _QLE, QPushButton as _QPB, QLabel
+        _at_parent = self.autoTradeTableView.parentWidget()
+        _at_layout = _at_parent.layout()
+        _add_row = _QHL()
+        _lbl_code = QLabel("종목추가:")
+        self._auto_trade_code_input = _QLE()
+        self._auto_trade_code_input.setPlaceholderText("종목코드 6자리 후 Enter")
+        self._auto_trade_code_input.setMaximumWidth(160)
+        self._auto_trade_code_input.setMaxLength(6)
+        self._auto_trade_code_input.returnPressed.connect(self._on_add_stock_btn_clicked)
+        _add_btn = _QPB("추가")
+        _add_btn.setMaximumWidth(55)
+        _add_btn.clicked.connect(self._on_add_stock_btn_clicked)
+        _add_row.addWidget(_lbl_code)
+        _add_row.addWidget(self._auto_trade_code_input)
+        _add_row.addWidget(_add_btn)
+        _add_row.addStretch()
+        _at_layout.insertLayout(_at_layout.count() - 1, _add_row)
+
+        # 현금/신용 잔고 테이블 모델 (내부 로직용 — 보유수량/평균단가/수익률 추적)
         self.account_pd_model = PandasModel(self.account_info_df)
-        self.accountInfoTableView.setModel(self.account_pd_model)
         self.credit_pd_model = PandasModel(self.credit_account_info_df)
         self.creditAccountInfoTableView.setModel(self.credit_pd_model)
+
+        # ── 현금 잔고 탭: 요약 헤더 + 보유종목 표시 테이블 ──────────
+        from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel
+
+        # 요약 헤더 위젯 (총매입/총손익/실현손익, 총평가/수익률/추정자산)
+        _sw = QWidget()
+        _sw.setMaximumHeight(54)
+        _sw.setStyleSheet(
+            "QWidget{background:#f5f7ff; border-bottom:1px solid #c0c8e0;}"
+            "QLabel.key{color:#555; font-size:10px;}"
+        )
+        _svl = QVBoxLayout(_sw)
+        _svl.setContentsMargins(8, 3, 8, 3)
+        _svl.setSpacing(2)
+
+        _SUMMARY_ROWS = [
+            [("총매입",  "_lbl_total_buy"),
+             ("총손익",  "_lbl_total_pnl"),
+             ("실현손익", "_lbl_realized")],
+            [("총평가",  "_lbl_total_eval"),
+             ("수익률",  "_lbl_return_pct"),
+             ("추정자산", "_lbl_est_asset")],
+        ]
+        for row_defs in _SUMMARY_ROWS:
+            _hl = QHBoxLayout()
+            _hl.setSpacing(12)
+            for key, attr in row_defs:
+                _kl = QLabel(key + ":")
+                _kl.setStyleSheet("color:#666; font-size:10px;")
+                _vl = QLabel("—")
+                _vl.setStyleSheet("font-weight:bold; font-size:12px; color:#222; min-width:90px;")
+                _hl.addWidget(_kl)
+                _hl.addWidget(_vl)
+                setattr(self, attr, _vl)
+            _hl.addStretch()
+            _svl.addLayout(_hl)
+
+        # 보유종목 display DataFrame (화면 표시 전용)
+        self._holdings_display_df = pd.DataFrame(
+            columns=["종목명", "평가손익", "수익률(%)", "매입가", "보유수량", "가능수량", "현재가"]
+        )
+        self._holdings_display_model = PandasModel(self._holdings_display_df)
+        self.accountInfoTableView.setModel(self._holdings_display_model)
+        self.accountInfoTableView.clicked.connect(self.on_holdings_table_clicked)
+
+        # vl_cash 레이아웃에 요약 헤더를 테이블 위에 삽입
+        self.accountInfoTableView.parentWidget().layout().insertWidget(0, _sw)
 
         # ── 돌고래 전략: 전일 OHLC 저장 (신호등 기법용)
         # {stock_code: {'블랙선': prev_high, '초록선': prev_close, '빨간선': prev_open}}
@@ -137,6 +235,11 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         self.backup_timer        = QTimer()
         self.table_refresh_timer = QTimer()
         self.order_check_timer   = QTimer()
+
+        # 분봉 자동 재조회 타이머 — 1분마다 추적 종목 전체 캔들 갱신 → MA 매수 조건 체크
+        self._candle_refresh_timer = QTimer()
+        self._candle_refresh_timer.timeout.connect(self._refresh_tracking_candles)
+        self._candle_refresh_timer.start(60_000)
 
         # TR 큐 처리 타이머 (250ms)
         self.tr_timer = QTimer()
@@ -186,11 +289,13 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         self._flow_schedule_timer.start(60_000)
 
         # [1051] 장중투자자별매매 배치 조회
-        self._intraday_inv_raw:    dict = {}   # {code: [{집계시간, 외국인, 기관계, ...}, ...]}
-        self._intraday_inv_total:  int  = 0
-        self._intraday_inv_done:   int  = 0
-        self._intraday_inv_mode:   str  = "외인"   # "외인"|"기관계"|"합산"
-        self._intraday_sector_agg: dict = {}       # {period: {sector: {"외인": val, "기관계": val}}}
+        self._intraday_inv_raw:       dict = {}   # {code: [{집계시간, 외국인, 기관계, ...}, ...]}
+        self._intraday_inv_total:     int  = 0
+        self._intraday_inv_done:      int  = 0
+        self._intraday_inv_mode:      str  = "외인"   # "외인"|"기관계"|"합산"
+        self._intraday_sector_agg:    dict = {}       # {period: {sector: {"외인": val, "기관계": val}}}
+        self._intraday_auto_queried:  bool = False    # 오늘 자동조회 완료 플래그
+        self._load_intraday_inv_cache()               # 오늘 날짜 캐시 복원
 
         # 해외선물 탭
         self._ovs_code     = "NQM26"   # 기본 종목코드 (NQ Mini NASDAQ)
@@ -198,14 +303,58 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         self._ovs_rt_data:  dict = {}   # 마지막 실시간 데이터
         self._setup_overseas_futures_tab()
 
-        # 자금흐름 모니터 탭 (별도 창)
-        self._flow_monitor_win: FlowMonitor | None = None
-        self._setup_flow_monitor_tab()
-
         # 전략 대시보드 탭 (4패널 통합, 한 화면)
         self._dashboard = DashboardWidget()
         self._dashboard.set_trader(self)
         self.mainTabWidget.addTab(self._dashboard, "전략")
+
+        # 시장지도 탭 (업종별 트리맵 + 종가베팅 섹터 스코어링)
+        try:
+            from market_map import MarketMapWidget
+            self._market_map = MarketMapWidget(trader=self)
+            self.mainTabWidget.addTab(self._market_map, "시장지도")
+        except Exception as _e:
+            logger.warning(f"[시장지도] 탭 초기화 실패: {_e}")
+            self._market_map = None
+
+        # 종목별 수급 흐름 탭 (08:00~20:00 시간대별 외인/기관/금투 raw 데이터)
+        try:
+            from stock_flow_db import StockFlowDB
+            from stock_flow_widget import StockFlowWidget
+            self._stock_flow_db     = StockFlowDB()
+            self._stock_flow_widget = StockFlowWidget(db=self._stock_flow_db)
+            self.mainTabWidget.addTab(self._stock_flow_widget, "수급흐름")
+            # 오늘 저장된 스냅샷 복원
+            self._stock_flow_widget.load_today()
+        except Exception as _e:
+            logger.warning(f"[수급흐름] 탭 초기화 실패: {_e}")
+            self._stock_flow_db     = None
+            self._stock_flow_widget = None
+
+        # 수급단타 탭
+        try:
+            self._setup_flow_scalper_tab()
+        except Exception as _e:
+            logger.warning(f"[수급단타] 탭 초기화 실패: {_e}")
+
+        # 모듈 활성화 상태 (타이머/UI 갱신 제어)
+        self._module_enabled: dict[str, bool] = {
+            "시장등락률":   True,
+            "테마별현황":   True,
+            "매수신호":    True,
+            "섹터자금흐름": True,
+            "해외선물":    True,
+            "전략":       True,
+            "시장지도":    True,
+            "거래원분석":  True,
+            "수급흐름":    True,
+        }
+
+        # 모듈 제어 탭
+        try:
+            self._setup_module_control_tab()
+        except Exception as _e:
+            logger.warning(f"[모듈제어] 탭 초기화 실패: {_e}")
 
         # 섹터 자금 유입 패널 (화면 상단)
         self._setup_sector_flow_panel()
@@ -225,6 +374,20 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         self._investor_auto_timer.setInterval(1300)   # 1.3초 간격 (TR 제한 준수)
         self._investor_auto_timer.timeout.connect(self._investor_auto_next)
 
+        # opt90013 프로그램매매 배치 — opt10059 완료 후 순차 실행
+        self._prog_auto_queue: list[str] = []
+        self._prog_auto_timer = QTimer()
+        self._prog_auto_timer.setInterval(1300)
+        self._prog_auto_timer.timeout.connect(self._prog_auto_next)
+
+        # 수급 배치 워치독 타이머 — 완료 기준 singleShot 체인이 끊겼을 때 복구용
+        # 정상 동작: _save_and_check_flow_signals 완료 후 singleShot(120s)으로 예약
+        # 비정상(오류로 체인 끊김): 3분마다 배치를 재시도 (isActive 가드로 중복 방지)
+        self._investor_10min_timer = QTimer()
+        self._investor_10min_timer.setInterval(3 * 60 * 1000)
+        self._investor_10min_timer.timeout.connect(self._run_investor_batch)
+        self._opt10032_first_received = False   # 첫 opt10032 수신 후 타이머 시작 플래그
+
         # ── DB 영속성 ──────────────────────────────────────────
         self.db = DBManager()
         self._nxt_update_done:  bool = False   # 오늘 09:05 next_day 업데이트 완료 여부
@@ -235,6 +398,17 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         self._supply_save_timer = QTimer()
         self._supply_save_timer.timeout.connect(self._save_supply_snapshot)
         self._supply_save_timer.start(60_000)
+
+        # 30분마다 종목별 수급 흐름 스냅샷 저장 (stock_flow_db)
+        self._flow_snap_timer = QTimer()
+        self._flow_snap_timer.timeout.connect(self._save_stock_flow_snapshot)
+        self._flow_snap_timer.start(30 * 60 * 1000)
+
+        # 저장된 모듈 설정 복원 (타이머가 모두 준비된 후)
+        try:
+            self._module_load_settings()
+        except Exception as _e:
+            logger.debug(f"[모듈제어] 설정 복원 실패: {_e}")
 
     # ========================
     # 거래대금 상위 조회
@@ -271,30 +445,70 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         self.request_broker_analysis(stock_code=code)
 
     def _investor_auto_next(self) -> None:
-        """외인/기관 자동 배치 조회 — 큐에서 종목 하나씩 opt10059 요청 (1.3초 간격)."""
+        """기관/금투 배치 — opt10059 순매수 데이터 (1.3초 간격)."""
         if not self._investor_auto_queue:
             self._investor_auto_timer.stop()
+            # opt10059 완료 → opt90013 배치 직전에 이전값 스냅샷 (Δ계산용)
+            self._prog_prev_cache = dict(self._prog_trade_cache)
+            self._prog_auto_queue = list(self._top_row_map.keys())[:50]
+            if self._prog_auto_queue and not self._prog_auto_timer.isActive():
+                self._prog_auto_timer.start()
             return
 
         code = self._investor_auto_queue.pop(0)
-
-        # 10분 이내 업데이트된 종목은 건너뜀
-        if time.time() - self._investor_last_update.get(code, 0) < 600:
-            return
-
         today = datetime.date.today().strftime("%Y%m%d")
         try:
             self._auto_investor_code = code
-            self.request_investor_data(
-                stock_code=code,
-                start_date=today,
-                end_date=today,
-                amount_qty="1",   # 1=금액, 2=수량
-                trade_type="0",
-            )
+            self.request_investor_data_flow_only(stock_code=code, end_date=today)
             self._investor_last_update[code] = time.time()
         except Exception as e:
             logger.debug(f"[자동외인조회] {code}: {e}")
+
+    def _prog_auto_next(self) -> None:
+        """프로그램매매 배치 — opt90013 순매수금액 (1.3초 간격, opt10059 완료 후 실행)."""
+        if not self._prog_auto_queue:
+            self._prog_auto_timer.stop()
+            QTimer.singleShot(500, self._save_and_check_flow_signals)
+            return
+
+        code = self._prog_auto_queue.pop(0)
+        today = datetime.date.today().strftime("%Y%m%d")
+        try:
+            self.request_prog_trade_daily(stock_code=code, date=today)
+        except Exception as e:
+            logger.debug(f"[프로그램배치] {code}: {e}")
+
+    def _run_investor_batch(self) -> None:
+        """opt10059 수급 배치 — 거래대금상위 50종목 전체 재조회.
+
+        완료 기준 2분 스케줄링(_save_and_check_flow_signals 에서 예약)으로 동작.
+        _investor_10min_timer 는 체인이 끊겼을 때 복구용 워치독.
+        """
+        # 이전 배치(opt10059 또는 opt90013)가 아직 실행 중이면 건너뜀
+        if self._investor_auto_timer.isActive() or self._prog_auto_timer.isActive():
+            logger.debug("[수급배치] 이전 배치 진행 중 — 이번 사이클 건너뜀")
+            return
+
+        import math as _math
+        codes = list(self._top_row_map.keys())[:50]
+        if not codes:
+            return
+
+        # 배치 시작 전 현재 수급값을 Δ 계산용 이전값으로 저장
+        prev = {}
+        for code, rec in self.sector_analyzer._stocks.items():
+            prev[code] = (
+                0.0 if _math.isnan(rec.foreign_net) else rec.foreign_net,
+                0.0 if _math.isnan(rec.inst_net)    else rec.inst_net,
+            )
+        self._flow_prev_investor = prev
+
+        self._investor_auto_queue.clear()
+        self._investor_last_update.clear()
+        self._investor_auto_queue.extend(codes)
+        if not self._investor_auto_timer.isActive():
+            self._investor_auto_timer.start()
+        logger.info(f"[수급배치] {len(codes)}종목 opt10059 배치 시작")
 
     def _on_top_trading_item_clicked(self, item):
         """거래대금상위 행 클릭 → 거래원분석·종목별투자자 종목코드 세팅 + 투자자 자동조회 (탭 이동 없음)"""
@@ -362,9 +576,10 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
             try:
                 foreign_net = int(today_row.get("외국인", 0) or 0)
                 inst_net    = int(today_row.get("기관계", 0) or 0)
-                self.sector_analyzer.update_investor(update_code, foreign_net, inst_net)
-                self.stock_scorer.update_investor(update_code, foreign_net, inst_net)
-                logger.debug(f"[투자자] {update_code} 외인={foreign_net:+,} 기관={inst_net:+,}")
+                fin_net     = int(today_row.get("금융투자", 0) or 0)
+                self.sector_analyzer.update_investor(update_code, foreign_net, inst_net, fin_net)
+                self.stock_scorer.update_investor(update_code, foreign_net, inst_net, fin_net)
+                logger.debug(f"[투자자] {update_code} 외인={foreign_net:+,} 기관={inst_net:+,} 금투={fin_net:+,}")
             except (TypeError, ValueError):
                 pass
         table = self.investorTableWidget
@@ -857,6 +1072,8 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
             self._market_chart_data[name] = pts[-1500:]
 
     def _redraw_market_chart(self):
+        if not self._module_enabled.get("시장등락률", True):
+            return
         if self._market_ax is None:
             return
         ax = self._market_ax
@@ -1116,14 +1333,14 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         sector_tbl.setAlternatingRowColors(False)
         sector_tbl.setShowGrid(False)
         sector_tbl.setStyleSheet(_TBL_SS)
-        sector_tbl.setColumnCount(9)
+        sector_tbl.setColumnCount(10)
         sector_tbl.setHorizontalHeaderLabels([
             "섹터", "거래대금합", "평균등락률", "확산도",
-            "5분속도", "10분속도", "외인순매수", "기관순매수", "대장주",
+            "5분속도", "10분속도", "외인수급(백만)", "기관수급(백만)", "금융투자(백만)", "대장주",
         ])
         hdr = sector_tbl.horizontalHeader()
         hdr.setSectionResizeMode(QHeaderView.ResizeToContents)
-        hdr.setSectionResizeMode(8, QHeaderView.Stretch)
+        hdr.setSectionResizeMode(9, QHeaderView.Stretch)
         sector_tbl.verticalHeader().setDefaultSectionSize(22)
         sector_tbl.setRowCount(0)
         sector_tbl.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
@@ -1131,67 +1348,6 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         vl.addWidget(sector_tbl)
         self._sector_flow_table = sector_tbl
 
-        # ── 구분선 ────────────────────────────────────────────────
-        sep = QFrame()
-        sep.setFrameShape(QFrame.HLine)
-        sep.setStyleSheet("color: #e0e0e0;")
-        vl.addWidget(sep)
-
-        # ── 하단: TODAY LEADER(왼쪽) + 실시간 자금 유입(오른쪽) ──
-        body_hl = QHBoxLayout()
-        body_hl.setSpacing(8)
-
-        # 왼쪽 — TODAY LEADER 테이블
-        left_vl = QVBoxLayout()
-        left_vl.setSpacing(1)
-        lbl_leader = QLabel("[ TODAY LEADER ]")
-        lbl_leader.setStyleSheet("color: #555; font-size: 10px; font-weight: bold;")
-        left_vl.addWidget(lbl_leader)
-
-        leader_tbl = QTableWidget()
-        leader_tbl.setObjectName("leaderTable")
-        leader_tbl.setEditTriggers(QTableWidget.NoEditTriggers)
-        leader_tbl.setSelectionBehavior(QTableWidget.SelectRows)
-        leader_tbl.setSelectionMode(QTableWidget.SingleSelection)
-        leader_tbl.verticalHeader().setVisible(False)
-        leader_tbl.setAlternatingRowColors(False)
-        leader_tbl.setShowGrid(False)
-        leader_tbl.setStyleSheet(_TBL_SS)
-        leader_tbl.setColumnCount(5)
-        leader_tbl.setHorizontalHeaderLabels(["섹터", "대장주", "강도", "외인", "속도"])
-        hdr2 = leader_tbl.horizontalHeader()
-        hdr2.setSectionResizeMode(QHeaderView.ResizeToContents)
-        hdr2.setSectionResizeMode(1, QHeaderView.Stretch)
-        leader_tbl.verticalHeader().setDefaultSectionSize(22)
-        leader_tbl.setRowCount(0)
-        leader_tbl.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        leader_tbl.setFixedHeight(28)
-        left_vl.addWidget(leader_tbl)
-        body_hl.addLayout(left_vl, stretch=6)
-
-        # 오른쪽 — 실시간 자금 유입 로그
-        right_vl = QVBoxLayout()
-        right_vl.setSpacing(1)
-        lbl_flow = QLabel("[ 실시간 자금 유입 ]")
-        lbl_flow.setStyleSheet("color: #555; font-size: 10px; font-weight: bold;")
-        right_vl.addWidget(lbl_flow)
-
-        log_widget = QListWidget()
-        log_widget.setObjectName("flowLog")
-        log_widget.setStyleSheet(
-            "QListWidget { border: none; background: transparent; font-size: 11px; }"
-            "QListWidget::item { padding: 1px 4px; }"
-        )
-        log_widget.setFixedWidth(240)
-        log_widget.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        log_widget.setFixedHeight(28)
-        right_vl.addWidget(log_widget)
-        body_hl.addLayout(right_vl, stretch=3)
-
-        vl.addLayout(body_hl)
-
-        self._leader_table      = leader_tbl
-        self._flow_log          = log_widget
         self._sector_flow_panel = panel
 
         # mainTabWidget 바로 앞에 삽입
@@ -1306,21 +1462,28 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
                 it.setForeground(QColor(180, 0, 0) if r10_val >= 50 else (QColor(200, 100, 0) if r10_val >= 20 else (QColor(Qt.darkGreen) if r10_val > 0 else QColor(Qt.gray))))
             stbl.setItem(r, 5, it)
 
-            # 6 외인순매수
+            # 6 외인수급(백만원)
             fn = float(row["외인순매수합(주)"])
-            it = QTableWidgetItem(_fmt_money(fn))
+            it = QTableWidgetItem(f"{fn:+,.0f}" if fn != 0 else "—")
             it.setForeground(QColor(Qt.red) if fn > 0 else (QColor(Qt.blue) if fn < 0 else QColor("#aaa")))
             it.setTextAlignment(Qt.AlignRight | Qt.AlignVCenter)
             stbl.setItem(r, 6, it)
 
-            # 7 기관순매수
+            # 7 기관수급(백만원)
             inst = float(row["기관순매수합(주)"])
-            it = QTableWidgetItem(_fmt_money(inst))
+            it = QTableWidgetItem(f"{inst:+,.0f}" if inst != 0 else "—")
             it.setForeground(QColor(Qt.red) if inst > 0 else (QColor(Qt.blue) if inst < 0 else QColor("#aaa")))
             it.setTextAlignment(Qt.AlignRight | Qt.AlignVCenter)
             stbl.setItem(r, 7, it)
 
-            # 8 대장주 + leader_score
+            # 8 금융투자(백만원)
+            fin = float(row.get("금융투자순매수합(주)", 0) or 0)
+            it = QTableWidgetItem(f"{fin:+,.0f}" if fin != 0 else "—")
+            it.setForeground(QColor(Qt.red) if fin > 0 else (QColor(Qt.blue) if fin < 0 else QColor("#aaa")))
+            it.setTextAlignment(Qt.AlignRight | Qt.AlignVCenter)
+            stbl.setItem(r, 8, it)
+
+            # 9 대장주 + leader_score  (col 인덱스: stbl.setItem(r, 9, ...))
             ld_info = leader_map.get(sector)
             if ld_info:
                 ld_name, ld_score, ld_grade = ld_info
@@ -1335,85 +1498,12 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
             it.setTextAlignment(Qt.AlignLeft | Qt.AlignVCenter)
             if ld_grade == "S":
                 f = it.font(); f.setBold(True); it.setFont(f)
-            stbl.setItem(r, 8, it)
+            stbl.setItem(r, 9, it)
 
         # 상태 레이블
         total_val = float(summary_df["거래대금합(억)"].sum()) if not summary_df.empty else 0
         self._sector_status_label.setText(f"{n_rows}섹터 | 총 {_fmt_money_abs(total_val)}")
 
-        # ── TODAY LEADER 테이블 ───────────────────────────────────
-        if not hasattr(self, '_leader_table'):
-            self._check_sector_alerts(display, vel_map, leader_map)
-            return
-
-        tbl = self._leader_table
-        tbl.setRowCount(n_rows)
-        tbl.setFixedHeight(tbl_h)
-        if hasattr(self, '_flow_log'):
-            self._flow_log.setFixedHeight(tbl_h)
-
-        for r, (_, row) in enumerate(display.iterrows()):
-            sector   = str(row["섹터명"])
-            r5       = vel_map.get(sector, float("nan"))
-            ld_info  = leader_map.get(sector)
-
-            # 섹터
-            it = QTableWidgetItem(sector)
-            it.setForeground(QColor("#1155cc"))
-            it.setTextAlignment(Qt.AlignLeft | Qt.AlignVCenter)
-            tbl.setItem(r, 0, it)
-
-            # 대장주 + leader_score
-            if ld_info:
-                ld_name, _, ld_grade = ld_info
-                it = QTableWidgetItem(f"{ld_name}")
-                it.setForeground(_GRADE_CLR.get(ld_grade, QColor("#cc4400")))
-                if ld_grade == "S":
-                    f = it.font(); f.setBold(True); it.setFont(f)
-            else:
-                it = QTableWidgetItem(str(row.get("대장주", "")))
-                it.setForeground(QColor("#cc4400"))
-            it.setTextAlignment(Qt.AlignLeft | Qt.AlignVCenter)
-            tbl.setItem(r, 1, it)
-
-            # 강도 (leader_score)
-            score_txt = f"{ld_info[1]:.0f}" if ld_info else "—"
-            score_clr = _GRADE_CLR.get(ld_info[2] if ld_info else "D", QColor(Qt.gray))
-            it = QTableWidgetItem(score_txt)
-            it.setForeground(score_clr)
-            it.setTextAlignment(Qt.AlignCenter)
-            if ld_info and ld_info[2] == "S":
-                f = it.font(); f.setBold(True); it.setFont(f)
-            tbl.setItem(r, 2, it)
-
-            # 외인순매수
-            fn = float(row.get("외인순매수합(주)", 0))
-            it = QTableWidgetItem(_fmt_money(fn))
-            it.setForeground(QColor(Qt.red) if fn > 0 else (QColor(Qt.blue) if fn < 0 else QColor("#aaa")))
-            it.setTextAlignment(Qt.AlignRight | Qt.AlignVCenter)
-            tbl.setItem(r, 3, it)
-
-            # 속도 아이콘
-            icon = self._vel_icon(r5)
-            it = QTableWidgetItem(icon)
-            it.setTextAlignment(Qt.AlignCenter)
-            if icon == "🔥🔥":
-                it.setForeground(QColor(180, 0, 0))
-            elif icon == "🔥":
-                it.setForeground(QColor(200, 80, 0))
-            elif icon == "📈":
-                it.setForeground(QColor(Qt.darkGreen))
-            else:
-                it.setForeground(QColor(Qt.gray))
-            tbl.setItem(r, 4, it)
-
-        # 상태 레이블
-        total_val = float(summary_df["거래대금합(억)"].sum()) if not summary_df.empty else 0
-        self._sector_status_label.setText(
-            f"{len(display)}섹터 | 총 {_fmt_money_abs(total_val)}"
-        )
-
-        # 자금 유입 알림 감지
         self._check_sector_alerts(display, vel_map, leader_map)
 
     def _check_sector_alerts(
@@ -1481,7 +1571,7 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         except Exception:
             vel_map = {}
 
-        lines = ["섹터\t거래대금합\t평균등락률\t확산도\t5분속도\t10분속도\t외인순매수\t기관순매수\t대장주"]
+        lines = ["섹터\t거래대금합\t평균등락률\t확산도\t5분속도\t10분속도\t외인수급(백만)\t기관수급(백만)\t금융투자(백만)\t대장주"]
         for _, row in df.iterrows():
             val = float(row["거래대금합(억)"])
             txt_val = f"{val/10000:.1f}조" if val >= 10000 else f"{val:,.0f}억"
@@ -1494,8 +1584,9 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
                 f"{float(row['평균등락률(%)']):+.1f}%\t"
                 f"{diff:.0f}%\t"
                 f"{txt5}\t{txt10}\t"
-                f"{_fmt_money(float(row['외인순매수합(주)']))}\t"
-                f"{_fmt_money(float(row['기관순매수합(주)']))}\t"
+                f"{float(row['외인순매수합(주)']):+,.0f}\t"
+                f"{float(row['기관순매수합(주)']):+,.0f}\t"
+                f"{float(row.get('금융투자순매수합(주)', 0) or 0):+,.0f}\t"
                 f"{row['대장주']}"
             )
         QApplication.clipboard().setText("\n".join(lines))
@@ -1514,6 +1605,15 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         else:
             self._top_trading_timer.stop()
             self.topTradingAutoRefreshPushButton.setText("자동조회 OFF")
+        # ON/OFF 상태 즉시 저장
+        self.settings.setValue('topTradingAutoOn', checked)
+
+    def _on_top_trading_interval_changed(self, value: int) -> None:
+        """인터벌 SpinBox 변경 시 즉시 저장 + 타이머가 ON이면 새 주기 적용."""
+        self.settings.setValue('topTradingIntervalSpinBox', value)
+        if self._top_trading_timer.isActive():
+            self._top_trading_timer.start(value * 1000)
+            self.topTradingAutoRefreshPushButton.setText(f"자동조회 ON ({value}초)")
 
     # 섹터별 배경 팔레트 (파스텔 계열, 8가지)
     _SECTOR_COLORS = [
@@ -1532,10 +1632,243 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         """SectorAnalyzer 콜백 — 섹터 요약 패널 갱신 + 매수 신호 갱신"""
         if hasattr(self, '_sector_flow_table'):
             self._update_sector_flow_table(summary_df)
-        self._try_update_buy_signals()
+        if self._module_enabled.get("매수신호", True):
+            self._try_update_buy_signals()
         self._try_take_flow_snapshot(summary_df)
-        if hasattr(self, '_dashboard'):
+        if self._module_enabled.get("전략", True) and hasattr(self, '_dashboard'):
             self._dashboard.on_sector_update()
+        if self._module_enabled.get("시장지도", True) and getattr(self, '_market_map', None) is not None:
+            try:
+                self._market_map.update_from_summary(summary_df)
+            except Exception:
+                pass
+
+    def on_receive_program_trade_data(self, code: str, prog_net: float) -> None:
+        """opt90013 콜백 — 프로그램 순매수금액을 캐시에 저장."""
+        if code:
+            self._prog_trade_cache[code] = prog_net
+
+    def _save_stock_flow_snapshot(self) -> None:
+        """배치 완료마다 종목별 수급 현황을 stock_flow_db에 분 단위로 저장.
+        수급 저장과 함께 가격 캐시도 위젯에 push — 가격이 2분마다 갱신됨."""
+        if getattr(self, '_stock_flow_widget', None) is None:
+            return
+        try:
+            stock_rows = []
+            with self.sector_analyzer._lock:
+                for code, rec in self.sector_analyzer._stocks.items():
+                    import math as _math
+                    # foreign_net → opt90013 프로그램순매수금액 우선, 없으면 opt10059 외인값
+                    prog_net = self._prog_trade_cache.get(code, None)
+                    foreign_val = (prog_net if prog_net is not None
+                                   else (0.0 if _math.isnan(rec.foreign_net) else rec.foreign_net))
+                    stock_rows.append({
+                        "code":        code,
+                        "name":        rec.name,
+                        "sector":      rec.sector,
+                        "foreign_net": foreign_val,
+                        "inst_net":    0.0 if _math.isnan(rec.inst_net) else rec.inst_net,
+                        "fin_net":     0.0 if _math.isnan(rec.fin_net)  else rec.fin_net,
+                    })
+            if stock_rows:
+                # 가격 캐시 먼저 push
+                if getattr(self, '_stock_price_cache', None):
+                    self._stock_flow_widget.set_live_prices(self._stock_price_cache)
+                self._stock_flow_widget.append_snapshot(stock_rows)
+                prog_cnt = sum(1 for c in [r["code"] for r in stock_rows] if c in self._prog_trade_cache)
+                logger.debug(f"[수급흐름] 스냅샷 저장 {len(stock_rows)}종목 (프로그램캐시 {prog_cnt}종목 반영)")
+        except Exception as e:
+            logger.debug(f"[수급흐름] 스냅샷 저장 실패: {e}")
+
+    def _save_and_check_flow_signals(self) -> None:
+        """opt90013 배치 완료 후 스냅샷 저장 + 수급Δ 신호 체크.
+        완료 후 2분 뒤 다음 배치 예약 — 완료 기준 스케줄링으로 타이밍 충돌 방지.
+        """
+        self._save_stock_flow_snapshot()
+        self._check_flow_delta_signals()
+        # 배치 완료 시각 기준으로 2분 뒤 다음 배치 예약
+        QTimer.singleShot(2 * 60 * 1000, self._run_investor_batch)
+
+    def _check_flow_delta_signals(self) -> None:
+        """수급흐름 Δ2분 배치 기반 매수 신호 체크.
+
+        설정값은 수급흐름 위젯(_stock_flow_widget)의 _delta_* 속성에서 읽음.
+        위젯이 없으면 self._flow_delta_* fallback.
+
+        3가지 트리거 모드:
+          0 — 프로그램Δ 절대값 ≥ 임계값 (실시간, 신뢰도 최고)
+          1 — 급증 감지: 직전 3구간 평균의 N배 이상
+          2 — 동시유입 가중합: 프로그램Δ + 기관Δ×가중치 ≥ 임계값
+        """
+        # ── 위젯에서 설정값 읽기 ─────────────────────────────
+        _w = getattr(self, '_stock_flow_widget', None)
+        if _w is not None:
+            enabled  = getattr(_w, '_delta_enabled',   False)
+            mode     = getattr(_w, '_delta_mode',      0)
+            prog_min = getattr(_w, '_delta_prog_min',  1000.0)
+            surge_x  = getattr(_w, '_delta_surge_x',  3.0)
+            inst_w   = getattr(_w, '_delta_inst_w',   0.3)
+        else:
+            enabled  = getattr(self, '_flow_delta_enabled',  False)
+            mode     = getattr(self, '_flow_delta_mode',     0)
+            prog_min = getattr(self, '_flow_delta_prog_min', 1000.0)
+            surge_x  = getattr(self, '_flow_delta_surge_x', 3.0)
+            inst_w   = getattr(self, '_flow_delta_inst_w',  0.3)
+
+        if not enabled:
+            return
+        if not self._prog_trade_cache:
+            return
+        import math as _math
+
+        cooldown   = self._flow_delta_cooldown
+        prog_prev  = self._prog_prev_cache
+        now_ts     = time.time()
+
+        for code in list(self._top_row_map.keys())[:50]:
+            # 쿨다운
+            if now_ts - self._flow_delta_alerted.get(code, 0) < cooldown:
+                continue
+
+            # 프로그램 Δ
+            prog_cur = self._prog_trade_cache.get(code)
+            if prog_cur is None:
+                continue
+            delta_prog = prog_cur - (prog_prev.get(code) or 0)
+
+            # 기관 Δ (opt10059, 5회/일 제한 → 가중치 낮게)
+            stock = self.sector_analyzer._stocks.get(code)
+            if stock is None:
+                continue
+            prev_pair  = self._flow_prev_investor.get(code)
+            inst_cur   = 0.0 if _math.isnan(stock.inst_net) else stock.inst_net
+            delta_inst = inst_cur - (prev_pair[1] if prev_pair else 0)
+
+            # 히스토리 (모드1 급증 감지용)
+            hist = self._flow_delta_hist.setdefault(code, [])
+
+            # 신호 판정
+            if mode == 0:
+                ok = delta_prog >= prog_min
+            elif mode == 1:
+                avg3 = sum(hist[-3:]) / max(len(hist[-3:]), 1)
+                ok   = delta_prog >= max(avg3 * surge_x, prog_min)
+            else:  # mode 2: 동시유입 가중합
+                ok = (delta_prog > 0
+                      and delta_prog + delta_inst * inst_w >= prog_min)
+
+            # 히스토리 갱신 (양수만 기록)
+            if delta_prog > 0:
+                hist.append(delta_prog)
+                if len(hist) > 10:
+                    hist.pop(0)
+
+            if not ok:
+                continue
+
+            self._flow_delta_alerted[code] = now_ts
+            name   = stock.name   or code
+            sector = stock.sector or ""
+            price  = self._stock_price_cache.get(code, {}).get("현재가",  0)
+            pct    = self._stock_price_cache.get(code, {}).get("등락률",  0.0)
+            logger.info(
+                f"[수급Δ신호] {name}({code}) 프로그램Δ={delta_prog:+,.0f} "
+                f"기관Δ={delta_inst:+,.0f} 등락률={pct:+.1f}%"
+            )
+            self._flow_fire_delta_signal(
+                code, name, sector, price, pct, delta_prog, delta_inst)
+
+    def _flow_fire_delta_signal(
+        self,
+        code: str, name: str, sector: str,
+        price: int, change_pct: float,
+        delta_prog: float, delta_inst: float,
+    ) -> None:
+        """수급Δ 신호 → 자동매매현황(auto_trade_stock_df)에 종목 추가.
+
+        반자동(mode=0): 자동매매현황에 추가만, 기존 MA 매수 로직이 처리
+        자동(mode=1):   자동매매현황 추가 + 즉시 시장가 매수 + 매수주문완료=True
+        """
+        # _AL 접미사 제거 — Kiwoom API는 6자리 코드만 허용
+        code = code.replace("_AL", "").strip()
+
+        t_str = datetime.datetime.now().strftime("%H:%M:%S")
+        _w    = getattr(self, '_stock_flow_widget', None)
+        mode  = (getattr(_w, '_delta_mode_exec', 0) if _w is not None
+                 else getattr(self, '_flow_delta_mode_exec', 0))  # 0=반자동 1=자동
+
+        logger.info(
+            f"[수급Δ{'반자동' if mode == 0 else '자동'}] {name}({code}) "
+            f"프로그램Δ={delta_prog:+,.0f} 기관Δ={delta_inst:+,.0f} "
+            f"등락률={change_pct:+.1f}% 가격={price:,} {t_str}"
+        )
+
+        # ── 자동매매현황에 추가 ──────────────────────────────────
+        if code not in self.auto_trade_stock_df.index:
+            max_count = self.maxTrackingCountSpinBox.value()
+            if len(self.auto_trade_stock_df) >= max_count:
+                logger.info(
+                    f"[수급Δ] 최대 추적 종목({max_count}개) 초과 → {name}({code}) 추가 건너뜀"
+                )
+                return
+            self.auto_trade_stock_df.loc[code] = {
+                "종목명":     name,
+                "현재가":     price,
+                "매매가능수량": 0,
+                "수익률(%)":  0.0,
+                "이평선":     "",
+                "매수":       "▶매수",
+                "매도":       "▶매도",
+                "매수주문완료": False,
+                "매도주문완료": False,
+                "삭제":       "삭제",
+            }
+            logger.info(f"[수급Δ] 자동매매현황 추가: {name}({code}) "
+                        f"({len(self.auto_trade_stock_df)}/{max_count})")
+        # 이미 있는 종목은 가격/이름만 갱신
+        else:
+            self.auto_trade_stock_df.at[code, "현재가"] = price
+            self.auto_trade_stock_df.at[code, "종목명"] = name
+
+        if mode == 0:
+            # 반자동: 자동매매현황 추가 후 기존 MA 로직에 위임
+            self.update_pandas_models()
+            # 일봉 캔들 → 신호등(블랙선/초록선/빨간선) 데이터 확보
+            self.request_candle_data(code, candle_type="일봉", include_pre_post=False)
+            # 분봉 캔들 → 즉시 MA 조건 체크 (1분 타이머 전에 첫 판단)
+            _ct = self.candleTypeComboBox.currentText()
+            if _ct != "일봉":
+                self.request_candle_data(code, candle_type=_ct, include_pre_post=False)
+            return
+
+        # ── 자동: 즉시 시장가 매수 ───────────────────────────────
+        if not price or self.is_no_transaction:
+            self.update_pandas_models()
+            return
+        qty = self._calc_buy_quantity(price)
+        if qty <= 0:
+            self.update_pandas_models()
+            return
+        account_num = self.get_trading_account_num()
+        exchange    = 'KRX' if getattr(self, 'is_paper_trading', True) else 'SOR'
+        self.enqueue_buy_order(
+            code, account_num=account_num,
+            is_market_order=True, order_quantity=qty, exchange=exchange,
+        )
+        self.auto_trade_stock_df.at[code, "매수주문완료"] = True
+        self.update_pandas_models()
+        logger.info(
+            f"[수급Δ자동] 매수주문 {name}({code}) 가격={price:,} 수량={qty}"
+        )
+
+    def _sector_analyzer_inst(self, code: str) -> float:
+        """sector_analyzer에서 기관순매수 반환 (NaN → 0)."""
+        import math as _m
+        stock = self.sector_analyzer._stocks.get(code)
+        if stock is None:
+            return 0.0
+        v = stock.inst_net
+        return 0.0 if _m.isnan(v) else v
 
     def _on_score_updated(self, score_df: pd.DataFrame) -> None:
         """StockScorer 콜백 — Top 3 바 + 거래대금상위 테이블 점수/등급 셀 갱신."""
@@ -1609,7 +1942,7 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
 
         # 섹터 집계기 / 점수 집계기 갱신 (UI 렌더링 전에 실행)
         try:
-            self.sector_analyzer.update_trading(df)
+            self.sector_analyzer.update_trading(df.head(50))
         except Exception as e:
             logger.warning(f"[섹터집계] update_trading 오류: {e}")
         try:
@@ -1617,25 +1950,40 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         except Exception as e:
             logger.warning(f"[점수집계] update_trading 오류: {e}")
 
-        # 상위 20개 종목 외인/기관 자동 조회 큐 추가
+        # 가격 캐시 갱신 (현재가·전일대비·등락률·시가총액) → 수급흐름 위젯 컬럼
         try:
-            top_codes = [str(c).strip() for c in df["종목코드"].head(20).tolist() if c]
-            for _c in top_codes:
-                if _c and _c not in self._investor_auto_queue:
-                    self._investor_auto_queue.append(_c)
-            if self._investor_auto_queue and not self._investor_auto_timer.isActive():
-                self._investor_auto_timer.start()
-        except Exception:
-            pass
+            for _, row in df.iterrows():
+                code = str(row.get("종목코드", "")).strip()
+                if not code:
+                    continue
+                self._stock_price_cache[code] = {
+                    "현재가":   int(row.get("현재가",   0) or 0),
+                    "전일대비": float(row.get("전일대비", 0) or 0),
+                    "등락률":   float(row.get("등락률",   0) or 0),
+                    "시가총액": int(row.get("시가총액",  0) or 0),
+                }
+            if getattr(self, '_stock_flow_widget', None) is not None:
+                self._stock_flow_widget.set_live_prices(self._stock_price_cache)
+        except Exception as _e:
+            logger.debug(f"[가격캐시] 갱신 실패: {_e}")
+
+        # opt10032 수신 즉시 현재 수급 데이터로 스냅샷 저장 (외인/기관 데이터가 이미 있을 경우 반영)
+        QTimer.singleShot(1000, self._save_stock_flow_snapshot)
+
+        # 첫 수신 시 수급 배치 즉시 1회 실행 + 10분 주기 타이머 시작
+        if not self._opt10032_first_received:
+            self._opt10032_first_received = True
+            QTimer.singleShot(3000, self._run_investor_batch)
+            self._investor_10min_timer.start()
 
         score_map = self.stock_scorer.get_score_map()
 
         table = self.topTradingTableWidget
 
         col_keys = ["순위", "전일순위", "종목명", "업종", "현재가", "전일대비", "등락률",
-                    "매도호가", "매수호가", "거래량", "시가총액", "거래대금", "점수", "등급"]
+                    "시가총액", "거래대금", "점수", "등급"]
         headers = ["순위", "전일순위", "종목명", "업종", "현재가", "전일대비", "등락률(%)",
-                   "매도호가", "매수호가", "거래량", "시가총액(억)", "거래대금(억)", "점수", "등급"]
+                   "시가총액(억원)", "거래대금(백만)", "점수", "등급"]
         table.setColumnCount(len(col_keys))
         table.setHorizontalHeaderLabels(headers)
 
@@ -1699,10 +2047,10 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
                     text  = f"{row[col]:.2f}%"
                     align = Qt.AlignRight | Qt.AlignVCenter
                 elif col == "시가총액":
-                    text  = f"{row[col]:,}억"
+                    text  = f"{row[col]:,}"
                     align = Qt.AlignRight | Qt.AlignVCenter
                 elif col == "거래대금":
-                    text  = f"{row[col] // 100:,}억"
+                    text  = f"{row[col]:,}"
                     align = Qt.AlignRight | Qt.AlignVCenter
                 elif col == "점수":
                     text  = f"{score:.1f}" if score is not None else "-"
@@ -1748,6 +2096,11 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         self._top_row_map = new_row_map
         table.resizeColumnsToContents()
 
+        # 첫 opt10032 수신 시 투자자조회 자동 실행 (오늘 캐시 없는 경우)
+        if not self._intraday_auto_queried and self._top_row_map and not self._intraday_inv_raw:
+            self._intraday_auto_queried = True
+            QTimer.singleShot(3000, self._start_intraday_investor_query)
+
     # ========================
     # 신호등 판단 (돌고래 전략 핵심)
     # ========================
@@ -1781,6 +2134,23 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         t = self.tradeEndTimeEdit.time()
         return datetime.datetime.now().replace(
             hour=t.hour(), minute=t.minute(), second=0, microsecond=0)
+
+    def _refresh_tracking_candles(self) -> None:
+        """1분마다 추적 종목 전체 분봉 캔들 재조회 → on_receive_candle_data → MA 매수 조건 체크.
+
+        - 자동매매 OFF 또는 조건적용시간 밖이면 건너뜀
+        - 일봉 모드일 때는 장중 재조회 불필요하므로 건너뜀
+        """
+        if self.is_no_transaction:
+            return
+        now_time = datetime.datetime.now()
+        if not (self._get_trade_start_time() <= now_time <= self._get_trade_end_time()):
+            return
+        candle_type = self.candleTypeComboBox.currentText()
+        if candle_type == "일봉":
+            return
+        for code in list(self.auto_trade_stock_df.index):
+            self.request_candle_data(code, candle_type=candle_type, include_pre_post=False)
 
     # ========================
     # 매수/매도 수량 계산
@@ -1925,10 +2295,14 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
     @log_exceptions
     def on_auto_trade_table_view_clicked(self, index):
         column_name = self.auto_trade_stock_df.columns[index.column()]
+        stock_code = self.auto_trade_stock_df.index[index.row()]
         if column_name == "삭제":
-            stock_code = self.auto_trade_stock_df.index[index.row()]
             self.auto_trade_stock_df.drop(stock_code, inplace=True)
             self.update_pandas_models()
+        elif column_name == "매수":
+            self._manual_buy_from_table(stock_code)
+        elif column_name == "매도":
+            self._manual_sell_from_table(stock_code)
 
     # ========================
     # 자동매매 DataFrame 로드
@@ -1937,10 +2311,14 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
     def load_auto_trader_df(self):
         pkl_path = os.path.join(data_save_path, 'auto_trade_stock_df.pkl')
         columns = ["종목코드", "종목명", "현재가", "매매가능수량", "수익률(%)",
-                   "이평선", "매수주문완료", "매도주문완료", "삭제"]
+                   "이평선", "매수", "매도", "매수주문완료", "매도주문완료", "삭제"]
         if os.path.exists(pkl_path):
             try:
-                return pd.read_pickle(pkl_path)
+                df = pd.read_pickle(pkl_path)
+                for col in ["매수", "매도"]:
+                    if col not in df.columns:
+                        df[col] = f"▶{col}"
+                return df
             except Exception as e:
                 logger.exception(e)
         df = pd.DataFrame(columns=columns)
@@ -1948,27 +2326,237 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         return df
 
     # ========================
+    # 자동매매현황 수동 종목 관리
+    # ========================
+
+    def _on_add_stock_btn_clicked(self) -> None:
+        code = self._auto_trade_code_input.text().strip()
+        if not code:
+            return
+        self._auto_trade_code_input.clear()
+        self.add_stock_to_auto_trade_manual(code)
+
+    def add_stock_to_auto_trade_manual(self, code: str, name: str = "") -> None:
+        """종목코드를 자동매매현황에 수동으로 추가."""
+        code = code.replace("_AL", "").strip()
+        if not code:
+            return
+        if code in self.auto_trade_stock_df.index:
+            logger.info(f"[수동추가] 이미 추적 중: {code}")
+            return
+        max_count = self.maxTrackingCountSpinBox.value()
+        if len(self.auto_trade_stock_df) >= max_count:
+            logger.info(f"[수동추가] 최대 추적 종목 초과({max_count}개): {code}")
+            return
+        if not name and not self.account_info_df.empty:
+            for (_, c), row in self.account_info_df.iterrows():
+                if c == code:
+                    name = str(row.get("종목명", "")) or ""
+                    break
+        self.auto_trade_stock_df.loc[code] = {
+            "종목명":     name or code,
+            "현재가":     0,
+            "매매가능수량": 0,
+            "수익률(%)":  0.0,
+            "이평선":     "",
+            "매수":       "▶매수",
+            "매도":       "▶매도",
+            "매수주문완료": False,
+            "매도주문완료": False,
+            "삭제":       "삭제",
+        }
+        self.update_pandas_models()
+        self.request_candle_data(code, candle_type="일봉", include_pre_post=False)
+        logger.info(f"[수동추가] 자동매매현황: {name or code}({code})")
+
+    def _manual_buy_from_table(self, code: str) -> None:
+        """자동매매현황 테이블에서 매수 클릭 → 즉시 주문 (자동매매 ON/OFF 무관)."""
+        is_market   = self.buyMarketRadioButton.isChecked()
+        is_qty_mode = self.buyQuantityRadioButton.isChecked()
+        현재가 = int(self.auto_trade_stock_df.at[code, "현재가"] or 0)
+        # 시장가+수량모드이면 현재가 없어도 주문 가능; 그 외엔 현재가 필요
+        if 현재가 <= 0 and not (is_market and is_qty_mode):
+            logger.info(f"[수동매수] 현재가 없음(0): {code} — 시장가+수량 모드 또는 실시간 데이터 수신 후 재시도")
+            return
+        qty = self._calc_buy_quantity(현재가)
+        if qty <= 0:
+            logger.info(f"[수동매수] 매수 수량 0: {code}")
+            return
+        account_num = self.get_trading_account_num()
+        exchange    = 'KRX' if self.is_paper_trading else 'SOR'
+        buy_price   = 0 if is_market else 현재가 + self.buyOffsetSpinBox.value()
+        self.enqueue_buy_order(
+            code, account_num=account_num,
+            is_market_order=is_market, order_quantity=qty,
+            order_price=buy_price, exchange=exchange,
+        )
+        self.auto_trade_stock_df.at[code, "매수주문완료"] = True
+        name = self.auto_trade_stock_df.at[code, "종목명"]
+        logger.info(f"[수동매수] {name}({code}) 가격={현재가:,} 수량={qty}")
+
+    def _manual_sell_from_table(self, code: str) -> None:
+        """자동매매현황 테이블에서 매도 클릭 → 즉시 주문 (자동매매 ON/OFF 무관)."""
+        account_num = self.get_trading_account_num()
+        key = self.get_account_key(account_num, code)
+        if key not in self.account_info_df.index:
+            logger.info(f"[수동매도] 보유 없음: {code}")
+            return
+        available = int(self.account_info_df.at[key, "보유수량"] or 0)
+        if available <= 0:
+            logger.info(f"[수동매도] 보유수량 0: {code}")
+            return
+        현재가   = int(self.auto_trade_stock_df.at[code, "현재가"] or 0)
+        qty      = self._calc_sell_quantity(available)
+        exchange = 'KRX' if self.is_paper_trading else 'SOR'
+        is_market = self.sellMarketRadioButton.isChecked()
+        sell_price = 0 if is_market else 현재가 + self.sellOffsetSpinBox.value()
+        self.enqueue_sell_order(
+            code, account_num=account_num,
+            is_market_order=is_market, order_quantity=qty,
+            order_price=sell_price, exchange=exchange,
+        )
+        self.auto_trade_stock_df.at[code, "매도주문완료"] = True
+        name = self.auto_trade_stock_df.at[code, "종목명"]
+        logger.info(f"[수동매도] {name}({code}) 가격={현재가:,} 수량={qty}")
+
+    def on_holdings_table_clicked(self, index) -> None:
+        """현금잔고 보유종목 행 클릭 → 자동매매현황에 추가."""
+        try:
+            row_idx = index.row()
+            if row_idx >= len(self.account_info_df):
+                return
+            (_, code) = self.account_info_df.index[row_idx]
+            name_val  = self.account_info_df.iloc[row_idx].get("종목명", "")
+            name      = name_val if isinstance(name_val, str) else ""
+        except (IndexError, AttributeError, KeyError):
+            return
+        self.add_stock_to_auto_trade_manual(code, name=name)
+
+    # ========================
     # 계좌 잔고 수신
     # ========================
 
     @log_exceptions
     def on_opw00018_req(self, trcode, rqname):
+        def _i(f):
+            return int(self._comm_get_data(trcode, "", rqname, 0, f).replace(",", "") or 0)
+        def _f(f):
+            return float(self._comm_get_data(trcode, "", rqname, 0, f).replace(",", "") or 0)
+
+        # ── 단일 데이터: 요약 헤더 갱신 ──────────────────────────
+        try:
+            총매입   = _i("총매입금액")
+            총손익   = _i("총평가손익금액")
+            총평가   = _i("총평가금액")
+            _rt_raw  = _f("총수익률(%)")
+            수익률   = _rt_raw / 100 if abs(_rt_raw) >= 100 else _rt_raw  # 실서버: 100배 스케일
+            추정자산  = _i("추정예탁자산")        # 실제 필드명 (추정자산 아님)
+            실현손익  = 0                          # opw00018에 없는 필드
+
+            def _pnl_style(v):
+                if v > 0: return "font-weight:bold;font-size:12px;color:#cc0000;"
+                if v < 0: return "font-weight:bold;font-size:12px;color:#0000cc;"
+                return "font-weight:bold;font-size:12px;color:#222;"
+
+            if hasattr(self, '_lbl_total_buy'):
+                self._lbl_total_buy.setText(f"{총매입:,}")
+                self._lbl_total_pnl.setText(f"{총손익:+,}")
+                self._lbl_total_pnl.setStyleSheet(_pnl_style(총손익))
+                self._lbl_realized.setText(f"{실현손익:+,}" if 실현손익 else "—")
+                self._lbl_realized.setStyleSheet(_pnl_style(실현손익))
+                self._lbl_total_eval.setText(f"{총평가:,}")
+                _rc = "#cc0000" if 수익률 >= 0 else "#0000cc"
+                self._lbl_return_pct.setText(f"{수익률:+.2f}%")
+                self._lbl_return_pct.setStyleSheet(
+                    f"font-weight:bold;font-size:12px;color:{_rc};")
+                self._lbl_est_asset.setText(f"{추정자산:,}" if 추정자산 else "—")
+        except Exception as _e:
+            logger.debug(f"[현금잔고] 요약 파싱 실패: {_e}")
+
+        # ── 반복 데이터: 보유 종목별 잔고 ────────────────────────
         data_cnt = self._get_repeat_cnt(trcode, rqname)
+        display_rows = []
+        info_rows    = []   # account_info_df 재구성용
+
+        def _s(v):
+            """None-safe strip."""
+            return str(v).strip() if v is not None else ""
+
+        def _safe_int(s):
+            try: return abs(int(_s(s).replace(",", "") or 0))
+            except (ValueError, AttributeError): return 0
+
         for i in range(data_cnt):
-            종목코드   = self._comm_get_data(trcode, "", rqname, i, "종목코드").replace("A", "").strip()
-            종목명    = self._comm_get_data(trcode, "", rqname, i, "종목명").strip()
-            보유수량   = int(self._comm_get_data(trcode, "", rqname, i, "보유수량") or 0)
-            매매가능수량 = int(self._comm_get_data(trcode, "", rqname, i, "매매가능수량") or 0)
-            평균단가   = int(self._comm_get_data(trcode, "", rqname, i, "평균단가") or 0)
-            현재가    = int(abs(float(self._comm_get_data(trcode, "", rqname, i, "현재가") or 0)))
-            key = self.get_account_key(self.using_account_num, 종목코드)
-            if 보유수량 > 0 and 종목코드:
-                self.account_info_df.loc[key] = {
-                    "계좌번호": self.using_account_num, "종목코드": 종목코드,
-                    "종목명": 종목명, "보유수량": 보유수량, "매매가능수량": 매매가능수량,
-                    "평균단가": 평균단가, "현재가": 현재가,
-                    "전일대비(%)": None, "수익률(%)": None,
-                }
+            # 종목번호: enc 실제 필드명 (모의투자 서버는 종목코드도 시도)
+            _raw_code = _s(self._comm_get_data(trcode, "", rqname, i, "종목번호")) or \
+                        _s(self._comm_get_data(trcode, "", rqname, i, "종목코드"))
+            _raw_name = _s(self._comm_get_data(trcode, "", rqname, i, "종목명"))
+            _raw_qty  = _s(self._comm_get_data(trcode, "", rqname, i, "보유수량"))
+            _raw_price= _s(self._comm_get_data(trcode, "", rqname, i, "현재가"))
+            # 매입가: enc 실제 필드명 (모의투자 서버는 평균단가도 시도)
+            _raw_avg  = _s(self._comm_get_data(trcode, "", rqname, i, "매입가")) or \
+                        _s(self._comm_get_data(trcode, "", rqname, i, "평균단가"))
+            _raw_pnl  = _s(self._comm_get_data(trcode, "", rqname, i, "평가손익"))
+            _raw_rt   = _s(self._comm_get_data(trcode, "", rqname, i, "수익률(%)"))
+            logger.debug(f"[현금잔고] row {i}: code={_raw_code!r} name={_raw_name!r} qty={_raw_qty!r} price={_raw_price!r} avg={_raw_avg!r} pnl={_raw_pnl!r} rt={_raw_rt!r}")
+
+            종목코드   = _raw_code.replace("A", "").strip()
+            종목명    = _raw_name if isinstance(_raw_name, str) and _raw_name not in ("", "None", "nan") else ""
+            보유수량   = _safe_int(_raw_qty)
+            매매가능수량 = _safe_int(self._comm_get_data(trcode, "", rqname, i, "매매가능수량"))
+            평균단가   = _safe_int(_raw_avg)
+            현재가    = _safe_int(_raw_price)
+
+            # 평가손익: API 직접값 우선, 없으면 계산
+            손익합계 = (현재가 - 평균단가) * 보유수량
+            if _raw_pnl:
+                try: 손익합계 = int(float(_raw_pnl.replace(",", "")))
+                except ValueError: pass
+            # 수익률: abs(v)>=100이면 실서버(100배) → ÷100, 아니면 그대로
+            손익율 = round((현재가 / 평균단가 - 1) * 100, 2) if 평균단가 else 0.0
+            if _raw_rt:
+                try:
+                    _v = float(_raw_rt.replace(",", ""))
+                    손익율 = _v / 100 if abs(_v) >= 100 else _v
+                except ValueError: pass
+
+            if 종목코드:
+                info_rows.append({
+                    "계좌번호":    self.using_account_num,
+                    "종목코드":    종목코드,
+                    "종목명":     종목명,
+                    "보유수량":    보유수량,
+                    "매매가능수량": 매매가능수량,
+                    "평균단가":    평균단가,
+                    "현재가":     현재가,
+                    "전일대비(%)": None,
+                    "수익률(%)":  손익율,
+                })
+                display_rows.append({
+                    "종목명":    종목명,
+                    "평가손익":  f"{손익합계:+,}",
+                    "수익률(%)": f"{손익율:.2f}%",
+                    "매입가":    f"{평균단가:,}",
+                    "보유수량":  보유수량,
+                    "가능수량":  매매가능수량,
+                    "현재가":    f"{현재가:,}",
+                })
+
+        # account_info_df 전체 재구성 — loc[key]=dict 방식의 NaN 오류 방지
+        if info_rows:
+            _new_info = pd.DataFrame(info_rows).set_index(["계좌번호", "종목코드"])
+            self.account_info_df = _new_info
+
+        # 보유종목 display 테이블 갱신 — setModel 재할당이 가장 안정적
+        logger.debug(f"[현금잔고] data_cnt={data_cnt}, display_rows={len(display_rows)}")
+        _COLS = ["종목명", "평가손익", "수익률(%)", "매입가", "보유수량", "가능수량", "현재가"]
+        new_df = pd.DataFrame(display_rows, columns=_COLS) if display_rows \
+            else pd.DataFrame(columns=_COLS)
+        self._holdings_display_df = new_df
+        new_model = PandasModel(new_df)
+        self._holdings_display_model = new_model
+        self.accountInfoTableView.setModel(new_model)
+
         if not self.has_done_loading:
             self.on_done_loading_basic_info()
 
@@ -2019,8 +2607,16 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
 
     @log_exceptions
     def on_receive_candle_data(self, stock_code, df, chart_type=''):
-        # ── 일봉: 전일 고가/종가/시가 저장 후 리턴
+        # ── 일봉: 전일 고가/종가/시가 저장 + 현재가 초기화
         if chart_type == "일봉":
+            if len(df) >= 1:
+                # 오늘(마지막 행) 종가로 현재가 초기화 — 수동 추가 종목 현재가=0 해소
+                today_close = int(df.iloc[-1]['Close'])
+                if (today_close > 0
+                        and stock_code in self.auto_trade_stock_df.index
+                        and self.auto_trade_stock_df.at[stock_code, "현재가"] == 0):
+                    self.auto_trade_stock_df.at[stock_code, "현재가"] = today_close
+                    self.update_pandas_models()
             if len(df) >= 2:
                 yesterday = df.iloc[-2]  # 마지막이 오늘, 그 전이 전일
                 self.prev_day_data[stock_code] = {
@@ -2053,6 +2649,13 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         df['MA'] = df['Close'].rolling(window=ma_length).mean()
         ma      = df['MA'].iloc[-1]
         현재가   = int(df['Close'].iloc[-1])
+
+        # 캔들 수신 시점에 현재가·이평선 컬럼 갱신 (수동 추가 종목도 바로 반영)
+        self.auto_trade_stock_df.at[stock_code, "현재가"] = 현재가
+        if ma and not math.isnan(ma):
+            self.auto_trade_stock_df.at[stock_code, "이평선"] = f"{int(ma):,}"
+        self.update_pandas_models()
+
         신호등   = self._get_signal_zone(stock_code, 현재가)
         p        = self.prev_day_data.get(stock_code)
         블랙선   = p['블랙선'] if p else None
@@ -2071,9 +2674,12 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         # ── 매수 조건
         # 신호등 데이터 있으면: 🟢 구간만 매수 허용
         # 신호등 데이터 없으면: MA 조건만으로 판단
-        buy_zone_ok = (신호등 == "🟢") if p else True
+        buy_zone_ok    = (신호등 == "🟢") if p else True
+        _now           = datetime.datetime.now()
+        _in_trade_time = self._get_trade_start_time() <= _now <= self._get_trade_end_time()
         if (buy_zone_ok
                 and buy_signal_ma
+                and _in_trade_time
                 and not self.auto_trade_stock_df.at[stock_code, "매수주문완료"]
                 and not self.is_no_transaction):
             qty = self._calc_buy_quantity(현재가)
@@ -2138,7 +2744,17 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
             if _es is not None:
                 self.sector_analyzer.update_exec_strength(_code, _es)
 
+        # 수급단타 신호/청산 체크
+        if self._flow_mode > 0:
+            try:
+                self._flow_scalper_tick(data)
+            except Exception:
+                pass
+
         if self.is_no_transaction:
+            return
+        _now = datetime.datetime.now()
+        if not (self._get_trade_start_time() <= _now <= self._get_trade_end_time()):
             return
         종목코드    = data['종목코드']
         현재가     = data['현재가']
@@ -2269,60 +2885,6 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
             self.db.save_supply_batch(rows)
             logger.debug(f"[DB] supply_flow {len(rows)}건 저장 ({time_str})")
 
-        # 자금흐름 모니터에 실시간 데이터 전달
-        if self._flow_monitor_win and self._flow_monitor_win.isVisible():
-            try:
-                from flow_monitor import calc_score, calc_temperature
-                sectors: dict = {}
-                stocks:  dict = {}
-                try:
-                    summary_df = self.sector_analyzer.get_summary()
-                    for rank, (_, sr) in enumerate(summary_df.iterrows(), 1):
-                        sname = str(sr.get("섹터명", ""))
-                        fore  = float(sr.get("외인순매수합", 0) or 0) / 100.0
-                        prog  = float(sr.get("프로그램합",   0) or 0) / 100.0
-                        vol   = float(sr.get("거래대금증가율", 0) or 0)
-                        sectors[sname] = {
-                            "rank":        rank,
-                            "foreigner":   fore,
-                            "program":     prog,
-                            "vol_change":  vol,
-                            "temperature": calc_temperature(fore, prog, vol),
-                        }
-                except Exception:
-                    pass
-                leader_df2 = self.sector_analyzer.get_leader_scores()
-                if leader_df2 is not None and not leader_df2.empty:
-                    for _, row2 in leader_df2.iterrows():
-                        code2 = str(row2.get("종목코드", ""))
-                        if not code2:
-                            continue
-                        f = float(row2.get("외인순매수", 0) or 0) / 100.0
-                        p = 0.0
-                        vr = float(row2.get("거래대금비율", 1.0) or 1.0)
-                        stocks[code2] = {
-                            "name":       str(row2.get("종목명", "")),
-                            "code":       code2,
-                            "sector":     str(row2.get("섹터명", "")),
-                            "price":      float(self.stock_code_to_realtime_price_dict.get(code2) or 0),
-                            "change_pct": float(row2.get("등락률(%)", 0) or 0),
-                            "foreigner":  f,
-                            "program":    p,
-                            "vol_ratio":  vr,
-                            "consec_buy": 0,
-                            "prog_accel": False,
-                            "is_top":     False,
-                            "score":      calc_score(f, p, vr),
-                        }
-                self._flow_monitor_win.feed_data({
-                    "sectors":  sectors,
-                    "stocks":   stocks,
-                    "time":     time_str,
-                    "datetime": now,
-                    "is_demo":  False,
-                })
-            except Exception as e:
-                logger.debug(f"[FlowMonitor] feed_data 실패: {e}")
 
     def _save_nxt_snapshot(self) -> None:
         """20:00 — 장후 NXT 수급 데이터 저장.
@@ -2418,8 +2980,58 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
             self.auto_pd_model.refresh()
             self.account_pd_model.refresh()
             self.credit_pd_model.refresh()
+            self._sync_holdings_display()
         except Exception as e:
             logger.exception(e)
+
+    def _sync_holdings_display(self) -> None:
+        """account_info_df 실시간 업데이트(현재가·수익률)를 holdings display 테이블에 반영."""
+        if not hasattr(self, '_holdings_display_model'):
+            return
+        if self.account_info_df.empty:
+            return
+        try:
+            def _ri(v):
+                """NaN-safe int: NaN != NaN is the only reliable NaN check."""
+                try:
+                    f = float(v) if v is not None else 0.0
+                    return 0 if f != f else int(f)
+                except (ValueError, TypeError):
+                    return 0
+
+            rows = []
+            for (_, 종목코드), row in self.account_info_df.iterrows():
+                현재가  = _ri(row.get("현재가"))
+                평균단가 = _ri(row.get("평균단가"))
+                보유수량 = _ri(row.get("보유수량"))
+                가능수량 = _ri(row.get("매매가능수량"))
+                수익률  = row.get("수익률(%)")
+                if isinstance(수익률, float) and 수익률 != 수익률:
+                    수익률 = None
+                평가손익 = (현재가 - 평균단가) * 보유수량
+
+                _nm = row.get("종목명", "")
+                if not isinstance(_nm, str):
+                    _nm = ""
+                rows.append({
+                    "종목명":    _nm,
+                    "평가손익":  f"{평가손익:+,}",
+                    "수익률(%)": f"{수익률:.2f}%" if 수익률 is not None else "—",
+                    "매입가":    f"{평균단가:,}",
+                    "보유수량":  보유수량,
+                    "가능수량":  가능수량,
+                    "현재가":    f"{현재가:,}",
+                })
+
+            _COLS = ["종목명", "평가손익", "수익률(%)", "매입가", "보유수량", "가능수량", "현재가"]
+            new_df = pd.DataFrame(rows, columns=_COLS) if rows \
+                else pd.DataFrame(columns=_COLS)
+            self._holdings_display_df = new_df
+            new_model = PandasModel(new_df)
+            self._holdings_display_model = new_model
+            self.accountInfoTableView.setModel(new_model)
+        except Exception as _e:
+            logger.debug(f"[holdings display] 동기화 실패: {_e}")
 
     def update_cell(self, key, column_name):
         self.update_pandas_models()
@@ -2692,7 +3304,15 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         self.sellAvailableRatioSpinBox.setValue(s.value('sellAvailableRatioSpinBox', 100.0, float))
         # ETF+ETN 제외(1)를 기본값으로 설정
         self.topTradingFilterComboBox.setCurrentIndex(s.value('topTradingFilterComboBox', 1, int))
-        self.topTradingIntervalSpinBox.setValue(s.value('topTradingIntervalSpinBox', 60, int))
+        # 기본값 120초 — 마지막 저장값 우선
+        interval = s.value('topTradingIntervalSpinBox', 120, int)
+        self.topTradingIntervalSpinBox.blockSignals(True)
+        self.topTradingIntervalSpinBox.setValue(interval)
+        self.topTradingIntervalSpinBox.blockSignals(False)
+        # 자동조회 ON 상태였으면 복원
+        if s.value('topTradingAutoOn', False, bool):
+            self.topTradingAutoRefreshPushButton.setChecked(True)
+            QTimer.singleShot(2000, lambda: self._on_top_trading_auto_toggle(True))
         if s.value('investorAmountRadioButton', True, bool):
             self.investorAmountRadioButton.setChecked(True)
         else:
@@ -2836,77 +3456,6 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
 
         self.mainTabWidget.addTab(root, "해외선물")
 
-    # ── 자금흐름 모니터 탭 ────────────────────────────────────────
-
-    def _setup_flow_monitor_tab(self) -> None:
-        from PyQt5.QtWidgets import QLabel, QPushButton, QVBoxLayout, QHBoxLayout
-        from PyQt5.QtCore import Qt
-
-        root   = QWidget()
-        vl     = QVBoxLayout(root)
-        vl.setContentsMargins(20, 20, 20, 20)
-        vl.setSpacing(12)
-
-        title = QLabel("자금흐름 모니터")
-        title.setStyleSheet("font-size:16px; font-weight:bold; color:#1a237e;")
-        title.setAlignment(Qt.AlignCenter)
-        vl.addWidget(title)
-
-        desc = QLabel(
-            "섹터 온도계 · 종목별 수급점수 · 시간대별 자금흐름 차트 · 실시간 알림\n"
-            "별도 창으로 열려 trading_product 와 실시간 데이터를 공유합니다."
-        )
-        desc.setAlignment(Qt.AlignCenter)
-        desc.setStyleSheet("color:#555; font-size:12px;")
-        vl.addWidget(desc)
-
-        self._flow_status_lbl = QLabel("상태: 미실행")
-        self._flow_status_lbl.setAlignment(Qt.AlignCenter)
-        self._flow_status_lbl.setStyleSheet("color:#888; font-size:11px;")
-        vl.addWidget(self._flow_status_lbl)
-
-        hl = QHBoxLayout()
-        hl.addStretch()
-
-        open_btn = QPushButton("▶  자금흐름 모니터 열기")
-        open_btn.setFixedWidth(200)
-        open_btn.setFixedHeight(36)
-        open_btn.setStyleSheet(
-            "background:#1565c0; color:white; border-radius:5px;"
-            "font-size:13px; font-weight:bold;"
-        )
-        open_btn.clicked.connect(self._open_flow_monitor)
-        hl.addWidget(open_btn)
-
-        close_btn = QPushButton("■  닫기")
-        close_btn.setFixedWidth(90)
-        close_btn.setFixedHeight(36)
-        close_btn.setStyleSheet(
-            "background:#c62828; color:white; border-radius:5px; font-size:13px;"
-        )
-        close_btn.clicked.connect(self._close_flow_monitor)
-        hl.addWidget(close_btn)
-
-        hl.addStretch()
-        vl.addLayout(hl)
-        vl.addStretch()
-
-        self.mainTabWidget.addTab(root, "자금흐름")
-
-    def _open_flow_monitor(self) -> None:
-        if self._flow_monitor_win is None or not self._flow_monitor_win.isVisible():
-            self._flow_monitor_win = FlowMonitor(api=self, db=self.db)
-
-        self._flow_monitor_win.show()
-        self._flow_monitor_win.raise_()
-        self._flow_monitor_win.activateWindow()
-        self._flow_status_lbl.setText("상태: 실행 중")
-        logger.info("[FlowMonitor] 자금흐름 모니터 열림")
-
-    def _close_flow_monitor(self) -> None:
-        if self._flow_monitor_win and self._flow_monitor_win.isVisible():
-            self._flow_monitor_win.close()
-        self._flow_status_lbl.setText("상태: 미실행")
 
     def _on_ovs_refresh(self):
         code = self._ovs_code_edit.text().strip().upper()
@@ -3158,13 +3707,907 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         self.mainTabWidget.addTab(tab_root, "매수 신호 🔔")
 
     # ========================
+    # 모듈 제어 탭
+    # ========================
+
+    _MODULE_SETTINGS_PATH = os.path.join(
+        os.path.dirname(__file__), "..", "data", "module_settings.json"
+    )
+
+    def _setup_module_control_tab(self) -> None:
+        """모듈 활성화/비활성화 제어 탭."""
+        from PyQt5.QtWidgets import (
+            QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
+            QSpinBox, QFrame, QGridLayout, QSizePolicy,
+        )
+
+        _BG = "#111"
+        _BTN_ON  = ("QPushButton{background:#1a3a1a;color:#5f5;border:1px solid #3a7a3a;"
+                    "font-size:11px;font-weight:bold;border-radius:4px;"
+                    "padding:6px 14px;min-width:110px;}"
+                    "QPushButton:hover{background:#254a25;}")
+        _BTN_OFF = ("QPushButton{background:#3a1a1a;color:#f55;border:1px solid #7a3a3a;"
+                    "font-size:11px;font-weight:bold;border-radius:4px;"
+                    "padding:6px 14px;min-width:110px;}"
+                    "QPushButton:hover{background:#4a2525;}")
+        _SPN = ("QSpinBox{background:#222;color:#ddd;border:1px solid #444;"
+                "border-radius:3px;padding:2px 4px;font-size:11px;}"
+                "QSpinBox::up-button,QSpinBox::down-button{width:14px;}")
+
+        def _lbl(t, size=11, color="#aaa"):
+            w = QLabel(t); w.setStyleSheet(f"color:{color};font-size:{size}px;")
+            return w
+
+        root = QWidget(); root.setStyleSheet(f"background:{_BG};")
+        vl = QVBoxLayout(root); vl.setContentsMargins(14, 14, 14, 14); vl.setSpacing(10)
+
+        vl.addWidget(_lbl("모듈 활성화 제어", 14, "#ddd"))
+        vl.addWidget(_lbl(
+            "비활성화하면 해당 모듈의 화면 갱신이 중단됩니다.  "
+            "섹터자금흐름 OFF = opt10063 배치 중단 (TR 절약 가장 큼).", 10, "#777"))
+
+        sep1 = QFrame(); sep1.setFrameShape(QFrame.HLine)
+        sep1.setStyleSheet("color:#333;"); vl.addWidget(sep1)
+
+        # ── 모듈 토글 버튼 그리드 ──────────────────────────────────
+        _MODULES = [
+            ("시장등락률",   "시장 지수 차트 갱신 중단 (3초 UI 루프)"),
+            ("테마별현황",   "테마 순위 업데이트 중단"),
+            ("매수신호",    "매수 신호 스캐너 처리 중단"),
+            ("섹터자금흐름", "opt10063 장중투자자 배치 조회 중단 ★ TR 절약"),
+            ("해외선물",    "해외선물 실시간 수신 중단"),
+            ("전략",       "전략 대시보드 갱신 중단"),
+            ("시장지도",    "업종별 트리맵 갱신 중단"),
+            ("거래원분석",  "거래원 실시간 데이터 처리 중단"),
+            ("수급흐름",    "수급흐름 탭 숨김 + 스냅샷 저장 중단 + 프로그램 배치 중단"),
+        ]
+
+        self._module_btns: dict[str, QPushButton] = {}
+        grid = QGridLayout(); grid.setSpacing(8)
+        for idx, (name, tip) in enumerate(_MODULES):
+            enabled = self._module_enabled.get(name, True)
+            btn = QPushButton(f"{'✅' if enabled else '⬜'} {name}")
+            btn.setCheckable(True); btn.setChecked(enabled)
+            btn.setToolTip(tip)
+            btn.setStyleSheet(_BTN_ON if enabled else _BTN_OFF)
+            btn.clicked.connect(lambda chk, n=name, b=btn: self._toggle_module(n, chk, b))
+            self._module_btns[name] = btn
+            grid.addWidget(btn, idx // 4, idx % 4)
+        vl.addLayout(grid)
+
+        sep2 = QFrame(); sep2.setFrameShape(QFrame.HLine)
+        sep2.setStyleSheet("color:#333;"); vl.addWidget(sep2)
+
+        # ── 수급 배치 주기 ─────────────────────────────────────────
+        row_batch = QHBoxLayout(); row_batch.setSpacing(8)
+        row_batch.addWidget(_lbl("수급 배치 주기 (opt10059) :", 11, "#ddd"))
+
+        self._flow_batch_spn = QSpinBox()
+        self._flow_batch_spn.setRange(2, 60)
+        self._flow_batch_spn.setValue(2)
+        self._flow_batch_spn.setSuffix(" 분")
+        self._flow_batch_spn.setStyleSheet(_SPN)
+        self._flow_batch_spn.setFixedWidth(80)
+        self._flow_batch_spn.valueChanged.connect(self._on_batch_interval_changed)
+        row_batch.addWidget(self._flow_batch_spn)
+
+        row_batch.addWidget(_lbl(
+            "  50종목 × 1.3초 ≈ 65초 소요 → 최소 2분 권장  |  "
+            "섹터자금흐름 OFF 상태에서 2분으로 설정하면 거의 실시간 수급 확인 가능",
+            10, "#666"))
+        row_batch.addStretch()
+        vl.addLayout(row_batch)
+
+        self._module_status_lbl = QLabel("")
+        self._module_status_lbl.setStyleSheet("color:#888;font-size:10px;")
+        vl.addWidget(self._module_status_lbl)
+
+        vl.addStretch()
+        self.mainTabWidget.addTab(root, "⚙ 모듈")
+
+    def _toggle_module(self, name: str, enabled: bool, btn: 'QPushButton') -> None:
+        """모듈 ON/OFF 토글 — 타이머 제어 + 플래그 저장."""
+        _BTN_ON  = ("QPushButton{background:#1a3a1a;color:#5f5;border:1px solid #3a7a3a;"
+                    "font-size:11px;font-weight:bold;border-radius:4px;"
+                    "padding:6px 14px;min-width:110px;}"
+                    "QPushButton:hover{background:#254a25;}")
+        _BTN_OFF = ("QPushButton{background:#3a1a1a;color:#f55;border:1px solid #7a3a3a;"
+                    "font-size:11px;font-weight:bold;border-radius:4px;"
+                    "padding:6px 14px;min-width:110px;}"
+                    "QPushButton:hover{background:#4a2525;}")
+
+        self._module_enabled[name] = enabled
+        btn.setText(f"{'✅' if enabled else '⬜'} {name}")
+        btn.setStyleSheet(_BTN_ON if enabled else _BTN_OFF)
+
+        # 타이머 직접 제어
+        if name == "시장등락률" and hasattr(self, '_market_chart_timer'):
+            if enabled:
+                self._market_chart_timer.start(3000)
+            else:
+                self._market_chart_timer.stop()
+
+        elif name == "섹터자금흐름" and hasattr(self, '_flow_schedule_timer'):
+            if enabled:
+                self._flow_schedule_timer.start(60_000)
+            else:
+                self._flow_schedule_timer.stop()
+
+        elif name == "해외선물":
+            # OvsFutures 위젯이 있는 경우 내부 타이머 제어
+            widget = getattr(self, '_ovs_widget', None)
+            if widget and hasattr(widget, 'set_active'):
+                widget.set_active(enabled)
+
+        elif name == "수급흐름":
+            # 스냅샷 저장 타이머
+            if hasattr(self, '_flow_snap_timer'):
+                if enabled:
+                    self._flow_snap_timer.start(30 * 60 * 1000)
+                else:
+                    self._flow_snap_timer.stop()
+            # 프로그램 배치 타이머 (opt90013)
+            if hasattr(self, '_prog_auto_timer'):
+                if not enabled and self._prog_auto_timer.isActive():
+                    self._prog_auto_timer.stop()
+            # 수급흐름 탭 표시/숨김
+            _widget = getattr(self, '_stock_flow_widget', None)
+            if _widget is not None:
+                if enabled:
+                    if self.mainTabWidget.indexOf(_widget) < 0:
+                        self.mainTabWidget.addTab(_widget, "수급흐름")
+                else:
+                    _idx = self.mainTabWidget.indexOf(_widget)
+                    if _idx >= 0:
+                        self.mainTabWidget.removeTab(_idx)
+
+        label = "활성화" if enabled else "비활성화"
+        if hasattr(self, '_module_status_lbl'):
+            self._module_status_lbl.setText(
+                f"[{datetime.datetime.now():%H:%M:%S}] {name} {label}")
+        logger.info(f"[모듈제어] {name} {label}")
+        self._module_save_settings()
+
+    def _on_batch_interval_changed(self, minutes: int) -> None:
+        """수급 배치 주기 변경."""
+        ms = minutes * 60 * 1000
+        self._investor_10min_timer.setInterval(ms)
+        if self._investor_10min_timer.isActive():
+            self._investor_10min_timer.start()  # 새 인터벌로 재시작
+        logger.info(f"[수급배치] 주기 변경: {minutes}분")
+        self._module_save_settings()
+
+    def _module_save_settings(self) -> None:
+        """모듈 제어 설정을 JSON 파일에 저장."""
+        import json
+        s = {
+            "modules":           self._module_enabled,
+            "batch_interval_min": (self._flow_batch_spn.value()
+                                   if hasattr(self, '_flow_batch_spn') else 10),
+        }
+        try:
+            os.makedirs(os.path.dirname(self._MODULE_SETTINGS_PATH), exist_ok=True)
+            with open(self._MODULE_SETTINGS_PATH, "w", encoding="utf-8") as f:
+                json.dump(s, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            logger.debug(f"[모듈제어] 설정 저장 실패: {e}")
+
+    def _module_load_settings(self) -> None:
+        """저장된 모듈 제어 설정 복원."""
+        import json
+        try:
+            with open(self._MODULE_SETTINGS_PATH, "r", encoding="utf-8") as f:
+                s = json.load(f)
+        except Exception:
+            return
+
+        # 배치 주기 복원 (최소 2분 강제)
+        batch_min = max(2, int(s.get("batch_interval_min", 2)))
+        if hasattr(self, '_flow_batch_spn'):
+            self._flow_batch_spn.blockSignals(True)
+            self._flow_batch_spn.setValue(batch_min)
+            self._flow_batch_spn.blockSignals(False)
+        self._investor_10min_timer.setInterval(batch_min * 60 * 1000)
+
+        # 모듈 ON/OFF 복원
+        for name, enabled in s.get("modules", {}).items():
+            if name not in self._module_enabled:
+                continue
+            self._module_enabled[name] = enabled
+            # 타이머만 직접 제어 (버튼 UI는 _setup_module_control_tab에서 이미 초기값 세팅됨)
+            if name == "시장등락률" and hasattr(self, '_market_chart_timer'):
+                if enabled:
+                    self._market_chart_timer.start(3000)
+                else:
+                    self._market_chart_timer.stop()
+            elif name == "섹터자금흐름" and hasattr(self, '_flow_schedule_timer'):
+                if enabled:
+                    self._flow_schedule_timer.start(60_000)
+                else:
+                    self._flow_schedule_timer.stop()
+            elif name == "수급흐름":
+                if hasattr(self, '_flow_snap_timer'):
+                    if enabled:
+                        self._flow_snap_timer.start(30 * 60 * 1000)
+                    else:
+                        self._flow_snap_timer.stop()
+                _widget = getattr(self, '_stock_flow_widget', None)
+                if _widget is not None:
+                    if enabled:
+                        if self.mainTabWidget.indexOf(_widget) < 0:
+                            self.mainTabWidget.addTab(_widget, "수급흐름")
+                    else:
+                        _idx = self.mainTabWidget.indexOf(_widget)
+                        if _idx >= 0:
+                            self.mainTabWidget.removeTab(_idx)
+            # 버튼 UI 동기화
+            if hasattr(self, '_module_btns'):
+                btn = self._module_btns.get(name)
+                if btn is not None:
+                    _on  = ("QPushButton{background:#1a3a1a;color:#5f5;border:1px solid #3a7a3a;"
+                            "font-size:11px;font-weight:bold;border-radius:4px;"
+                            "padding:6px 14px;min-width:110px;}"
+                            "QPushButton:hover{background:#254a25;}")
+                    _off = ("QPushButton{background:#3a1a1a;color:#f55;border:1px solid #7a3a3a;"
+                            "font-size:11px;font-weight:bold;border-radius:4px;"
+                            "padding:6px 14px;min-width:110px;}"
+                            "QPushButton:hover{background:#4a2525;}")
+                    btn.blockSignals(True)
+                    btn.setChecked(enabled)
+                    btn.setText(f"{'✅' if enabled else '⬜'} {name}")
+                    btn.setStyleSheet(_on if enabled else _off)
+                    btn.blockSignals(False)
+        logger.info(f"[모듈제어] 설정 복원 완료: 배치{batch_min}분")
+
+    # ========================
+    # 수급단타 탭
+    # ========================
+
+    def _setup_flow_scalper_tab(self) -> None:
+        """수급단타 탭 — 반자동(알림)/자동(주문) 모드 전환."""
+        from PyQt5.QtWidgets import (
+            QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
+            QDoubleSpinBox, QSpinBox, QTableWidget, QTableWidgetItem,
+            QHeaderView, QComboBox, QFrame,
+        )
+        from PyQt5.QtGui import QColor, QBrush
+        from PyQt5.QtCore import Qt
+
+        _BG  = "#111"
+        _BTN = ("QPushButton{background:#222;color:#aaa;border:1px solid #444;"
+                "font-size:11px;border-radius:3px;padding:2px 8px;min-height:24px;}"
+                "QPushButton:hover{background:#333;color:#fff;}"
+                "QPushButton:checked{background:#1a3a6a;color:#6af;border-color:#5af;}")
+        _TBL = ("QTableWidget{background:#161616;color:#ddd;border:none;gridline-color:#2a2a2a;}"
+                "QTableWidget::item{padding:1px 4px;}"
+                "QHeaderView::section{background:#222;color:#999;border:none;"
+                "border-bottom:1px solid #333;padding:2px 4px;font-size:10px;}"
+                "QTableWidget::item:selected{background:#1a3a6a;}")
+        _SPN = ("QDoubleSpinBox,QSpinBox{background:#222;color:#ddd;"
+                "border:1px solid #444;border-radius:3px;padding:1px 4px;font-size:11px;}"
+                "QDoubleSpinBox::up-button,QDoubleSpinBox::down-button,"
+                "QSpinBox::up-button,QSpinBox::down-button{width:14px;}")
+
+        def _lbl(text: str) -> QLabel:
+            w = QLabel(text)
+            w.setStyleSheet("color:#999;font-size:11px;")
+            return w
+
+        root = QWidget(); root.setStyleSheet(f"background:{_BG};")
+        vl   = QVBoxLayout(root); vl.setContentsMargins(6, 6, 6, 6); vl.setSpacing(4)
+
+        # ── 1행: 모드 + 매매 파라미터 ─────────────────────────
+        row1 = QHBoxLayout(); row1.setSpacing(8)
+
+        self._flow_btn_off  = QPushButton("■ OFF")
+        self._flow_btn_semi = QPushButton("🔔 반자동")
+        self._flow_btn_auto = QPushButton("⚡ 자동")
+        for btn in (self._flow_btn_off, self._flow_btn_semi, self._flow_btn_auto):
+            btn.setCheckable(True); btn.setStyleSheet(_BTN); row1.addWidget(btn)
+        self._flow_btn_off.setChecked(True)
+        self._flow_btn_off.clicked.connect(lambda: self._flow_set_mode(0))
+        self._flow_btn_semi.clicked.connect(lambda: self._flow_set_mode(1))
+        self._flow_btn_auto.clicked.connect(lambda: self._flow_set_mode(2))
+
+        sep = QFrame(); sep.setFrameShape(QFrame.VLine)
+        sep.setStyleSheet("color:#444;"); row1.addWidget(sep)
+
+        row1.addWidget(_lbl("투자금(원):"))
+        spn_invest = QSpinBox()
+        spn_invest.setRange(100_000, 100_000_000); spn_invest.setSingleStep(100_000)
+        spn_invest.setValue(1_000_000); spn_invest.setStyleSheet(_SPN); spn_invest.setFixedWidth(120)
+        spn_invest.valueChanged.connect(lambda v: setattr(self, '_flow_invest_amt', v))
+        row1.addWidget(spn_invest)
+
+        row1.addWidget(_lbl("익절:"))
+        spn_profit = QDoubleSpinBox()
+        spn_profit.setRange(0.1, 10.0); spn_profit.setSingleStep(0.1)
+        spn_profit.setValue(1.5); spn_profit.setSuffix("%"); spn_profit.setStyleSheet(_SPN); spn_profit.setFixedWidth(72)
+        spn_profit.valueChanged.connect(lambda v: setattr(self, '_flow_profit_pct', v))
+        row1.addWidget(spn_profit)
+
+        row1.addWidget(_lbl("손절:"))
+        spn_stop = QDoubleSpinBox()
+        spn_stop.setRange(0.1, 5.0); spn_stop.setSingleStep(0.1)
+        spn_stop.setValue(0.5); spn_stop.setSuffix("%"); spn_stop.setStyleSheet(_SPN); spn_stop.setFixedWidth(72)
+        spn_stop.valueChanged.connect(lambda v: setattr(self, '_flow_stop_pct', v))
+        row1.addWidget(spn_stop)
+
+        row1.addStretch()
+        self._flow_status_lbl = QLabel("● OFF")
+        self._flow_status_lbl.setStyleSheet("color:#555;font-size:13px;font-weight:bold;")
+        row1.addWidget(self._flow_status_lbl)
+        vl.addLayout(row1)
+
+        # ── 2행: 진입 조건 ────────────────────────────────────
+        row2 = QHBoxLayout(); row2.setSpacing(8)
+        row2.addWidget(_lbl("진입조건:"))
+
+        row2.addWidget(_lbl("외인≥"))
+        spn_foreign = QSpinBox()
+        spn_foreign.setRange(0, 500_000); spn_foreign.setSingleStep(1_000)
+        spn_foreign.setValue(5_000); spn_foreign.setSuffix("백만"); spn_foreign.setStyleSheet(_SPN); spn_foreign.setFixedWidth(130)
+        spn_foreign.valueChanged.connect(lambda v: setattr(self, '_flow_min_foreign', float(v)))
+        row2.addWidget(spn_foreign)
+
+        row2.addWidget(_lbl("기관≥"))
+        spn_inst = QSpinBox()
+        spn_inst.setRange(0, 500_000); spn_inst.setSingleStep(1_000)
+        spn_inst.setValue(3_000); spn_inst.setSuffix("백만"); spn_inst.setStyleSheet(_SPN); spn_inst.setFixedWidth(130)
+        spn_inst.valueChanged.connect(lambda v: setattr(self, '_flow_min_inst', float(v)))
+        row2.addWidget(spn_inst)
+
+        self._flow_cond_combo = QComboBox()
+        self._flow_cond_combo.addItems(["외인 OR 기관", "외인 AND 기관", "외인만", "기관만"])
+        self._flow_cond_combo.setStyleSheet(
+            "QComboBox{background:#222;color:#ddd;border:1px solid #444;"
+            "font-size:11px;border-radius:3px;padding:1px 6px;}"
+            "QComboBox QAbstractItemView{background:#222;color:#ddd;selection-background-color:#1a3a6a;}")
+        self._flow_cond_combo.setFixedWidth(120)
+        row2.addWidget(self._flow_cond_combo)
+
+        row2.addWidget(_lbl("체결강도≥"))
+        spn_exec = QDoubleSpinBox()
+        spn_exec.setRange(50.0, 300.0); spn_exec.setSingleStep(5.0)
+        spn_exec.setValue(130.0); spn_exec.setSuffix("%"); spn_exec.setStyleSheet(_SPN); spn_exec.setFixedWidth(80)
+        spn_exec.valueChanged.connect(lambda v: setattr(self, '_flow_min_exec', v))
+        row2.addWidget(spn_exec)
+
+        row2.addWidget(_lbl("등락률"))
+        spn_chg_lo = QDoubleSpinBox()
+        spn_chg_lo.setRange(-30.0, 30.0); spn_chg_lo.setSingleStep(0.5)
+        spn_chg_lo.setValue(0.0); spn_chg_lo.setSuffix("%"); spn_chg_lo.setStyleSheet(_SPN); spn_chg_lo.setFixedWidth(72)
+        spn_chg_lo.valueChanged.connect(lambda v: setattr(self, '_flow_min_change', v))
+        row2.addWidget(spn_chg_lo)
+        row2.addWidget(_lbl("~"))
+        spn_chg_hi = QDoubleSpinBox()
+        spn_chg_hi.setRange(-30.0, 30.0); spn_chg_hi.setSingleStep(0.5)
+        spn_chg_hi.setValue(3.0); spn_chg_hi.setSuffix("%"); spn_chg_hi.setStyleSheet(_SPN); spn_chg_hi.setFixedWidth(72)
+        spn_chg_hi.valueChanged.connect(lambda v: setattr(self, '_flow_max_change', v))
+        row2.addWidget(spn_chg_hi)
+
+        row2.addStretch()
+        vl.addLayout(row2)
+
+        # ── 3행: Δ 진입 조건 ─────────────────────────────────
+        row3 = QHBoxLayout(); row3.setSpacing(8)
+        row3.addWidget(_lbl("Δ조건(유입변화):"))
+
+        row3.addWidget(_lbl("Δ외인≥"))
+        spn_df = QSpinBox()
+        spn_df.setRange(0, 500_000); spn_df.setSingleStep(500)
+        spn_df.setValue(0); spn_df.setSuffix("백만"); spn_df.setStyleSheet(_SPN); spn_df.setFixedWidth(130)
+        spn_df.setToolTip("0=비활성 / 양수=해당 금액 이상 신규 유입된 경우만 진입")
+        spn_df.valueChanged.connect(lambda v: setattr(self, '_flow_min_delta_foreign', float(v)))
+        row3.addWidget(spn_df)
+
+        row3.addWidget(_lbl("Δ기관≥"))
+        spn_di = QSpinBox()
+        spn_di.setRange(0, 500_000); spn_di.setSingleStep(500)
+        spn_di.setValue(0); spn_di.setSuffix("백만"); spn_di.setStyleSheet(_SPN); spn_di.setFixedWidth(130)
+        spn_di.setToolTip("0=비활성 / 양수=해당 금액 이상 신규 유입된 경우만 진입")
+        spn_di.valueChanged.connect(lambda v: setattr(self, '_flow_min_delta_inst', float(v)))
+        row3.addWidget(spn_di)
+
+        row3.addWidget(_lbl("(2분 배치 기준, 0=비활성)"))
+        row3.addStretch()
+        vl.addLayout(row3)
+
+        # ── 로그 테이블 ───────────────────────────────────────
+        _COLS = ["시각", "종목명", "섹터", "외인수급", "외인Δ", "기관수급", "기관Δ",
+                 "체결강도", "등락률", "진입가", "현재가", "수익률", "상태"]
+        self._flow_log_tbl = QTableWidget(0, len(_COLS))
+        self._flow_log_tbl.setHorizontalHeaderLabels(_COLS)
+        self._flow_log_tbl.setEditTriggers(QTableWidget.NoEditTriggers)
+        self._flow_log_tbl.setSelectionBehavior(QTableWidget.SelectRows)
+        self._flow_log_tbl.verticalHeader().setVisible(False)
+        self._flow_log_tbl.setStyleSheet(_TBL)
+        self._flow_log_tbl.verticalHeader().setDefaultSectionSize(20)
+        hdr = self._flow_log_tbl.horizontalHeader()
+        for ci in range(len(_COLS)):
+            hdr.setSectionResizeMode(ci, QHeaderView.ResizeToContents)
+        vl.addWidget(self._flow_log_tbl)
+
+        # 스핀박스 참조 보존 (설정 저장/복원용)
+        self._flow_spn_invest  = spn_invest
+        self._flow_spn_profit  = spn_profit
+        self._flow_spn_stop    = spn_stop
+        self._flow_spn_foreign = spn_foreign
+        self._flow_spn_inst    = spn_inst
+        self._flow_spn_exec    = spn_exec
+        self._flow_spn_chg_lo  = spn_chg_lo
+        self._flow_spn_chg_hi  = spn_chg_hi
+        self._flow_spn_delta_f = spn_df
+        self._flow_spn_delta_i = spn_di
+
+        # 값 변경 시 자동 저장
+        for _spn in (spn_invest, spn_profit, spn_stop, spn_foreign, spn_inst,
+                     spn_exec, spn_chg_lo, spn_chg_hi, spn_df, spn_di):
+            _spn.valueChanged.connect(lambda _v: self._flow_save_settings())
+        self._flow_cond_combo.currentIndexChanged.connect(lambda _i: self._flow_save_settings())
+
+        # 저장된 설정 복원
+        self._flow_load_settings()
+
+        # ── 수급흐름 Δ2분 배치 신호 섹션 ─────────────────────────
+        sep_delta = QFrame(); sep_delta.setFrameShape(QFrame.HLine)
+        sep_delta.setStyleSheet("color:#555;margin:4px 0;"); vl.addWidget(sep_delta)
+
+        delta_title = QLabel("▶ 수급흐름 Δ2분 배치 신호 → 자동매매 연계")
+        delta_title.setStyleSheet("color:#6af;font-size:12px;font-weight:bold;")
+        vl.addWidget(delta_title)
+
+        # ── Δ 모드 + 활성화 버튼 ──────────────────────────────
+        row_d1 = QHBoxLayout(); row_d1.setSpacing(8)
+
+        row_d1.addWidget(_lbl("트리거:"))
+        self._delta_mode_combo = QComboBox()
+        self._delta_mode_combo.addItems([
+            "① 프로그램Δ 절대값",
+            "② 급증 감지 (N배 이상)",
+            "③ 프로그램+기관 동시유입",
+        ])
+        self._delta_mode_combo.setStyleSheet(
+            "QComboBox{background:#222;color:#ddd;border:1px solid #444;"
+            "font-size:11px;border-radius:3px;padding:1px 6px;min-width:190px;}"
+            "QComboBox QAbstractItemView{background:#222;color:#ddd;selection-background-color:#1a3a6a;}")
+        self._delta_mode_combo.currentIndexChanged.connect(
+            lambda i: (setattr(self, '_flow_delta_mode', i), self._delta_update_threshold_lbl()))
+        row_d1.addWidget(self._delta_mode_combo)
+
+        self._delta_threshold_lbl = QLabel("프로그램Δ ≥")
+        self._delta_threshold_lbl.setStyleSheet("color:#aaa;font-size:11px;")
+        row_d1.addWidget(self._delta_threshold_lbl)
+
+        self._delta_prog_spn = QSpinBox()
+        self._delta_prog_spn.setRange(100, 100_000); self._delta_prog_spn.setSingleStep(100)
+        self._delta_prog_spn.setValue(1000); self._delta_prog_spn.setSuffix("백만")
+        self._delta_prog_spn.setStyleSheet(_SPN); self._delta_prog_spn.setFixedWidth(120)
+        self._delta_prog_spn.valueChanged.connect(
+            lambda v: setattr(self, '_flow_delta_prog_min', float(v)))
+        row_d1.addWidget(self._delta_prog_spn)
+
+        # 모드1: 급증 배율
+        self._delta_surge_lbl = QLabel("배율:")
+        self._delta_surge_lbl.setStyleSheet("color:#aaa;font-size:11px;"); self._delta_surge_lbl.hide()
+        row_d1.addWidget(self._delta_surge_lbl)
+        self._delta_surge_spn = QDoubleSpinBox()
+        self._delta_surge_spn.setRange(1.5, 20.0); self._delta_surge_spn.setSingleStep(0.5)
+        self._delta_surge_spn.setValue(3.0); self._delta_surge_spn.setSuffix("×")
+        self._delta_surge_spn.setStyleSheet(_SPN); self._delta_surge_spn.setFixedWidth(72)
+        self._delta_surge_spn.valueChanged.connect(
+            lambda v: setattr(self, '_flow_delta_surge_x', v))
+        self._delta_surge_spn.hide(); row_d1.addWidget(self._delta_surge_spn)
+
+        # 모드2: 기관 가중치
+        self._delta_instw_lbl = QLabel("기관가중치:")
+        self._delta_instw_lbl.setStyleSheet("color:#aaa;font-size:11px;"); self._delta_instw_lbl.hide()
+        row_d1.addWidget(self._delta_instw_lbl)
+        self._delta_instw_spn = QDoubleSpinBox()
+        self._delta_instw_spn.setRange(0.0, 1.0); self._delta_instw_spn.setSingleStep(0.05)
+        self._delta_instw_spn.setValue(0.3)
+        self._delta_instw_spn.setStyleSheet(_SPN); self._delta_instw_spn.setFixedWidth(65)
+        self._delta_instw_spn.valueChanged.connect(
+            lambda v: setattr(self, '_flow_delta_inst_w', v))
+        self._delta_instw_spn.hide(); row_d1.addWidget(self._delta_instw_spn)
+
+        row_d1.addStretch()
+
+        self._delta_btn_off  = QPushButton("■ OFF")
+        self._delta_btn_semi = QPushButton("🔔 반자동")
+        self._delta_btn_auto = QPushButton("⚡ 자동")
+        for btn in (self._delta_btn_off, self._delta_btn_semi, self._delta_btn_auto):
+            btn.setCheckable(True); btn.setStyleSheet(_BTN); row_d1.addWidget(btn)
+        self._delta_btn_off.setChecked(True)
+        self._delta_btn_off.clicked.connect(lambda: self._flow_delta_set_mode(0))
+        self._delta_btn_semi.clicked.connect(lambda: self._flow_delta_set_mode(1))
+        self._delta_btn_auto.clicked.connect(lambda: self._flow_delta_set_mode(2))
+
+        self._delta_status_lbl = QLabel("● OFF")
+        self._delta_status_lbl.setStyleSheet("color:#555;font-size:12px;font-weight:bold;")
+        row_d1.addWidget(self._delta_status_lbl)
+        vl.addLayout(row_d1)
+
+        self.mainTabWidget.addTab(root, "수급단타")
+
+    def _flow_set_mode(self, mode: int) -> None:
+        """모드 전환 (0=OFF, 1=반자동, 2=자동)."""
+        self._flow_mode = mode
+        self._flow_btn_off.setChecked(mode == 0)
+        self._flow_btn_semi.setChecked(mode == 1)
+        self._flow_btn_auto.setChecked(mode == 2)
+        labels = {
+            0: ("● OFF",         "#555"),
+            1: ("🔔 반자동 실행 중", "#fa0"),
+            2: ("⚡ 자동 실행 중",  "#f55"),
+        }
+        txt, clr = labels[mode]
+        self._flow_status_lbl.setText(txt)
+        self._flow_status_lbl.setStyleSheet(
+            f"color:{clr};font-size:13px;font-weight:bold;")
+        logger.info(f"[수급단타] 모드: {['OFF','반자동','자동'][mode]}")
+        self._flow_save_settings()
+
+    def _flow_delta_set_mode(self, mode: int) -> None:
+        """수급Δ 배치 신호 모드 전환 (0=OFF, 1=반자동, 2=자동)."""
+        # mode==0: 비활성화 / mode>=1: 활성화
+        self._flow_delta_enabled       = (mode > 0)
+        self._flow_delta_mode_exec     = max(mode - 1, 0)   # 0=반자동 1=자동
+        self._delta_btn_off.setChecked(mode == 0)
+        self._delta_btn_semi.setChecked(mode == 1)
+        self._delta_btn_auto.setChecked(mode == 2)
+        labels = {
+            0: ("● OFF",           "#555"),
+            1: ("🔔 반자동 실행 중",  "#fa0"),
+            2: ("⚡ 자동 실행 중",   "#f55"),
+        }
+        txt, clr = labels[mode]
+        self._delta_status_lbl.setText(txt)
+        self._delta_status_lbl.setStyleSheet(f"color:{clr};font-size:12px;font-weight:bold;")
+        logger.info(f"[수급Δ신호] 모드: {['OFF','반자동','자동'][mode]}")
+
+    def _delta_update_threshold_lbl(self) -> None:
+        """트리거 모드에 따라 임계값 레이블·위젯 표시 전환."""
+        mode = self._flow_delta_mode
+        self._delta_surge_lbl.setVisible(mode == 1)
+        self._delta_surge_spn.setVisible(mode == 1)
+        self._delta_instw_lbl.setVisible(mode == 2)
+        self._delta_instw_spn.setVisible(mode == 2)
+        labels = {
+            0: "프로그램Δ ≥",
+            1: "최소 프로그램Δ ≥",
+            2: "가중합 ≥",
+        }
+        self._delta_threshold_lbl.setText(labels.get(mode, "임계값 ≥"))
+
+    _FLOW_SETTINGS_PATH = os.path.join(
+        os.path.dirname(__file__), "..", "data", "flow_scalper_settings.json"
+    )
+
+    def _flow_save_settings(self) -> None:
+        """수급단타 설정을 JSON 파일에 저장."""
+        import json
+        s = {
+            "mode":              self._flow_mode,
+            "invest_amt":        self._flow_invest_amt,
+            "profit_pct":        self._flow_profit_pct,
+            "stop_pct":          self._flow_stop_pct,
+            "min_foreign":       self._flow_min_foreign,
+            "min_inst":          self._flow_min_inst,
+            "min_exec":          self._flow_min_exec,
+            "min_change":        self._flow_min_change,
+            "max_change":        self._flow_max_change,
+            "min_delta_foreign": self._flow_min_delta_foreign,
+            "min_delta_inst":    self._flow_min_delta_inst,
+            "cond_idx": (self._flow_cond_combo.currentIndex()
+                         if hasattr(self, '_flow_cond_combo') else 0),
+        }
+        try:
+            os.makedirs(os.path.dirname(self._FLOW_SETTINGS_PATH), exist_ok=True)
+            with open(self._FLOW_SETTINGS_PATH, "w", encoding="utf-8") as f:
+                json.dump(s, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            logger.debug(f"[수급단타] 설정 저장 실패: {e}")
+
+    def _flow_load_settings(self) -> None:
+        """저장된 수급단타 설정을 복원."""
+        import json
+        try:
+            with open(self._FLOW_SETTINGS_PATH, "r", encoding="utf-8") as f:
+                s = json.load(f)
+        except Exception:
+            return
+
+        # 스핀박스 setValue → 내부적으로 valueChanged 시그널 → setattr + save 연쇄
+        # save가 과도하게 호출되지 않도록 blockSignals 사용
+        def _set(spn, key, default):
+            if spn is not None and key in s:
+                spn.blockSignals(True)
+                spn.setValue(s[key])
+                spn.blockSignals(False)
+
+        _set(getattr(self, '_flow_spn_invest',  None), "invest_amt",        1_000_000)
+        _set(getattr(self, '_flow_spn_profit',  None), "profit_pct",        1.5)
+        _set(getattr(self, '_flow_spn_stop',    None), "stop_pct",          0.5)
+        _set(getattr(self, '_flow_spn_foreign', None), "min_foreign",       5_000.0)
+        _set(getattr(self, '_flow_spn_inst',    None), "min_inst",          3_000.0)
+        _set(getattr(self, '_flow_spn_exec',    None), "min_exec",          130.0)
+        _set(getattr(self, '_flow_spn_chg_lo',  None), "min_change",        0.0)
+        _set(getattr(self, '_flow_spn_chg_hi',  None), "max_change",        3.0)
+        _set(getattr(self, '_flow_spn_delta_f', None), "min_delta_foreign", 0.0)
+        _set(getattr(self, '_flow_spn_delta_i', None), "min_delta_inst",    0.0)
+
+        # 콤보박스
+        if hasattr(self, '_flow_cond_combo') and "cond_idx" in s:
+            self._flow_cond_combo.blockSignals(True)
+            self._flow_cond_combo.setCurrentIndex(s["cond_idx"])
+            self._flow_cond_combo.blockSignals(False)
+
+        # 내부 변수 직접 동기화 (blockSignals로 setattr 시그널이 막혔으므로)
+        self._flow_invest_amt        = int(s.get("invest_amt",        1_000_000))
+        self._flow_profit_pct        = float(s.get("profit_pct",        1.5))
+        self._flow_stop_pct          = float(s.get("stop_pct",          0.5))
+        self._flow_min_foreign       = float(s.get("min_foreign",       5_000.0))
+        self._flow_min_inst          = float(s.get("min_inst",          3_000.0))
+        self._flow_min_exec          = float(s.get("min_exec",          130.0))
+        self._flow_min_change        = float(s.get("min_change",        0.0))
+        self._flow_max_change        = float(s.get("max_change",        3.0))
+        self._flow_min_delta_foreign = float(s.get("min_delta_foreign", 0.0))
+        self._flow_min_delta_inst    = float(s.get("min_delta_inst",    0.0))
+
+        # 모드 복원 (OFF로 시작 — 재시작 시 자동/반자동은 안전하게 OFF로)
+        # mode는 저장만 하고 복원은 항상 OFF (의도치 않은 자동매매 방지)
+        logger.info(f"[수급단타] 설정 복원 완료")
+
+    def _flow_scalper_tick(self, data: dict) -> None:
+        """실시간 틱마다 호출 — 신호 감지 + 포지션 청산 체크."""
+        import math as _math
+
+        code = str(data.get('종목코드', '')).replace("_AL", "").strip()
+        if not code:
+            return
+
+        raw_price = data.get('현재가', 0)
+        price = abs(int(raw_price)) if raw_price else 0
+        if price <= 0:
+            return
+
+        change_pct    = float(data.get('등락률',    0) or 0)
+        exec_strength = float(data.get('체결강도', 100) or 100)
+
+        # ── 포지션 청산 체크 (자동 모드) ───────────────────────
+        if code in self._flow_positions:
+            if self._flow_mode == 2:
+                self._flow_check_exit(code, price)
+            else:
+                # 반자동 보유중 P&L 갱신
+                for row in self._flow_log:
+                    if row.get('_code') == code and row.get('상태') == '보유중':
+                        ep = row.get('_entry_price', price)
+                        pnl = (price / ep - 1) * 100 if ep else 0
+                        row['현재가'] = f"{price:,}"
+                        row['수익률'] = f"{pnl:+.2f}%"
+                now = time.time()
+                if now - self._flow_log_refresh_ts >= 1.0:
+                    self._flow_log_refresh_ts = now
+                    self._flow_refresh_log_tbl()
+            return
+
+        # ── 수급 데이터 조회 (sector_analyzer) ────────────────
+        try:
+            stock = self.sector_analyzer._stocks.get(code)
+            if stock is None:
+                return
+            foreign_net = 0.0 if _math.isnan(stock.foreign_net) else stock.foreign_net
+            inst_net    = 0.0 if _math.isnan(stock.inst_net)    else stock.inst_net
+        except Exception:
+            return
+
+        # ── Δ 수급 계산 (이전 배치값과의 차이) ────────────────────
+        prev = self._flow_prev_investor.get(code)
+        delta_foreign = (foreign_net - prev[0]) if prev else None
+        delta_inst    = (inst_net    - prev[1]) if prev else None
+
+        # ── 쿨다운 10분 ────────────────────────────────────────
+        if time.time() - self._flow_alerted.get(code, 0) < 600:
+            return
+
+        # ── 진입 조건 ──────────────────────────────────────────
+        ci = self._flow_cond_combo.currentIndex() if hasattr(self, '_flow_cond_combo') else 0
+        f_ok = foreign_net >= self._flow_min_foreign
+        i_ok = inst_net    >= self._flow_min_inst
+        if   ci == 0: inv_ok = f_ok or  i_ok
+        elif ci == 1: inv_ok = f_ok and i_ok
+        elif ci == 2: inv_ok = f_ok
+        else:         inv_ok = i_ok
+
+        if not (inv_ok
+                and exec_strength >= self._flow_min_exec
+                and self._flow_min_change <= change_pct <= self._flow_max_change):
+            return
+
+        # ── Δ 조건 (0이면 비활성) ──────────────────────────────
+        if self._flow_min_delta_foreign > 0:
+            if delta_foreign is None or delta_foreign < self._flow_min_delta_foreign:
+                return
+        if self._flow_min_delta_inst > 0:
+            if delta_inst is None or delta_inst < self._flow_min_delta_inst:
+                return
+
+        # ── 신호 발생 ──────────────────────────────────────────
+        self._flow_alerted[code] = time.time()
+        name   = stock.name   or code
+        sector = stock.sector or ""
+        self._flow_fire_signal(
+            code, name, sector, price,
+            foreign_net, inst_net, exec_strength, change_pct,
+            delta_foreign, delta_inst,
+        )
+
+    def _flow_fire_signal(
+        self, code: str, name: str, sector: str, price: int,
+        foreign_net: float, inst_net: float,
+        exec_strength: float, change_pct: float,
+        delta_foreign: float | None = None,
+        delta_inst:    float | None = None,
+    ) -> None:
+        """신호 발생 처리 — 반자동=알림, 자동=주문."""
+        t_str  = datetime.datetime.now().strftime("%H:%M:%S")
+        status = "🔔신호" if self._flow_mode == 1 else "⚡매수진입"
+
+        def _dfmt(v):
+            return f"{v:+,.0f}" if v is not None else "—"
+
+        log_row = {
+            "시각":  t_str,   "종목명": name,   "섹터":   sector,
+            "외인수급": f"{foreign_net:+,.0f}",
+            "외인Δ":  _dfmt(delta_foreign),
+            "기관수급": f"{inst_net:+,.0f}",
+            "기관Δ":  _dfmt(delta_inst),
+            "체결강도": f"{exec_strength:.0f}%",
+            "등락률":  f"{change_pct:+.1f}%",
+            "진입가":  f"{price:,}",
+            "현재가":  f"{price:,}",
+            "수익률":  "—",
+            "상태":   status,
+            "_code":         code,
+            "_entry_price":  price,
+        }
+        self._flow_log.insert(0, log_row)
+        if len(self._flow_log) > 300:
+            self._flow_log = self._flow_log[:300]
+
+        df_str = f" Δ외인={delta_foreign:+,.0f}" if delta_foreign is not None else ""
+        di_str = f" Δ기관={delta_inst:+,.0f}"    if delta_inst    is not None else ""
+        logger.info(
+            f"[수급단타] 신호 {name}({code}) "
+            f"외인={foreign_net:+,.0f}{df_str} 기관={inst_net:+,.0f}{di_str} "
+            f"체결강도={exec_strength:.0f}% 등락률={change_pct:+.1f}% "
+            f"가격={price:,}"
+        )
+
+        if self._flow_mode == 1:
+            # 반자동: 소리 알림
+            QApplication.beep()
+
+        elif self._flow_mode == 2:
+            # 자동: 시장가 매수 주문
+            qty = max(1, self._flow_invest_amt // price)
+            acc = getattr(self, 'using_account_num', '')
+            if acc:
+                self.orders_queue.put([
+                    "시장가매수주문",
+                    self._get_screen_num(), acc,
+                    1, code, qty, 0, "03",
+                    name, code, qty,
+                ])
+                target = price * (1 + self._flow_profit_pct / 100)
+                stop_p = price * (1 - self._flow_stop_pct   / 100)
+                self._flow_positions[code] = {
+                    "name": name, "sector": sector,
+                    "entry_price": price, "qty": qty,
+                    "target": target, "stop": stop_p,
+                    "entry_time": t_str,
+                }
+                logger.info(
+                    f"[수급단타] 자동매수 {name} {qty}주 | "
+                    f"목표={target:,.0f} 손절={stop_p:,.0f}"
+                )
+
+        if hasattr(self, '_flow_log_tbl'):
+            self._flow_refresh_log_tbl()
+
+    def _flow_check_exit(self, code: str, price: int) -> None:
+        """포지션 청산 조건 확인 → 해당 시 시장가 매도."""
+        pos = self._flow_positions.get(code)
+        if not pos:
+            return
+
+        entry = pos['entry_price']
+        pnl_pct = (price / entry - 1) * 100 if entry else 0
+
+        # 로그 실시간 갱신
+        for row in self._flow_log:
+            if row.get('_code') == code and row.get('상태') in ('⚡매수진입', '보유중'):
+                row['현재가'] = f"{price:,}"
+                row['수익률'] = f"{pnl_pct:+.2f}%"
+                row['상태']   = '보유중'
+
+        reason = None
+        if price >= pos['target']:
+            reason = "익절"
+        elif price <= pos['stop']:
+            reason = "손절"
+
+        if reason is None:
+            now = time.time()
+            if now - self._flow_log_refresh_ts >= 1.0:
+                self._flow_log_refresh_ts = now
+                self._flow_refresh_log_tbl()
+            return
+
+        # 청산 주문
+        qty = pos['qty']
+        acc = getattr(self, 'using_account_num', '')
+        if acc:
+            self.orders_queue.put([
+                "시장가매도주문",
+                self._get_screen_num(), acc,
+                2, code, qty, 0, "03",
+                pos['name'], code, qty,
+            ])
+
+        icon = "✅" if reason == "익절" else "🔴"
+        for row in self._flow_log:
+            if row.get('_code') == code and row.get('상태') == '보유중':
+                row['상태'] = f"{icon}{reason}({pnl_pct:+.2f}%)"
+
+        del self._flow_positions[code]
+        logger.info(f"[수급단타] {reason} {pos['name']} {pnl_pct:+.2f}% @ {price:,}")
+
+        if hasattr(self, '_flow_log_tbl'):
+            self._flow_refresh_log_tbl()
+
+    def _flow_refresh_log_tbl(self) -> None:
+        """신호/포지션 로그 테이블 갱신."""
+        from PyQt5.QtGui import QColor, QBrush
+        from PyQt5.QtCore import Qt
+
+        _STATUS_BG = {
+            "🔔신호":   QColor(0x33, 0x2a, 0x00),
+            "⚡매수진입": QColor(0x2a, 0x00, 0x00),
+            "보유중":   QColor(0x1a, 0x2a, 0x00),
+        }
+        _COLS = ["시각", "종목명", "섹터", "외인수급", "외인Δ", "기관수급", "기관Δ",
+                 "체결강도", "등락률", "진입가", "현재가", "수익률", "상태"]
+
+        tbl  = self._flow_log_tbl
+        rows = self._flow_log[:200]
+        tbl.setRowCount(len(rows))
+        tbl.setUpdatesEnabled(False)
+
+        for r, row in enumerate(rows):
+            status = row.get("상태", "")
+            bg     = _STATUS_BG.get(status)
+            for c, key in enumerate(_COLS):
+                val  = str(row.get(key, ""))
+                item = QTableWidgetItem(val)
+                item.setTextAlignment(Qt.AlignCenter)
+                if bg:
+                    item.setBackground(QBrush(bg))
+                tbl.setItem(r, c, item)
+
+        tbl.setUpdatesEnabled(True)
+        self._flow_log_refresh_ts = time.time()
+
+    # ========================
     # 섹터 자금 흐름 히스토리 탭
     # ========================
 
     def _setup_sector_flow_history_tab(self):
         from PyQt5.QtWidgets import (
             QWidget, QVBoxLayout, QHBoxLayout, QLabel,
-            QPushButton, QTableWidget, QHeaderView, QFrame,
+            QPushButton, QTableWidget, QHeaderView,
         )
 
         _BG  = "#111"
@@ -3177,151 +4620,52 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
             "QTableWidget::item:selected{background:#1a3a6a;}"
         )
         _BTN = ("QPushButton{background:#222;color:#aaa;border:1px solid #444;"
-                "font-size:11px;border-radius:3px;padding:1px 4px;}"
-                "QPushButton:checked{background:#2255aa;color:#fff;border-color:#3377cc;}")
+                "font-size:11px;border-radius:3px;padding:2px 6px;}"
+                "QPushButton:hover{background:#333;color:#fff;}")
 
         root = QWidget(); root.setStyleSheet(f"background:{_BG};")
-        vl = QVBoxLayout(root); vl.setContentsMargins(4,4,4,4); vl.setSpacing(3)
+        vl = QVBoxLayout(root); vl.setContentsMargins(4, 4, 4, 4); vl.setSpacing(4)
 
         # ── 컨트롤 바 ─────────────────────────────────────────────
-        ctrl = QHBoxLayout(); ctrl.setSpacing(4)
+        ctrl = QHBoxLayout(); ctrl.setSpacing(6)
 
-        lbl = QLabel("표시:"); lbl.setStyleSheet("color:#888;font-size:11px;")
-        ctrl.addWidget(lbl)
-
-        self._flow_btn_f = QPushButton("외인"); self._flow_btn_f.setCheckable(True); self._flow_btn_f.setChecked(True)
-        self._flow_btn_i = QPushButton("기관"); self._flow_btn_i.setCheckable(True)
-        self._flow_btn_s = QPushButton("합산"); self._flow_btn_s.setCheckable(True)
-        for b in (self._flow_btn_f, self._flow_btn_i, self._flow_btn_s):
-            b.setFixedSize(50, 22); b.setStyleSheet(_BTN); ctrl.addWidget(b)
-        self._flow_btn_f.clicked.connect(lambda: self._on_flow_mode_changed("외인"))
-        self._flow_btn_i.clicked.connect(lambda: self._on_flow_mode_changed("기관"))
-        self._flow_btn_s.clicked.connect(lambda: self._on_flow_mode_changed("합산"))
-
-        sep_lbl = QLabel("|"); sep_lbl.setStyleSheet("color:#444;"); ctrl.addWidget(sep_lbl)
-        lbl2 = QLabel("간격:"); lbl2.setStyleSheet("color:#888;font-size:11px;"); ctrl.addWidget(lbl2)
-
-        self._flow_interval_btns: list = []
-        for mins, secs in [(5,300),(10,600),(30,1800)]:
-            b = QPushButton(f"{mins}분"); b.setCheckable(True); b.setChecked(secs==600)
-            b.setFixedSize(38, 22); b.setStyleSheet(_BTN)
-            b.clicked.connect(lambda _, s=secs: self._on_flow_interval_changed(s))
-            ctrl.addWidget(b)
-            self._flow_interval_btns.append((b, secs))
-
-        sep_lbl2 = QLabel("|"); sep_lbl2.setStyleSheet("color:#444;"); ctrl.addWidget(sep_lbl2)
-
-        # 지금 기록 버튼 (수동 스냅샷)
-        snap_now_btn = QPushButton("지금 기록")
-        snap_now_btn.setFixedSize(65, 22); snap_now_btn.setStyleSheet(_BTN)
-        snap_now_btn.clicked.connect(self._force_flow_snapshot)
-        ctrl.addWidget(snap_now_btn)
-
-        # 초기화 버튼
-        clear_btn = QPushButton("초기화")
-        clear_btn.setFixedSize(50, 22); clear_btn.setStyleSheet(_BTN)
-        clear_btn.clicked.connect(self._clear_flow_history)
-        ctrl.addWidget(clear_btn)
-
-        sep_lbl3 = QLabel("|"); sep_lbl3.setStyleSheet("color:#444;"); ctrl.addWidget(sep_lbl3)
-
-        # [1051] 장중투자자 조회 버튼
         inv_btn = QPushButton("[1051] 투자자조회")
-        inv_btn.setFixedSize(100, 22); inv_btn.setStyleSheet(_BTN)
+        inv_btn.setFixedSize(120, 24); inv_btn.setStyleSheet(_BTN)
         inv_btn.clicked.connect(self._start_intraday_investor_query)
         ctrl.addWidget(inv_btn)
 
+        refresh_btn = QPushButton("새로고침")
+        refresh_btn.setFixedSize(70, 24); refresh_btn.setStyleSheet(_BTN)
+        refresh_btn.clicked.connect(self._update_intraday_stock_table)
+        ctrl.addWidget(refresh_btn)
+
         ctrl.addStretch()
-        self._flow_ctrl_lbl = QLabel("스냅샷 대기 중 (외인/기관 데이터 로딩 후 자동 기록)")
-        self._flow_ctrl_lbl.setStyleSheet("color:#555;font-size:10px;")
-        ctrl.addWidget(self._flow_ctrl_lbl)
-        vl.addLayout(ctrl)
-
-        # ── 히스토리 테이블 ──────────────────────────────────────
-        # 세로 스크롤: 섹터 행 / 가로 스크롤: 시간대 열 (8시~20시 전체)
-        hist_tbl = QTableWidget()
-        hist_tbl.setObjectName("flowHistTable")
-        hist_tbl.setEditTriggers(QTableWidget.NoEditTriggers)
-        hist_tbl.setSelectionBehavior(QTableWidget.SelectRows)
-        hist_tbl.setSelectionMode(QTableWidget.SingleSelection)
-        hist_tbl.verticalHeader().setVisible(False)
-        hist_tbl.setAlternatingRowColors(False)
-        hist_tbl.setShowGrid(True)
-        hist_tbl.setStyleSheet(_TBL)
-        hist_tbl.verticalHeader().setDefaultSectionSize(22)
-        hist_tbl.setHorizontalScrollMode(QTableWidget.ScrollPerPixel)
-        vl.addWidget(hist_tbl, stretch=3)
-        self._flow_hist_table = hist_tbl
-
-        # ── 종가 신호 패널 ────────────────────────────────────────
-        sep = QFrame(); sep.setFrameShape(QFrame.HLine)
-        sep.setStyleSheet("color:#2a2a2a;"); vl.addWidget(sep)
-
-        sig_lbl = QLabel("[ 종가 베팅 신호 — 최근 1시간 외인+기관 순매수 유입 순위 ]")
-        sig_lbl.setStyleSheet("color:#888;font-size:10px;")
-        vl.addWidget(sig_lbl)
-
-        sig_tbl = QTableWidget()
-        sig_tbl.setObjectName("flowSigTable")
-        sig_tbl.setEditTriggers(QTableWidget.NoEditTriggers)
-        sig_tbl.setSelectionBehavior(QTableWidget.SelectRows)
-        sig_tbl.setSelectionMode(QTableWidget.SingleSelection)
-        sig_tbl.verticalHeader().setVisible(False)
-        sig_tbl.setAlternatingRowColors(False)
-        sig_tbl.setShowGrid(False)
-        sig_tbl.setStyleSheet(_TBL)
-        sig_tbl.setColumnCount(5)
-        sig_tbl.setHorizontalHeaderLabels(["순위","섹터","외인(1h)","기관(1h)","대장주"])
-        sig_hdr = sig_tbl.horizontalHeader()
-        sig_hdr.setSectionResizeMode(QHeaderView.ResizeToContents)
-        sig_hdr.setSectionResizeMode(4, QHeaderView.Stretch)
-        sig_tbl.verticalHeader().setDefaultSectionSize(22)
-        sig_tbl.setFixedHeight(185)
-        vl.addWidget(sig_tbl, stretch=1)
-        self._flow_sig_table = sig_tbl
-
-        # ── [1051] 장중투자자별매매 섹터 집계 패널 ──────────────────
-        sep2 = QFrame(); sep2.setFrameShape(QFrame.HLine)
-        sep2.setStyleSheet("color:#2a2a2a;"); vl.addWidget(sep2)
-
-        inv_hdr = QHBoxLayout(); inv_hdr.setSpacing(4)
-        inv_hdr_lbl = QLabel("[ 장중투자자별매매 [1051] — 섹터별 시간대 집계 (백만원→억원) ]")
-        inv_hdr_lbl.setStyleSheet("color:#888;font-size:10px;")
-        inv_hdr.addWidget(inv_hdr_lbl)
-        inv_hdr.addSpacing(8)
-
-        _INV_BTN = ("QPushButton{background:#1a1a1a;color:#aaa;border:1px solid #333;"
-                    "font-size:11px;border-radius:3px;padding:1px 4px;}"
-                    "QPushButton:checked{background:#225522;color:#7fff7f;border-color:#336633;}")
-        self._inv_btn_f = QPushButton("외인"); self._inv_btn_f.setCheckable(True); self._inv_btn_f.setChecked(True)
-        self._inv_btn_i = QPushButton("기관계"); self._inv_btn_i.setCheckable(True)
-        self._inv_btn_s = QPushButton("합산"); self._inv_btn_s.setCheckable(True)
-        for b in (self._inv_btn_f, self._inv_btn_i, self._inv_btn_s):
-            b.setFixedSize(48, 20); b.setStyleSheet(_INV_BTN); inv_hdr.addWidget(b)
-        self._inv_btn_f.clicked.connect(lambda: self._on_intraday_mode_changed("외인"))
-        self._inv_btn_i.clicked.connect(lambda: self._on_intraday_mode_changed("기관계"))
-        self._inv_btn_s.clicked.connect(lambda: self._on_intraday_mode_changed("합산"))
-
-        inv_hdr.addSpacing(8)
         self._intraday_prog_lbl = QLabel("대기 중")
         self._intraday_prog_lbl.setStyleSheet("color:#555;font-size:10px;")
-        inv_hdr.addWidget(self._intraday_prog_lbl)
-        inv_hdr.addStretch()
-        vl.addLayout(inv_hdr)
+        ctrl.addWidget(self._intraday_prog_lbl)
+        vl.addLayout(ctrl)
 
-        intraday_tbl = QTableWidget()
-        intraday_tbl.setObjectName("intradayTbl")
-        intraday_tbl.setEditTriggers(QTableWidget.NoEditTriggers)
-        intraday_tbl.setSelectionBehavior(QTableWidget.SelectRows)
-        intraday_tbl.setSelectionMode(QTableWidget.SingleSelection)
-        intraday_tbl.verticalHeader().setVisible(False)
-        intraday_tbl.setAlternatingRowColors(False)
-        intraday_tbl.setShowGrid(True)
-        intraday_tbl.setStyleSheet(_TBL)
-        intraday_tbl.verticalHeader().setDefaultSectionSize(22)
-        intraday_tbl.setFixedHeight(220)
-        vl.addWidget(intraday_tbl)
-        self._intraday_tbl = intraday_tbl
+        # ── 종목별 1차~5차 수급 테이블 ──────────────────────────
+        _PCOLS = ["1차", "2차", "3차", "4차", "5차"]
+        ist = QTableWidget()
+        ist.setColumnCount(3 + len(_PCOLS))
+        ist.setHorizontalHeaderLabels(["종목명", "섹터", "구분"] + _PCOLS)
+        ist.setEditTriggers(QTableWidget.NoEditTriggers)
+        ist.setSelectionBehavior(QTableWidget.SelectRows)
+        ist.verticalHeader().setVisible(False)
+        ist.setAlternatingRowColors(False)
+        ist.setShowGrid(True)
+        ist.setStyleSheet(_TBL)
+        ist.verticalHeader().setDefaultSectionSize(20)
+        ist_hdr = ist.horizontalHeader()
+        ist_hdr.setSectionResizeMode(0, QHeaderView.ResizeToContents)
+        ist_hdr.setSectionResizeMode(1, QHeaderView.ResizeToContents)
+        ist_hdr.setSectionResizeMode(2, QHeaderView.Fixed)
+        ist.setColumnWidth(2, 36)
+        for _ci in range(3, 3 + len(_PCOLS)):
+            ist_hdr.setSectionResizeMode(_ci, QHeaderView.Stretch)
+        vl.addWidget(ist)
+        self._intraday_stock_tbl = ist
 
         self.mainTabWidget.addTab(root, "섹터자금흐름")
 
@@ -3440,11 +4784,12 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         """실제 스냅샷 기록."""
         t_str = datetime.datetime.now().strftime("%H:%M")
         display = label if label else t_str
-        snap = {"time": t_str, "label": display, "foreign": {}, "inst": {}}
+        snap = {"time": t_str, "label": display, "foreign": {}, "inst": {}, "fin": {}}
         for _, row in summary_df.iterrows():
             sec = str(row["섹터명"])
             snap["foreign"][sec] = float(row.get("외인순매수합(주)") or 0)
             snap["inst"][sec]    = float(row.get("기관순매수합(주)") or 0)
+            snap["fin"][sec]     = float(row.get("금융투자순매수합(주)") or 0)
         self._flow_history.append(snap)
         self._flow_last_snap_ts = time.time()
         # 8시~20시 전체 보관 (720분 ÷ 5분 = 144 + 스케줄 6개 ≤ 200)
@@ -3578,11 +4923,11 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
             total = 0.0
             for snap in recent:
                 hist_i = hist.index(snap)
-                cur    = snap[key].get(sec, 0.0)
+                cur    = snap.get(key, {}).get(sec, 0.0)
                 if hist_i == 0:
                     total += cur
                 else:
-                    total += cur - hist[hist_i - 1][key].get(sec, 0.0)
+                    total += cur - hist[hist_i - 1].get(key, {}).get(sec, 0.0)
             return total
 
         all_sectors = set()
@@ -3591,9 +4936,10 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
 
         rows_data = []
         for sec in all_sectors:
-            f = _delta_sum(sec, "foreign")
-            i = _delta_sum(sec, "inst")
-            rows_data.append((sec, f, i))
+            f  = _delta_sum(sec, "foreign")
+            i  = _delta_sum(sec, "inst")
+            fi = _delta_sum(sec, "fin")
+            rows_data.append((sec, f, i, fi))
         rows_data.sort(key=lambda x: x[1] + x[2], reverse=True)
         top = rows_data[:8]
 
@@ -3618,7 +4964,7 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
             except Exception:
                 return str(v)
 
-        for r, (sec, f_val, i_val) in enumerate(top):
+        for r, (sec, f_val, i_val, fi_val) in enumerate(top):
             rank_clr = [QColor(220,50,50), QColor(220,130,0), QColor(60,140,220)]
             r_clr    = rank_clr[r] if r < 3 else QColor(180, 180, 180)
 
@@ -3632,15 +4978,14 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
                     ft = item.font(); ft.setBold(True); item.setFont(ft)
                 return item
 
+            def _flow_fg(v): return QColor(220,60,60) if v>0 else QColor(60,80,220)
+
             sig_tbl.setItem(r, 0, _it(f"{r+1}위", fg=r_clr, bold=(r<3)))
             sig_tbl.setItem(r, 1, _it(sec, fg=QColor("#5599ff"), align=Qt.AlignLeft|Qt.AlignVCenter))
-            sig_tbl.setItem(r, 2, _it(_fmt_v(f_val),
-                                       fg=QColor(220,60,60) if f_val>0 else QColor(60,80,220),
-                                       align=Qt.AlignRight|Qt.AlignVCenter))
-            sig_tbl.setItem(r, 3, _it(_fmt_v(i_val),
-                                       fg=QColor(220,60,60) if i_val>0 else QColor(60,80,220),
-                                       align=Qt.AlignRight|Qt.AlignVCenter))
-            sig_tbl.setItem(r, 4, _it(leader_map.get(sec, "—"),
+            sig_tbl.setItem(r, 2, _it(_fmt_v(f_val),  fg=_flow_fg(f_val),  align=Qt.AlignRight|Qt.AlignVCenter))
+            sig_tbl.setItem(r, 3, _it(_fmt_v(i_val),  fg=_flow_fg(i_val),  align=Qt.AlignRight|Qt.AlignVCenter))
+            sig_tbl.setItem(r, 4, _it(_fmt_v(fi_val), fg=_flow_fg(fi_val), align=Qt.AlignRight|Qt.AlignVCenter))
+            sig_tbl.setItem(r, 5, _it(leader_map.get(sec, "—"),
                                        fg=QColor(220,160,0) if r<3 else QColor(160,160,160),
                                        align=Qt.AlignLeft|Qt.AlignVCenter))
 
@@ -3690,12 +5035,176 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
         if self._intraday_inv_done >= self._intraday_inv_total and self._intraday_inv_total > 0:
             self._aggregate_intraday_by_sector()
             self._update_intraday_table()
+            self._update_intraday_stock_table()
+            self._save_intraday_inv_cache()
+            # opt10063 완료 → 수급흐름 탭 소급 채우기
+            self._backfill_stock_flow_from_intraday()
             t_str = datetime.datetime.now().strftime("%H:%M")
             if hasattr(self, '_intraday_prog_lbl'):
                 n_with_data = sum(1 for r in self._intraday_inv_raw.values() if r)
                 self._intraday_prog_lbl.setText(
                     f"완료 {t_str} — {n_with_data}/{self._intraday_inv_total}종목 수신"
                 )
+
+    # opt10063 1차~5차 → TIME_SLOT 매핑
+    # 각 차수는 그 시각까지의 누적 수급 (opt10059와 동일한 단위: 백만원)
+    _PERIOD_TO_SLOT = {
+        "1차":   "09:00",
+        "2차":   "09:30",
+        "3차":   "11:00",
+        "4차":   "13:00",
+        "5차":   "14:00",
+        "종가전": "15:00",
+    }
+
+    # ── 1차~5차 캐시 영속성 ──────────────────────────────────────
+
+    def _intraday_cache_path(self, date_str: str | None = None) -> str:
+        if date_str is None:
+            date_str = datetime.datetime.now().strftime("%Y%m%d")
+        data_dir = os.path.join(os.path.dirname(__file__), "..", "data")
+        return os.path.join(data_dir, f"intraday_inv_{date_str}.json")
+
+    def _save_intraday_inv_cache(self) -> None:
+        """_intraday_inv_raw를 오늘 날짜 JSON으로 저장."""
+        if not self._intraday_inv_raw:
+            return
+        import json
+        path = self._intraday_cache_path()
+        try:
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(self._intraday_inv_raw, f, ensure_ascii=False)
+            logger.debug(f"[1051] 캐시 저장: {len(self._intraday_inv_raw)}종목 → {os.path.basename(path)}")
+        except Exception as e:
+            logger.debug(f"[1051] 캐시 저장 실패: {e}")
+
+    def _load_intraday_inv_cache(self) -> None:
+        """오늘 날짜 JSON 캐시가 있으면 _intraday_inv_raw에 복원. 이전 날짜 파일은 삭제."""
+        import json, glob as _glob
+        today = datetime.datetime.now().strftime("%Y%m%d")
+        data_dir = os.path.join(os.path.dirname(__file__), "..", "data")
+
+        # 이전 날짜 캐시 정리
+        for old_path in _glob.glob(os.path.join(data_dir, "intraday_inv_*.json")):
+            fname = os.path.basename(old_path)
+            try:
+                d = fname.replace("intraday_inv_", "").replace(".json", "")
+                if d < today:
+                    os.remove(old_path)
+                    logger.debug(f"[1051] 구 캐시 삭제: {fname}")
+            except Exception:
+                pass
+
+        path = self._intraday_cache_path(today)
+        if not os.path.exists(path):
+            return
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            self._intraday_inv_raw = data
+            self._intraday_auto_queried = True   # 캐시 있으면 자동조회 스킵
+            # UI는 탭 생성 후에 갱신
+            QTimer.singleShot(800, self._update_intraday_stock_table)
+            logger.info(f"[1051] 오늘({today}) 캐시 복원: {len(data)}종목")
+        except Exception as e:
+            logger.debug(f"[1051] 캐시 로드 실패: {e}")
+
+    def _backfill_stock_flow_from_intraday(self) -> None:
+        """
+        opt10063(_intraday_inv_raw) 1차~5차 데이터를 stock_flow_db에 소급 저장.
+
+        - 프로그램을 늦게 켰거나 장 중 스냅샷이 빠진 경우 수급흐름 탭을 보완.
+        - 각 차수는 장 시작~해당 컷오프까지의 누적 수급.
+        - fin_net(금융투자)은 opt10063이 제공하지 않으므로 0으로 저장.
+        """
+        if getattr(self, '_stock_flow_widget', None) is None:
+            return
+        if not self._intraday_inv_raw:
+            return
+
+        try:
+            from stock_flow_db import TIME_SLOTS as _TIME_SLOTS
+
+            # 실제 집계시간이 채워진 종목이 하나라도 있는지 확인
+            has_real_data = any(
+                any(str(row.get("집계시간", "")).strip() for row in rows)
+                for rows in self._intraday_inv_raw.values()
+                if rows
+            )
+            if not has_real_data:
+                logger.warning("[수급흐름소급] opt10063 집계시간 전부 공백 — "
+                               "장 마감 후에는 1차~5차 데이터가 제공되지 않습니다. "
+                               "장중(09:00~15:30)에 조회하세요.")
+                return
+
+            def _resolve_slot(period: str) -> str | None:
+                """
+                집계시간 값 → TIME_SLOT 문자열.
+                "1차"~"5차"/"종가전" 형식과 "HHMM"/"HH:MM" 숫자 형식 모두 처리.
+                """
+                slot = self._PERIOD_TO_SLOT.get(period)
+                if slot:
+                    return slot
+                # 숫자형 시간 처리 ("0919", "0951", "1101", "1310", "1418", "15:20" 등)
+                cleaned = period.replace(":", "")
+                if cleaned.isdigit() and len(cleaned) == 4:
+                    h, m = int(cleaned[:2]), int(cleaned[2:])
+                    bucket_m = (m // 30) * 30
+                    candidate = f"{h:02d}:{bucket_m:02d}"
+                    if candidate in _TIME_SLOTS:
+                        return candidate
+                    # 범위 밖이면 클램핑
+                    return _TIME_SLOTS[0] if candidate < _TIME_SLOTS[0] else _TIME_SLOTS[-1]
+                return None
+
+            # 슬롯별 종목 rows 취합
+            slot_rows: dict[str, list[dict]] = {}
+            skipped_periods: set[str] = set()
+
+            for code, rows in self._intraday_inv_raw.items():
+                if not rows:
+                    continue
+                clean_code = code.replace("_AL", "").strip()
+                name   = self.stock_code_to_stock_name_dict.get(clean_code, clean_code)
+                sector = (self.stock_code_to_sector.get(clean_code) or
+                          self.stock_code_to_sector.get(code) or "")
+
+                for row in rows:
+                    period = str(row.get("집계시간", "")).strip()
+                    slot   = _resolve_slot(period)
+                    if not slot:
+                        skipped_periods.add(period)
+                        continue
+
+                    slot_rows.setdefault(slot, []).append({
+                        "code":        clean_code,
+                        "name":        name,
+                        "sector":      sector,
+                        "foreign_net": float(row.get("외국인", 0) or 0),
+                        "inst_net":    float(row.get("기관계",  0) or 0),
+                        "fin_net":     0.0,
+                    })
+
+            if skipped_periods:
+                logger.warning(f"[수급흐름소급] 매핑 실패 period 값: {skipped_periods}")
+
+            if not slot_rows:
+                logger.warning("[수급흐름소급] 저장할 데이터 없음 — period 매핑 전부 실패")
+                return
+
+            total_saved = 0
+            for slot, s_rows in slot_rows.items():
+                saved = self._stock_flow_db.save_snapshot(s_rows, snap_time=slot)
+                total_saved += saved
+
+            logger.info(f"[수급흐름소급] 완료 — {len(slot_rows)}슬롯 "
+                        f"({', '.join(sorted(slot_rows))}), 총 {total_saved}건")
+
+            self._stock_flow_widget.load_today()
+
+        except Exception as e:
+            logger.exception(f"[수급흐름소급] 오류: {e}")
 
     def _aggregate_intraday_by_sector(self):
         """opt10063 raw 데이터를 섹터 × 시간대로 집계. 단위: 백만원 → 억원(÷100)."""
@@ -3815,6 +5324,126 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
             ft = it.font(); ft.setBold(True); it.setFont(ft)
             tbl.setItem(r, len(col_headers) - 1, it)
 
+    def _update_intraday_stock_table(self) -> None:
+        """[1051] 종목별 1차~5차 수급 테이블 갱신 (외인·기관, 백만원)."""
+        if not hasattr(self, '_intraday_stock_tbl') or not self._intraday_inv_raw:
+            return
+
+        tbl = self._intraday_stock_tbl
+        _PERIODS = ["1차", "2차", "3차", "4차", "5차"]
+        _GRP_BG  = [QColor(0x1A, 0x1A, 0x1A), QColor(0x22, 0x22, 0x22)]
+
+        # ── raw → {code: {period: {외국인, 기관계}}} ─────────────
+        stock_data: dict[str, dict] = {}
+        for code, rows in self._intraday_inv_raw.items():
+            if not rows:
+                continue
+            clean = code.replace("_AL", "").strip()
+            for row in rows:
+                period = str(row.get("집계시간", "")).strip()
+                if period not in _PERIODS:
+                    continue
+                if clean not in stock_data:
+                    stock_data[clean] = {}
+                stock_data[clean][period] = {
+                    "외국인": float(row.get("외국인", 0) or 0),
+                    "기관계": float(row.get("기관계",  0) or 0),
+                }
+
+        if not stock_data:
+            tbl.setRowCount(0)
+            return
+
+        # ── 최신 차수 합산 기준 정렬 (강한매수 우선) ─────────────
+        def _latest_score(c):
+            d = stock_data[c]
+            for p in reversed(_PERIODS):
+                if p in d:
+                    return d[p]["외국인"] + d[p]["기관계"]
+            return 0.0
+
+        sorted_codes = sorted(stock_data.keys(), key=_latest_score, reverse=True)
+
+        # ── 색상 스케일 기준값 ────────────────────────────────────
+        all_abs = [
+            abs(v)
+            for d in stock_data.values()
+            for pv in d.values()
+            for v in pv.values()
+        ]
+        abs_max = max(all_abs) if all_abs else 1.0
+
+        def _net_bg(val: float) -> QColor:
+            ratio = min(abs(val) / max(abs_max, 1.0), 1.0)
+            if val > 0:
+                if ratio >= 0.6: return QColor(0xC6, 0x28, 0x28)
+                if ratio >= 0.2: return QColor(0xE5, 0x73, 0x73)
+                return QColor(0x7B, 0x2F, 0x2F)
+            elif val < 0:
+                if ratio >= 0.6: return QColor(0x0D, 0x47, 0xA1)
+                if ratio >= 0.2: return QColor(0x42, 0x7B, 0xC5)
+                return QColor(0x1A, 0x3A, 0x6B)
+            return QColor(0x2A, 0x2A, 0x2A)
+
+        def _txt_color(bg: QColor) -> QColor:
+            lum = 0.299*bg.red() + 0.587*bg.green() + 0.114*bg.blue()
+            return QColor(Qt.white) if lum < 140 else QColor(Qt.black)
+
+        # ── 렌더링 ────────────────────────────────────────────────
+        n_rows = len(sorted_codes) * 2  # 외인 + 기관
+        tbl.setRowCount(n_rows)
+        tbl.setUpdatesEnabled(False)
+
+        r_idx = 0
+        for g_idx, code in enumerate(sorted_codes):
+            name   = self.stock_code_to_stock_name_dict.get(code, code)
+            sector = self.stock_code_to_sector.get(code, "")
+            grp_bg = _GRP_BG[g_idx % 2]
+            d      = stock_data[code]
+
+            for inv_idx, (inv_label, inv_key) in enumerate(
+                [("외인", "외국인"), ("기관", "기관계")]
+            ):
+                def _it(text, align=Qt.AlignCenter, fg=None, bg=None):
+                    item = QTableWidgetItem(text)
+                    item.setTextAlignment(align)
+                    item.setBackground(QBrush(bg if bg else grp_bg))
+                    if fg:
+                        item.setForeground(QBrush(fg))
+                    return item
+
+                # 고정 컬럼
+                tbl.setItem(r_idx, 0, _it(
+                    name if inv_idx == 0 else "",
+                    Qt.AlignLeft | Qt.AlignVCenter,
+                    fg=QColor("#DDDDDD")))
+                tbl.setItem(r_idx, 1, _it(
+                    sector if inv_idx == 0 else "",
+                    fg=QColor("#8888AA")))
+
+                lbl_fg = QColor(0xEF, 0x53, 0x50) if inv_label == "외인" else QColor(0x66, 0xBB, 0x6A)
+                lbl_it = _it(inv_label, fg=lbl_fg)
+                f = lbl_it.font(); f.setBold(True); lbl_it.setFont(f)
+                tbl.setItem(r_idx, 2, lbl_it)
+
+                # 1차~5차 컬럼
+                for p_idx, period in enumerate(_PERIODS):
+                    col = 3 + p_idx
+                    if period in d:
+                        val  = d[period][inv_key]
+                        text = f"{val:+,.0f}" if val != 0 else "0"
+                        bg   = _net_bg(val)
+                        fg   = _txt_color(bg)
+                        tbl.setItem(r_idx, col, _it(
+                            text, Qt.AlignRight | Qt.AlignVCenter, fg, bg))
+                    else:
+                        tbl.setItem(r_idx, col, _it("—", fg=QColor("#555")))
+
+                r_idx += 1
+
+        tbl.setUpdatesEnabled(True)
+        tbl.resizeRowsToContents()
+
     def _try_update_buy_signals(self) -> None:
         """섹터/점수 데이터를 모아 BuySignalScanner에 전달."""
         try:
@@ -3829,6 +5458,8 @@ class CustomAutoTrader(KiwoomAPI, AutoTrader):
 
     def _on_buy_signal_updated(self, sig_df: pd.DataFrame) -> None:
         """BuySignalScanner 콜백 — 매수 신호 탭 갱신."""
+        if not self._module_enabled.get("매수신호", True):
+            return
         if hasattr(self, '_dashboard'):
             self._dashboard.on_buy_signal(sig_df)
         if not hasattr(self, '_buy_signal_table'):

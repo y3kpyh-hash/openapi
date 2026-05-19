@@ -83,8 +83,9 @@ class StockRecord:
     trading_value: int     # 거래대금 (억원)
     market_cap:    int     # 시가총액 (억원)
     rank:          int     # 거래대금 순위
-    foreign_net:   float = math.nan  # 외인 순매수 (억원); nan = 미로드
-    inst_net:      float = math.nan  # 기관 순매수 (억원); nan = 미로드
+    foreign_net:   float = math.nan  # 외인 순매수 (백만원); nan = 미로드
+    inst_net:      float = math.nan  # 기관 순매수 (백만원); nan = 미로드
+    fin_net:       float = math.nan  # 금융투자 순매수 (백만원); nan = 미로드
     exec_strength: float = 100.0 # 체결강도 (%)
 
 
@@ -123,14 +124,14 @@ class SectorAnalyzer:
         "섹터명", "거래대금합(억)", "평균등락률(%)",
         "확산도(%)",
         "상승종목수", "하락종목수",
-        "외인순매수합(주)", "기관순매수합(주)",
+        "외인순매수합(주)", "기관순매수합(주)", "금융투자순매수합(주)",
         "대장주", "종목수",
     ]
 
     STOCK_COLS = [
         "종목코드", "종목명", "현재가", "등락률(%)",
         "거래대금(억)", "시가총액(억)",
-        "외인순매수(주)", "기관순매수(주)", "순위",
+        "외인순매수(주)", "기관순매수(주)", "금융투자순매수(주)", "순위",
     ]
 
     def __init__(
@@ -166,9 +167,9 @@ class SectorAnalyzer:
             raise ValueError(f"DataFrame 누락 컬럼: {missing}")
 
         with self._lock:
-            # 기존 외인/기관 데이터 보존 (update_investor 로 쌓인 값)
-            saved: dict[str, tuple[int, int]] = {
-                code: (r.foreign_net, r.inst_net)
+            # 기존 외인/기관/금융투자 데이터 보존 (update_investor 로 쌓인 값)
+            saved: dict[str, tuple] = {
+                code: (r.foreign_net, r.inst_net, r.fin_net)
                 for code, r in self._stocks.items()
             }
             self._stocks.clear()
@@ -179,7 +180,7 @@ class SectorAnalyzer:
                     continue
 
                 sector = str(row.get("업종", "")).strip() or "미분류"
-                fn, inst = saved.get(code, (math.nan, math.nan))
+                fn, inst, fin = saved.get(code, (math.nan, math.nan, math.nan))
 
                 self._stocks[code] = StockRecord(
                     code          = code,
@@ -187,11 +188,12 @@ class SectorAnalyzer:
                     sector        = sector,
                     price         = _to_int(row.get("현재가", 0)),
                     change_pct    = _to_float(row.get("등락률", 0.0)),
-                    trading_value = _to_int(row.get("거래대금", 0)),
-                    market_cap    = _to_int(row.get("시가총액", 0)),
+                    trading_value = _to_int(row.get("거래대금", 0)) // 100,  # 백만원 → 억원
+                    market_cap    = _to_int(row.get("시가총액", 0)),          # 이미 억원
                     rank          = rank,
                     foreign_net   = fn,
                     inst_net      = inst,
+                    fin_net       = fin,
                 )
 
             # 속도 스냅샷: 락 안에서 섹터합 계산
@@ -208,17 +210,20 @@ class SectorAnalyzer:
     def update_investor(
         self,
         code: str,
-        foreign_net: float,   # 억원
-        inst_net: float,      # 억원
+        foreign_net: float,          # 백만원
+        inst_net: float,             # 백만원
+        fin_net: float = math.nan,   # 금융투자 백만원
     ) -> None:
         """
-        개별 종목 외인/기관 순매수 갱신 (단위: 억원).
+        개별 종목 외인/기관/금융투자 순매수 갱신 (단위: 백만원).
         opt10059(금액 기준), 실시간 FID 등 어디서든 호출 가능.
         """
         with self._lock:
             if code in self._stocks:
                 self._stocks[code].foreign_net = foreign_net
                 self._stocks[code].inst_net    = inst_net
+                if not math.isnan(fin_net):
+                    self._stocks[code].fin_net = fin_net
             # 아직 trading 데이터가 없으면 무시 (나중에 update_trading 이 덮어씀)
 
         self._notify()
@@ -283,20 +288,22 @@ class SectorAnalyzer:
             dn_cnt      = sum(1 for m in members if m.change_pct < 0)
             foreign_sum = sum(m.foreign_net for m in members if not math.isnan(m.foreign_net))
             inst_sum    = sum(m.inst_net    for m in members if not math.isnan(m.inst_net))
+            fin_sum     = sum(m.fin_net     for m in members if not math.isnan(m.fin_net))
             leader      = max(members, key=lambda m: m.trading_value)
             diffusion   = round(up_cnt / len(members) * 100, 1)
 
             rows.append({
-                "섹터명":          sector,
-                "거래대금합(억)":   total_value,
-                "평균등락률(%)":    round(avg_pct, 2),
-                "확산도(%)":        diffusion,
-                "상승종목수":       up_cnt,
-                "하락종목수":       dn_cnt,
-                "외인순매수합(주)": foreign_sum,
-                "기관순매수합(주)": inst_sum,
-                "대장주":          leader.name,
-                "종목수":          len(members),
+                "섹터명":              sector,
+                "거래대금합(억)":       total_value,
+                "평균등락률(%)":        round(avg_pct, 2),
+                "확산도(%)":            diffusion,
+                "상승종목수":           up_cnt,
+                "하락종목수":           dn_cnt,
+                "외인순매수합(주)":     foreign_sum,
+                "기관순매수합(주)":     inst_sum,
+                "금융투자순매수합(주)": fin_sum,
+                "대장주":              leader.name,
+                "종목수":              len(members),
             })
 
         if not rows:
@@ -460,9 +467,10 @@ class SectorAnalyzer:
                     "등락률(%)":     m.change_pct,
                     "거래대금(억)":   m.trading_value,
                     "시가총액(억)":   m.market_cap,
-                    "외인순매수(주)": m.foreign_net,
-                    "기관순매수(주)": m.inst_net,
-                    "순위":          m.rank,
+                    "외인순매수(주)":     m.foreign_net,
+                    "기관순매수(주)":     m.inst_net,
+                    "금융투자순매수(주)": m.fin_net,
+                    "순위":              m.rank,
                 }
                 for m in members
             ],

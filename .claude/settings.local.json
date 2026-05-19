@@ -10,7 +10,15 @@
       "Bash(python -c \"import platform; print\\('arch:', platform.architecture\\(\\)\\)\")",
       "Bash(where python *)",
       "Bash(C:\\\\Python310_32\\\\python.exe *)",
-      "PowerShell(& \"C:\\\\Python310_32\\\\python.exe\" \"C:\\\\OpenAPI\\\\chapter1\\\\example1-1.py\")"
+      "PowerShell(& \"C:\\\\Python310_32\\\\python.exe\" \"C:\\\\OpenAPI\\\\chapter1\\\\example1-1.py\")",
+      "Read(//c//**)",
+      "PowerShell(& \"C:\\\\Python310_32\\\\python.exe\" -c \"import loguru, PyQt5; print\\('OK'\\)\" 2>&1)",
+      "PowerShell($bytes = [System.IO.File]::ReadAllBytes\\(\"c:\\\\OpenAPI\\\\data\\\\opw00018.enc\"\\); $text = [System.Text.Encoding]::GetEncoding\\(\"euc-kr\"\\).GetString\\($bytes\\); $text | Select-String \"종목|코드|보유|평균|매입|현재|수량\" | Select-Object -First 40)",
+      "PowerShell($bytes = [System.IO.File]::ReadAllBytes\\(\"c:\\\\OpenAPI\\\\data\\\\opw00018.enc\"\\); $text = [System.Text.Encoding]::GetEncoding\\(\"euc-kr\"\\).GetString\\($bytes\\); Write-Output $text | Select-Object -First 100)",
+      "Bash(\"C:\\\\Python310_32\\\\python.exe\" -c \"import ast, sys; ast.parse\\(open\\('trading_product.py', encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "PowerShell(Start-Process regsvr32 -ArgumentList \"/s `\"c:\\\\OpenAPI\\\\khopenapi.ocx`\"\" -Verb RunAs -Wait -PassThru | Select-Object ExitCode)",
+      "PowerShell($proc = Start-Process -FilePath \"regsvr32.exe\" -ArgumentList \"/s `\"c:\\\\OpenAPI\\\\khopenapi.ocx`\"\" -Verb RunAs -Wait -PassThru; Write-Output \"ExitCode: $\\($proc.ExitCode\\)\")",
+      "Bash(\"C:\\\\Python310_32\\\\python.exe\" -c \"import ast; ast.parse\\(open\\('trading_product.py',encoding='utf-8'\\).read\\(\\)\\); print\\('OK'\\)\")"
     ]
   }
 }

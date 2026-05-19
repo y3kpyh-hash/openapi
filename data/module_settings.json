@@ -1,0 +1,14 @@
+{
+  "modules": {
+    "시장등락률": false,
+    "테마별현황": false,
+    "매수신호": false,
+    "섹터자금흐름": false,
+    "해외선물": false,
+    "전략": false,
+    "시장지도": false,
+    "거래원분석": false,
+    "수급흐름": true
+  },
+  "batch_interval_min": 10
+}
